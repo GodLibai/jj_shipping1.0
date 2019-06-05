@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.rr.dao.ShipinfoMapper">
-  <resultMap id="BaseResultMap" type="com.rr.pojo.Shipinfo">
+<mapper namespace="com.zzf4.jj_shipping.dao.ShipinfoMapper">
+  <resultMap id="BaseResultMap" type="Shipinfo">
     <id column="l_id" jdbcType="INTEGER" property="lId" />
     <result column="s_id" jdbcType="INTEGER" property="sId" />
     <result column="begin_id" jdbcType="INTEGER" property="beginId" />
@@ -23,7 +23,7 @@
     delete from t_shipinfo
     where l_id = #{lId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.rr.pojo.Shipinfo">
+  <insert id="insert" parameterType="Shipinfo">
     insert into t_shipinfo (l_id, s_id, begin_id, 
       end_id, begin_time, end_time, 
       pay_status)
@@ -31,7 +31,7 @@
       #{endId,jdbcType=INTEGER}, #{beginTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, 
       #{payStatus,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.rr.pojo.Shipinfo">
+  <insert id="insertSelective" parameterType="Shipinfo">
     insert into t_shipinfo
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="lId != null">
@@ -80,7 +80,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.rr.pojo.Shipinfo">
+  <update id="updateByPrimaryKeySelective" parameterType="Shipinfo">
     update t_shipinfo
     <set>
       <if test="sId != null">
@@ -104,7 +104,7 @@
     </set>
     where l_id = #{lId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.rr.pojo.Shipinfo">
+  <update id="updateByPrimaryKey" parameterType="Shipinfo">
     update t_shipinfo
     set s_id = #{sId,jdbcType=INTEGER},
       begin_id = #{beginId,jdbcType=INTEGER},

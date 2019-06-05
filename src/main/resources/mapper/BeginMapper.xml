@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.rr.dao.BeginMapper">
-  <resultMap id="BaseResultMap" type="com.rr.pojo.Begin">
+<mapper namespace="com.zzf4.jj_shipping.dao.BeginMapper">
+  <resultMap id="BaseResultMap" type="Begin">
     <id column="begin_id" jdbcType="INTEGER" property="beginId" />
     <result column="b_name" jdbcType="VARCHAR" property="bName" />
   </resultMap>
@@ -18,11 +18,11 @@
     delete from t_begin
     where begin_id = #{beginId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.rr.pojo.Begin">
+  <insert id="insert" parameterType="Begin">
     insert into t_begin (begin_id, b_name)
     values (#{beginId,jdbcType=INTEGER}, #{bName,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.rr.pojo.Begin">
+  <insert id="insertSelective" parameterType="Begin">
     insert into t_begin
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="beginId != null">
@@ -41,7 +41,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.rr.pojo.Begin">
+  <update id="updateByPrimaryKeySelective" parameterType="Begin">
     update t_begin
     <set>
       <if test="bName != null">
@@ -50,7 +50,7 @@
     </set>
     where begin_id = #{beginId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.rr.pojo.Begin">
+  <update id="updateByPrimaryKey" parameterType="Begin">
     update t_begin
     set b_name = #{bName,jdbcType=VARCHAR}
     where begin_id = #{beginId,jdbcType=INTEGER}

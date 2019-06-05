@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.rr.dao.OrderMapper">
-  <resultMap id="BaseResultMap" type="com.rr.pojo.Order">
+<mapper namespace="com.zzf4.jj_shipping.dao.OrderMapper">
+  <resultMap id="BaseResultMap" type="Order">
     <id column="o_id" jdbcType="INTEGER" property="oId" />
     <result column="s_id" jdbcType="INTEGER" property="sId" />
     <result column="box_id" jdbcType="INTEGER" property="boxId" />
@@ -21,13 +21,13 @@
     delete from t_order
     where o_id = #{oId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.rr.pojo.Order">
+  <insert id="insert" parameterType="Order">
     insert into t_order (o_id, s_id, box_id, 
       state, totalmoney)
     values (#{oId,jdbcType=INTEGER}, #{sId,jdbcType=INTEGER}, #{boxId,jdbcType=INTEGER}, 
       #{state,jdbcType=VARCHAR}, #{totalmoney,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.rr.pojo.Order">
+  <insert id="insertSelective" parameterType="Order">
     insert into t_order
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="oId != null">
@@ -64,7 +64,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.rr.pojo.Order">
+  <update id="updateByPrimaryKeySelective" parameterType="Order">
     update t_order
     <set>
       <if test="sId != null">
@@ -82,7 +82,7 @@
     </set>
     where o_id = #{oId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.rr.pojo.Order">
+  <update id="updateByPrimaryKey" parameterType="Order">
     update t_order
     set s_id = #{sId,jdbcType=INTEGER},
       box_id = #{boxId,jdbcType=INTEGER},

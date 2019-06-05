@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.rr.dao.AdditionMapper">
+<mapper namespace="com.zzf4.jj_shipping.dao.AdditionMapper">
   <resultMap id="BaseResultMap" type="com.rr.pojo.Addition">
     <id column="pay_id" jdbcType="INTEGER" property="payId" />
     <result column="pay_name" jdbcType="VARCHAR" property="payName" />
@@ -26,7 +26,7 @@
     delete from t_addition
     where pay_id = #{payId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.rr.pojo.Addition">
+  <insert id="insert" parameterType="Addition">
     insert into t_addition (pay_id, pay_name, pay_status, 
       units, currency, GP20, 
       GP40, HC40, fares, 
@@ -36,7 +36,7 @@
       #{gp40,jdbcType=INTEGER}, #{hc40,jdbcType=INTEGER}, #{fares,jdbcType=INTEGER}, 
       #{remark,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.rr.pojo.Addition">
+  <insert id="insertSelective" parameterType="Addition">
     insert into t_addition
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="payId != null">
@@ -103,7 +103,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.rr.pojo.Addition">
+  <update id="updateByPrimaryKeySelective" parameterType="Addition">
     update t_addition
     <set>
       <if test="payName != null">
@@ -136,7 +136,7 @@
     </set>
     where pay_id = #{payId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.rr.pojo.Addition">
+  <update id="updateByPrimaryKey" parameterType="Addition">
     update t_addition
     set pay_name = #{payName,jdbcType=VARCHAR},
       pay_status = #{payStatus,jdbcType=VARCHAR},

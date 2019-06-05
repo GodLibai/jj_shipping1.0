@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zzf4.jj_shipping.dao.UserMapper">
-  <resultMap id="BaseResultMap" type="com.zzf4.jj_shipping.entity.User">
+  <resultMap id="BaseResultMap" type="User">
     <id column="u_id" jdbcType="INTEGER" property="uId" />
     <result column="E_mail" jdbcType="VARCHAR" property="eMail" />
     <result column="company" jdbcType="VARCHAR" property="company" />
