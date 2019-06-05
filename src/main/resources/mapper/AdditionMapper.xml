@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zzf4.jj_shipping.dao.AdditionMapper">
-  <resultMap id="BaseResultMap" type="com.rr.pojo.Addition">
+  <resultMap id="BaseResultMap" type="Addition">
     <id column="pay_id" jdbcType="INTEGER" property="payId" />
     <result column="pay_name" jdbcType="VARCHAR" property="payName" />
     <result column="pay_status" jdbcType="VARCHAR" property="payStatus" />
