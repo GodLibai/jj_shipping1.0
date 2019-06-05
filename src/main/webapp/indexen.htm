@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Basic Page Needs================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>锦江航运</title>
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- IOS6全屏 Chrome高版本全屏 ================================================== -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- 让360双核浏览器用webkit内核渲染页面 ================================================== -->
+    <meta name="renderer" content="webkit" />
+    <!-- reset and core CSS -->
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/allcss.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="css/english.css" rel="stylesheet" type="text/css" />
+    <!-- Favicons -->
+    <link rel="icon" href="http://ejj.jjshipping.cn/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="http://ejj.jjshipping.cn/favicon.ico" type="image/x-icon" />
+    <link rel="icon" sizes="196x196" href="http://ejj.jjshipping.cn/images/apple-touch-icon-152x152.jpg" />
+    <style>
+        .selected_01 {
+            border: 1px solid #e3e3e3;
+            background: #fff;
+            border-radius: 3px;
+            display: inline-block;
+            height: 40px;
+            vertical-align: middle;
+            width: 120px;
+        }
+        .btndang {
+            display: inline-block;
+            width: 130px;
+            height: 46px;
+            color: #fff;
+            line-height: 46px;
+            border: none;
+            border-radius: 3px;
+            text-align: center;
+            transition: opacity .2s;
+        }
+        .banner .aside-left {
+            width: 70%;
+            float: left;
+        }
+        .banner .aside-right {
+            width: 30%;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+
+<!-- header -->
+<div class="loginbar">
+    <div class="main clearfix">
+        <div class="login-submit">
+                <span class="login-wrap">
+                   <a href="login_3.htm">Login</a>
+                    <i class="split-items">|</i>
+                    <a href="regedit.htm">Registration</a>
+                </span>
+            <a href="index.htm">中文</a>
+        </div>
+    </div>
+</div>
+
+<!-- end -->
+<!-- header -->
+<div class="header">
+<div class="main clearfix">
+    <h1 class="logo">
+        <a href="indexen.htm#"><img src="images/index/logo.png" alt="" /></a>
+    </h1>
+    <div class="top-nav top-nava">
+        <a href="indexen.htm" class="active">Home</a>
+        <a href="home.htm">Foreign Trade Line</a>
+
+
+      <a href="cargosearch.htm" class="defaultline">Information Query and Subscription</a>
+        <a href="http://op.jjshipping.cn/eservices/index-nav.jsp?_menu=menu1" target="_blank">Protocol User Entrance</a>
+    </div>
+
+</div>
+</div>
+
+<!-- end -->
+<!-- banner -->
+<div class="banner">
+    <!--<img src="images/index/banner.jpg" alt="" class="banner-img">-->
+    <div class="main main-inner">
+        <div class="quick-entry">
+            <!-- nav -->
+            <ul id="myTabsa" class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="indexen.htm#first-tab" role="tab" data-toggle="tab" aria-controls="first-tab" aria-expanded="false">Booking</a></li>
+                <li role="presentation" class=""><a href="indexen.htm#second-tab" role="tab" data-toggle="tab" aria-controls="second-tab" aria-expanded="true">Cargo Tracking</a></li>
+                <li role="presentation" class=""><a href="indexen.htm#third-tab" role="tab" data-toggle="tab" aria-controls="third-tab" aria-expanded="true">Empty Release</a></li>
+                <li role="presentation" class=""><a href="indexen.htm#forth-tab" role="tab" data-toggle="tab" aria-controls="forth-tab" aria-expanded="false">D/O Info</a></li>
+                <li role="presentation" id="end"><a href="indexen.htm#five-tab" role="tab" data-toggle="tab" class="" aria-controls="five-tab" aria-expanded="true">Demurrage and  Detention Charge </a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="first-tab">
+                    <div class="select-wrap clearfix">
+                        <label for="" class="pull-left">
+                            <span>POL</span>
+                            <div class="selected">
+                                <input id="startport" class="selected-start" />
+                                <input id="startportcod" name="startportcod" type="hidden" />
+                            </div>
+                        </label>
+                        <label for="" class="pull-right">
+                            <span>POD</span>
+                            <div class="selected">
+                                <input id="endport" class="selected-start" placeholder="Supported by national Fuzzy Lookup" />
+                                <input id="endportcod" name="endportcod" type="hidden" />
+                            </div>
+                        </label>
+                    </div>
+                    <div class="searchbtn-area"><a href="indexen.htm#" class="btn btn-search">SEARCH</a></div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade in" id="second-tab">
+                    <div class="input-wrap">
+                        <label for="">B/L NO</label>
+                        <input type="text" placeholder="B/L NO" id="cargobill" />
+                    </div>
+                    <div class="searchbtn-area extra-style"><a href="indexen.htm#" class="btn btn-search" onClick="cargotraker()">search</a></div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade in" id="third-tab">
+                    <div class="input-wrap">
+                        <label for="">B/L NO</label>
+                        <input type="text" placeholder="B/L NO" id="putbill" />
+                    </div>
+                    <div class="searchbtn-area extra-style"><a href="indexen.htm#" class="btn btn-search" onClick="putcntr()">search</a></div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade in" id="forth-tab">
+                    <div class="input-wrap">
+                        <label for="">B/L NO</label>
+                        <input type="text" placeholder="B/L NO" id="dobillnbr" />
+                    </div>
+                    <div class="searchbtn-area extra-style"><a href="javascript:dofeequery();" class="btn btn-search">search</a></div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade in" id="five-tab">
+                    <div class="five-wrap clearfix">
+                        <div class="aside-left">
+                            <div class="select-wrap clearfix">
+                                <label for="" class="pull-left">
+                                    <span class="padding15px">Country</span>
+                                    <div class="selected selected_01">
+                                        <select title="Please select the country" name="sType" id="selectcountry" class="single_select3E">
+                                            <option value="SG">SINGAPORE</option>
+                                            <option value="TH">THAILAND</option>
+                                            <option value="TW">TAIWAN</option>
+                                            <option value="US">UNITED STATES</option>
+                                            <option value="VN">VIET NAM</option>
+                                            <option value="CN">CHINA</option>
+                                            <option value="GB">UNITED KINGDOM</option>
+                                            <option value="HK">HONG KONG </option>
+                                            <option value="JP">JAPAN</option>
+                                            <option value="KR">REPUBLIC OF KOREA</option>
+                                        </select>
+                                    </div>
+                                    <span class="padding15px">Port</span>
+                                    <div class="selected selected_01">
+                                        <select title="Please select the port" name="sType" id="selectport" class="single_select3E">
+                                            <!--<option th:each="portdetail:${port}" th:value="${portdetail.PORT_COD}" th:text="${portdetail.C_PORT_NAM}"></option>-->
+                                        </select>
+                                    </div>
+                                </label>
+                                <label for="" class="pull-right">
+                                    <span>Status</span>
+                                    <div class="selected">
+                                        <select title="Status" name="stat" id="stat" class="single_select" style="display: none;">
+                                            <option selected="selected" value="0">Status</option>
+                                            <option value="1">Uint to be redelivered</option>
+                                            <option value="2">Uints redelivered and change to be collected</option>
+                                            <option value="3">Charge collected</option>
+                                            <option value="-1">Charge to be refunded</option>
+                                            <option value="-2">Charge refunded</option>
+                                        </select>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="aside-right">
+                            <div class="input-wrap">
+                                <label for="">B/L</label>
+                                <input type="text" placeholder="B/L" style="width: 100px" id="feebill" />
+                            </div>
+                            <div class="searchbtn-area extra-style" style="margin-top:20px"><a href="indexen.htm#" class="btndang btn-search" onClick="zqfee()">Search</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 星星 -->
+        <div class="star">
+            <span class="star-box star-box-01"></span>
+            <span class="star-box star-box-02"></span>
+            <span class="star-box star-box-03"></span>
+            <span class="star-box star-box-04"></span>
+            <span class="star-box star-box-05"></span>
+            <span class="star-box star-box-06"></span>
+            <span class="star-box star-box-07"></span>
+            <span class="star-box star-box-08"></span>
+        </div>
+        <!-- 云朵 -->
+        <div class="cloud">
+            <span class="cloud-01"><img src="images/index/cloud-01.png" alt="" class="img-responsive" /></span>
+            <span class="cloud-02"><img src="images/index/cloud-02.png" alt="" class="img-responsive" /></span>
+            <span class="cloud-03"><img src="images/index/cloud-03.png" alt="" class="img-responsive" /></span>
+        </div>
+
+    </div>
+</div>
+<!-- end -->
+<!-- main-content -->
+<div class="main-content">
+    <div class="main">
+        <div class="row clearfix">
+            <div class="left-side">
+                <h2 class="subtitle"><em class="icon01">Information Query</em><a href="indexen.htm#" class="more hide">More  ></a></h2>
+                <div class="links">
+                    <div class="links-inner">
+                        <a href="sailingdate.htm">
+                            <i class="links-items links-icon01"></i><span>Main Line<br />Schedule<br />Query</span>
+                        </a>
+                        <a href="sailingdatebranch.htm">
+                            <i class="links-items links-icon02"></i><span>Branch Line<br />Schedule<br />Query</span>
+                        </a>
+                        <a href="branchqueryindex.htm">
+                            <i class="links-items links-icon03"></i><span>Multimodal<br />Transportation<br />Schedule Query</span>
+                        </a>
+                    </div>
+                    <div class="links-inner">
+                        <a href="shipstate.htm">
+                            <i class="links-items links-icon04"></i><span>Vessel<br />Movement</span>
+                        </a>
+                        <a href="branchqueryindexNational.htm">
+                            <i class="links-items links-icon05"></i><span>International<br />Transshipment Query</span>
+                        </a>
+                        <a href="cntrtracker.htm">
+                            <i class="links-items links-icon06"></i><span>Container<br />Tracking</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <h2 class="subtitle"><em class="icon02">Information Bulletin</em><a href="noticemore.htm" class="more">More ></a></h2>
+                <!-- 焦点图 新闻列表 -->
+                <div class="focus-news clearfix">
+                    <!-- Swiper -->
+                    <div class="index-swiper">
+                        <div class="swiper-container" id="indexSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="images/index/swiper-banner-01.jpg" alt="" class="img-responsive" /></div>
+                                <div class="swiper-slide"><img src="images/index/swiper-banner-02.jpg" alt="" class="img-responsive" /></div>
+                                <div class="swiper-slide"><img src="images/index/swiper-banner-03.jpg" alt="" class="img-responsive" /></div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <!--<div class="news"  th:unless="${#lists.isEmpty(noticeList)}">-->
+                        <!--<ul class="news-lists" th:each="notice : ${noticeList}" >-->
+                            <!--<li>-->
+                                <!--<a th:if="${notice.notice_title_eng}" th:href="@{'/noticeinfo?noticeno='+${notice.notice_no}}">-->
+                                    <!--<span class="news-timer"  th:text="${notice.notice_tim !=null}?${#strings.substring(notice.notice_tim,0,10)}:''">2016-04-26</span>-->
+                                    <!--<p class="news-text">-->
+                                        <!--<em class="news-remark"  th:text="'['+${notice.notice_typ_eng}+']'">【船期】</em>-->
+                                        <!--<span  th:text="${notice.notice_title_eng !=null}?(${#strings.length(notice.notice_title_eng) gt 15}?${#strings.substring(notice.notice_title_eng,1,15)+'...'}:${notice.notice_title_eng}):''">香港海防航线2016年5月船期表</span>-->
+                                    <!--</p>-->
+                                <!--</a>-->
+                            <!--</li>-->
+
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <div class="news">
+                        <ul class="news-lists">
+                            <li>
+                                <a href="noticeinfo.htm">
+                                    <span class="news-timer">2019-01-08</span>
+                                    <p class="news-text">
+                                        <em class="news-remark" style="color:red;">[Top]</em>
+                                        
+                                        <!--<span th:text="${#strings.length(notice.notice_title) gt 30}?${#strings.substring(notice.notice_title,1,30)+'...'}:${notice.notice_title}">香港海防航线2016年5月船期表</span>-->
+                                        <span>关于厦门和香港征收LSS附加费的通知</span>
+                                    </p>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <ul class="news-lists">
+                            <li>
+                                <a href="noticeinfo_2.htm">
+                                    <span class="news-timer">2018-07-30</span>
+                                    <p class="news-text">
+                                        <em class="news-remark" style="color:red;">[Top]</em>
+                                        
+                                        <!--<span th:text="${#strings.length(notice.notice_title) gt 30}?${#strings.substring(notice.notice_title,1,30)+'...'}:${notice.notice_title}">香港海防航线2016年5月船期表</span>-->
+                                        <span>关于对网上支付业务开具电子发票的通知</span>
+                                    </p>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <ul class="news-lists">
+                            <li>
+                                <a href="noticeinfo_3.htm">
+                                    <span class="news-timer">2019-05-31</span>
+                                    <p class="news-text">
+                                        
+                                        <em class="news-remark">[Sailing Schedule]</em>
+                                        <!--<span th:text="${#strings.length(notice.notice_title) gt 30}?${#strings.substring(notice.notice_title,1,30)+'...'}:${notice.notice_title}">香港海防航线2016年5月船期表</span>-->
+                                        <span>阪神穿梭快航2019年6月船期表（更正一）</span>
+                                    </p>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <ul class="news-lists">
+                            <li>
+                                <a href="noticeinfo_6.htm">
+                                    <span class="news-timer">2019-05-31</span>
+                                    <p class="news-text">
+                                        
+                                        <em class="news-remark">[Sailing Schedule]</em>
+                                        <!--<span th:text="${#strings.length(notice.notice_title) gt 30}?${#strings.substring(notice.notice_title,1,30)+'...'}:${notice.notice_title}">香港海防航线2016年5月船期表</span>-->
+                                        <span>青岛快航2019年6月船期表（更正一）</span>
+                                    </p>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <ul class="news-lists">
+                            <li>
+                                <a href="noticeinfo_4.htm">
+                                    <span class="news-timer">2019-05-31</span>
+                                    <p class="news-text">
+                                        
+                                        <em class="news-remark">[Sailing Schedule]</em>
+                                        <!--<span th:text="${#strings.length(notice.notice_title) gt 30}?${#strings.substring(notice.notice_title,1,30)+'...'}:${notice.notice_title}">香港海防航线2016年5月船期表</span>-->
+                                        <span>九州釜山线2019年6月船期表（更正二）</span>
+                                    </p>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <ul class="news-lists">
+                            <li>
+                                <a href="noticeinfo_5.htm">
+                                    <span class="news-timer">2019-05-31</span>
+                                    <p class="news-text">
+                                        
+                                        <em class="news-remark">[Sailing Schedule]</em>
+                                        <!--<span th:text="${#strings.length(notice.notice_title) gt 30}?${#strings.substring(notice.notice_title,1,30)+'...'}:${notice.notice_title}">香港海防航线2016年5月船期表</span>-->
+                                        <span>四季快航2019年6月船期表（更正一）</span>
+                                    </p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 优势服务 -->
+    <div class="advantage">
+        <div class="main">
+            <div class="advantage-inner">
+                <div class="advantage-list clearfix">
+                    <div class="advan-details">
+                            <span class="detais-img">
+                                <img src="images/index/detais-img-01.png" alt="" class="img-responsive" />
+                            </span>
+                        <div class="details-title">
+                            <h4>Reasonable Schedule</h4>
+                        </div>
+                    </div>
+
+                    <div class="advan-details">
+                            <span class="detais-img">
+                                <img src="images/index/detais-img-02.png" alt="" class="img-responsive" />
+                            </span>
+                        <div class="details-title">
+                            <h4>Simple procedure</h4>
+                        </div>
+                    </div>
+                    <div class="advan-details">
+                            <span class="detais-img">
+                                <img src="images/index/detais-img-03.png" alt="" class="img-responsive" />
+                            </span>
+                        <div class="details-title">
+                            <h4>Precise delivery</h4>
+                        </div>
+                    </div>
+                    <div class="advan-details last">
+                            <span class="detais-img">
+                                <img src="images/index/detais-img-04.png" alt="" class="img-responsive" />
+                            </span>
+                        <div class="details-title">
+                            <h4>Safe and efficient</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end -->
+<!-- footer -->
+
+<div class="footer">
+    <div class="footer-links">
+        <div class="main clearfix w1000">
+            <dl class="footer-inner">
+                <dt>About us</dt>
+                <dd>
+                    <a href="intoJinjiang.htm">Our Group</a>
+                    <a href="contactUs.htm"> Contact Us</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>Guideline</dt>
+                <dd>
+                    <a href="serviceLogistics.htm">Service Process</a>
+                    <a href="paymentMethod.htm">Payment</a>
+                    <a href="importExchangeProcess.htm">Import Flow</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>Common Info</dt>
+                <dd>
+                    <a href="shipData.htm">Vessel Info</a>
+                    <a href="portInformation.htm">Port Info</a>
+                    <a href="yardInformation.htm">Container Depot Info</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>Support center</dt>
+                <dd>
+                    <a href="proxyDirectory.htm">Agent List</a>
+                    <a href="overdueFeeStandard.htm">Dem/Det Charge</a>
+                    <!--<a th:href="@{'/additionFeeSchedule'}">Detention Charge Standard</a>-->
+                    <a href="fastDeliveryService.htm">HDS info</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner last-child">
+                <dt>Contact Us</dt>
+                <dd>
+                    <span class="tel-icon"></span>
+                    <p class="tel-number">400-921-2288</p>
+                    <span class="qr_code"></span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="main clearfix w1000">
+            <div class="copyright">
+                <p>Copyright © 2015岸基网络科技有限公司All Rights Reserved.</p>
+                <p>沪ICP备13047598号</p>
+            </div>
+            <div class="friendlinks">
+                <a href="http://ejj.jjshipping.cn/infor-notice.html">HDS info</a>                      <span>|</span>
+                <a href="http://ejj.jjshipping.cn/legal-notice.html"> Legal declaration </a>
+                <span>|</span>
+                <a href="indexen.htm#">Web Statistics</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end -->
+<div class="sidebar">
+    <a href="javascript:void(0);" style="cursor: context-menu;">
+        <span class=""></span>
+    </a>
+
+    <a target="_blank" href="http://q.url.cn/cdVSx4?_type=wpa%26qidian=true">
+        <span class="online-consult"></span>
+    </a>
+    <a href="javascript:void(0);" class="tel-parent">
+        <span class="telphone telImg"></span>
+        <p class="tel-details">
+            <s class="telphone"></s>售后服务热线:<br />400-921-2288
+        </p>
+    </a>
+    <a href="javascript:void(0);">
+        <mark class="backto-top"></mark>
+    </a>
+</div>
+<!-- Javascript with AMD  -->
+<script src="js/lib/require.js" data-main="/js/app/main"></script>
+<script>
+    //换单查询
+    function dofeequery(){
+
+        window.open("/doquery?billnbr="+$("#dobillnbr").val(),'top');
+    }
+    //货物跟踪
+    function cargotraker(){
+
+        window.open("/cargosearch?billnbr="+$("#cargobill").val(),'top');
+    }
+    //放箱查询
+    function putcntr(){
+
+        window.open("/cntrfang?billnbr="+$("#putbill").val(),'top');
+    }
+    //滞期费查询
+
+    function zqfee(){
+        if($("#feebill").val()==''){
+            alert("Please enter the bill of lading !");
+            return;
+        }
+        if($("#selectport").val()==''||$("#selectport").val()==null){
+            alert("Please select a port!");
+            return;
+        }
+        else {
+            var url = "/demurragequery?para=" + $("#selectcountry").val() + "@" + $("#selectport").val() + "@" + $("#stat").val() + "@" + $("#feebill").val();
+            console.log(url);
+            window.open(url, 'top');
+        }
+    }
+</script>
+</body>
+</html>

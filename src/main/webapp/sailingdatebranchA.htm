@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Basic Page Needs================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>锦江航运</title>
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- IOS6全屏 Chrome高版本全屏 ================================================== -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+    <!-- reset and core CSS -->
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/allcss.css" rel="stylesheet" type="text/css" />
+    <link href="css/0818.css" rel="stylesheet" type="text/css" />
+    <link href="css/english.css" rel="stylesheet" type="text/css" />
+    <link href="calend/fullcalendar.css" rel="stylesheet" />
+    <link href="calend/fullcalendar.print.css" rel="stylesheet" media="print" />
+    <link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="css/ui-dialog.css" rel="stylesheet" type="text/css" />
+    <style>
+        .ui-menu .ui-menu-item-wrapper {
+            position: relative;
+            padding: 3px 1em 3px .1em;
+            height: 10px;
+            line-height: 10px;
+        }
+        .centerlabel{
+            width:128px;
+            height:10px;
+            display:block;
+            color:#333!important;
+            text-align:center;
+        }
+        .centerlabel:hover{
+            color:#333;
+        }
+    </style>
+</head>
+<body>
+
+<!-- header -->
+<div class="loginbar">
+    <div class="main clearfix">
+        <div class="login-submit">
+            <div class="login-dropdown"></div>
+            <span class="login-wrap">
+                <a href="login_3.htm">登录</a>
+                <i class="split-items">|</i>
+                <a href="register.htm">注册</a>
+            </span>
+            <a href="indexen.htm">English</a>
+        </div>
+    </div>
+</div>
+
+<!-- end -->
+<!-- header -->
+<div class="header">
+        <script language="javascript">
+            /*<![CDATA[*/
+            function coupon() {
+                window.location.href='/coupon';
+            }
+            function countdown() {
+                window.location.href='/countdown';
+            }
+            function seckilling() {
+                window.location.href='/seckilling';
+            }
+            function xyUserEntry() {
+                //window.location.href='/seckillover';
+                if ($("#xytype").val() !='CS' && $("#xytype").val() !='OB') {
+                    window.open('http://op.jjshipping.cn/eservices/index-nav.jsp?_menu=menu1');
+                }else{
+                    $("#xytype").val('XY')
+                }
+            }
+            function impChangeSingle() {
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=1');
+                $("#xytype").val('CS');
+            }
+            function onlinbox(){
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=2');
+                $("#xytype").val('OB');
+            }
+            /*]]>*/
+        </script>
+        <div class="main clearfix">
+            <h1 class="logo">
+                <a href="www_jjshipping_default.html" target="_blank"><img src="images/index/logo.png" alt="" /></a>
+            </h1>
+            <div class="top-nav">
+                <a href="index.htm" class="active">首页</a>
+                <a href="home.htm" class="line">在线订舱</a>
+                <a href="cargosearch.htm" class="defaultline">信息查询与订阅</a>
+            <!-- <a  class="discount-nav" >优惠信息
+                    <ul class="dis-nav" >
+                        <li onclick="seckilling();" >秒杀</li>
+                        <li  onclick="coupon();">优惠劵</li>
+
+
+                    </ul>
+                </a>-->
+                <input type="hidden" id="xytype" name="xytype" />
+                <a href="sailingdatebranchA.htm#" onclick="xyUserEntry();" class="discount-nav">协议用户入口
+                    <ul class="dis-nav" style="width: 140px;">
+                        <li onclick="impChangeSingle();">进口换单网上预约</li>
+                        <li onclick="onlinbox();">网上放箱</li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<!-- end -->
+
+
+
+
+<!-- tit -->
+<div class="g-tit">
+    首页 &gt; <span>支线船期查询</span>
+</div>
+<!-- /tit end -->
+
+
+
+<!-- main -->
+<div class="main pb40 clearfix">
+
+    <!-- left -->
+    <div class="leftsidebar  leftsidebar_01">
+
+    <dl>
+        <dt><img src="images/leftside-dt-icon6.png" alt="" />信息查询订阅</dt>
+        <dd><a href="cargosearch.htm" class="cur">货物跟踪</a></dd>
+        <dd><a href="sailingdate.htm" class="sailingdate">干线船期查询</a></dd>
+        <dd><a href="sailingdatebranch.htm" class="sailingdatebranch">支线船期查询</a></dd>
+        <dd><a href="shipstate.htm" class="shipstate">船舶动态</a></dd>
+        <dd><a href="branchqueryindex.htm" class="branchqueryindex">多式联运查询</a></dd>
+        <dd><a href="branchqueryindexNational.htm" class="branchqueryindexNational">国际中转查询</a></dd>
+        <dd><a href="demurragequery.htm" class="demurragequery">滞期费查询</a></dd>
+        <dd><a href="cntrfang.htm" class="cntrfang">放箱查询</a></dd>
+        <dd><a href="changeSingleInfo.htm" class="changeSingleInfo">换单信息查询</a></dd>
+        <dd><a href="cntrtracker.htm" class="cntrtracker">集装箱跟踪</a></dd>
+        <dd><a href="additionFeeSchedule.htm" class="additionFeeSchedule">附加费明细</a></dd>
+        <dd><a href="http://ejj.jjshipping.cn/subscriptionInfo" class="subscriptionInfo">消息订阅</a></dd>
+    </dl>
+
+</div>
+    <!-- /left end -->
+
+    <!-- right -->
+    <div class="rightcolumn  query-freight">
+        <div class="Port-tit">
+            <ul>
+                <li class="line"><a href="sailingdatebranch.htm">港口查询</a></li>
+                <li class="line clk"><a href="sailingdatebranchA.htm">船名航次查询</a></li>
+            </ul>
+        </div>
+        <div class="bank_title">
+            <div class="select-wrap">
+                <label for="" class="pull-left">
+                    <span class="padding15px">船名:</span>
+                    <div class="selected selected_03" style="width: 300px;">
+                        <select title="请选择船名" name="sType" id="selectshipname" class="single_select">
+                            <option value="AOXIN">AOXIN(澳鑫)</option>
+                            <option value="BAOHANG06">BAOHANG06(宝航06)</option>
+                            <option value="BAOWANG8">BAOWANG8(宝旺8号)</option>
+                            <option value="BINGANG808">BINGANG808(镔港808)</option>
+                            <option value="BINGANG818">BINGANG818(镔港818)</option>
+                            <option value="BINGANG828">BINGANG828(镔港828)</option>
+                            <option value="BINGANG888">BINGANG888(镔港888)</option>
+                            <option value="BINGANG918">BINGANG918(镔港918)</option>
+                            <option value="BINGANG978">BINGANG978(镔港978)</option>
+                            <option value="BINGANG998">BINGANG998(镔港998)</option>
+                            <option value="BOQING3">BOQING3(柏青3)</option>
+                            <option value="CHANGHAIBEIHU">CHANGHAIBEIHU(长海北湖)</option>
+                            <option value="CHANGHAIDONGHU">CHANGHAIDONGHU(长海东湖)</option>
+                            <option value="CHANGHAIXINKE">CHANGHAIXINKE(长海鑫科)</option>
+                            <option value="CHANGHAIYUSHUN">CHANGHAIYUSHUN(长海雨顺)</option>
+                            <option value="CHANGHANGJIYUN0316">CHANGHANGJIYUN0316(长航集运0316)</option>
+                            <option value="CHANGHANGJIYUN0317">CHANGHANGJIYUN0317(长航集运0317)</option>
+                            <option value="CHANGHANGJIYUN0318">CHANGHANGJIYUN0318(长航集运0318)</option>
+                            <option value="CHANGHANGJIYUN0319">CHANGHANGJIYUN0319(长航集运0319)</option>
+                            <option value="CHANGHANGJIYUN0320">CHANGHANGJIYUN0320(长航集运0320)</option>
+                            <option value="CHANGHANGJIYUN0321">CHANGHANGJIYUN0321(长航集运0321)</option>
+                            <option value="CHANGHANGJIYUN0322">CHANGHANGJIYUN0322(长航集运0322)</option>
+                            <option value="CHANGHANGJIYUN0323">CHANGHANGJIYUN0323(长航集运0323)</option>
+                            <option value="CHANGHANGJIYUN0325">CHANGHANGJIYUN0325(长航集运0325)</option>
+                            <option value="CHANGHANGJIYUN0326">CHANGHANGJIYUN0326(长航集运0326)</option>
+                            <option value="CHANGHANGJIYUN0327">CHANGHANGJIYUN0327(长航集运0327)</option>
+                            <option value="CHANGHANGJIYUN0328">CHANGHANGJIYUN0328(长航集运0328)</option>
+                            <option value="CHANGHANGJIYUN0329">CHANGHANGJIYUN0329(长航集运0329)</option>
+                            <option value="CHANGHANGJIYUN0330">CHANGHANGJIYUN0330(长航集运0330)</option>
+                            <option value="CHANGHANGJIYUN0331">CHANGHANGJIYUN0331(长航集运0331)</option>
+                            <option value="CHANGHANGJIYUN0332">CHANGHANGJIYUN0332(长航集运0332)</option>
+                            <option value="CHANGHANGJIYUN0333">CHANGHANGJIYUN0333(长航集运0333)</option>
+                            <option value="CHANGHANGJIYUN0335">CHANGHANGJIYUN0335(长航集运0335)</option>
+                            <option value="CHANGHANGJIYUN8201">CHANGHANGJIYUN8201(长航集运8201)</option>
+                            <option value="CHANGHANGJIYUN8202">CHANGHANGJIYUN8202(长航集运8202)</option>
+                            <option value="CHANGHANGJIYUN8301">CHANGHANGJIYUN8301(长航集运8301)</option>
+                            <option value="CHANGHANGJIYUN8302">CHANGHANGJIYUN8302(长航集运8302)</option>
+                            <option value="CHANGHANGJIYUN8303">CHANGHANGJIYUN8303(长航集运8303)</option>
+                            <option value="CHANGHANGJIYUN8305">CHANGHANGJIYUN8305(长航集运8305)</option>
+                            <option value="CHANGHONGFEIYUE">CHANGHONGFEIYUE(长虹飞跃)</option>
+                            <option value="CHANGHONGJI18">CHANGHONGJI18(长虹集18)</option>
+                            <option value="CHANGHONGJI2">CHANGHONGJI2(长虹集2)</option>
+                            <option value="CHANGHONGJI2HAO">CHANGHONGJI2HAO(长虹集2号)</option>
+                            <option value="CHANGHONGJI6">CHANGHONGJI6(长虹集6)</option>
+                            <option value="CHANGHONGJI6HAO">CHANGHONGJI6HAO(长虹集6号)</option>
+                            <option value="CHANGHONGJI7">CHANGHONGJI7(长虹集7)</option>
+                            <option value="CHANGHONGJI918">CHANGHONGJI918(长虹集918)</option>
+                            <option value="CHANGJIANGXINXING">CHANGJIANGXINXING(长江新星)</option>
+                            <option value="CHANGJIANGZHIFU">CHANGJIANGZHIFU(长江之福)</option>
+                            <option value="CHANGJIANGZHIHANG">CHANGJIANGZHIHANG(长江之航)</option>
+                            <option value="CHANGJIANGZHISHENG">CHANGJIANGZHISHENG(长江之盛)</option>
+                            <option value="CHANGJIANGZHIYUAN">CHANGJIANGZHIYUAN(长江之源)</option>
+                            <option value="CHANGTONG9HAO">CHANGTONG9HAO(畅通9号)</option>
+                            <option value="CHANGXING1568">CHANGXING1568(长兴1568)</option>
+                            <option value="CHANGXING1668">CHANGXING1668(长兴1668)</option>
+                            <option value="CHENGYUN169">CHENGYUN169(承运169)</option>
+                            <option value="CHONGLUNJI3001">CHONGLUNJI3001(重轮集3001)</option>
+                            <option value="CHONGLUNJI3002">CHONGLUNJI3002(重轮集3002)</option>
+                            <option value="CHONGLUNJI3005">CHONGLUNJI3005(重轮集3005)</option>
+                            <option value="CHONGLUNJI3006">CHONGLUNJI3006(重轮集3006)</option>
+                            <option value="CHONGLUNJI3007">CHONGLUNJI3007(重轮集3007)</option>
+                            <option value="CHONGLUNJI3008">CHONGLUNJI3008(重轮集3008)</option>
+                            <option value="CHONGLUNJI3009">CHONGLUNJI3009(重轮集3009)</option>
+                            <option value="CHONGLUNJI3010">CHONGLUNJI3010(重轮集3010)</option>
+                            <option value="CHONGLUNJI3011">CHONGLUNJI3011(重轮集3011)</option>
+                            <option value="CHONGLUNJI3012">CHONGLUNJI3012(重轮集3012)</option>
+                            <option value="CHONGLUNJI3015">CHONGLUNJI3015(重轮集3015)</option>
+                            <option value="CHONGLUNJI3016">CHONGLUNJI3016(重轮集3016)</option>
+                            <option value="CHONGLUNJI3017">CHONGLUNJI3017(重轮集3017)</option>
+                            <option value="CHONGLUNJI3018">CHONGLUNJI3018(重轮集3018)</option>
+                            <option value="CHONGLUNJI3019">CHONGLUNJI3019(重轮集3019)</option>
+                            <option value="CHONGLUNJI3020">CHONGLUNJI3020(重轮集3020)</option>
+                            <option value="CHUNYUAN66">CHUNYUAN66(淳源66)</option>
+                            <option value="CHUNYUAN88">CHUNYUAN88(淳源88)</option>
+                            <option value="DAXIN1">DAXIN1(大新1)</option>
+                            <option value="DAXIN16">DAXIN16(大新16)</option>
+                            <option value="DAXIN18">DAXIN18(大新18)</option>
+                            <option value="DAXIN2">DAXIN2(大新2)</option>
+                            <option value="DAXIN26">DAXIN26(大新26)</option>
+                            <option value="DAXIN6">DAXIN6(大新6)</option>
+                            <option value="DAXIN66">DAXIN66(大新66)</option>
+                            <option value="DAXIN7">DAXIN7(大新7)</option>
+                            <option value="DAXIN9">DAXIN9(大新9)</option>
+                            <option value="DEJIN">DEJIN(德锦)</option>
+                            <option value="DEJIN5">DEJIN5(德锦5)</option>
+                            <option value="DEJIN7">DEJIN7(德锦7)</option>
+                            <option value="DEJIN8">DEJIN8(德锦8)</option>
+                            <option value="DIHAO012">DIHAO012(帝豪012)</option>
+                            <option value="DIHAO1">DIHAO1(帝豪1)</option>
+                            <option value="DIHAO1008">DIHAO1008(帝豪1008)</option>
+                            <option value="DIHAO1028">DIHAO1028(帝豪1028)</option>
+                            <option value="DIHAO11">DIHAO11(帝豪11)</option>
+                            <option value="DIHAO12">DIHAO12(帝豪12)</option>
+                            <option value="DIHAO13">DIHAO13(帝豪13)</option>
+                            <option value="DIHAO15">DIHAO15(帝豪15)</option>
+                            <option value="DIHAO2">DIHAO2(帝豪2)</option>
+                            <option value="DIHAO3">DIHAO3(帝豪3)</option>
+                            <option value="DONGFANGQIANG">DONGFANGQIANG(东方强)</option>
+                            <option value="FANYAJIANGYIN">FANYAJIANGYIN(泛亚江阴)</option>
+                            <option value="FUHAI16">FUHAI16(福海16)</option>
+                            <option value="FUHAI169">FUHAI169(福海169)</option>
+                            <option value="FUHAI666">FUHAI666(福海666)</option>
+                            <option value="FUHENG">FUHENG(富恒)</option>
+                            <option value="FUTAI">FUTAI(富泰)</option>
+                            <option value="FUXIN">FUXIN(富鑫)</option>
+                            <option value="FUYUAN1">FUYUAN1(富源1)</option>
+                            <option value="GANGSHENG1015">GANGSHENG1015(港盛1015)</option>
+                            <option value="GANNANCHANGHUO1616">GANNANCHANGHUO1616(赣南昌货1616)</option>
+                            <option value="GANYUAN20">GANYUAN20(赣远20)</option>
+                            <option value="GANYUAN29">GANYUAN29(赣远29)</option>
+                            <option value="GANYUAN32">GANYUAN32(赣远32)</option>
+                            <option value="GANYUAN36">GANYUAN36(赣远36)</option>
+                            <option value="GANYUAN37">GANYUAN37(赣远37)</option>
+                            <option value="GANYUAN39">GANYUAN39(赣远39)</option>
+                            <option value="GUOJUNZHIQUAN">GUOJUNZHIQUAN(国俊之全)</option>
+                            <option value="GUOSHENG9">GUOSHENG9(国盛9)</option>
+                            <option value="GUOXIANG918">GUOXIANG918(国祥918)</option>
+                            <option value="HAIBO8">HAIBO8(海波8号)</option>
+                            <option value="HAIBO88">HAIBO88(海波88)</option>
+                            <option value="HAIBO9">HAIBO9(海波9号)</option>
+                            <option value="HAICHUAN11">HAICHUAN11(海川11号)</option>
+                            <option value="HAICHUAN2">HAICHUAN2(海川2号)</option>
+                            <option value="HAICHUAN3HAO">HAICHUAN3HAO(海川3号)</option>
+                            <option value="HAICHUAN5">HAICHUAN5(海川5号)</option>
+                            <option value="HAICHUAN6">HAICHUAN6(海川6号)</option>
+                            <option value="HAICHUAN9">HAICHUAN9(海川9号)</option>
+                            <option value="HAIXIANG666">HAIXIANG666(海翔666)</option>
+                            <option value="HANGHONG2001">HANGHONG2001(航宏2001)</option>
+                            <option value="HANGHONG2002">HANGHONG2002(航宏2002)</option>
+                            <option value="HANGHONG906">HANGHONG906(航宏906)</option>
+                            <option value="HANGHONG909">HANGHONG909(航宏909)</option>
+                            <option value="HANGJI1301">HANGJI1301(航集1301)</option>
+                            <option value="HANGSHUN808">HANGSHUN808(航顺808)</option>
+                            <option value="HANGXU26">HANGXU26(航旭26)</option>
+                            <option value="HANGXU27">HANGXU27(航旭27)</option>
+                            <option value="HANGXU28">HANGXU28(航旭28)</option>
+                            <option value="HANGXU29">HANGXU29(航旭29)</option>
+                            <option value="HANGXU6036">HANGXU6036(航旭6036)</option>
+                            <option value="HANGXU6037">HANGXU6037(航旭6037)</option>
+                            <option value="HANGXU6038">HANGXU6038(航旭6038)</option>
+                            <option value="HANGXU6039">HANGXU6039(航旭6039)</option>
+                            <option value="HANGXU6306">HANGXU6306(航旭6306)</option>
+                            <option value="HANGXU801">HANGXU801(航旭801)</option>
+                            <option value="HANGXU802">HANGXU802(航旭802)</option>
+                            <option value="HANGXU803">HANGXU803(航旭803)</option>
+                            <option value="HANGXU805">HANGXU805(航旭805)</option>
+                            <option value="HANSHENG006">HANSHENG006(汉升006)</option>
+                            <option value="HAOHANG1001">HAOHANG1001(浩航1001)</option>
+                            <option value="HAOHANG1002">HAOHANG1002(浩航1002)</option>
+                            <option value="HAOHANG1003">HAOHANG1003(浩航1003)</option>
+                            <option value="HAOHANG1005">HAOHANG1005(浩航1005)</option>
+                            <option value="HAOHANG1006">HAOHANG1006(浩航1006)</option>
+                            <option value="HAOHANG1008">HAOHANG1008(浩航1008)</option>
+                            <option value="HAOYUNJI16">HAOYUNJI16(昊运集16)</option>
+                            <option value="HAOYUNTONG">HAOYUNTONG(好运通)</option>
+                            <option value="HENGKUNHAIYANG">HENGKUNHAIYANG(恒坤海阳)</option>
+                            <option value="HENGKUNHEXIE">HENGKUNHEXIE(恒坤和谐)</option>
+                            <option value="HENGKUNSHIYE">HENGKUNSHIYE(恒坤士业)</option>
+                            <option value="HENGLONG16">HENGLONG16(恒隆16)</option>
+                            <option value="HENGLONG6">HENGLONG6(恒隆6)</option>
+                            <option value="HENGLONG69">HENGLONG69(恒隆69)</option>
+                            <option value="HENGLONG8">HENGLONG8(恒隆8)</option>
+                            <option value="HENGLONG9">HENGLONG9(恒隆9)</option>
+                            <option value="HENGTONG66">HENGTONG66(恒通66)</option>
+                            <option value="HENGTONG99">HENGTONG99(恒通99)</option>
+                            <option value="HENIU166">HENIU166(河牛166)</option>
+                            <option value="HENIU386">HENIU386(河牛386)</option>
+                            <option value="HENIU73">HENIU73(河牛73)</option>
+                            <option value="HENIU74">HENIU74(河牛74)</option>
+                            <option value="HEXIE1001">HEXIE1001(和谐1001)</option>
+                            <option value="HEXIE11HAO">HEXIE11HAO(和谐11号)</option>
+                            <option value="HEXIE19">HEXIE19(和谐19)</option>
+                            <option value="HEXIE7HAO">HEXIE7HAO(和谐7号)</option>
+                            <option value="HONGHAI009">HONGHAI009(鸿海009)</option>
+                            <option value="HONGHAI968">HONGHAI968(鸿海968)</option>
+                            <option value="HONGHAI988">HONGHAI988(鸿海988)</option>
+                            <option value="HONGHAI99">HONGHAI99(鸿海99)</option>
+                            <option value="HONGLICHAOYUE01">HONGLICHAOYUE01(鸿利超越01)</option>
+                            <option value="HONGLIQIHANG">HONGLIQIHANG(鸿利祺航)</option>
+                            <option value="HONGLIXINGYUN">HONGLIXINGYUN(鸿利幸运)</option>
+                            <option value="HONGTAI22">HONGTAI22(弘泰22)</option>
+                            <option value="HONGWANGJI19">HONGWANGJI19(鸿旺集19)</option>
+                            <option value="HONGWANGJI666">HONGWANGJI666(鸿旺集666)</option>
+                            <option value="HONGYUAN1818">HONGYUAN1818(宏远1818)</option>
+                            <option value="HOUDE4HAO">HOUDE4HAO(厚德4号)</option>
+                            <option value="HOUDE8HAO">HOUDE8HAO(厚德8号)</option>
+                            <option value="HUAANJI8">HUAANJI8(华安吉8)</option>
+                            <option value="HUABO99">HUABO99(华波99)</option>
+                            <option value="HUAFENG6">HUAFENG6(华枫6号)</option>
+                            <option value="HUAFENGHESHENG">HUAFENGHESHENG(华枫和盛)</option>
+                            <option value="HUAGUANGYANGSHAN">HUAGUANGYANGSHAN(华光洋山)</option>
+                            <option value="HUAHANGSHANGHAI">HUAHANGSHANGHAI(华航上海)</option>
+                            <option value="HUAHANGXINKE666">HUAHANGXINKE666(华航鑫科666)</option>
+                            <option value="HUAIANJIANGJI">HUAIANJIANGJI(怀安江集)</option>
+                            <option value="HUAIANYONGSHUN">HUAIANYONGSHUN(怀安永顺)</option>
+                            <option value="HUAIANYONGYU">HUAIANYONGYU(怀安永裕)</option>
+                            <option value="HUAIHAIHONGYUN">HUAIHAIHONGYUN(淮海鸿运)</option>
+                            <option value="HUAIHAIJIYUN">HUAIHAIJIYUN(淮海集运)</option>
+                            <option value="HUAIHAIYUANZHE">HUAIHAIYUANZHE(淮海远哲)</option>
+                            <option value="HUANHAI168">HUANHAI168(环海168)</option>
+                            <option value="HUANQIU018">HUANQIU018(环球018)</option>
+                            <option value="HUANQIU0188">HUANQIU0188(环球0188)</option>
+                            <option value="HUANQIU333">HUANQIU333(环球333)</option>
+                            <option value="HUANQIU888">HUANQIU888(环球888)</option>
+                            <option value="HUANQIUFAZHAN">HUANQIUFAZHAN(环球发展)</option>
+                            <option value="HUANQIUHEXIE">HUANQIUHEXIE(环球和谐)</option>
+                            <option value="HUASHENG099">HUASHENG099(华胜099)</option>
+                            <option value="HUASHENGFAZHAN">HUASHENGFAZHAN(华晟发展)</option>
+                            <option value="HUASHENGTENGFEI">HUASHENGTENGFEI(华晟腾飞)</option>
+                            <option value="HUAXIJIYUN">HUAXIJIYUN(华喜集运)</option>
+                            <option value="HUAXIN888">HUAXIN888(华鑫888)</option>
+                            <option value="HUAYANGYONGSHENG">HUAYANGYONGSHENG(华洋永盛)</option>
+                            <option value="HUAYUNFAZHAN">HUAYUNFAZHAN(华运发展)</option>
+                            <option value="HUAZHENG6666">HUAZHENG6666(华正6666)</option>
+                            <option value="HUIHONGHAI">HUIHONGHAI(辉泓海)</option>
+                            <option value="HUYONGHONG008">HUYONGHONG008(沪永鸿008)</option>
+                            <option value="JI HAI ZHI TENG">JI HAI ZHI TENG(集海之腾)</option>
+                            <option value="JIAHAOYONGSHENG">JIAHAOYONGSHENG(嘉豪永胜)</option>
+                            <option value="JIAJI001">JIAJI001(嘉集001)</option>
+                            <option value="JIAJI002">JIAJI002(嘉集002)</option>
+                            <option value="JIAJI003">JIAJI003(嘉集003)</option>
+                            <option value="JIAJI005">JIAJI005(嘉集005)</option>
+                            <option value="JIAJI006">JIAJI006(嘉集006)</option>
+                            <option value="JIAJI007">JIAJI007(嘉集007)</option>
+                            <option value="JIAJI008">JIAJI008(嘉集008)</option>
+                            <option value="JIAJI009">JIAJI009(嘉集009)</option>
+                            <option value="JIAJI010">JIAJI010(嘉集010)</option>
+                            <option value="JIAJI011">JIAJI011(嘉集011)</option>
+                            <option value="JIAJI012">JIAJI012(嘉集012)</option>
+                            <option value="JIAJI016">JIAJI016(嘉集016)</option>
+                            <option value="JIAJI018">JIAJI018(嘉集018)</option>
+                            <option value="JIAJI019">JIAJI019(嘉集019)</option>
+                            <option value="JIAJI028">JIAJI028(嘉集028)</option>
+                            <option value="JIAJI301">JIAJI301(嘉集301)</option>
+                            <option value="JIAJI302">JIAJI302(嘉集302)</option>
+                            <option value="JIAJI303">JIAJI303(嘉集303)</option>
+                            <option value="JIAJI305">JIAJI305(嘉集305)</option>
+                            <option value="JIAJI305">JIAJI305(嘉集305)</option>
+                            <option value="JIAJI306">JIAJI306(嘉集306)</option>
+                            <option value="JIALUN902">JIALUN902(佳轮902)</option>
+                            <option value="JIALUN906">JIALUN906(佳轮906)</option>
+                            <option value="JIANGHAITONG1198">JIANGHAITONG1198(江海通1198)</option>
+                            <option value="JIANGHAITONG16">JIANGHAITONG16(江海通16)</option>
+                            <option value="JIANGHAITONG18">JIANGHAITONG18(江海通18)</option>
+                            <option value="JIANGHAITONG69">JIANGHAITONG69(江海通69)</option>
+                            <option value="JIANGHAIXINHAO">JIANGHAIXINHAO(江海新皓)</option>
+                            <option value="JIANGHAIZHIDA">JIANGHAIZHIDA(江海之达)</option>
+                            <option value="JIANGHAIZHIYUE">JIANGHAIZHIYUE(江海之悦)</option>
+                            <option value="JIANGHONG816">JIANGHONG816(江宏816)</option>
+                            <option value="JIANGJIYUN1201">JIANGJIYUN1201(江集运1201)</option>
+                            <option value="JIANGJIYUN1203">JIANGJIYUN1203(江集运1203)</option>
+                            <option value="JIANGJIYUN1205">JIANGJIYUN1205(江集运1205)</option>
+                            <option value="JIANGJIYUN1206">JIANGJIYUN1206(江集运1206)</option>
+                            <option value="JIANGJIYUN1207">JIANGJIYUN1207(江集运1207)</option>
+                            <option value="JIANGJIYUN1208">JIANGJIYUN1208(江集运1208)</option>
+                            <option value="JIANGJIYUN1209">JIANGJIYUN1209(江集运1209)</option>
+                            <option value="JIANGJIYUN1210">JIANGJIYUN1210(江集运1210)</option>
+                            <option value="JIANGJIYUN1211">JIANGJIYUN1211(江集运1211)</option>
+                            <option value="JIANGJIYUN1212">JIANGJIYUN1212(江集运1212)</option>
+                            <option value="JIANGJIYUN1215">JIANGJIYUN1215(江集运1215)</option>
+                            <option value="JIANGJIYUN1216">JIANGJIYUN1216(江集运1216)</option>
+                            <option value="JIANGJIYUN1217">JIANGJIYUN1217(江集运1217)</option>
+                            <option value="JIANGJIYUN1218">JIANGJIYUN1218(江集运1218)</option>
+                            <option value="JIANGJIYUN1219">JIANGJIYUN1219(江集运1219)</option>
+                            <option value="JIANGJIYUN1220">JIANGJIYUN1220(江集运1220)</option>
+                            <option value="JIANGJIYUN1222">JIANGJIYUN1222(江集运1222)</option>
+                            <option value="JIANGJIYUN1223">JIANGJIYUN1223(江集运1223)</option>
+                            <option value="JIANGJIYUN1225">JIANGJIYUN1225(江集运1225)</option>
+                            <option value="JIANGJIYUN1226">JIANGJIYUN1226(江集运1226)</option>
+                            <option value="JIANGJIYUN1227">JIANGJIYUN1227(江集运1227)</option>
+                            <option value="JIANGJIYUN1228">JIANGJIYUN1228(江集运1228)</option>
+                            <option value="JIANGJIYUN1229">JIANGJIYUN1229(江集运1229)</option>
+                            <option value="JIANGJIYUN1230">JIANGJIYUN1230(江集运1230)</option>
+                            <option value="JIANGJIYUN1231">JIANGJIYUN1231(江集运1231)</option>
+                            <option value="JIANGJIYUN1232">JIANGJIYUN1232(江集运1232)</option>
+                            <option value="JIANGJIYUN1233">JIANGJIYUN1233(江集运1233)</option>
+                            <option value="JIANGJIYUN1235">JIANGJIYUN1235(江集运1235)</option>
+                            <option value="JIANGJIYUN1236">JIANGJIYUN1236(江集运1236)</option>
+                            <option value="JIANGJIYUN1237">JIANGJIYUN1237(江集运1237)</option>
+                            <option value="JIANGJIYUN1238">JIANGJIYUN1238(江集运1238)</option>
+                            <option value="JIANGJIYUN1239">JIANGJIYUN1239(江集运1239)</option>
+                            <option value="JIANGJIYUN1250">JIANGJIYUN1250(江集运1250)</option>
+                            <option value="JIANGJIYUN1251">JIANGJIYUN1251(江集运1251)</option>
+                            <option value="JIANGJIYUN1252">JIANGJIYUN1252(江集运1252)</option>
+                            <option value="JIANGJIYUN1255">JIANGJIYUN1255(江集运1255)</option>
+                            <option value="JIANGJIYUN1256">JIANGJIYUN1256(江集运1256)</option>
+                            <option value="JIANGJIYUN1257">JIANGJIYUN1257(江集运1257)</option>
+                            <option value="JIANGJIYUN1258">JIANGJIYUN1258(江集运1258)</option>
+                            <option value="JIANGJIYUN1259">JIANGJIYUN1259(江集运1259)</option>
+                            <option value="JIANGJIYUN1260">JIANGJIYUN1260(江集运1260)</option>
+                            <option value="JIANGJIYUN1261">JIANGJIYUN1261(江集运1261)</option>
+                            <option value="JIANGJIYUN1263">JIANGJIYUN1263(江集运1263)</option>
+                            <option value="JIANGJIYUN1265">JIANGJIYUN1265(江集运1265)</option>
+                            <option value="JIANGJIYUN1266">JIANGJIYUN1266(江集运1266)</option>
+                            <option value="JIANGJIYUN1267">JIANGJIYUN1267(江集运1267)</option>
+                            <option value="JIANGJIYUN1268">JIANGJIYUN1268(江集运1268)</option>
+                            <option value="JIANGJIYUN1270">JIANGJIYUN1270(江集运1270)</option>
+                            <option value="JIANGJIYUN1271">JIANGJIYUN1271(江集运1271)</option>
+                            <option value="JIANGJIYUN1272">JIANGJIYUN1272(江集运1272)</option>
+                            <option value="JIANGJIYUN1277">JIANGJIYUN1277(江集运1277)</option>
+                            <option value="JIANGSUJI10">JIANGSUJI10(江苏集10)</option>
+                            <option value="JIANGSUJI7">JIANGSUJI7(江苏集7)</option>
+                            <option value="JIAOFAHAICHUAN">JIAOFAHAICHUAN(交发海川)</option>
+                            <option value="JIAXING22">JIAXING22(佳兴22)</option>
+                            <option value="JIAXING66">JIAXING66(佳兴66)</option>
+                            <option value="JIEAN16">JIEAN16(捷安16)</option>
+                            <option value="JIEAN18">JIEAN18(捷安18)</option>
+                            <option value="JIHAIBO1008">JIHAIBO1008(集海驳1008)</option>
+                            <option value="JIHAIBO1010">JIHAIBO1010(集海驳1010)</option>
+                            <option value="JIHAICHANG1HAO">JIHAICHANG1HAO(集海昌1号)</option>
+                            <option value="JIHAICHANG2HAO">JIHAICHANG2HAO(集海昌2号)</option>
+                            <option value="JIHAICHANG3HAO">JIHAICHANG3HAO(集海昌3号)</option>
+                            <option value="JIHAIDA">JIHAIDA(集海达)</option>
+                            <option value="JIHAIFENFA">JIHAIFENFA(集海奋发)</option>
+                            <option value="JIHAIRONG">JIHAIRONG(集海荣)</option>
+                            <option value="JIHAIRUN">JIHAIRUN(集海润)</option>
+                            <option value="JIHAIRUNYANG">JIHAIRUNYANG(集海润扬)</option>
+                            <option value="JIHAITONG">JIHAITONG(集海通)</option>
+                            <option value="JIHAIYANGSHAN">JIHAIYANGSHAN(集海洋山)</option>
+                            <option value="JIHAIYONGQIANG">JIHAIYONGQIANG(集海永强)</option>
+                            <option value="JIHAIYU">JIHAIYU(集海渝)</option>
+                            <option value="JIHAIYUAN">JIHAIYUAN(集海源)</option>
+                            <option value="JIHAIZHICHENG">JIHAIZHICHENG(集海之程)</option>
+                            <option value="JIHAIZHIFENG">JIHAIZHIFENG(集海之峰)</option>
+                            <option value="JIHAIZHIHONG">JIHAIZHIHONG(集海之鸿)</option>
+                            <option value="JIHAIZHIJIE">JIHAIZHIJIE(集海之杰)</option>
+                            <option value="JIHAIZHIJUN">JIHAIZHIJUN(集海之俊)</option>
+                            <option value="JIHAIZHIKUN">JIHAIZHIKUN(集海之鲲)</option>
+                            <option value="JIHAIZHIMING">JIHAIZHIMING(集海之明)</option>
+                            <option value="JIHAIZHISHENG">JIHAIZHISHENG(集海之盛)</option>
+                            <option value="JIHAIZHITENG">JIHAIZHITENG(集海之腾)</option>
+                            <option value="JIHAIZHIXING">JIHAIZHIXING(集海之星)</option>
+                            <option value="JIHAIZHIXIU">JIHAIZHIXIU(集海之绣)</option>
+                            <option value="JIHAIZHIYUAN">JIHAIZHIYUAN(集海之源)</option>
+                            <option value="JIHAIZHONGSHAN">JIHAIZHONGSHAN(集海钟山)</option>
+                            <option value="JINGHUAI99">JINGHUAI99(荆淮99)</option>
+                            <option value="JINGSHAN666">JINGSHAN666(荆山666)</option>
+                            <option value="JINGSHAN999">JINGSHAN999(荆山999)</option>
+                            <option value="JINJIANG888">JINJIANG888(金江888)</option>
+                            <option value="JINYU99">JINYU99(锦钰99)</option>
+                            <option value="JINYUANNIUYUE">JINYUANNIUYUE(锦源纽约)</option>
+                            <option value="JIXIANGYONGYU">JIXIANGYONGYU(吉祥永裕)</option>
+                            <option value="JIXING">JIXING(集兴)</option>
+                            <option value="JUNZHENGHEXIE">JUNZHENGHEXIE(军正和谐)</option>
+                            <option value="KAIHANG166">KAIHANG166(凯航166)</option>
+                            <option value="KAITONG6">KAITONG6(凯通6)</option>
+                            <option value="KAITONG66">KAITONG66(凯通66)</option>
+                            <option value="KAITONG69">KAITONG69(凯通69)</option>
+                            <option value="KAITONG99">KAITONG99(凯通99)</option>
+                            <option value="KUIXIA938">KUIXIA938(夔峡938)</option>
+                            <option value="LINGGANG18">LINGGANG18(凌港18)</option>
+                            <option value="LINGYUNHE">LINGYUNHE(凌云河)</option>
+                            <option value="LIZHOUGUOHANG">LIZHOUGUOHANG(力洲国航)</option>
+                            <option value="LIZHOUGUOYUN">LIZHOUGUOYUN(力洲国运)</option>
+                            <option value="LIZHOUHUIHUANG">LIZHOUHUIHUANG(力洲辉煌)</option>
+                            <option value="LUHAI689">LUHAI689(路海689)</option>
+                            <option value="MAODA5">MAODA5(茂达5号)</option>
+                            <option value="MINBEN">MINBEN(民本)</option>
+                            <option value="MINCHANG">MINCHANG(民畅)</option>
+                            <option value="MINCHAO">MINCHAO(民超)</option>
+                            <option value="MINCHUAN">MINCHUAN(民川)</option>
+                            <option value="MINCHUN">MINCHUN(民淳)</option>
+                            <option value="MINFENG">MINFENG(民奉)</option>
+                            <option value="MINFENG818">MINFENG818(民丰818)</option>
+                            <option value="MINGE">MINGE(民歌)</option>
+                            <option value="MINGHANG588">MINGHANG588(铭航588)</option>
+                            <option value="MINGJIA999">MINGJIA999(铭佳999)</option>
+                            <option value="MINHAO">MINHAO(民昊)</option>
+                            <option value="MINHU">MINHU(民湖)</option>
+                            <option value="MINJI">MINJI(民吉)</option>
+                            <option value="MINJIA">MINJIA(民嘉)</option>
+                            <option value="MINJIANG">MINJIANG(民江)</option>
+                            <option value="MINJIE">MINJIE(民捷)</option>
+                            <option value="MINJING">MINJING(民晶)</option>
+                            <option value="MINJUE">MINJUE(民觉)</option>
+                            <option value="MINJUN">MINJUN(民俊)</option>
+                            <option value="MINKAI">MINKAI(民楷)</option>
+                            <option value="MINKUI">MINKUI(民夔)</option>
+                            <option value="MINLAI">MINLAI(民来)</option>
+                            <option value="MINLI">MINLI(民立)</option>
+                            <option value="MINLV">MINLV(民律)</option>
+                            <option value="MINMO">MINMO(民模)</option>
+                            <option value="MINQING">MINQING(民庆)</option>
+                            <option value="MINQUAN">MINQUAN(民权)</option>
+                            <option value="MINREN">MINREN(民仁)</option>
+                            <option value="MINRONG">MINRONG(民荣)</option>
+                            <option value="MINRONGHAO">MINRONGHAO(民荣号)</option>
+                            <option value="MINTAI">MINTAI(民泰)</option>
+                            <option value="MINWANG">MINWANG(民望)</option>
+                            <option value="MINWEI">MINWEI(民伟)</option>
+                            <option value="MINWU">MINWU(民伍)</option>
+                            <option value="MINXIANG">MINXIANG(民享)</option>
+                            <option value="MINYIN">MINYIN(民殷)</option>
+                            <option value="MINYOU">MINYOU(民有)</option>
+                            <option value="MINYU">MINYU(民语)</option>
+                            <option value="MINZHAN">MINZHAN(民展)</option>
+                            <option value="MINZHI">MINZHI(民治)</option>
+                            <option value="MINZHOU">MINZHOU(民洲)</option>
+                            <option value="PENGZHAN">PENGZHAN(鹏展)</option>
+                            <option value="PUHAI213">PUHAI213(浦海213)</option>
+                            <option value="PUHAI216">PUHAI216(浦海216)</option>
+                            <option value="PUHAI217">PUHAI217(浦海217)</option>
+                            <option value="PUHAI218">PUHAI218(浦海218)</option>
+                            <option value="PUHAI219">PUHAI219(浦海219)</option>
+                            <option value="PUHAI226">PUHAI226(浦海226)</option>
+                            <option value="PUHAI228">PUHAI228(浦海228)</option>
+                            <option value="PUHAI229">PUHAI229(浦海229)</option>
+                            <option value="PUTAIHANGYUN002">PUTAIHANGYUN002(普泰航运002)</option>
+                            <option value="PUTAIHANGYUN003">PUTAIHANGYUN003(普泰航运003)</option>
+                            <option value="PUTAIHANGYUN007">PUTAIHANGYUN007(普泰航运007)</option>
+                            <option value="QIANGSHENGHUIHUANG">QIANGSHENGHUIHUANG(强盛辉煌)</option>
+                            <option value="QIANKU8">QIANKU8(乾坤8)</option>
+                            <option value="QIANKUN8">QIANKUN8(乾坤8)</option>
+                            <option value="QIAOTAI20HAO">QIAOTAI20HAO(乔泰20号)</option>
+                            <option value="QIAOTAI28HAO">QIAOTAI28HAO(乔泰28号)</option>
+                            <option value="QIAOTAI29">QIAOTAI29(乔泰29)</option>
+                            <option value="QIAOTAI2HAO">QIAOTAI2HAO(乔泰2号)</option>
+                            <option value="QIAOTAI3">QIAOTAI3(乔泰3)</option>
+                            <option value="QIAOTAI35">QIAOTAI35(乔泰35)</option>
+                            <option value="QIAOTAI8">QIAOTAI8(乔泰8)</option>
+                            <option value="QINGYUNHE">QINGYUNHE(青云河)</option>
+                            <option value="QINHE818">QINHE818(亲河818)</option>
+                            <option value="QINHE838">QINHE838(亲河838)</option>
+                            <option value="RONGHAICHANGHONG">RONGHAICHANGHONG(荣海长虹)</option>
+                            <option value="RONGJIANG005">RONGJIANG005(荣江005)</option>
+                            <option value="RONGJIANG009">RONGJIANG009(荣江009)</option>
+                            <option value="RONGJIANG010">RONGJIANG010(荣江010)</option>
+                            <option value="RONGJIANG011">RONGJIANG011(荣江011)</option>
+                            <option value="RONGJIANG012">RONGJIANG012(荣江012)</option>
+                            <option value="RONGJIANG013">RONGJIANG013(荣江013)</option>
+                            <option value="RUNDAHANGHAI">RUNDAHANGHAI(润达航海)</option>
+                            <option value="RUNFA19">RUNFA19(润发19)</option>
+                            <option value="RUNFA3">RUNFA3(润发3)</option>
+                            <option value="RUNFA66">RUNFA66(润发66)</option>
+                            <option value="RUNFA818">RUNFA818(润发818)</option>
+                            <option value="RUNFA99">RUNFA99(润发99)</option>
+                            <option value="RUNFA9HAO">RUNFA9HAO(润发9号)</option>
+                            <option value="RUNFACHANGHONG">RUNFACHANGHONG(润发长虹)</option>
+                            <option value="RUNFACHANGQING">RUNFACHANGQING(润发长青)</option>
+                            <option value="RUNFAXIANGYUN">RUNFAXIANGYUN(润发祥运)</option>
+                            <option value="RUNFAXINGFU">RUNFAXINGFU(润发幸福)</option>
+                            <option value="RUNFAZHIBAO">RUNFAZHIBAO(润发之宝)</option>
+                            <option value="SANMA666">SANMA666(三马666)</option>
+                            <option value="SANMA999">SANMA999(三马999)</option>
+                            <option value="SHANGQING3">SHANGQING3(上庆3)</option>
+                            <option value="SHANGQING6">SHANGQING6(上庆6)</option>
+                            <option value="SHANGQING7">SHANGQING7(上庆7)</option>
+                            <option value="SHANGQING8HAO">SHANGQING8HAO(上庆8号)</option>
+                            <option value="SHANGQING9">SHANGQING9(上庆9)</option>
+                            <option value="SHENGCANG2">SHENGCANG2(盛仓2)</option>
+                            <option value="SHENGDA02">SHENGDA02(盛达02)</option>
+                            <option value="SHENGDA6HAO">SHENGDA6HAO(盛达6号)</option>
+                            <option value="SHENGDAHEXIE">SHENGDAHEXIE(盛达和谐)</option>
+                            <option value="SHENGDAHEXU">SHENGDAHEXU(盛达和旭)</option>
+                            <option value="SHENGDAKANGPING">SHENGDAKANGPING(盛达康平)</option>
+                            <option value="SHENGSONG618">SHENGSONG618(生松618)</option>
+                            <option value="SHENGSONG88">SHENGSONG88(生松88)</option>
+                            <option value="SHENGSONG9">SHENGSONG9(生松9)</option>
+                            <option value="SHENGSONG988">SHENGSONG988(生松988)</option>
+                            <option value="SHENGSONG998">SHENGSONG998(森松998)</option>
+                            <option value="SHENZHOU16">SHENZHOU16(申舟16)</option>
+                            <option value="SHENZHOU6HAO">SHENZHOU6HAO(申舟6号)</option>
+                            <option value="SHENZHOUHEXIE">SHENZHOUHEXIE(申舟和谐)</option>
+                            <option value="SHIBAO997">SHIBAO997(石宝997)</option>
+                            <option value="SHUNCHENG999">SHUNCHENG999(顺成999)</option>
+                            <option value="SHUNDAJI">SHUNDAJI(顺达集)</option>
+                            <option value="SHUNDAYONGHENG">SHUNDAYONGHENG(顺达永恒)</option>
+                            <option value="SHUNFA818">SHUNFA818(顺发818)</option>
+                            <option value="SHUNFENGZHIYUAN">SHUNFENGZHIYUAN(顺风致远)</option>
+                            <option value="SHUNGANG88">SHUNGANG88(顺港88)</option>
+                            <option value="SHUNGANGBAO">SHUNGANGBAO(顺港保)</option>
+                            <option value="SHUNGANGJIYUN">SHUNGANGJIYUN(顺港集运)</option>
+                            <option value="SHUNZE9">SHUNZE9(顺泽9)</option>
+                            <option value="SUHUAJI1">SUHUAJI1(苏华集1)</option>
+                            <option value="SUHUAXIJI6">SUHUAXIJI6(苏华锡集6)</option>
+                            <option value="TAIBANG666">TAIBANG666(泰邦666)</option>
+                            <option value="TAIBANG968">TAIBANG968(泰邦968)</option>
+                            <option value="TAIPINGYANG03">TAIPINGYANG03(太平洋03)</option>
+                            <option value="TAIPINGYANG11">TAIPINGYANG11(太平洋11)</option>
+                            <option value="TAIYUAN888">TAIYUAN888(泰源888)</option>
+                            <option value="TENGHONG68">TENGHONG68(腾鸿68)</option>
+                            <option value="TENGHONG828">TENGHONG828(腾鸿828)</option>
+                            <option value="TENGHONG858">TENGHONG858(腾鸿858)</option>
+                            <option value="TENGHONG868">TENGHONG868(腾鸿868)</option>
+                            <option value="TENGHONG888">TENGHONG888(腾鸿888)</option>
+                            <option value="TIANHAI1">TIANHAI1(天海1号)</option>
+                            <option value="TIANXIANGJI">TIANXIANGJI(天祥集)</option>
+                            <option value="TIANYI008">TIANYI008(天益008)</option>
+                            <option value="TIANYI009">TIANYI009(天益009)</option>
+                            <option value="TO BE NOTED">TO BE NOTED(船期待告)</option>
+                            <option value="TONGDAXINCHENG">TONGDAXINCHENG(通达新成)</option>
+                            <option value="TONGDAYONGHENG">TONGDAYONGHENG(通达永恒)</option>
+                            <option value="TONGHAIJI18">TONGHAIJI18(通海集18)</option>
+                            <option value="WAIDAIHU01">WAIDAIHU01(外代沪01)</option>
+                            <option value="WANBANGHEXIE">WANBANGHEXIE(万邦和谐)</option>
+                            <option value="WANBANGYANGSHAN">WANBANGYANGSHAN(万邦洋山)</option>
+                            <option value="WANBANGYUANHAI">WANBANGYUANHAI(万邦源海)</option>
+                            <option value="WANBANGZHIYUAN">WANBANGZHIYUAN(万邦致远)</option>
+                            <option value="WANFENG351">WANFENG351(万峰351)</option>
+                            <option value="WANFUDA01">WANFUDA01(皖福达01)</option>
+                            <option value="WANLIZHOU688">WANLIZHOU688(皖力洲688)</option>
+                            <option value="WANLIZHOU899">WANLIZHOU899(皖力洲899)</option>
+                            <option value="WANLIZHOU988">WANLIZHOU988(皖力洲988)</option>
+                            <option value="WANLIZHOU998">WANLIZHOU998(皖力洲998)</option>
+                            <option value="WANSHUNFENG199">WANSHUNFENG199(皖顺风199)</option>
+                            <option value="WANTONGDA99">WANTONGDA99(皖通达99)</option>
+                            <option value="WANXINYUHAI8">WANXINYUHAI8(皖新玉海8)</option>
+                            <option value="WANYUANYANG1">WANYUANYANG1(皖远洋1)</option>
+                            <option value="WANYUANYANG2">WANYUANYANG2(皖远洋2)</option>
+                            <option value="WANYUANYANG918">WANYUANYANG918(皖远洋918)</option>
+                            <option value="WANYUHANG1">WANYUHANG1(皖宇航1)</option>
+                            <option value="WEIJIEHAO">WEIJIEHAO(伟杰号)</option>
+                            <option value="WEIXIANGHAO">WEIXIANGHAO(伟翔号)</option>
+                            <option value="WUHANCHANGHONG1">WUHANCHANGHONG1(武汉长虹1)</option>
+                            <option value="WUJIAZUI1009">WUJIAZUI1009(武家嘴1009)</option>
+                            <option value="WUJIAZUIJI19">WUJIAZUIJI19(武家嘴集19)</option>
+                            <option value="WUXIANG16">WUXIANG16(武祥16)</option>
+                            <option value="WUXIANG26">WUXIANG26(武祥26)</option>
+                            <option value="WUXIANG6">WUXIANG6(武祥6)</option>
+                            <option value="XIANGHUAIHUAHUO1188">XIANGHUAIHUAHUO1188(湘怀化货1188)</option>
+                            <option value="XIANGJI909">XIANGJI909(翔集909)</option>
+                            <option value="XIANGSHUIYUN19">XIANGSHUIYUN19(湘水运19)</option>
+                            <option value="XIANGSHUIYUN98">XIANGSHUIYUN98(湘水运98)</option>
+                            <option value="XIANGWEI2HAO">XIANGWEI2HAO(湘伟2号)</option>
+                            <option value="XIANGYIYANGJI0001">XIANGYIYANGJI0001(湘益阳集0001)</option>
+                            <option value="XIANGYIYANGJI5369">XIANGYIYANGJI5369(湘益阳机5369)</option>
+                            <option value="XIANGYUAN10">XIANGYUAN10(湘远10)</option>
+                            <option value="XIANGYUAN11">XIANGYUAN11(湘远11)</option>
+                            <option value="XIANGYUAN12">XIANGYUAN12(湘远12)</option>
+                            <option value="XIANGYUAN16">XIANGYUAN16(湘远16)</option>
+                            <option value="XIANGYUAN18">XIANGYUAN18(湘远18)</option>
+                            <option value="XIANGYUAN5399">XIANGYUAN5399(湘远5399)</option>
+                            <option value="XIANGYUAN6">XIANGYUAN6(湘远6)</option>
+                            <option value="XIANGYUAN8">XIANGYUAN8(湘远8)</option>
+                            <option value="XINBINGJIANG">XINBINGJIANG(新滨江)</option>
+                            <option value="XINBINHE">XINBINHE(新滨河)</option>
+                            <option value="XINCHANGFENG717">XINCHANGFENG717(新长丰717)</option>
+                            <option value="XINCHANGFENG727">XINCHANGFENG727(新长丰727)</option>
+                            <option value="XINCHANGFENG757">XINCHANGFENG757(新长丰757)</option>
+                            <option value="XINCHANGFENG777">XINCHANGFENG777(新长丰777)</option>
+                            <option value="XINCHANGJIANG">XINCHANGJIANG(新长江)</option>
+                            <option value="XINDONGFANG6">XINDONGFANG6(新东方6)</option>
+                            <option value="XINGANJI8">XINGANJI8(兴安集8)</option>
+                            <option value="XINGGAOJI8">XINGGAOJI8(兴皋集8)</option>
+                            <option value="XINGLONGYONGSHENG">XINGLONGYONGSHENG(兴隆永盛)</option>
+                            <option value="XINGWANG916">XINGWANG916(兴旺916)</option>
+                            <option value="XINGYIHANGYUN009">XINGYIHANGYUN009(兴一航运009)</option>
+                            <option value="XINGYIHANGYUN015">XINGYIHANGYUN015(兴一航运015)</option>
+                            <option value="XINHAIJIFENJIN">XINHAIJIFENJIN(新海集奋进)</option>
+                            <option value="XINHAIJITENGDA">XINHAIJITENGDA(新海集腾达)</option>
+                            <option value="XINHAIJIXIANGYU">XINHAIJIXIANGYU(新海集翔宇)</option>
+                            <option value="XINTONGJI1HAO">XINTONGJI1HAO(新通集1号)</option>
+                            <option value="XINWANGHAO">XINWANGHAO(鑫旺号)</option>
+                            <option value="XINYANGSHAN1">XINYANGSHAN1(新洋山1)</option>
+                            <option value="XINYUANHE7">XINYUANHE7(信源和7)</option>
+                            <option value="XINYUANHE8">XINYUANHE8(信源和8)</option>
+                            <option value="XINYUANHE9">XINYUANHE9(信源和9)</option>
+                            <option value="XUANTENGYUSHUN">XUANTENGYUSHUN(喧腾禹顺)</option>
+                            <option value="XUEYOUYANGSHAN">XUEYOUYANGSHAN(学友洋山)</option>
+                            <option value="XUTONGJI111">XUTONGJI111(徐铜集111)</option>
+                            <option value="XUTONGJI18">XUTONGJI18(徐铜集18)</option>
+                            <option value="YANGFENG889">YANGFENG889(洋峰889)</option>
+                            <option value="YONGSHENG118">YONGSHENG118(永盛118)</option>
+                            <option value="YONGSHENG988">YONGSHENG988(永盛988)</option>
+                            <option value="YONGSHENGXIN0002">YONGSHENGXIN0002(永盛鑫0002)</option>
+                            <option value="YONGSHUNXIN">YONGSHUNXIN(永顺鑫)</option>
+                            <option value="YONGYU10">YONGYU10(永裕10)</option>
+                            <option value="YUANHAI6">YUANHAI6(源海6号)</option>
+                            <option value="YUANHAI8">YUANHAI8(源海8号)</option>
+                            <option value="YUANHAI9">YUANHAI9(源海9号)</option>
+                            <option value="YUANHAIYANGSHAN">YUANHAIYANGSHAN(源海洋山)</option>
+                            <option value="YUANHUAI1HAO">YUANHUAI1HAO(远怀1号)</option>
+                            <option value="YUANHUAI6">YUANHUAI6(远怀6)</option>
+                            <option value="YUANYANGJI2">YUANYANGJI2(远洋集2)</option>
+                            <option value="YUDONG809">YUDONG809(渝东809)</option>
+                            <option value="YUEYANGYANGSHAN">YUEYANGYANGSHAN(岳阳洋山)</option>
+                            <option value="YUGANGJI1">YUGANGJI1(渝港集1)</option>
+                            <option value="YUGANGJI6">YUGANGJI6(渝港集6)</option>
+                            <option value="YUGANGJI9">YUGANGJI9(渝港集9)</option>
+                            <option value="YUHANG116">YUHANG116(宇航116)</option>
+                            <option value="YUHANG18">YUHANG18(宇航18)</option>
+                            <option value="YUHANG888">YUHANG888(宇航888)</option>
+                            <option value="YUHANGFAZHAN">YUHANGFAZHAN(宇航发展)</option>
+                            <option value="YUHANGJI1001">YUHANGJI1001(渝航集1001)</option>
+                            <option value="YUHANGJI1003">YUHANGJI1003(渝航集1003)</option>
+                            <option value="YUHANGJI1006">YUHANGJI1006(渝航集1006)</option>
+                            <option value="YUHANGJI1008">YUHANGJI1008(渝航集1008)</option>
+                            <option value="YUJI999">YUJI999(渝集999)</option>
+                            <option value="YUTONG88">YUTONG88(宇通88)</option>
+                            <option value="YUXING989">YUXING989(渝兴989)</option>
+                            <option value="ZEXINJUNJIE">ZEXINJUNJIE(泽鑫俊杰)</option>
+                            <option value="ZHONGCHENG16">ZHONGCHENG16(众诚16)</option>
+                            <option value="ZHONGCHENG19">ZHONGCHENG19(众诚19)</option>
+                            <option value="ZHONGCHENG2">ZHONGCHENG2(众诚2)</option>
+                            <option value="ZHONGCHENG26">ZHONGCHENG26(众诚26)</option>
+                            <option value="ZHONGCHENG89">ZHONGCHENG89(众诚89)</option>
+                            <option value="ZHONGCHENG9">ZHONGCHENG9(众诚9)</option>
+                            <option value="ZHONGCHENG99">ZHONGCHENG99(众诚99)</option>
+                            <option value="ZHONGHAI008">ZHONGHAI008(中海008)</option>
+                            <option value="ZHONGHAI016">ZHONGHAI016(中海016)</option>
+                            <option value="ZHONGHAI018">ZHONGHAI018(中海018)</option>
+                            <option value="ZHONGHAI019">ZHONGHAI019(中海019)</option>
+                            <option value="ZHONGHAI06">ZHONGHAI06(中海06)</option>
+                            <option value="ZHONGHAI099">ZHONGHAI099(中海099)</option>
+                            <option value="ZHONGHAI1188">ZHONGHAI1188(中海1188)</option>
+                            <option value="ZHONGHAI151">ZHONGHAI151(中海151)</option>
+                            <option value="ZHONGHAI156">ZHONGHAI156(中海156)</option>
+                            <option value="ZHONGHAI588">ZHONGHAI588(中海588)</option>
+                            <option value="ZHONGHAI699">ZHONGHAI699(中海699)</option>
+                            <option value="ZHONGHAI918">ZHONGHAI918(中海918)</option>
+                            <option value="ZHONGHAIJI">ZHONGHAIJI(中海集)</option>
+                            <option value="ZHONGHAIJI18">ZHONGHAIJI18(中海集18)</option>
+                            <option value="ZHONGKAI19">ZHONGKAI19(众凯19)</option>
+                            <option value="ZHONGTAI66">ZHONGTAI66(仲泰66)</option>
+                            <option value="ZHONGTAI9">ZHONGTAI9(仲泰9)</option>
+                            <option value="ZHONGTAI99">ZHONGTAI99(仲泰99)</option>
+                            <option value="ZHONGWAIYUNCHANGJIANG002">ZHONGWAIYUNCHANGJIANG002(中外运长江002)</option>
+                            <option value="ZHONGWAIYUNCHANGJIANG003">ZHONGWAIYUNCHANGJIANG003(中外运长江003)</option>
+                            <option value="ZHONGYIJIHAI">ZHONGYIJIHAI(中艺吉海)</option>
+                            <option value="ZHONGYIJIRUI">ZHONGYIJIRUI(中艺吉瑞)</option>
+                            <option value="ZHONGYIJITONG">ZHONGYIJITONG(中艺吉通)</option>
+                            <option value="ZHONGYIRUNHAI">ZHONGYIRUNHAI(中艺润海)</option>
+                        </select>
+                    </div>
+                    <input type="hidden" id="hideshipname" />
+                </label>
+                <!--<label for="" class="pull-left ">
+                    <span class="padding15px">航次:</span>
+                    <div class="selected selected_03">
+                        <select title="请选择航次" name="sType" id="selectvoyageno" class="single_select">
+
+                        </select>
+                    </div>
+                </label>-->
+                <label class="pull-left">
+                    <span class="padding15px">航次:</span>
+                    <div class="selected selected_03">
+                        <input id="selectvoyageno" class="selected-start" style="width:90px;" />
+                    </div>
+                </label>
+                <label class="pull-left">
+                    <div>
+                        <input type="button" id="buttonsearch" class="search_btn" value="查询" />
+                    </div>
+                </label>
+            </div>
+            <div class="tc_date">
+                <div class="date datea form_datetime" data-date-format="dd MM yyyy" id="contrastDate">
+                    <span class="add-on"><i class="icon-th"></i></span>
+                    <input size="16" type="text" id="rq" value="" />
+                </div>
+            </div>
+        </div>
+        <!-- foreign-route -->
+        <div class="padding20">
+            <div id="calendar"></div>
+        </div>
+    </div>
+    <!-- /right end -->
+</div>
+<!-- main end -->
+<!-- footer -->
+<div class="footer">
+    <div class="footer-links">
+        <div class="main clearfix w1000">
+            <dl class="footer-inner">
+                <dt>关于我们</dt>
+                <dd>
+                    <a target="_blank" href="www_jjshipping_default.html">公司官网</a>
+                    <a href="intoJinjiang.htm">走进锦江</a>
+                    <a href="contactUs.htm"> 联系我们</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>新手上路</dt>
+                <dd>
+                    <a href="serviceLogistics.htm">服务流程</a>
+                    <a href="paymentMethod.htm">支付方式</a>
+                    <a href="importExchangeProcess.htm">进口换单流程</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>常用信息</dt>
+                <dd>
+                    <a href="shipData.htm">船舶资料</a>
+                    <a href="portInformation.htm">港口信息</a>
+                    <a href="yardInformation.htm">堆场信息</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>帮助中心</dt>
+                <dd>
+                    <a href="proxyDirectory.htm">代理名录</a>
+                    <a href="overdueFeeStandard.htm">超期费标准</a>
+                    <!--<a th:href="@{'/additionFeeSchedule'}">附加费明细</a>-->
+                    <a href="fastDeliveryService.htm">快速交货服务</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner last-child">
+                <dt>联系我们</dt>
+                <dd>
+                    <span class="tel-icon"></span>
+                    <p class="tel-number">400-921-2288</p>
+                    <span class="qr_code"></span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="main clearfix w1000">
+            <div class="copyright">
+                <p>Copyright © 2015上海锦江航运(集团)有限公司 All Rights Reserved.  </p>
+                <p>沪ICP备13047598号</p>
+            </div>
+            <div class="friendlinks">
+                <a href="noticemore.htm">信息公告</a>
+                <span>|</span>
+                <a href="legalNotice.htm">法律申明</a>
+                <span>|</span>
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256022543'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1256022543' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end -->
+<div class="sidebar">
+    <a href="javascript:void(0);" style="cursor: context-menu;">
+        <span class=""></span>
+    </a>
+    <a target="_blank" href="http://q.url.cn/cdVSx4?_type=wpa%26qidian=true">
+        <span class="online-consult"></span>
+    </a>
+    <a href="javascript:void(0);" class="tel-parent">
+        <span class="telphone telImg"></span>
+        <p class="tel-details">
+            <s class="telphone"></s>售后服务热线:<br />400-921-2288
+        </p>
+    </a>
+    <a href="javascript:void(0);">
+        <mark class="backto-top"></mark>
+    </a>
+</div>
+<!-- end -->
+
+
+<script src="js/lib/jquery-1.11.1.min.js"></script>
+<script src="calend/lib/moment.min.js"></script>
+<script src="calend/fullcalendar.min.js"></script>
+<script src="js/lib/layer.js"></script>
+<script src="js/lib/dialog-min.js"></script>
+<!-- Javascript with AMD  -->
+<script src="js/lib/require.js" data-main="js/app/queryinfo/queryinfo"></script>
+
+
+<script>
+    /*<![CDATA[*/
+    $(".active").attr("class", "la");
+    $(".defaultline").attr("class", "active");
+    BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800097653, selector: 'BizQQWPA'});
+    $(".cur").attr("class", "queryinfo");
+    $(".sailingdatebranch").attr("class", "cur");
+    var d=new Date();
+    var year=d.getFullYear();
+    var month=d.getMonth()+1;
+    if(month<=9){
+        month="0"+month;
+    }
+    var day=d.getDate();
+    if(day<=9){
+        day="0"+day;
+    }
+    var dates=year+"-"+month+"-"+day;
+    $("#rq").val(dates);
+    $(document).ready(function() {
+        var th=  $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            dayNamesShort: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+            buttonText:{
+                prev:     '上月',
+                next:     '下月',
+                prevYear: '去年',
+                nextYear: '明年',
+                today:    '转到今天',
+                month:    '月',
+                week:     '周',
+                day:      '日'
+            },
+            defaultDate: dates,
+            selectable: true,
+            selectHelper: true,
+            aspectRatio:2,
+            contentHeight:750,
+            //单击事件项时触发
+            eventClick: function (calEvent, jsEvent, view) {
+                layer.open({
+                    type: 2,
+                    title: '挂靠港信息',
+                    fix: false,
+                    shadeClose: true,
+                    maxmin: true,
+                    area: ['800px', '470px'],
+                    content: "/sailingdatepopup?shipno="+calEvent.shipNo+"&shipName="+calEvent.title+"&differ="+"B",
+                });
+            },
+            eventRender: function (event, element) {
+                console.log(event.title)
+                // element.html('<span style="color:red;font-size: small">'+event.title+'</span>');
+                element.html('<div class="rili"><p>'+event.title+'</p><p>'+ '<span class="p1">'+'<em style="margin-left:0px;background:'+event.textColor+'">'
+                        +event.value+'</em></span><span class="p1" style="margin-left: 10px">'+" "+event.name+'</span><span class="p2">'+event.time+'</span></p></div>');
+            },
+            select: function(start, end) {
+                /* var title = prompt('Event Title:');
+                 var eventData;
+                 if (title) {
+                 eventData = {
+                 title: title,
+                 start: start,
+                 end: end
+                 };
+                 $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+                 }
+                 $('#calendar').fullCalendar('unselect');*/
+            },
+            editable: false,
+            eventLimit: true
+            //, // allow "more" link when too many events
+
+
+            //   events:'/getsailingdate'
+        });
+        function addMonth(sDate, num) {
+
+            var aYmd = sDate.split('-');
+            var dt = new Date(aYmd[0], aYmd[1], aYmd[2]);
+
+            dt.setMonth(dt.getMonth() + num);
+
+            var y = dt.getFullYear();
+            var m = dt.getMonth();
+            var d = dt.getDate();
+            //坑爹啊，月份是从0开始啊！！！！
+            if (m == 0) { m = 12; y = y - 1; }
+
+            if (m < 10) m = '0' + m;
+            if (d < 10) d = '0' + d;
+            return y + '-' + m + '-' + d;
+        }
+
+        $('.fc-prev-button').click(function(){
+            var d=addMonth( $("#rq").val(),-1);
+
+
+
+            $("#rq").val(d)
+        });
+        $('.fc-next-button').click(function(){
+            var d=addMonth( $("#rq").val(),1);
+
+
+
+            $("#rq").val(d)
+        });
+        $('.fc-today-button').click(function(){
+            var d=new Date();
+            var year=d.getFullYear();
+            var month=d.getMonth()+1;
+            var day=d.getDate();
+            var dates=year+"-"+month+"-"+day;
+            $("#rq").val(dates);
+        });
+        $('#buttonsearch').click(function () {
+            if ($("#selectshipname").val()==null){
+                msg('请选择船名');
+                return;
+            }
+            if ($("#selectvoyageno").val()==null){
+                msg('请选择航次');
+                return;
+            }
+            var events = {
+                url: '/getsailingdatebranch',
+                type: 'GET',
+                data: {
+                    shipname:$("#selectshipname").val(),
+                    voyageno:$("#selectvoyageno").val()
+                }
+            }
+            th.fullCalendar('removeEventSource', events);
+            th.fullCalendar('addEventSource', events);
+//                th.fullCalendar('refetchEvents');
+
+            $.ajax({
+                url: "/getshipvoyagetime?shipname=" + $("#selectshipname").val() + "&voyage=" + $("#selectvoyageno").val(),
+                success: function (data) {
+                    th.fullCalendar('gotoDate',new Date(data.data[0].SHIP_END_TIME));
+                    $("#rq").val(data.data[0].SHIP_END_TIME);
+                },
+                error: function () {
+                    return;
+                }
+            });
+
+        });
+
+    });
+    /*]]>*/
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Basic Page Needs================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- IOS6全屏 Chrome高版本全屏 ================================================== -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+    <!-- reset and core CSS -->
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/allcss.css" rel="stylesheet" type="text/css" />
+    <link href="css/0818.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+<!-- header -->
+<div class="loginbar">
+    <div class="main clearfix">
+        <div class="login-submit">
+            <div class="login-dropdown"></div>
+            <span class="login-wrap">
+                <a href="login_3.htm">登录</a>
+                <i class="split-items">|</i>
+                <a href="register.htm">注册</a>
+            </span>
+            <a href="indexen.htm">English</a>
+        </div>
+    </div>
+</div>
+
+<!-- end -->
+<!-- header -->
+<div class="header">
+        <script language="javascript">
+            /*<![CDATA[*/
+            function coupon() {
+                window.location.href='/coupon';
+            }
+            function countdown() {
+                window.location.href='/countdown';
+            }
+            function seckilling() {
+                window.location.href='/seckilling';
+            }
+            function xyUserEntry() {
+                //window.location.href='/seckillover';
+                if ($("#xytype").val() !='CS' && $("#xytype").val() !='OB') {
+                    window.open('http://op.jjshipping.cn/eservices/index-nav.jsp?_menu=menu1');
+                }else{
+                    $("#xytype").val('XY')
+                }
+            }
+            function impChangeSingle() {
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=1');
+                $("#xytype").val('CS');
+            }
+            function onlinbox(){
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=2');
+                $("#xytype").val('OB');
+            }
+            /*]]>*/
+        </script>
+        <div class="main clearfix">
+            <h1 class="logo">
+                <a href="www_jjshipping_default.html" target="_blank"><img src="images/index/logo.png" alt="" /></a>
+            </h1>
+            <div class="top-nav">
+                <a href="index.htm" class="active">首页</a>
+                <a href="home.htm" class="line">在线订舱</a>
+                <a href="cargosearch.htm" class="defaultline">信息查询与订阅</a>
+            <!-- <a  class="discount-nav" >优惠信息
+                    <ul class="dis-nav" >
+                        <li onclick="seckilling();" >秒杀</li>
+                        <li  onclick="coupon();">优惠劵</li>
+
+
+                    </ul>
+                </a>-->
+                <input type="hidden" id="xytype" name="xytype" />
+                <a href="fastDeliveryService.htm#" onclick="xyUserEntry();" class="discount-nav">协议用户入口
+                    <ul class="dis-nav" style="width: 140px;">
+                        <li onclick="impChangeSingle();">进口换单网上预约</li>
+                        <li onclick="onlinbox();">网上放箱</li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<!-- end -->
+
+
+<!-- tit -->
+<div class="g-tit">
+    首页 &gt; <span>快速交货服务</span>
+</div>
+<!-- /tit end -->
+
+
+<!-- main -->
+
+<form>
+    <!-- main -->
+    <div class="main pb40 clearfix">
+
+        <!-- left -->
+        <div class="leftsidebar leftsidebar_01">
+    <dl>
+        <dt><img src="images/leftside-dt-icon6.png" alt="" />帮助中心</dt>
+        <dd><a href="intoJinjiang.htm" class="cur">走进锦江</a></dd>
+        <dd><a href="contactUs.htm" class="contactUs">联系我们</a></dd>
+        <dd><a href="serviceLogistics.htm" class="serviceLogistics">服务流程</a></dd>
+        <dd><a href="paymentMethod.htm" class="paymentMethod">支付方式</a></dd>
+        <dd><a href="importExchangeProcess.htm" class="importExchangeProcess">进口换单流程</a></dd>
+        <dd><a href="shipData.htm" class="shipData">船舶资料</a></dd>
+        <dd><a href="portInformation.htm" class="portInformation">港口信息</a></dd>
+        <dd><a href="yardInformation.htm" class="yardInformation">堆场信息</a></dd>
+        <dd><a href="proxyDirectory.htm" class="proxyDirectory">代理名录</a></dd>
+        <dd><a href="overdueFeeStandard.htm" class="overdueFeeStandard">超期费标准</a></dd>
+        <!--<dd><a href="/additionFeeSchedule"  class="additionFeeSchedule">附加费用明细</a></dd>-->
+        <dd><a href="fastDeliveryService.htm" class="fastDeliveryService">快速交货服务</a></dd>
+        <dd><a href="hsClearance.htm" class="hsClearance">通关编码查询</a></dd>
+        <dd><a href="shiptracker.htm" class="shiptracker">船舶跟踪</a></dd>
+        <dd><a href="agreement.htm" class="agreements">提单背面条款</a></dd>
+    </dl>
+</div>
+        <!-- /left end -->
+        <!-- main -->
+
+        <!-- right -->
+        <div class="rightcolumn h832 padding20">
+            <div class="page_one">
+                <div class="page_one_txt">
+                    <div class="page_four_p pagefour01">
+                        <h3>货代（客户）</h3>
+                        <p>客户在我司订舱时使用HDS提单号。<br />
+                            装箱单上须使用HDS港口代码。<br />
+                            临时申请HDS操作并不更改提单号的，须经航线同意，装箱单使用HDS港口代码。<br />
+                            HDS货物进港后需取消的，需向我司支付USD50/20DC,USD100/40DC的费用。</p>
+                    </div>
+                    <div class="page_four_p pagefour02">
+                        <h3>代理 </h3>
+                        <p>
+                            1.起运港代理接受HDS货物订舱时须给与客户HDS提单号。 <br />
+                            2.如遇特殊情况，请按以下方式操作：<br />
+                            &nbsp; （1）交货日为节假日：<br />
+                            &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  HDS货物可照常接受定舱，航线通知上海港不发送HDS清单，目的港与非HDS货物同样操作，且不收取HDS费用，我司不支付佣金。如收货人额外申请假日提货，代理可以接受，并收取该货物的HDS费用及佣金。 <br />
+                            &nbsp; （2）由于台风或明显原因使下航次无法准时抵港：<br />
+                            &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  航线应提前一周通知起运港代理取消HDS货物订舱，起运港代理应在接受定舱时告知发货人或货代。货主额外申请，航线确认后，HDS货物按新的交货时间操作，起运港代理应通知目的港代理，并收取HDS费用。 <br />
+                            &nbsp; （3）HDS货物已接受定舱但未能准时交货：<br />
+                            &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  根据船长ETA确定抵港时间，如船舶将于1500L以后的晚上靠泊作业，目的港代理应取消HDS操作，我司不再支付HDS佣金；如船舶将于1500L之前白天抵港作业，则继续按HDS操作，但不再向收货人收取HDS费用，并向收货人做好解释工作，我司支付代理佣金。<br />
+                            &nbsp; （4）班期临时调整： <br />
+                            &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  应在新班期接受定舱前告知客户新的HDS货物交货时间并接受HDS定舱。<br />
+                            3.目的港代理收到HDS货物清单后，如无特殊情况，应提前通知收货人。 <br />
+                            4.HDS货物准时抵港卸下后，不管收货人是否准时提取，均需支付HDS费用。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /right end -->
+        <!-- main end -->
+    </div>
+</form>
+
+
+<!-- footer -->
+<div class="footer">
+    <div class="footer-links">
+        <div class="main clearfix w1000">
+            <dl class="footer-inner">
+                <dt>关于我们</dt>
+                <dd>
+                    <a target="_blank" href="www_jjshipping_default.html">公司官网</a>
+                    <a href="intoJinjiang.htm">走进锦江</a>
+                    <a href="contactUs.htm"> 联系我们</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>新手上路</dt>
+                <dd>
+                    <a href="serviceLogistics.htm">服务流程</a>
+                    <a href="paymentMethod.htm">支付方式</a>
+                    <a href="importExchangeProcess.htm">进口换单流程</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>常用信息</dt>
+                <dd>
+                    <a href="shipData.htm">船舶资料</a>
+                    <a href="portInformation.htm">港口信息</a>
+                    <a href="yardInformation.htm">堆场信息</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>帮助中心</dt>
+                <dd>
+                    <a href="proxyDirectory.htm">代理名录</a>
+                    <a href="overdueFeeStandard.htm">超期费标准</a>
+                    <!--<a th:href="@{'/additionFeeSchedule'}">附加费明细</a>-->
+                    <a href="fastDeliveryService.htm">快速交货服务</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner last-child">
+                <dt>联系我们</dt>
+                <dd>
+                    <span class="tel-icon"></span>
+                    <p class="tel-number">400-921-2288</p>
+                    <span class="qr_code"></span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="main clearfix w1000">
+            <div class="copyright">
+                <p>Copyright © 2015上海锦江航运(集团)有限公司 All Rights Reserved.  </p>
+                <p>沪ICP备13047598号</p>
+            </div>
+            <div class="friendlinks">
+                <a href="noticemore.htm">信息公告</a>
+                <span>|</span>
+                <a href="legalNotice.htm">法律申明</a>
+                <span>|</span>
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256022543'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1256022543' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end -->
+<div class="sidebar">
+    <a href="javascript:void(0);" style="cursor: context-menu;">
+        <span class=""></span>
+    </a>
+    <a target="_blank" href="http://q.url.cn/cdVSx4?_type=wpa%26qidian=true">
+        <span class="online-consult"></span>
+    </a>
+    <a href="javascript:void(0);" class="tel-parent">
+        <span class="telphone telImg"></span>
+        <p class="tel-details">
+            <s class="telphone"></s>售后服务热线:<br />400-921-2288
+        </p>
+    </a>
+    <a href="javascript:void(0);">
+        <mark class="backto-top"></mark>
+    </a>
+</div>
+<!-- end -->
+
+<!-- Javascript with AMD  -->
+<script src="js/lib/require.js" data-main="js/app/main"></script>
+<script src="js/lib/jquery-1.11.1.min.js"></script>
+
+<script>
+    BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800097653, selector: 'BizQQWPA'});
+    $(".cur").attr("class", "helps");
+    $(".fastDeliveryService").attr("class", "cur");
+</script>
+
+
+</body>
+
+</html>

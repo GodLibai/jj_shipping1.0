@@ -1,0 +1,1030 @@
+/* 
+* @Author: Marte
+* @Date:   2017-06-16 12:01:09
+* @Last Modified by:   Marte
+* @Last Modified time: 2017-08-14 14:45:19
+*/
+/*html,body{font-family: '微软雅黑';}*/
+.dn{display: none;}
+.txt-center{
+    text-align: center;
+}
+
+.index-lunbo-wrap{
+    width:100%;
+    height:260px;
+    position: fixed;
+    bottom:0;
+    left:0;
+    z-index: 2;
+}
+.index-lunbo{
+    width:100%;
+    height:100%;
+    background:url(../images/index/lunbo-bg.png) no-repeat bottom;
+}
+.close-lunbo,.close-lunbo-box{
+    width:38px;
+    height:38px;
+    position: absolute;
+    right:15px;
+    top: 60px;
+}
+.close-lunbo{
+    background:url(../images/icon/icon-close.png) no-repeat;
+}
+.close-lunbo-box{
+    z-index: 10;
+    cursor: pointer;
+}
+.close-lunbo:after{
+    content:'';
+    display: block;
+    width:2px;
+    height:40px;
+    background:#4d9ccc;
+    position: absolute;
+    left:50%;
+    bottom:-40px;
+}
+.index-lunbo .swiper-slide{
+    opacity:0 !important;
+    text-align: center;
+}
+.index-lunbo .swiper-slide-active{
+    opacity:1 !important;
+}
+.open-lunbo{
+    position: fixed;
+    left:-100%;
+    bottom:0;
+    cursor: pointer;
+    line-height: 0;
+    z-index: 9;
+}
+.index-lunbo .pagination {
+  position: absolute;
+  left: 0;
+  text-align: center;
+  bottom:15px;
+  width: 100%;
+
+}
+.swiper-pagination-switch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #fff;
+  background:#999 \9;
+  opacity:0.3;
+  margin: 0 3px;
+  cursor: pointer;
+}
+.swiper-active-switch {
+  background: #fff;
+  opacity:1;
+
+}
+
+
+
+
+
+
+/*外贸航线*/
+.special-offer td:first-child{
+    background:url(../images/icon/special-offer.png) no-repeat left top;
+}
+.freight{
+    width: 50px;
+    margin:0 auto;
+    text-align: left;
+    font-size: 14px;
+}
+.special-offer .freight{
+    line-height: 24px;
+}
+.foreign-route .freight.discount-box strong,.foreign-route .freight.discount-box span{
+    font-weight: bold;
+    color:#ff1212;
+}
+.special-offer .origin-price{
+    min-width: 35px;
+    font-size: 10px;
+    color:#999;
+    line-height: 12px;
+    padding-left: 3px;
+    position: relative;
+    margin-bottom: -2px;
+    margin-top: -1px;
+}
+.special-offer .origin-price:after{
+    content:'';
+    display: block;
+    width:40px;
+    height:1px;
+    background-color: #bbb;
+    position: absolute;
+    left:-3px;
+    top: 50%;
+}
+.quick-order{
+    cursor: pointer;
+}
+
+
+
+/*优惠券*/
+.coupon-page-wrap{
+    padding:20px 0;
+}
+.coupon-list li{
+    width:33.33%;
+    height:236px;
+    float: left;
+    position: relative;
+    margin-top: 20px;
+}
+.coupon-list .coup-top{
+    margin-top: 60px;
+    padding:0 20px;
+    line-height: 26px;
+    color:#fff;
+    font-size: 14px;
+    position: relative;
+}
+.coup-top img{
+    position: absolute;
+    bottom: -15px;
+    left:40px;
+}
+.purpose{
+    position: relative;
+}
+.coup-money{
+    position: absolute;
+    right:10px;
+    top: -10px;
+    font-size: 24px;
+}
+.coup-money b{
+    font-size: 36px;
+}
+.time-slot{
+    color:rgba(255,255,255,.6);
+}
+.time-slot span{
+    float: right;
+    margin-right: 15px;
+}
+.coupon-list li p{
+    position: absolute;
+    bottom:43px;
+    left:22px;
+    font-size: 14px;
+    color:#249fed;
+}
+.rob-coup{
+    background:url(../images/coupon001.png) no-repeat;
+}
+.no-coup{
+    background:url(../images/coupon002.png) no-repeat;
+}
+.has-coup{
+    background:url(../images/coupon003.png) no-repeat;
+}
+.coupon-list .progress{
+    width:190px;
+    height:10px;
+    border-radius: 10px;
+    background-color: #eee;
+    position: absolute;
+    left:20px;
+    bottom:25px;
+    margin-bottom: 0;
+    overflow: hidden;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+}
+.coupon-list .progress.progress0{
+    background-color: #ccc;
+}
+.progress-bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    line-height: 10px;
+    color: #fff;
+    text-align: center;
+    background-color: #337ab7;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+}
+.coupon-list .progress-bar{
+    background-color: #6ac2f9;
+}
+
+.coupon-list .get-coup{
+    width:118px;
+    height:38px;
+    line-height: 38px;
+    text-align: center;
+    color:#fff;
+    border: 1px solid #ffa70e;
+    background-color: #ffa70e;
+    border-radius: 3px;
+    position: absolute;
+    right:30px;
+    bottom:20px;
+    cursor: pointer;
+}
+.coupon-list .get-coup.get-coup-bd{
+    color:#ccc;
+    background-color: #fff;
+    border: 1px solid #cfcfcf;
+    cursor: default;
+}
+.coupon-list .no-coup p{
+    color:#ccc;
+}
+
+/*分页*/
+#coupon-page{
+    height:28px;
+    margin:20px auto 40px;
+    text-align: center;
+}
+#coupon-page .current,#coupon-page .prev,#coupon-page .next,#coupon-page a{
+    display:inline-block;
+    width:26px;
+    height:26px;
+    line-height: 26px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #eee;
+    overflow: hidden;
+    margin:0 5px;
+    border-radius: 2px;
+    color:#777;
+}
+#coupon-page span{
+    display:inline-block;
+    width:26px;
+    height:26px;
+    line-height: 26px;
+    text-align: center;
+}
+#coupon-page .current,#coupon-page a:hover{
+    background: #f5532c;
+    color:#fff;
+}
+#coupon-page .prev:hover{
+    color:#777;
+}
+#coupon-page .current.prev{
+    background: #fff;
+    color:#777;
+}
+#coupon-page .prev,#coupon-page .next{
+    width:56px;
+    color:#777;
+    background:none !important;
+    border: none;
+    /*color:transparent;
+    color:#fff \9;
+    background:#fff url(../images/icon/prev-page.png) no-repeat center;*/
+}
+#coupon-page .next:hover{
+    color:#777;
+}
+#coupon-page .next{
+    /*color:transparent;
+    color:#fff \9;
+    background:#fff url(../images/icon/next-page.png) no-repeat center;*/
+}
+
+
+/*我的优惠卷*/
+.coupon-switch{
+    height:58px;
+    padding:1px;
+    border-bottom: 1px solid #f2f2f2;
+    position: relative;
+}
+.tab-switch li{
+    float: left;
+    width:105px;
+    height:58px;
+    line-height: 58px;
+    text-align: center;
+    position: relative;
+}
+.tab-switch li:after{
+    content:'';
+    display: block;
+    width:1px;
+    height:14px;
+    background-color: #e6ecf4;
+    position: absolute;
+    top:50%;
+    margin-top: -7px;
+    right:0;
+}
+.tab-switch li:last-child:after{
+    display: none;
+}
+.tab-switch li a{
+    display: block;
+    width:100%;
+    height:100%;
+    color:#333;
+}
+.tab-switch .active a{
+    color:#0d4698;
+    border-bottom: 2px solid #0d4698;
+}
+.coupon-rule{
+    height:100%;
+    line-height: 58px;
+    padding-left: 25px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -29px;
+    color:#0d4698;
+    background:url(../images/icon/question.png) no-repeat left center;
+    cursor: pointer;
+}
+.coupon-main{
+    padding:20px;
+}
+.my-coupons{
+
+}
+.my-coupons li{
+    width:33.33%;
+    height:166px;
+    float: left;
+    background:url(../images/my-coupon001.png) no-repeat center;
+    position: relative;
+    color:#fff;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.my-coupons .expiring{
+    background:url(../images/my-coupon002.png) no-repeat center;
+}
+.my-coupons .already{
+    background:url(../images/my-coupon003.png) no-repeat center;
+}
+.already img{
+    position: absolute;
+    bottom:20px;
+    right:20px;
+}
+.my-coupons .discount{
+    font-size: 24px;
+    position: absolute;
+    top: 36px;
+    left:30px;
+}
+.my-coupons .discount b{
+    font-size: 36px;
+}
+.my-coupons .usage{
+    width:100%;
+    position: absolute;
+    top: 84px;
+    left:30px;
+}
+.my-coupons .usage span{
+   position: absolute;
+   right:55px;
+}
+.my-coupons .validity{
+    position: absolute;
+    bottom:15px;
+    left:30px;
+    color:#999;
+    opacity:0.6;
+}
+
+.inpage-pagi{
+    width:100%;
+    position: absolute;
+    bottom:0px;
+    left:0;
+}
+
+
+/*我的秒杀*/
+.spike-table{
+    margin-bottom: 10px;
+}
+.spike-table .table{
+    border-top: 1px solid #e3e3e3;
+    margin-bottom: 0;
+}
+.bg-tr{
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #e3e3e3;
+}
+.spike-table .table td{
+    padding:10px 24px 15px;
+}
+.spike-table .bg-tr td{
+    padding:0 20px;
+    height:49px;
+    color:#999;
+}
+.spike-table .bg-tr td:last-child{
+    text-align: right;
+}
+.spike-table .table .set-padding{
+    padding-top: 25px;
+}
+.spike-table.order-summary td{
+    color:#666;
+    line-height: 26px;
+    font-size: 14px;
+}
+.spike-table.order-summary td p{
+    color:#333;
+    font-size: 14px;
+}
+.spike-table.order-summary .commodity{
+    color:#666;
+    font-size: 14px;
+}
+.spike-table .to-pay{
+    width:90px;
+    height:32px;
+    line-height: 32px;
+    text-align: center;
+    color:#fff;
+    background-color: #f5532c;
+    border: none;
+    border-radius: 3px;
+}
+.spike-table.order-summary .expired{
+    color:#999;
+}
+
+
+
+/*秒杀之前倒计时*/
+.pad10{
+    padding:10px 0;
+}
+.countdown-banner{
+    width:100%;
+    /*height:380px;*/
+    position: relative;
+}
+.count-time{
+    width:430px;
+    height:52px;
+    position: absolute;
+    bottom:18px;
+    left:50%;
+    margin-left: -215px;
+    color:#fff;
+}
+.count-time div{
+    display:inline-block;
+    width:52px;
+    height:52px;
+    line-height: 52px;
+    text-align: center;
+    border: 1px dashed #fff;
+    border-radius: 3px;
+    font-size: 32px;
+    position: relative;
+    margin-right: 50px;
+}
+.count-time span{
+    font-size: 20px;
+    position: absolute;
+    right:-30px;
+    bottom:0;
+    line-height: 20px;
+}
+.count-wrap{
+    margin:10px 0;
+    background-color: #fff;
+}
+.rob-img{
+    float: left;
+    margin-right: 20px;
+}
+.rob-right{
+    width:920px;
+    float: left;
+    font-size: 14px;
+    color:#333;
+}
+.rob-right-top{
+    height:20px;
+    line-height: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f2f2f2;
+    margin-bottom: 23px;
+}
+.rob-right-top>div{
+    float: left;
+    margin-right: 120px;
+}
+.rob-right img{
+    vertical-align: -4px;
+    margin:0 3px;
+}
+.rob-right .line-to{
+    vertical-align: 4px;
+}
+.shift span{
+    margin-right: 20px;
+}
+.prepaid{
+    float: right;
+    color:#999;
+}
+.rob-right-mid{
+    margin-bottom: 30px;
+}
+.date-from-to{
+    float: left;
+}
+.date-from-to li{
+    height:20px;
+    line-height: 20px;
+    float: left;
+    margin:0 6px;
+}
+.date-from-to li:first-child{
+    margin:0;
+}
+.date-from-to .line-to{
+    margin-top: -9px;
+}
+.color999{
+    color:#999;
+}
+.date-from-to .interval-day{
+    width:28px;
+    height:14px;
+    line-height: 14px;
+    text-align: center;
+    border: 1px solid #0d4698;
+    color:#0d4698;
+    font-size: 12px;
+    border-radius: 3px;
+    margin-top: 3px;
+}
+.can-rob{
+    font-size: 16px;
+    float: right;
+}
+.can-rob span{
+    font-size: 14px;
+    color:#0d4698;
+    margin:0 5px;
+    font-family: Arial;
+}
+.rob-right-bot{
+    height:54px;
+}
+.price-box{
+    float: left;
+    width:118px;
+    padding:5px 20px;
+    height:42px;
+}
+.price-box{
+    color:#999;
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+.now-price{
+    font-size: 24px;
+}
+.now-price span{
+    color:#333;
+}
+.now-price i{
+    font-size: 18px;
+}
+.pass-price{
+    font-size: 14px;
+    margin-left: 5px;
+    margin-bottom: 2px;
+    position: relative;
+}
+.pass-price:after{
+    content:'';
+    display: block;
+    width:45px;
+    height:1px;
+    background-color: #999;
+    position: absolute;
+    top: 48%;
+    left:-5px;
+}
+.rob-btn{
+    width:130px;
+    height:50px;
+    line-height: 50px;
+    background-color: #0d4698;
+    color:#fff;
+    border: none;
+    border-radius: 2px;
+    float: right;
+    margin-top: 2px;
+}
+.rob-btn img{
+    margin-right: 15px;
+    vertical-align: -5px;
+}
+.rob-btn .icon-eye{
+    vertical-align: -1px;
+    margin-left: -10px;
+}
+.rob-btn.org-btn{
+    background-color: #f5532c;
+}
+.rob-btn.gray-btn{
+    background-color: #bbb;
+}
+
+
+/*HS通关编码查询*/
+.marr20{
+    margin-right: 20px;
+}
+.hs-table{
+    width:100%;
+    border: 1px solid #e3e3e3;
+}
+.hs-table th,.hs-table td{
+    height:58px;
+    text-align: center;
+    font-size: 14px;
+    width: 160px;
+}
+.hs-table th{
+    background-color: #f5f5f5;
+    color:#666;
+}
+.hs-table td{
+    color:#999;
+    border-top: 1px solid #e3e3e3;
+
+}
+.hs-table td b{
+    color:#333;
+}
+.hs-table .txt-left{
+    text-align: left;
+    padding-left: 30px;
+}
+
+
+
+/*我的积分*/
+.mypoint-top{
+    width:100%;
+    height:172px;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    background:url(../images/left-point-bg.png) no-repeat left top;
+    position: relative;
+    padding:0 20px 0 236px;
+    font-size: 14px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.point-num{
+    font-size: 48px;
+    position: absolute;
+    left:20px;
+    top: 50px;
+    color:#fff;
+    font-family: Arial;
+}
+.mypoint-top .point-txt{
+    color:#fff;
+    font-size: 16px;
+    position: absolute;
+    left:25px;
+    bottom:45px;
+}
+.integral{
+    width:100%;
+    color:#0d4698;
+    margin-top: 20px;
+    padding-bottom: 13px;
+    border-bottom: 1px dashed #e3e3e3;
+    margin-bottom: 13px;
+}
+.integral-desc{
+    color:#999;
+    line-height: 24px;
+    text-align: justify;
+}
+.mypoint-table{
+    width:100%;
+    margin-top: 20px;
+}
+.mypoint-table .mypoint-table-tr{
+    border: 1px solid #e3e3e3;
+}
+.mypoint-table th{
+    background-color: #f5f5f5;
+    height:39px;
+    text-align: center;
+    color:#999;
+}
+.mypoint-table td{
+    padding:10px 0;
+    text-align: center;
+    min-width: 120px;
+    color:#999;
+    border-bottom: 1px solid #e3e3e3;
+}
+.point-source{
+    margin-left: 20px;
+    margin-top: 28px;
+}
+.point-source p{
+    margin-bottom: 15px;
+    text-align: left;
+}
+.col333{
+    color:#333 !important;
+}
+.mypoint-table .positive,.mypoint-table .negative{
+    
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 18px;
+}
+.mypoint-table .positive{
+    color:#0d4698;
+}
+.mypoint-table .negative{
+    color:#f5532c;
+}
+.order-content .lists-body .count-wrap table{
+    width: 100%;
+}
+.order-content .lists-body .count-wrap table tr{
+    height: 40px;
+    border-bottom: 1px solid #eeeeee;
+    border-left: 1px solid #eeeeee;
+    border-right: 1px solid #eeeeee;
+}
+.order-content .lists-body .count-wrap table tr:first-child{
+    height: 50px;
+}
+.order-content .lists-body .count-wrap table .x-offer td:nth-child(1){
+    background: url(../images/icon/special-offer.png) no-repeat;
+    background-size: 40px;
+}
+.order-content .lists-body .count-wrap table tr th{
+    width: 25%;
+    color: #fff;
+    background-color: #477ecd;
+    text-align: center;
+    font-size: 18px;
+}
+.order-content .lists-body .count-wrap table tr th:nth-child(4){
+    font-size: 16px;
+}
+.order-content .lists-body .count-wrap table tr td{
+    color: #f5532c;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+.order-content .lists-body .count-wrap .bottom-num{
+    width: 100px;
+}
+.order-content .lists-body .count-wrap .bottom-box{
+    width: 25%;
+    text-align: center;
+    float: left;
+}
+.clear-box{
+    clear: both;
+}
+.order-content .lists-body .count-wrap .bottom-num .plus{
+    background-image: url(../images/x-plus.png)
+}
+.order-content .lists-body .count-wrap .bottom-num .reduce{
+    background-image: url(../images/x-reduce.png)
+}
+.order-content .lists-body .count-wrap .bottom-num .plus:hover{
+    background-color: #f5532c;
+    background-image: url(../images/x-plus2.png)
+}
+.order-content .lists-body .count-wrap .bottom-num .reduce:hover{
+    background-color: #f5532c;
+    background-image: url(../images/x-reduce2.png);
+    background-size: 18px;
+}
+.margin-40{
+    margin-top: -40px;
+}
+.order-content .lists-body .show-more-inner{
+    min-height: 0px;
+    margin-top: 22px;
+}
+.order-content .lists-body .padtop0{
+    padding-top: 0px;
+}
+.order-content .lists-body .show-tip{
+    font-size: 12px;
+    color: #f5532c;
+    margin-right: 255px;
+    padding-left: 20px;
+    background: url(../images/x-tip.png) no-repeat 0px 0px;
+    display: inline-block;
+    padding-bottom: 2px;
+    margin-top: 22px;
+}
+.rightcolumn .x-content{
+    padding: 20px 50px;
+    height: 670px;
+    overflow-y: scroll;
+    margin-top: 20px;
+}
+.rightcolumn .bigtitle{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+.rightcolumn .smalltitle{
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+.rightcolumn .texttitle{
+    font-weight: bold;
+    font-size: 14px;
+}
+.rightcolumn .fujian{
+    padding-left: 50px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #999;
+    background: no-repeat 20px center;
+    background-size: 14px;
+}
+.rightcolumn .x-download{
+    font-size: 14px;
+    margin-top: 10px;
+    padding-left: 50px;
+}
+.tc-all{
+    width: 100%;
+    text-align: center;
+}
+.tanchuang{
+    position: absolute;
+    height: 292px;
+    width: 455px;
+    top: 50%;
+    margin-top: -130px;
+    margin-left: -227.5px;
+    left: 50%;
+    /* margin: 180px 372.5px auto 372.5px; */
+    background-color: #fff;
+    z-index: 999;
+}
+.tc-close{
+    height: 60px;
+    text-align: right;
+    background-color: #0d4698;
+    line-height: 60px;
+}
+.tc-close img{
+    margin-right: 15px;
+    padding-top: 20px;
+}
+.ovhidden{
+    overflow: hidden;
+    height: 100%;
+}
+.tc-text{
+    margin-top: 50px;
+    text-align: center;
+    line-height: 24px;
+    color: #666;
+}
+.tc-input{
+    width: 180px;
+    height: 46px;
+    margin-top: 50px;
+    border: none;
+    cursor: pointer;
+}
+.tc-level{
+    background-color: #f5532c;
+    color: #fff;
+    margin-left: 44px;
+    margin-right: 4px;
+}
+.tc-cancel{
+    background-color: #fff;
+    color: #999;
+    border: 1px solid #e3e3e3;
+    margin-left: 4px;
+}
+.mask{
+    filter: Alpha(opacity=30); -moz-opacity: 0.3; -khtml-opacity: 0.3;
+    opacity: 0.3; background-color: #000; width: 100%; height: 100%; z-index: 999;
+    position: absolute; left: 0; top: 0; display: none; overflow: hidden;
+}
+/* 附加费用明细 */
+.title-span{
+    font-size: 14px;
+    color: #333;
+    padding-left: 15px;
+    padding-right: 5px;
+}
+.position{
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    color: #fff;
+    font-size: 12px;
+    display: inline-block;
+    text-align: center;
+    line-height: 18px;
+}
+.positon-name{
+    font-size: 14px;
+    color: #333;
+    padding-left: 5px;
+}
+.img-line{
+    padding: 4px;
+    padding-top: 0px;
+}
+.cost-table{
+    margin-top: 20px;
+}
+.cost-table tr th{
+    font-size: 14px;
+    color: #666666;
+    height: 60px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    text-align: center;
+}
+.cost-table tr td{
+    font-size: 14px;
+    color: #999999;
+    height: 40px;
+    text-align: center;
+    border: 1px solid #e3e3e3;
+}
+.cost-name{
+    color: #333 !important;
+    font-weight: bold;
+}
+.icon-open{
+    position: absolute;
+    margin-top: 16px;
+    margin-left: -18px;
+}
+.ms-bottom{
+    background-color: #fff;
+    border: 1px solid #e3e3e3;
+    max-height: 300px;
+    overflow-y: scroll;
+    display: none;
+}
+.ms-bottom ul li{
+    line-height: 37px;
+    font-size: 16px;
+    color: #333;
+    font-weight: normal;
+}
+.ms-bottom ul li:hover{
+    background-color: #0d4698;
+    color: #fff;
+}
+.ms-bottom ul li.active{
+    background-color: #0d4698;
+    color: #fff;
+}
+
+
+

@@ -1,0 +1,278 @@
+/* 注册 */
+#regi input:focus,#agreementregi input:focus{
+    border: 1px solid #0d4698;
+}
+#regi .reset{
+    width: 180px;
+}
+.regi-tip{
+    padding-left: 60px;
+    width: 240px;
+    height: 60px;
+    position: fixed;
+    background: no-repeat 20px center;
+    background-color: #f5532c;
+    color: #fff;
+    line-height: 60px;
+    font-size: 14px;
+    left: 50%;
+    margin-left: -150px;
+    border-radius: 5px;
+    display: none;
+}
+.succ-tip{
+    padding-left: 80px;
+    width: 240px;
+    height: 60px;
+    position: fixed;
+    background: no-repeat 20px center;
+    background-color: #f5532c;
+    color: #fff;
+    line-height: 60px;
+    font-size: 14px;
+    left: 50%;
+    margin-left: -150px;
+    border-radius: 5px;
+    display: none;
+}
+.fail-tip{
+    padding-left: 80px;
+    width: 160px;
+    height: 60px;
+    position: fixed;
+    background: no-repeat 20px center;
+    background-color: #f5532c;
+    color: #fff;
+    line-height: 60px;
+    font-size: 14px;
+    left: 50%;
+    margin-left: -120px;
+    border-radius: 5px;
+    display: none;
+}
+.reg-check{
+    min-height: 0px !important;
+    margin-left: 0px !important;
+    padding-left: 90px;
+    background: no-repeat 70px 1px;
+    background-size: 12px;
+}
+.reg-check a:hover{
+    text-decoration: underline;
+}
+#regi .reset:focus,#regi .reg:focus{
+    border: none;
+}
+#agreementregi{
+    display: none;
+}
+.forget-password .logincontent .rightcon .con{
+    width: 360px;
+}
+.width160{
+    width: 160px !important;
+}
+#yzm,#yzm2{
+    background-color: #f5532c;
+    border: none;
+    color: #fff;
+    width: 100px;
+    margin-left: 6px;
+    text-align: center;
+    text-indent: 0px;
+    cursor: pointer;
+    outline: none;
+}
+#yzm:focus,#yzm2:focus{
+    border: none !important;
+}
+.yzm2{
+    background-color: #bbbbbb !important;
+}
+.red{
+    border: 1px solid #f5532c !important;
+}
+.reg-tip{
+    color: #f5532c;
+    font-size: 12px;
+    display: none;
+}
+.reg-pwtip{
+    color: #f5532c;
+    font-size: 12px;
+    /* display: none; */
+}
+/* 注册协议 */
+.agree{
+    background-color: #fff;
+    padding: 20px 70px;
+    color: #666;
+}
+.agree-tit{
+    font-size: 18px;
+    color: #0d4698;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 30px;
+}
+.cont-tit{
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.cont-con{
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+.agree-txtit{
+    padding-top: 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* 公司信息 */
+.x-cont{
+    padding: 50px 40px;
+}
+.com-tip{
+    position: absolute;
+    background: no-repeat 0px center;
+    margin-left: 10px;
+    padding-left: 30px;
+    padding: 17px 30px;
+    color: #f5532c;
+    display: none;
+}
+.fac-tip{
+    margin-top: -10px;
+}
+.fac-tips{
+    background: no-repeat 0px center;
+    line-height: 40px;
+    padding-left: 30px;
+    color: #f5532c;
+}
+.fac-info{
+    background: no-repeat 0px 28px;
+    padding-left: 40px;
+    line-height: 80px;
+    border-top: 1px solid #e3e3e3;
+    color: #666;
+    font-weight: bold;
+    font-size: 16px;
+}
+.fac-info span{
+    position: absolute;
+    left: 200px;
+    font-weight: normal;
+    font-size: 14px;
+}
+.fac-info:last-child{
+    border-bottom: 1px solid #e3e3e3;
+    margin-bottom: 40px;
+}
+.fac-right{
+    position: absolute;
+    right: 40px;
+    margin-top: 33px;
+}
+.fac-xiugai{
+    color: #f5532c;
+}
+.fac-baocun{
+    color: #666;
+}
+.fac-tit{
+    font-size: 16px;
+    color: #0d4698;
+    font-weight: bold;
+    padding-left: 30px;
+    background: no-repeat 0px center;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+.fac-con{
+    text-align: center;
+}
+.fac-con label{
+    display: block;
+    font-size: 14px;
+    color: #333;
+}
+.fac-con input{
+    width: 278px;
+    border: 1px solid #e3e3e3;
+    height: 46px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+.fac-con label:nth-child(1){
+    padding-left: 40px;
+    margin-top: 10px;
+}
+.fac-con button{
+    width: 290px;
+    background-color: #f5532c;
+    color: #fff;
+    letter-spacing: 4px;
+    border: none;
+    height: 46px;
+    margin-top: 10px;
+    margin-left: 120px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 60px;
+}
+#new{
+    position: absolute;
+}
+/* 公用 */
+.liucheng-tit{
+    font-size: 14px;
+    color: #0d4698;
+    font-weight: bold;
+    margin-top: 10px;
+    line-height: 28px;
+    margin-bottom: 5px;
+}
+.liucheng-tit i{
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: 14px;
+    background-color: #0d4698;
+    margin-right: 10px;
+    color: #fff;
+    text-align: center;
+}
+.martop15{
+    margin-top: 15px;
+}
+.liucheng-text{
+    color: #666;
+    line-height: 20px;
+    padding-left: 50px;
+}
+.liucheng-text a{
+    color: #f5532c;
+    text-decoration: underline;
+}
+.lc-borderleft{
+    position: absolute;
+    height:400px;
+    border-left: 1px dashed rgba(13,70,152,0.2);
+    margin-left: 14px;
+    margin-top: 20px;
+}
+.con2{
+    padding-right: 40px;
+}
+#agreementregi{
+    width: 400px;
+}
+#agreementregi dt{
+    width: 100px;
+    margin-right: 20px;
+}

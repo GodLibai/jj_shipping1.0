@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rr.dao.ShipMapper">
+  <resultMap id="BaseResultMap" type="com.rr.pojo.Ship">
+    <id column="s_id" jdbcType="INTEGER" property="sId" />
+    <result column="s_class" jdbcType="VARCHAR" property="sClass" />
+    <result column="s_name" jdbcType="VARCHAR" property="sName" />
+    <result column="saillings" jdbcType="VARCHAR" property="saillings" />
+    <result column="GP20" jdbcType="VARCHAR" property="gp20" />
+    <result column="GP40" jdbcType="VARCHAR" property="gp40" />
+    <result column="HC40" jdbcType="VARCHAR" property="hc40" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    s_id, s_class, s_name, saillings, GP20, GP40, HC40
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_ship
+    where s_id = #{sId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_ship
+    where s_id = #{sId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rr.pojo.Ship">
+    insert into t_ship (s_id, s_class, s_name, 
+      saillings, GP20, GP40, 
+      HC40)
+    values (#{sId,jdbcType=INTEGER}, #{sClass,jdbcType=VARCHAR}, #{sName,jdbcType=VARCHAR}, 
+      #{saillings,jdbcType=VARCHAR}, #{gp20,jdbcType=VARCHAR}, #{gp40,jdbcType=VARCHAR}, 
+      #{hc40,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rr.pojo.Ship">
+    insert into t_ship
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sId != null">
+        s_id,
+      </if>
+      <if test="sClass != null">
+        s_class,
+      </if>
+      <if test="sName != null">
+        s_name,
+      </if>
+      <if test="saillings != null">
+        saillings,
+      </if>
+      <if test="gp20 != null">
+        GP20,
+      </if>
+      <if test="gp40 != null">
+        GP40,
+      </if>
+      <if test="hc40 != null">
+        HC40,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sId != null">
+        #{sId,jdbcType=INTEGER},
+      </if>
+      <if test="sClass != null">
+        #{sClass,jdbcType=VARCHAR},
+      </if>
+      <if test="sName != null">
+        #{sName,jdbcType=VARCHAR},
+      </if>
+      <if test="saillings != null">
+        #{saillings,jdbcType=VARCHAR},
+      </if>
+      <if test="gp20 != null">
+        #{gp20,jdbcType=VARCHAR},
+      </if>
+      <if test="gp40 != null">
+        #{gp40,jdbcType=VARCHAR},
+      </if>
+      <if test="hc40 != null">
+        #{hc40,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rr.pojo.Ship">
+    update t_ship
+    <set>
+      <if test="sClass != null">
+        s_class = #{sClass,jdbcType=VARCHAR},
+      </if>
+      <if test="sName != null">
+        s_name = #{sName,jdbcType=VARCHAR},
+      </if>
+      <if test="saillings != null">
+        saillings = #{saillings,jdbcType=VARCHAR},
+      </if>
+      <if test="gp20 != null">
+        GP20 = #{gp20,jdbcType=VARCHAR},
+      </if>
+      <if test="gp40 != null">
+        GP40 = #{gp40,jdbcType=VARCHAR},
+      </if>
+      <if test="hc40 != null">
+        HC40 = #{hc40,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where s_id = #{sId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rr.pojo.Ship">
+    update t_ship
+    set s_class = #{sClass,jdbcType=VARCHAR},
+      s_name = #{sName,jdbcType=VARCHAR},
+      saillings = #{saillings,jdbcType=VARCHAR},
+      GP20 = #{gp20,jdbcType=VARCHAR},
+      GP40 = #{gp40,jdbcType=VARCHAR},
+      HC40 = #{hc40,jdbcType=VARCHAR}
+    where s_id = #{sId,jdbcType=INTEGER}
+  </update>
+</mapper>

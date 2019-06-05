@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Basic Page Needs================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- IOS6全屏 Chrome高版本全屏 ================================================== -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- reset and core CSS -->
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/allcss.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery.editable-select.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/0818.css" rel="stylesheet" type="text/css" />
+    <link href="css/ui-dialog.css" rel="stylesheet" type="text/css" />
+    <link href="css/june-index.css" rel="stylesheet" type="text/css" />
+    <link href="css/pagination.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        .fancybox-close {
+            position: absolute;
+            top: 6px;
+            right: 15px;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            z-index: 8040;
+            background: url(close.jpg) center center no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="main clearfix" style="width: 780px;margin: 0">
+        <div class="table">
+            <div class="lists-head">
+                <p class="common-box">
+                    <span class="common-box-title"><i class="icon icon-105"></i>供应商资料</span>
+                </p>
+            </div>
+            <div class="lists-body">
+                
+            </div>
+        </div>
+    </div>
+    <script src="js/lib/require.js" data-main="js/app/main"></script>
+    <script src="js/lib/jquery-1.11.1.min.js"></script>
+    <script src="js/lib/jquery.fancybox.js"></script>
+    <script src="js/lib/jquery.pagination.js"></script>
+    <script>
+        /*<![CDATA[*/
+        function weatherInfo(portCod) {
+            window.location.href='/baranchWeatherRecord?portCod='+portCod;
+        }
+        /*]]>*/
+    </script>
+</body>
+</html>

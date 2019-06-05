@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!-- Basic Page Needs================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HS通关编码查询</title>
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- IOS6全屏 Chrome高版本全屏 ================================================== -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- 让360双核浏览器用webkit内核渲染页面 ================================================== -->
+    <meta name="renderer" content="webkit" />
+    <!-- reset and core CSS -->
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/allcss.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/0818.css" />
+    <link rel="stylesheet" type="text/css" href="css/june-index.css" />
+    <!-- Favicons -->
+    <link rel="icon" href="http://ejj.jjshipping.cn/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="http://ejj.jjshipping.cn/favicon.ico" type="image/x-icon" />
+    <link rel="icon" sizes="196x196" href="http://ejj.jjshipping.cn/images/apple-touch-icon-152x152.jpg" />
+    <!-- IOS 主屏图标
+	================================================== -->
+    <link rel="apple-touch-icon-precomposed" href="http://ejj.jjshipping.cn/images/apple-touch-icon-76x76.jpg" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="http://ejj.jjshipping.cn/images/apple-touch-icon-76x76.jpg" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://ejj.jjshipping.cn/images/apple-touch-icon-120x120.jpg" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://ejj.jjshipping.cn/images/apple-touch-icon-152x152.jpg" />
+
+</head>
+
+<body>
+
+<!-- header -->
+<div class="loginbar">
+    <div class="main clearfix">
+        <div class="login-submit">
+            <div class="login-dropdown"></div>
+            <span class="login-wrap">
+                <a href="login_3.htm">登录</a>
+                <i class="split-items">|</i>
+                <a href="register.htm">注册</a>
+            </span>
+            <a href="indexen.htm">English</a>
+        </div>
+    </div>
+</div>
+
+<!-- end -->
+<!-- header -->
+<div class="header">
+        <script language="javascript">
+            /*<![CDATA[*/
+            function coupon() {
+                window.location.href='/coupon';
+            }
+            function countdown() {
+                window.location.href='/countdown';
+            }
+            function seckilling() {
+                window.location.href='/seckilling';
+            }
+            function xyUserEntry() {
+                //window.location.href='/seckillover';
+                if ($("#xytype").val() !='CS' && $("#xytype").val() !='OB') {
+                    window.open('http://op.jjshipping.cn/eservices/index-nav.jsp?_menu=menu1');
+                }else{
+                    $("#xytype").val('XY')
+                }
+            }
+            function impChangeSingle() {
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=1');
+                $("#xytype").val('CS');
+            }
+            function onlinbox(){
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=2');
+                $("#xytype").val('OB');
+            }
+            /*]]>*/
+        </script>
+        <div class="main clearfix">
+            <h1 class="logo">
+                <a href="www_jjshipping_default.html" target="_blank"><img src="images/index/logo.png" alt="" /></a>
+            </h1>
+            <div class="top-nav">
+                <a href="index.htm" class="active">首页</a>
+                <a href="home.htm" class="line">在线订舱</a>
+                <a href="cargosearch.htm" class="defaultline">信息查询与订阅</a>
+            <!-- <a  class="discount-nav" >优惠信息
+                    <ul class="dis-nav" >
+                        <li onclick="seckilling();" >秒杀</li>
+                        <li  onclick="coupon();">优惠劵</li>
+
+
+                    </ul>
+                </a>-->
+                <input type="hidden" id="xytype" name="xytype" />
+                <a href="agreement.htm#" onclick="xyUserEntry();" class="discount-nav">协议用户入口
+                    <ul class="dis-nav" style="width: 140px;">
+                        <li onclick="impChangeSingle();">进口换单网上预约</li>
+                        <li onclick="onlinbox();">网上放箱</li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<!-- end -->
+
+
+<!-- tit -->
+<div class="g-tit">
+    首页 &gt; <span>提单背面条款</span>
+</div>
+<!-- /tit end -->
+
+
+
+
+<!-- main -->
+<div class="main pb40 clearfix">
+
+    <!-- left -->
+    <div class="leftsidebar leftsidebar_01">
+    <dl>
+        <dt><img src="images/leftside-dt-icon6.png" alt="" />帮助中心</dt>
+        <dd><a href="intoJinjiang.htm" class="cur">走进锦江</a></dd>
+        <dd><a href="contactUs.htm" class="contactUs">联系我们</a></dd>
+        <dd><a href="serviceLogistics.htm" class="serviceLogistics">服务流程</a></dd>
+        <dd><a href="paymentMethod.htm" class="paymentMethod">支付方式</a></dd>
+        <dd><a href="importExchangeProcess.htm" class="importExchangeProcess">进口换单流程</a></dd>
+        <dd><a href="shipData.htm" class="shipData">船舶资料</a></dd>
+        <dd><a href="portInformation.htm" class="portInformation">港口信息</a></dd>
+        <dd><a href="yardInformation.htm" class="yardInformation">堆场信息</a></dd>
+        <dd><a href="proxyDirectory.htm" class="proxyDirectory">代理名录</a></dd>
+        <dd><a href="overdueFeeStandard.htm" class="overdueFeeStandard">超期费标准</a></dd>
+        <!--<dd><a href="/additionFeeSchedule"  class="additionFeeSchedule">附加费用明细</a></dd>-->
+        <dd><a href="fastDeliveryService.htm" class="fastDeliveryService">快速交货服务</a></dd>
+        <dd><a href="hsClearance.htm" class="hsClearance">通关编码查询</a></dd>
+        <dd><a href="shiptracker.htm" class="shiptracker">船舶跟踪</a></dd>
+        <dd><a href="agreement.htm" class="agreements">提单背面条款</a></dd>
+    </dl>
+</div>
+
+        <!-- right -->
+        <div class="rightcolumn">
+            <div class="x-content">
+                <p class="bigtitle">TERMS AND CONDITIONS OF SHIPMENT MUTUALLY AGREED：</p>
+                <p class="smalltitle">(Large Print Available on Request)</p>
+                <p class="texttitle">1. DEFINITIONS</p>
+                <p class="textcon">
+                    "Carrier" means SHANGHAI JINJIANG SHIPPING （GROUP）CO., LTD.<br /> "Merchant" includes the consignor, the
+                    shipper, the receiver, the consignee, the owner of the Goods, the lawful holder or endorsee of this Bill
+                    of Lading, or any other person having any present or future interest in the Goods or this Bill of Lading,
+                    or anyone authorized to act on behalf of any of the foregoing.<br /> "Vessel", where the context so admits,
+                    includes the Vessel named in Box 6 of this Bill of Lading or any substitute therefore, and any feeder
+                    vessel, lighter or barge used by or on behalf of the Carrier in connection with any seaborne leg of the
+                    carriage.<br /> "Sub-contractor" includes owners and operators of vessels (other than the Carrier), stevedores,
+                    terminal, warehouse, depot and groupage operators, road and rail transport operators and any independent
+                    contractor employed by the Carrier in the performance of the carriage and any sub-sub-contractor thereof.The
+                    expression Sub-contractor shall include direct and indirect Sub-contractors and their respective servants,
+                    agents or Sub-contractors.
+                    <br /> "Goods" means the whole or any part of the cargo received from the Merchant and includes any Container
+                    not supplied by or on behalf of the Carrier.<br /> "Package" means each Container which is stuffed and
+                    sealed by or on behalf of the Merchant, and not the items packed in such container, if the number of
+                    such items is not indicated on the front of this Bill of Lading or is indicated by the terms such as
+                    "Said to Contain" or similarexpressions.<br /> "Shipping Unit" means any physical unit of cargo not shipped
+                    in a package, including machinery, vehicles and boats, except goods shipped in bulk.<br /> "Container"
+                    includes any Container, open top, trailer, transportable tank, flat rack, platform, pallet, and any other
+                    equipment or device used for or in connection with the transportation of the Goods.
+                </p>
+                <p class="texttitle">2. CARRIER'S TARIFF</p>
+                <p class="textcon">
+                    The terms of the Carrier's applicable Tariff and other requirements regarding charges are incorporated into this
+                    Bill of Lading. Particular attention is drawn to the terms contained therein, including, but not limited to, free
+                    storage time, Container and vehicle demurrage, etc. Copies of the relevant provisions of the applicable Tariff
+                    are obtainable from the Carrier or his agents upon request. In case of any inconsistency between this Bill of
+                    Lading and the applicable Tariff, this Bill of Lading shall prevail.
+                </p>
+                <p class="texttitle">3. SUB-CONTRACTING, INDEMNITY AND CERTAIN DEFENSES, EXEMPTIONS AND LIMITATIONS</p>
+                <p class="textcon">
+                    (1) The Carrier shall have the right at any time and on any terms whatsoever to sub-contract the whole or any
+                    part of the carriage with any Sub-contractor and/or to substitute any other vessel or means of transport for the
+                    Vessel.<br />
+                    (2) The Merchant undertakes that no claim or legal action whatsoever shall be made or brought against any
+                    person by whom the carriage is performed or undertaken (including, but not limited to, the Carrier's servants,
+                    agents or Sub-contractors) other than the Carrier, which imposes or attempts to impose upon any such person,
+                    or any vessel owned or operated by such person, any liability whatsoever in connection with the Goods or the
+                    carriage thereof whether or not arising out of negligence on the part of such person. Should any such claim or
+                    legal action nevertheless be made or brought, the Merchant undertakes to indemnify the Carrier against all
+                    consequences thereof including legal expenses on a full indemnity basis. Without prejudice to the foregoing,
+                    every such person or vessel, including, but not limited to, the Carrier's servants, agents, or Sub-contractors as
+                    defined in Clause 1 above, shall have the benefit of every exemption, defense and limitation herein contained
+                    applicable to the Carrier, in contract or in tort, as if such provision were expressly contracted for its benefit, and,
+                    in entering into this contract, the Carrier, to the extent of such exemptions, defenses and limitations, does so not
+                    only on its behalf, but also as an agent and trustee for such person or vessel.
+                </p>
+                <p class="texttitle">4. CARRIER'S RESPONSIBILITY</p>
+                <p class="textcon">
+                    (1) Port to Port Shipment. If Box 6, Box 7 and Box 8 but not Box 4, Box 5 and Box 9 are filled in on the front of
+                    this Bill of Lading, this Bill of Lading is a Port-to-Port contract. The Carrier shall be responsible for the Goods as
+                    Carrier from the time when the Goods are received by the Carrier at the Port of Loading until the time of
+                    delivery thereof at the Port of Discharge to the Merchant or to the Authority as required by local laws or
+                    regulations, whichever occurs earlier.<br />
+                    (2) Combined Transport. If Box 4, Box 5 and/ or Box 9 are filled in on the front of this Bill of Lading and the
+                    place(s) or port(s) indicated therein is/ are place(s) or port(s) other than that indicated in Box 7 and Box 8 and
+                    Freight is paid for combined transport, this Bill of Lading is a Combined transport contract. The Carrier
+                    undertakes to arrange or procure the pre-carriage and/ or on-carriage segments of the combined transport. All
+                    claims arising from the combined transport carriage must be filed with the Carrier within 9 months after the
+                    delivery of the Goods or the date when the Goods should have been delivered, failing which the Carrier shall be
+                    discharged from all liabilities whatsoever in respect of the Goods. If any payment is made by the Carrier to the
+                    Merchant in respect of any claim arising from the combined transport carriage, the Carrier shall be
+                    automatically subrogated to or given all rights of the Merchant against all others including pre-carrier or
+                    on-carrier or Sub-contractor on account of such loss or damage. Nothing herein contained shall be deemed a
+                    waive of any rights that the Carrier may have against a pre-carrier or on-carrier or Sub-contractor for indemnity
+                    or otherwise
+                </p>
+                <p class="texttitle">5. NOTICE OF CLAIM AND TIME BAR</p>
+                <p class="textcon">
+                    (1) Unless notice of loss or damage is given in writing to the Carrier's agent at the Port of Discharge or Place of
+                    Delivery before or on the date of delivery of the Goods, or if loss or damage is not apparent, within 15
+                    consecutive days thereafter, such delivery shall be prima facie evidence of the delivery of the Goods by the
+                    Carrier and/ or on-carrier in the order and condition described in this Bill of Lading.<br />
+                    (2) The Carrier, its servants, agents and Sub-contractors shall be discharged from all liabilities whatsoever
+                    unless suit is brought within one year after the delivery of the Goods or the date when the Goods should have
+                    been delivered.
+                </p>
+                <p class="texttitle">6. LOSS OR DAMAGE</p>
+                <p class="textcon">
+                    (1) The terms of this Bill of Lading shall at all times govern all responsibilities of the Carrier in connection with or
+                    arising out of the carriage of the Goods not only during the carriage, but also during the period prior to and/or
+                    subsequent to the carriage. The exemptions from liability, defenses and limitation of liability provided for herein
+                    or otherwise shall apply in any action against the Carrier for loss or damage or delay, howsoever occurring and
+                    whether the action be founded in contract or in tort and even if the loss, damage or delay arose as a result of
+                    unseaworthiness, negligence or fundamental breach of contract. Save as is otherwise provided herein, the
+                    Carrier shall in no circumstances whatsoever and howsoever arising be liable for direct or indirect or
+                    consequential loss or damage or loss of profits.<br />
+                    (2) The Carrier does not undertake that the Goods will be transported from or loaded at the place of receipt or
+                    loading or will arrive at the place of discharge, destination or transshipment aboard any particular vessel or
+                    other conveyance at any particular date or time or to meet any particular market or in time for any particular use.
+                    Scheduled or advertised departure and arrival times are only expected times and may be advanced or delayed
+                    if the Carrier shall find it necessary, prudent or convenient. The Carrier shall in no circumstances whatsoever
+                    and howsoever arising be liable for direct, indirect or consequential loss or damage caused by delay.<br />
+                    (3) If the stage of the combined transport during which loss or damage occurred can be determined, the liability
+                    of the Carrier shall be governed by the national law(s) and/or international convention(s) applicable thereto. If
+                    the stage of the combined transport during which loss or damage occurred cannot be determined, the
+                    Merchant and the Carrier agree that it shall be deemed that the loss or damage occurred aboard the Carrier's
+                    Vessel. In either case, clauses 5(2) and 7 shall apply.
+                </p>
+                <p class="texttitle">7. LIMITATION OF LIABILITY</p>
+                <p class="textcon">
+                    (1) Except as provided for in Clause 7(2), this Bill of Lading shall be subject to the provisions of the Maritime
+                    Code of the People's Republic of China as provided for in Clause 26(1). Neither the Carrier, its servants, agents,
+                    Sub-contractors nor the Vessel shall in any event be liable for any loss of or damage to the Goods in any
+                    amount exceeding the limits per package or unit prescribed by that Code, unless the nature and value of the
+                    Goods have been declared by the Merchant before shipment and inserted in this Bill of Lading (Box 11) and the
+                    Merchant has paid additional Freight on such declared value.<br />
+                    (2) Where carriage includes carriage to or from or through a port or place in the United States of America, this
+                    Bill of Lading shall be subject to the provisions of the United States Carriage of Goods by Sea Act, 1936 (US
+                    COGSA) and any amendments thereto, as provided for in Clause 26(2) hereof. In such event, neither the
+                    Carrier nor its servants, agents, Sub-contractors and/or the Vessel shall in any event be liable for any loss of or
+                    damage to the Goods in an amount exceeding the limits per package or unit prescribed by US COGSA, unless
+                    the nature and value of the Goods have been declared by the Merchant before shipment and inserted in this
+                    Bill of Lading (Box 11) and the Merchant has paid additional Freight on such declared value.<br />
+                    (3) If a legal regime other than the Maritime Code of the People's Republic of China or US COGSA is
+                    compulsorily applied to this Bill of Lading, the liability of the Carrier, if any, shall not exceed the limits per
+                    Package or Shipping Unit prescribed therein, unless the nature and value of the Goods have been declared by
+                    the Merchant and inserted in this Bill of Lading (Box 11) and the Merchant has paid additional Freight on such
+                    declared value.<br />
+                    (4) For the purpose of this Clause 7, the declared value shall be the basis for calculating the Carrier's liability, if
+                    any, provided that such declared value shall not be conclusive on the Carrier, and further provided that such
+                    declared value does not exceed the true value of the Goods at destination. Any partial loss or damage shall be
+                    adjusted pro-rata on the basis of such declared value.
+                </p>
+                <p class="texttitle">9. CARRIER'S CONTAINERS</p>
+                <p class="textcon">
+                    (1) Goods received in break bulk will be stuffed by the Carrier in Containers and the Carrier shall have the right
+                    to carry any Containers, whether or not stuffed by the Carrier, on deck or below deck. All such Goods shall
+                    participate in General Average.<br />
+                    (2) If Carrier's Containers and equipment are used by the Merchant for Pre-carriage or on-carriage or unpacked
+                    at the Merchant's premises, the Merchant is responsible for returning the empty Containers, with interiors
+                    brushed, clean and free of smell to the point or place designated by the Carrier, its servants or agents, within
+                    the time prescribed in the Tariff and/or required by the Carrier. Should a Container not be returned within the
+                    aforesaid time, the Merchant shall be liable for any detention, demurrage, loss of expenses which may arise
+                    from such non-return.<br />
+                    (3) The Merchant shall be liable for any loss of or damage to Carrier's Containers and other equipment while in
+                    the custody of the Merchant or anyone acting on the Merchant's behalf. The Merchant shall also be liable
+                    during such period for any loss of or damage to the property of others or for any injuries or death and the
+                    Merchant shall indemnify and hold harmless the Carrier against all damages, including legal expenses,
+                    incurred from any and all such claims arising during such periods.
+                </p>
+                <p class="texttitle">10. MERCHANT-STUFFED CONTAINER</p>
+                <p class="textcon">
+                    (1) If a Container has not been stuffed by or on behalf of the Carrier, the Carrier shall not be liable for loss of or
+                    damage to the Goods and the Merchant shall indemnify the Carrier against any loss, damage, liability or
+                    expense incurred by the Carrier if such loss, damage, liability, or expense has been caused by:<br />
+                    (a) the manner in which the Container has been filled, packed, loaded or stuffed, or<br />
+                    (b) the unsuitability of the Goods for carriage in the Container, or<br />
+                    (c) the unsuitability or defective condition of the Container, provided that, if the Container had been supplied by
+                    or on behalf of the Carrier, this unsuitability or defective condition could have been apparent upon inspection by
+                    the Merchant at or prior to the time when the Container was filled, packed, loaded or stuffed.<br />
+                    (2) If a Merchant-stuffed Container is delivered by the Carrier with its seal intact, such delivery shall constitute
+                    full and complete performance of the Carrier's obligations hereunder and the Carrier shall not be liable for any
+                    damage to, loss or shortage of the Goods ascertained at delivery.<br />
+                    (3) The Merchant shall inspect Containers before stuffing them and the use of a Container shall be prima facie
+                    evidence of its being suitable and without defect.
+                </p>
+                <p class="texttitle">11. MERCHANT'S DESCRIPTION</p>
+                <p class="textcon">
+                    (1) The Merchant's description of the Goods stuffed in a sealed Container by the Merchant, or on his behalf,
+                    shall not be binding on the Carrier, and the description declared by the Merchant on the front of this Bill of
+                    Lading is information provided by the Merchant solely for its own use including but not limited to the use of its
+                    freight forwarder. It is understood by the Merchant that the Carrier has not verified the contents, weight or
+                    measurement of a sealed container, and the Carrier makes no representation as to the contents of a sealed
+                    Container, van, crate or box, hereunder, nor its weight or measurement, nor the value, quantity, quality,
+                    description, condition, marks or number of the contents thereof. The Carrier shall be under no responsibility
+                    whatsoever in respect of such description or particulars.<br />
+                    (2) If any particulars of any letter of credit and/or import license and/or sales contract and/or invoice or order
+                    number and/or details of any contract to which the Carrier is not a party are shown on the front of this Bill of
+                    Lading, such particulars are included solely at the request of the Merchant for its convenience. The Merchant
+                    agrees that the inclusion of such particulars shall not be regarded as a declaration of value and shall in no way
+                    affect the Carrier's liability under this Bill of Lading. The Merchant acknowledges that, except as provided for in
+                    Clause 7 hereof, the value of the Goods is unknown to the Carrier.
+                </p>
+                <p class="texttitle">12. MERCHANT'S RESPONSIBILITY</p>
+                <p class="textcon">
+                    (1) The parties defined as “Merchant” in clause 1 hereof shall, where applicable, be jointly and severally liable to
+                    the Carrier for the due fulfillment of all obligations undertaken by any of them under this Bill of Lading.<br />
+                    (2) The Merchant warrants to the Carrier that the particulars relating to the Goods as set forth on the front of this
+                    Bill of Lading have been checked by the Merchant on receipt of this Bill of Lading and that such particulars, and
+                    any particulars furnished by or on behalf of the Merchant, are adequate and correct. The Merchant also
+                    warrants that the Goods are lawful Goods and are not contraband.<br />
+                    (3) The Merchant shall indemnify the Carrier against all liabilities, costs, losses, damages, fines, penalties,
+                    expenses or other sanctions of a monetary nature arising or resulting from any breach of the warranties in
+                    Clause 12(2) hereof or from any other cause in connection with the Goods for which the Carrier is not
+                    responsible.<br />
+                    (4) The Merchant shall comply with all regulations or requirements of customs, port and other Authorities, and
+                    shall bear and pay all duties, taxes, fines, imposts, expenses or losses (including the full return Freight for the
+                    Goods if returned, or if on-carried, the full Freight from the Port of Discharge or the Place of Delivery nominated
+                    herein to the amended Port of Discharge or the amended Place of Delivery) incurred and/or sustained by
+                    reason of any failure to so comply, or by reason of any illegal, incorrect or insufficient marking, numbering, or
+                    addressing of the Goods, and shall indemnify the Carrier in respect thereof.
+                </p>
+                <p class="texttitle">13. FREIGHT AND CHARGES</p>
+                <p class="textcon">
+                    (1) All Freight shall be deemed fully, finally and unconditionally earned on receipt of the Goods by the Carrier
+                    and shall be paid and non-returnable in any event whatsoever.<br />
+                    (2) All Freight and charges shall be paid without any set-off, counter-claim, deduction, or stay of execution
+                    before delivery of the Goods.<br />
+                    (3) The Merchant's attention is drawn to the stipulations concerning currency in which the Freight is to be paid,
+                    rate of exchange, devaluation and other contingencies concerning the Freight in the applicable Tariff or as
+                    agreed otherwise.<br />
+                    (4) If the Merchant's description of the Goods in this Bill of Lading or in any document or certificate furnished to
+                    the Carrier by or on behalf of the Merchant shall prove to have been inaccurate, incorrect or misleading in any
+                    respect, the Merchant shall pay for the actual damage suffered by the Carrier.<br />
+                    (5) Payment of Freight and charges to any freight forwarder or broker, or anyone other than the Carrier or its
+                    authorized agent, shall not be considered payment to the Carrier and shall be made at the Merchant's sole risk.<br />
+                    (6) The parties defined as Merchants in clause 1 hereof shall, where applicable, be jointly and severally liable to
+                    the Carrier for Payment of all Freight, demurrage, General Average and charges, including, but not limited to,
+                    court costs, expenses and reasonable attorney's fees incurred in collecting sums due to the Carrier, failing
+                    which the Merchant shall be considered a default by the Merchantin the payment of Freight and charges.
+                </p>
+                <p class="texttitle">14. INSPECTION OF THE GOODS</p>
+                <p class="textcon">
+                    The Carrier and/or any person to whom the Carrier has sub-contracted the carriage or any person authorized
+                    by the Carrier shall be entitled, but under no obligation, to open any Container or Package at any time and to
+                    inspect the Goods, If by order of the Authorities at any place, a container must be opened for inspection, the
+                    Carrier shall not be liable for any loss or damage incurred as a result of any opening, unpacking, inspection or
+                    repacking. The Carrier shall be entitled to recover the cost of such opening, unpacking, inspection, and
+                    repacking from the Merchant.
+                </p>
+                <p class="texttitle">15. CARRIAGE AFFECTED BY CONDITION OF THE GOODS</p>
+                <p class="textcon">
+                    If it appears at anytime that the Goods cannot safely or properly be carried or carried further, either at all or
+                    without incurring any additional expense or taking any measure(s) in relation to the Goods or the Container, the
+                    Carrier may without notice to the Merchant (but as its agent only) take any measure(s) and/or incur any
+                    additional expense to carry or to continue the carriage thereof, and/or sell or dispose of the Goods, and/or
+                    abandon the carriage and/or store them ashore or afloat, under cover or in the open, at any place, whichever
+                    the Carrier in his absolute discretion considers most appropriate, which abandonment, storage, sale or disposal
+                    thereof shall be deemed to constitute due delivery under this Bill of Lading. The Merchant shall indemnify the
+                    Carrier against any additional expense so incurred.
+                </p>
+                <p class="texttitle">16. LIENS</p>
+                <p class="textcon">
+                    The Carrier shall have a lien on the Goods and any documents relating thereto for Freight, dead Freight,
+                    demurrage, detention, and for any expenses incurred by the Carrier for recoopering, repacking, remarking,
+                    fumigation or required disposal of faulty Goods, for General Average contributions to whomsoever due, for fines,
+                    dues, tolls, land Freight, or commissions paid or advanced by the Carrier on behalf of the Goods, for any sums
+                    including salvage payable to the Carrier under this Bill of Lading and for legal expenses incurred because of
+                    any attachment or other legal proceedings brought against the Goods by governmental Authorities or any
+                    person claiming an interest in the Goods. The Carrier's lien shall survive discharge or delivery of the Goods and
+                    the Carrier shall have the right to enforce such lien by public auction or private sale in its discretion. Should the
+                    proceeds of sale fail to cover the amount due, including expenses incurred, the Carrier shall be entitled to
+                    recover the balance from the Merchant. Should such proceeds exceed the amount due, the balance shall be
+                    returned to the Merchant.
+                </p>
+                <p class="texttitle">17. DECK CARGO, ANIMALS AND PLANTS</p>
+                <p class="textcon">
+                    Goods (other than Goods stuffed in Containers) that are stated on the front of this Bill of Lading as contracted to
+                    be stowed "on deck" and are so carried, and all live animals, including fish and birds, or plants shipped
+                    hereunder, shall be carried solely at the risk of the Merchant, and the Carrier shall not be liable for any loss or
+                    damage of whatsoever nature arising during carriage by sea whether or not arising out of negligence on the
+                    part of the Carrier. The Carrier shall be bound to prove that he has fulfilled the special requirements of the
+                    Merchant with regard to the carriage of the live animals and that under the circumstances of the sea carriage,
+                    the loss or damage has occurred due to the special risks inherent therein. The Merchant shall indemnify the
+                    Carrier against all or any extracosts incurred for any reason whatsoever in connection with the carriage of such
+                    live animals or plants.
+                </p>
+                <p class="texttitle">18. METHODS AND ROUTES OF CARRIAGE</p>
+                <p class="textcon">
+                    The Carrier may at any time during the carriage<br />
+                    (1) use any means of transport or storage whatsoever;<br />
+                    (2) transfer the Goods from one conveyance to another including transshipment or carrying the same on
+                    another Vessel other than the Vessel named on the front of this Bill of Lading or by any other means of
+                    transport whatsoever. Anything done in accordance with this Clause or any delay arising therefrom shall be
+                    deemed to be within the scope of the carriage and shall not be a deviation.
+                </p>
+                <p class="texttitle">19. MATTERS AFFECTING PERFORMANCE</p>
+                <p class="textcon">
+                    If at any time the carriage is or is likely in the judgment of the Master to be affected by any hindrance, risk, delay,
+                    difficulty or disadvantage of any kind, other than the inability of the Goods to be safely or properly carried or
+                    carried further, and howsoever arising (even though the circumstances giving rise to such matters as stated
+                    above existed at the time this contract was entered into or the Goods were received for shipment), the Carrier
+                    (whether or not the carriage is commenced) may, at his sole discretion and without prior notice to the Merchant:<br />
+                    (1) carry the Goods to the contracted Port of Discharge or Place of Delivery, whichever is applicable, by an
+                    alternative route from that indicated in this Bill of Lading or from that which is customary for Goods consigned to
+                    that Port of Discharge or Place of Delivery. If the Carrier elects to invoke the terms of this sub-Clause, then,
+                    notwithstanding the provisions of Clause 18 hereof, the Carrier shall be entitled to charge such additional
+                    Freight as the Carrier may determine, or<br />
+                    (2) suspend the carriage of the Goods and store them ashore or afloat upon the terms of this Bill of Lading and
+                    endeavor to forward them as soon as possible, but the Carrier makes no representation as to the maximum
+                    period of suspension. If the Carrier elects to invoke the terms of this sub-Clause, then the Carrier shall be
+                    entitled to the payment of such additional Freight as the Carrier may determine, or<br />
+                    (3) abandon the carriage of the Goods and place the Goods at the Merchant's disposal at any port or place
+                    where the Carrier may deem safe and convenient, whereupon the responsibility of the Carrier in respect of
+                    such Goods shall entirely cease. The Carrier shall nevertheless be entitled to full Freight on the Goods received
+                    for shipment, and the Merchant shall pay any additional costs of the carriage to and delivery and storage at
+                    such port or place.<br />
+                    Where the Carrier elects to use an alternative route under Clause 19(1) or to suspend the carriage under
+                    Clause 19(2), same shall not prejudice its right subsequently to abandon the carriage.
+                </p>
+                <p class="texttitle">20. DANGEROUS GOODS</p>
+                <p class="textcon">
+                    At the time of shipment of Dangerous Goods, the Merchant shall, in compliance with the regulations governing
+                    the carriage of such Goods, have the same properly packed, distinctly marked and labeled and notify the
+                    Carrier in writing of their proper description, nature and the precautions to be taken. In case the Merchant fails
+                    to notify or inaccurately notifies the Carrier, the Carrier may have such Goods landed, destroyed or rendered
+                    innocuous when and where circumstances so require, without compensation. The Merchant shall be liable to
+                    the Carrier for any loss, damage or expense resulting from such shipment.<br />
+                    Notwithstanding the Carrier's knowledge of the nature of the Dangerous Goods and its consent to carry, the
+                    Carrier may still have such Goods landed, destroyed or rendered innocuous, without compensation, when they
+                    become an actual danger to the Vessel, the crew and other persons on board or to other goods. However, what
+                    mentioned in this Clause shall not prejudice the contribution in General Average, if any.
+                </p>
+                <p class="texttitle">21. SPECIAL, REFRIGERATED OR HEATED CONTAINERS</p>
+                <p class="textcon">
+                    (1) Unless the Merchant and the Carrier agree in writing before shipment that specially ventilated, refrigerated
+                    or heated Containers will be used to ship the Goods and such agreement is noted on the front of this Bill of
+                    Lading, and the Merchant gives proper written notice to the Carrier of the nature of the Goods and of the
+                    particular temperature range to be maintained and/or special attention required and the Merchant pays the
+                    extra Freight charged under the Carrier's Tariff or as agreed, the Goods shall be carried in ordinary unventilated
+                    Containers.<br />
+                    (2) In case of a refrigerated Container stuffed by or on behalf of the Merchant, the Merchant undertakes that its
+                    thermostatic, ventilating or any other controls have been correctly set by the Merchant and that the temperature
+                    of the Goods and the refrigerated Container has been brought to the required temperature level before stuffing
+                    and that the Goods have been properly stowed in the Container before the receipt thereof by the Carrier. If
+                    these requirements are not fully met, the Carrier shall not be liable for any loss of or damage to the Goods
+                    howsoever arising.<br />
+                    The Merchant shall be responsible for the operation and maintenance of the Carrier's Container while it is in the
+                    Merchant's custody or the custody of anyone acting on the Merchant's behalf.<br />
+                    (3) If a suggested temperature is noted on the front of this Bill of Lading, the Merchant shall deliver the Goods to
+                    the Carrier at the noted temperature plus or minus 2℃ permitted, and the Carrier shall exercise due diligence
+                    to maintain such temperature, plus or minus 2℃ while the Goods are in its actual possession.<br />
+                    (4) The Carrier does not warrant that the Container be properly ventilated, refrigerated or heated throughout the
+                    carriage, nor shall the Carrier be liable for any loss of or damage to the Goods arising from any latent defects,
+                    any total or partial failure or breakdown, or stoppage of the refrigerating machinery, plant, insulation and/or any
+                    apparatus of the Container, Vessel, conveyance and any other facilities, provided that the Carrier shall before or
+                    at the beginning of the carriage exercise due diligence to maintain the refrigerated Container in an efficient
+                    state.<br />
+                    (5) In case of the Merchant's own Container, a set of emergency kit and an operation manual shall be supplied
+                    by the Merchant.
+                </p>
+                <p class="texttitle">22. NOTIFICATION AND DELIVERY</p>
+                <p class="textcon">
+                    (1) Any mention herein of parties to be notified of the arrival of the Goods is solely for information of the Carrier,
+                    and failure to give such notification shall not give rise to any liability on the part of the Carrier or relieve the
+                    Merchant of any obligation hereunder.<br />
+                    (2) The Merchant shall take delivery of the Goods within the time provided for in the Carrier's applicable Tariff or
+                    as required by the Carrier.<br />
+                    (3) If the Merchant fails to take delivery of the Goods during a reasonable time or whenever in the opinion of the
+                    Carrier the Goods are likely to deteriorate, decay, become worthless or incur charges whether for storage or
+                    otherwise in excess of their value, the Carrier may, at its discretion, without prejudice to any rights which he
+                    may have against the Merchant, without notice and without any responsibility whatsoever attaching to him,
+                    unstuff, sell, destroy or dispose of the Goods at the sole risk and expense of the Merchant, and apply any
+                    proceeds of sale in reduction of the sums due to the Carrier from the Merchant. The aforesaid unstuffing shall
+                    constitute due delivery hereunder and thereupon all liability whatsoever of the Carrier in respect of the Goods
+                    thereof shall cease.<br />
+                    (4) Where the Carrier is obliged to hand over the Goods so carried into the custody of the port, customs or any
+                    other Authorities at the Port of Discharge or Place of Delivery and the Goods are delivered by the same to the
+                    Merchant without necessity of production of this Bill of lading by the Merchant as required by the local law,
+                    regulation and/or practice, such hand-over shall constitute due delivery to the Merchant under this Bill of Lading
+                    and thereupon the liability of the Carrier in respect of the Goods shall entirely cease.<br />
+                    (5) Refusal by the Merchant to take delivery of the Goods in accordance with the terms of this Clause,
+                    notwithstanding its having been notified of the availability of the Goods for delivery, shall constitute an
+                    irrevocable waiver by the Merchant to the Carrier of all and any claims whatsoever relating to the Goods or the
+                    Carriage. The Merchant shall be liable for any losses, damages, expenses and liabilities incurred and sustained
+                    by the Carrier arising from such refusal, including but not limited to, the return of the Goods to their place of
+                    origin.
+                </p>
+                <p class="texttitle">23. GENERAL AVERAGE AND SALVAGE</p>
+                <p class="textcon">
+                    (1) General Average shall be adjusted at any port or place at the Carrier's option according to the York-Antwerp
+                    Rules 1974, as amended in 1990, and any other amendments thereto. The Merchant shall give such cash
+                    deposit or other security as the Carrier may deem sufficient to cover the estimated General Average
+                    contribution of the Goods before delivery.<br />
+                    (2) In the event of the Master considering that salvage services are needed, the Merchant agrees that the
+                    Master shall act on its behalf to procure such services to Goods and that the Carrier may act on its behalf to
+                    settle salvage remuneration. The Merchant shall timely and fully provide cash deposit or other security to the
+                    salvor without affecting the schedule of the Vessel after the salvage, failing which the Merchant shall be liable
+                    for any losses arising therefrom and sustained by the Carrier.
+                </p>
+                <p class="texttitle">24. BOTH-TO-BLAME COLLISION</p>
+                <p class="textcon">
+                    The Both-to-blame Collision Clause currently published by the Baltic and International Maritime Conference is
+                    deemed to be incorporated into this Bill of Lading.
+                </p>
+                <p class="texttitle">25. NON-VESSEL-OPERATING COMMON CARRIER</p>
+                <p class="textcon">
+                    If this Bill of Lading is accepted by a Merchant acting as a non-vessel-operating common carrier (NVOCC),
+                    who has in turn concluded other contracts of carriage with third parties, the NVOCC hereby warrants that the
+                    contracts concluded by him in respect of the Goods subject to this Bill of Lading shall incorporate the terms and
+                    conditions of this Bill of Lading. The NVOCC further warrants to indemnify the Carrier, its servants, agents and
+                    Sub-contractors against all consequences of his failure to do so.
+                </p>
+                <p class="texttitle">26. LAW AND JURISDICTION</p>
+                <p class="textcon">
+                    (1) This Bill of Lading is governed by the laws of the People's Republic of China. All disputes arising under or in
+                    connection with this Bill of Lading shall be determined by the laws of the People's Republic of China and any
+                    action against the Carrier shall be brought before the Shanghai Maritime Court.<br />
+                    (2) Notwithstanding the provision of Clause 26(1), where carriage includes carriage to or from or through a port
+                    or place in the United States of America, this Bill of Lading shall be subject to the provisions of the US COGSA,
+                    which shall be deemed to have been incorporated herein and nothing herein contained shall be deemed a
+                    surrender by the Carrier of any of its rights, immunities, exceptions or limitations or an increase of any of its
+                    liabilities under US COGSA. The provision cited in the COGSA (except as may be otherwise specifically
+                    provided herein) shall also govern before loading and after discharging as long as the goods remain in the
+                    Carrier's custody of control.
+                </p>
+                <p class="texttitle">27. VARIATION OF THE CONTRACT</p>
+                <p class="textcon">
+                    No servant, agent or Sub-contractor of the Carrier shall have the power to waive or vary any terms of this Bill of
+                    Lading unless such waiver or variation is in writing and is specifically authorized or approved in writing by the
+                    Carrier.
+                </p>
+                <p class="texttitle">28. NEW JASON CLAUSE</p>
+                <p class="textcon">
+                    In the event of accident, danger, damage or disaster before or after the commencement of the voyage resulting
+                    from any cause whatsoever, whether due to negligence or not, for which, or for the consequences of which, the
+                    Carrier is not responsible by statute, contract or otherwise, the Goods and the Merchant jointly and severally
+                    shall contribute with the Carrier in General Average to the payment of any sacrifices, losses or expenses of a
+                    General Average nature that may be made or incurred and shall pay salvage and special charges incurred in
+                    respect of the Goods. If a salving ship is owned or operated by the Carrier, salvage shall be paid for as fully as if
+                    the salving ship belonged to strangers.
+                </p>
+            </div>
+            <div>
+                <p class="fujian" style="background-image:url(images/icon/icon_99.jpg)">附件下载</p>
+                <p class="x-download"><a href="attachment/billAgreement.pdf" download="">锦江提单条款TERMS AND CONDITIONS 2013.pdf</a></p>
+            </div>
+
+            <div class="clear20"></div>
+            <!-- page -->
+        </div>
+        <!-- /right end -->
+
+</div>
+    <!-- main end -->
+
+<!-- footer -->
+<div class="footer">
+    <div class="footer-links">
+        <div class="main clearfix w1000">
+            <dl class="footer-inner">
+                <dt>关于我们</dt>
+                <dd>
+                    <a target="_blank" href="www_jjshipping_default.html">公司官网</a>
+                    <a href="intoJinjiang.htm">走进锦江</a>
+                    <a href="contactUs.htm"> 联系我们</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>新手上路</dt>
+                <dd>
+                    <a href="serviceLogistics.htm">服务流程</a>
+                    <a href="paymentMethod.htm">支付方式</a>
+                    <a href="importExchangeProcess.htm">进口换单流程</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>常用信息</dt>
+                <dd>
+                    <a href="shipData.htm">船舶资料</a>
+                    <a href="portInformation.htm">港口信息</a>
+                    <a href="yardInformation.htm">堆场信息</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>帮助中心</dt>
+                <dd>
+                    <a href="proxyDirectory.htm">代理名录</a>
+                    <a href="overdueFeeStandard.htm">超期费标准</a>
+                    <!--<a th:href="@{'/additionFeeSchedule'}">附加费明细</a>-->
+                    <a href="fastDeliveryService.htm">快速交货服务</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner last-child">
+                <dt>联系我们</dt>
+                <dd>
+                    <span class="tel-icon"></span>
+                    <p class="tel-number">400-921-2288</p>
+                    <span class="qr_code"></span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="main clearfix w1000">
+            <div class="copyright">
+                <p>Copyright © 2015上海锦江航运(集团)有限公司 All Rights Reserved.  </p>
+                <p>沪ICP备13047598号</p>
+            </div>
+            <div class="friendlinks">
+                <a href="noticemore.htm">信息公告</a>
+                <span>|</span>
+                <a href="legalNotice.htm">法律申明</a>
+                <span>|</span>
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256022543'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1256022543' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end -->
+<div class="sidebar">
+    <a href="javascript:void(0);" style="cursor: context-menu;">
+        <span class=""></span>
+    </a>
+    <a target="_blank" href="http://q.url.cn/cdVSx4?_type=wpa%26qidian=true">
+        <span class="online-consult"></span>
+    </a>
+    <a href="javascript:void(0);" class="tel-parent">
+        <span class="telphone telImg"></span>
+        <p class="tel-details">
+            <s class="telphone"></s>售后服务热线:<br />400-921-2288
+        </p>
+    </a>
+    <a href="javascript:void(0);">
+        <mark class="backto-top"></mark>
+    </a>
+</div>
+<!-- Javascript with AMD  -->
+<script src="js/lib/require.js" data-main="js/app/main"></script>
+<script src="js/lib/jquery-1.11.1.min.js"></script>
+
+<script>
+    $(".cur").attr("class", "helps");
+    $(".agreements").attr("class", "cur");
+
+
+
+    /* $.ajax({
+     url: "/getAdditionFeeSchedule",
+     async: false,
+     success: function (data) {
+     $("#tables_03").replaceWith(data);
+     }
+     });*/
+
+</script>
+</body>
+
+</html>

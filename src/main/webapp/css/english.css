@@ -1,0 +1,197 @@
+.top-nava {
+    float: right;
+    font-size: 0;
+    height: 90px;
+}
+.top-nava a {
+    border-bottom: 2px solid transparent;
+    color: #333;
+    font-size: 18px;
+    margin-left: 50px;
+    padding: 0 9px 10px;
+    transform-origin: center center 0;
+    transition: border-bottom-color 0.2s ease 0s;
+}
+
+#myTabsa {
+    background-color: transparent;
+    font-size: 0;
+    height: 54px;
+}
+#myTabsa li {
+    display: inline-block;
+    height: 54px; float:left;
+    line-height: 54px;
+    margin-left: 1px;
+    text-align: center;
+    width: 125px;
+}
+#myTabsa li a {
+    background-color: #0d4698;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #fff;
+    display: block;
+    font-size: 12px;
+    width: 100%;
+}
+#myTabsa li:first-child {
+    margin-left: 0;
+}
+#myTabsa li.active a {
+    background-color: #fff;
+    color: #0d4698;
+}
+#myTabsa li#end { padding-top:0}
+#myTabsa li#end a{ line-height:18px; height:44px; padding-top:10px;}
+.advan-details {
+    border-left: 1px solid #e5e5e5;
+    float: left;
+    height: 60px;
+    overflow: hidden;
+    padding-left: 50px;
+    padding-right: 0px;
+    width: 261px;
+}
+.advan-details .details-title h4 {
+    color: #444;
+    font-size:16px; padding-top:10px;
+    font-weight: 500;
+    padding-bottom: 8px;
+}
+.footer-inner dd > a {
+    color: #93969b;
+    display: block;
+    font-size: 12px;
+    height: 25px;
+}
+.w1000 {
+    width: 1100px !important;
+}
+.links span {
+    display: block;
+    position: relative;
+    white-space: nowrap;
+}
+.links span {
+    display: block; line-height:15px; font-size:12px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.links a {
+    color: #333;
+    display: inline-block;
+    font-size: 14px;
+    height: 80px;
+    margin-top: 12px;
+    text-align: center;
+    width: 33.3333%;
+}
+
+.links span {
+    display: block;
+    font-size: 12px;
+    line-height: 15px;
+    position: relative;
+    white-space: nowrap;
+}
+.links span {
+    display: block;
+    position: relative;
+    white-space: nowrap;
+}
+.links span {
+    display: block;
+    position: relative;
+    white-space: nowrap;
+}
+
+.links a {
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+}
+.links a {
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+}
+
+body {
+    font-family: "Helvetica Neue",微软雅黑,Tohoma;
+    line-height: 1;
+}
+.button_btna {
+    background: #b8e5bd none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 3px;
+    color: #34833d;
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    transition: opacity 0.2s ease 0s;
+    width: 120px;
+}
+
+.leftsidebar dl dt {
+    background-color: #0d4698;
+    color: #fff;
+    font-size: 12px;
+    height: 55px;
+    line-height: 55px;
+    padding-left: 20px;
+    padding-right: 30px;
+}
+.leftsidebar dl dd a {
+    color: #333;
+    display: block;
+    font-size: 14px;
+    padding-left:40px;
+}
+.leftsidebar dl dd.twoline { height:auto;}
+.leftsidebar dl dd.twoline a {
+    line-height:22px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.leftsidebar dl dd a.cur {
+    background: #e5edf9 url("../images/leftside-a.png") no-repeat scroll 22px center;
+    color: #0d4698;
+}
+
+.leftsidebar dl dd a:hover {
+    background: #e5edf9 url("../images/leftside-a.png") 22px center no-repeat;
+    color: #0d4698;
+}
+
+.book_main em {
+    background-color: #ededed;
+    border-radius: 18px;
+    color: #666666;
+    display: block;
+    float: left;
+    height: 35px;
+    line-height: 35px;
+    margin-right: 20px;
+    text-align: center;
+    font-size: 12px;
+    width: 100px;
+}
+
+.book_main em.clk {
+    background-color: #0d4698;
+    border-radius: 18px;
+    color: #fff;
+    display: block;
+    float: left;
+    font-size: 12px;
+    height: 35px;
+    line-height: 35px;
+    margin-right: 20px;
+    text-align: center;
+    width: 100px;
+}

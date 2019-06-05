@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Basic Page Needs================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- IOS6全屏 Chrome高版本全屏 ================================================== -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+    <!-- reset and core CSS -->
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/allcss.css" rel="stylesheet" type="text/css" />
+    <link href="css/0818.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+<!-- header -->
+<div class="loginbar">
+    <div class="main clearfix">
+        <div class="login-submit">
+            <div class="login-dropdown"></div>
+            <span class="login-wrap">
+                <a href="login_3.htm">登录</a>
+                <i class="split-items">|</i>
+                <a href="register.htm">注册</a>
+            </span>
+            <a href="indexen.htm">English</a>
+        </div>
+    </div>
+</div>
+
+<!-- end -->
+<!-- header -->
+<div class="header">
+        <script language="javascript">
+            /*<![CDATA[*/
+            function coupon() {
+                window.location.href='/coupon';
+            }
+            function countdown() {
+                window.location.href='/countdown';
+            }
+            function seckilling() {
+                window.location.href='/seckilling';
+            }
+            function xyUserEntry() {
+                //window.location.href='/seckillover';
+                if ($("#xytype").val() !='CS' && $("#xytype").val() !='OB') {
+                    window.open('http://op.jjshipping.cn/eservices/index-nav.jsp?_menu=menu1');
+                }else{
+                    $("#xytype").val('XY')
+                }
+            }
+            function impChangeSingle() {
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=1');
+                $("#xytype").val('CS');
+            }
+            function onlinbox(){
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=2');
+                $("#xytype").val('OB');
+            }
+            /*]]>*/
+        </script>
+        <div class="main clearfix">
+            <h1 class="logo">
+                <a href="www_jjshipping_default.html" target="_blank"><img src="images/index/logo.png" alt="" /></a>
+            </h1>
+            <div class="top-nav">
+                <a href="index.htm" class="active">首页</a>
+                <a href="home.htm" class="line">在线订舱</a>
+                <a href="cargosearch.htm" class="defaultline">信息查询与订阅</a>
+            <!-- <a  class="discount-nav" >优惠信息
+                    <ul class="dis-nav" >
+                        <li onclick="seckilling();" >秒杀</li>
+                        <li  onclick="coupon();">优惠劵</li>
+
+
+                    </ul>
+                </a>-->
+                <input type="hidden" id="xytype" name="xytype" />
+                <a href="legalNotice.htm#" onclick="xyUserEntry();" class="discount-nav">协议用户入口
+                    <ul class="dis-nav" style="width: 140px;">
+                        <li onclick="impChangeSingle();">进口换单网上预约</li>
+                        <li onclick="onlinbox();">网上放箱</li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<!-- end -->
+
+
+<!-- tit -->
+<div class="g-tit">
+    首页 &gt; <span>法律申明</span>
+</div>
+<!-- /tit end -->
+
+<div class="main pb40 clearfix">
+    <!-- left -->
+    <div class="leftsidebar">
+        <dl>
+            <dt><img src="images/leftside-dt-icon1.png" alt="" />辅助栏目</dt>
+            <dd><a href="noticemore.htm">信息公告</a></dd>
+            <dd><a href="legalNotice.htm" class="cur">法律申明</a></dd>
+        </dl>
+    </div>
+    <!-- /left end -->
+
+    <div class="rightcolumn h832">
+        <div class="persnal-modfity">
+            <div class="forget-password">
+                <div class="txtcontent">
+                    <div class="newsdetailtitle">法律申明</div>
+
+                    <div class="newsdetailcon">
+                        <p>上海锦江航运（集团）有限公司官网（以下简称“本站”）由上海锦江航运（集团）有限公司（以下简称“锦江航运”）创设。任何人进入、浏览和使用本站即承认已阅读、理解并同意受本声明约束，并遵守所有适用的法律和法规。</p>
+                        <p><b>版权声明 </b></p>
+                        <p>							 本站提供的任何内容（包括但不限于数据、文字、图表、图片、音频及视频等）的版权均属于锦江航运官网或相关权利人。未经锦江航运官网或相关权利人事先的书面许可，不得以任何方式擅自复制、再造、传播、出版、转帖、改编或陈列本站的内容。同时，未经锦江航运官网书面许可，对于本站上的任何内容，任何人不得在非锦江航运官网所属的服务器上做镜像。任何未经授权使用本站任何内容的行为都将违反《中华人民共和国著作权法》和其它法律法规以及有关国际公约的规定。
+                        </p>
+                        <p><b>域名与商标声明</b></p>
+                        <p>
+                            jjshipping.cn域名为锦江航运官网所有。未经锦江航运官网书面授权，任何单位或个人不得使用。锦江航运官网（www.jjshipping.cn）此处引用商标为锦江航运官网在中国和其它国家的注册商标。未经锦江航运官网书面授权，任何单位或个人不得使用上述商标，或将上述商标用作网站名称。本站所提及的公司和产品的名称和/或此处包含的第三方商标、商品名称和徽标可能是它们各自所有者的商标；所描述的示例公司、机构、产品、域名、电子邮件地址、徽标、人员和事件均为虚构，不应视为或推导出与任何真实公司、机构、产品、域名、电子邮件地址、徽标、人员或事件有任何关联。
+
+                        </p>
+                        <p><b>免责声明 </b></p>
+                        <p>
+                            锦江航运官网不保证本站上任何内容的准确性、及时性、完整性和可靠性以及使用这些内容得出的结果。锦江航运官网以及其分支机构、子公司、董事、员工、代理以及其他任何代表（以下简称"相关人"）对于本站内容的任何错误、不准确和遗漏都将不承担任何责任。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /right end -->
+</div>
+
+
+<!-- footer -->
+<div class="footer">
+    <div class="footer-links">
+        <div class="main clearfix w1000">
+            <dl class="footer-inner">
+                <dt>关于我们</dt>
+                <dd>
+                    <a target="_blank" href="www_jjshipping_default.html">公司官网</a>
+                    <a href="intoJinjiang.htm">走进锦江</a>
+                    <a href="contactUs.htm"> 联系我们</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>新手上路</dt>
+                <dd>
+                    <a href="serviceLogistics.htm">服务流程</a>
+                    <a href="paymentMethod.htm">支付方式</a>
+                    <a href="importExchangeProcess.htm">进口换单流程</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>常用信息</dt>
+                <dd>
+                    <a href="shipData.htm">船舶资料</a>
+                    <a href="portInformation.htm">港口信息</a>
+                    <a href="yardInformation.htm">堆场信息</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>帮助中心</dt>
+                <dd>
+                    <a href="proxyDirectory.htm">代理名录</a>
+                    <a href="overdueFeeStandard.htm">超期费标准</a>
+                    <!--<a th:href="@{'/additionFeeSchedule'}">附加费明细</a>-->
+                    <a href="fastDeliveryService.htm">快速交货服务</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner last-child">
+                <dt>联系我们</dt>
+                <dd>
+                    <span class="tel-icon"></span>
+                    <p class="tel-number">400-921-2288</p>
+                    <span class="qr_code"></span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="main clearfix w1000">
+            <div class="copyright">
+                <p>Copyright © 2015上海锦江航运(集团)有限公司 All Rights Reserved.  </p>
+                <p>沪ICP备13047598号</p>
+            </div>
+            <div class="friendlinks">
+                <a href="noticemore.htm">信息公告</a>
+                <span>|</span>
+                <a href="legalNotice.htm">法律申明</a>
+                <span>|</span>
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256022543'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1256022543' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end -->
+<div class="sidebar">
+    <a href="javascript:void(0);" style="cursor: context-menu;">
+        <span class=""></span>
+    </a>
+    <a target="_blank" href="http://q.url.cn/cdVSx4?_type=wpa%26qidian=true">
+        <span class="online-consult"></span>
+    </a>
+    <a href="javascript:void(0);" class="tel-parent">
+        <span class="telphone telImg"></span>
+        <p class="tel-details">
+            <s class="telphone"></s>售后服务热线:<br />400-921-2288
+        </p>
+    </a>
+    <a href="javascript:void(0);">
+        <mark class="backto-top"></mark>
+    </a>
+</div>
+<!-- end -->
+
+<!-- Javascript with AMD  -->
+<script src="js/lib/require.js" data-main="js/app/main"></script>
+<script src="js/lib/jquery-1.11.1.min.js"></script>
+
+<script>
+    BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800097653, selector: 'BizQQWPA'});
+</script>
+
+
+</body>
+
+</html>

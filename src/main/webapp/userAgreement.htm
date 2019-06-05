@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+    <!-- Basic Page Needs================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>锦江航运</title>
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- IOS6全屏 Chrome高版本全屏 ================================================== -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+    <!-- 让360双核浏览器用webkit内核渲染页面 ================================================== -->
+    <meta name="renderer" content="webkit" />
+    <!-- reset and core CSS -->
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/allcss.css" rel="stylesheet" type="text/css" />
+    <link href="css/october-new.css" rel="stylesheet" type="text/css" />
+    <!-- Favicons -->
+    <link rel="icon" href="http://ejj.jjshipping.cn/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="http://ejj.jjshipping.cn/favicon.ico" type="image/x-icon" />
+    <link rel="icon" sizes="196x196" href="http://ejj.jjshipping.cn/images/apple-touch-icon-152x152.jpg" />
+    <!-- IOS 主屏图标
+	================================================== -->
+    <link rel="apple-touch-icon-precomposed" href="http://ejj.jjshipping.cn/images/apple-touch-icon-76x76.jpg" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="http://ejj.jjshipping.cn/images/apple-touch-icon-76x76.jpg" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://ejj.jjshipping.cn/images/apple-touch-icon-120x120.jpg" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://ejj.jjshipping.cn/images/apple-touch-icon-152x152.jpg" />
+
+</head>
+
+<body>
+<!-- 登录-注册 -->
+
+<div class="loginbar">
+    <div class="main clearfix">
+        <div class="login-submit">
+            <div class="login-dropdown"></div>
+            <span class="login-wrap">
+                <a href="login_3.htm">登录</a>
+                <i class="split-items">|</i>
+                <a href="register.htm">注册</a>
+            </span>
+            <a href="indexen.htm">English</a>
+        </div>
+    </div>
+</div>
+
+<!-- end -->
+<!-- header -->
+<div class="header">
+        <script language="javascript">
+            /*<![CDATA[*/
+            function coupon() {
+                window.location.href='/coupon';
+            }
+            function countdown() {
+                window.location.href='/countdown';
+            }
+            function seckilling() {
+                window.location.href='/seckilling';
+            }
+            function xyUserEntry() {
+                //window.location.href='/seckillover';
+                if ($("#xytype").val() !='CS' && $("#xytype").val() !='OB') {
+                    window.open('http://op.jjshipping.cn/eservices/index-nav.jsp?_menu=menu1');
+                }else{
+                    $("#xytype").val('XY')
+                }
+            }
+            function impChangeSingle() {
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=1');
+                $("#xytype").val('CS');
+            }
+            function onlinbox(){
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=2');
+                $("#xytype").val('OB');
+            }
+            /*]]>*/
+        </script>
+        <div class="main clearfix">
+            <h1 class="logo">
+                <a href="www_jjshipping_default.html" target="_blank"><img src="images/index/logo.png" alt="" /></a>
+            </h1>
+            <div class="top-nav">
+                <a href="index.htm" class="active">首页</a>
+                <a href="home.htm" class="line">在线订舱</a>
+                <a href="cargosearch.htm" class="defaultline">信息查询与订阅</a>
+            <!-- <a  class="discount-nav" >优惠信息
+                    <ul class="dis-nav" >
+                        <li onclick="seckilling();" >秒杀</li>
+                        <li  onclick="coupon();">优惠劵</li>
+
+
+                    </ul>
+                </a>-->
+                <input type="hidden" id="xytype" name="xytype" />
+                <a href="userAgreement.htm#" onclick="xyUserEntry();" class="discount-nav">协议用户入口
+                    <ul class="dis-nav" style="width: 140px;">
+                        <li onclick="impChangeSingle();">进口换单网上预约</li>
+                        <li onclick="onlinbox();">网上放箱</li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </div>
+<!-- end -->
+
+<!-- tit -->
+<div class="g-tit">
+    首页 &gt; <span>注册协议</span>
+</div>
+<!-- /tit end -->
+
+
+<!-- main -->
+<div class="main border-top pb40">
+    <div class="agree">
+        <div class="agree-tit">锦江航运用户协议</div>
+        <div class="agree-cont">
+            <div class="cont-tit">用户协议和法律声明</div>
+            <div class="cont-con">请用户在使用电商平台之前务必先仔细阅读本协议条款及法律声明。如用户对本协议条款有任何疑问，请务必向锦江航运进行询问，锦江航运会向用户解释条款的内容，否则，视为用户已完全理解并知悉本协议条款的内容。</div>
+            <div class="agree-txtit">第一条 签约主体及协议生效</div>
+            <div class="cont-con">1.1 ejj.jjshipping.cn电商平台（下称“电商平台”）由上海锦江航运（集团）有限公司（以下简称“锦江航运”）开发并管理。本协议由锦江航运与登录并使用电商平台的用户（下称“用户”）共同订立。访问和使用电商平台的用户受以下条款约束。</div>
+            <div class="cont-con">1.2 本协议内容包括协议正文、附件及所有已经发布的或将来可能发布的电商平台服务规则、物流价目表、法律声明等文件。这些文件是本协议不可分割的一部分，与协议具有相同法律效力。</div>
+            <div class="cont-con">1.3 当用户点击“我已经阅读并同意服务协议”时或实际使用了电商平台服务，本协议即开始生效，在之后的服务使用过程中用户均应遵守本协议的约定，与服务相关的争议、纠纷、投诉、争议解决等均受本协议约束。</div>
+            <div class="agree-txtit">第二条 更新与修订</div>
+            <div class="cont-con">2.1 本协议以电商平台公布的形式进行更新，调整后的内容将于公布之日或公布另行指定的日期开始生效。如用户不同意相关修订，请届时立即停止使用本服务，否则将视为已接受经修订的内容，当与锦江航运发生争议时，应以最新的约定内容为准，除另行明确声明外，任何使服务范围扩大或功能增强的新内容均受本协议约束。</div>
+            <div class="cont-con">2.2 锦江航运有权根据业务需要不时地制定、修改本协议及相关声明等内容，如相关内容有任何修订，锦江航运将在其网站上刊载公告，不再单独通知用户，修订后的内容将于公布之日或公布另行指定的日期开始生效。如用户不同意相关修订，请届时立即停止使用本服务，否则将视为已接受经修订的内容，当与锦江航运发生争议时，应以最新的修订内容为准，除另行明确声明外，任何使服务范围扩大或功能增强的新内容均受本协议约束。</div>
+            <div class="cont-con">2.3 用户应不时地审阅本协议条款以及并入其中的政策与指南以了解并适用和使用锦江航运的条款和条件。</div>
+            <div class="agree-txtit">第三条 用户资质</div>
+            <div class="cont-con">3.1 与锦江航运订立本协议的用户须为在中国大陆地区依法成立、存续的公司法人。</div>
+            <div class="cont-con">3.2 用户资质不符合上述约定的，锦江航运可随时解除本协议、停止向其提供本服务，若因此给锦江航运或任何第三方造成损失的，由用户承担全部赔偿责任。</div>
+            <div class="cont-con">3.3 锦江航运有权拒绝向被暂时或永久中止锦江航运会员资格的用户提供本服务。</div>
+            <div class="agree-txtit">第四条 账户</div>
+            <div class="cont-con">4.1 在用户签署本协议，完成注册程序并通过审核后，电商平台会向用户提供唯一编号的电商平台账户（下称账户），用户通过该账户及密码登录电商平台。</div>
+            <div class="cont-con">4.2 用户应对用户的账户安全负责，任何通过用户的账户实施的行为，包括用户在注册时使用的邮箱所发出的电子邮件中的委托信息和数据、用户使用电商平台所提供的即时聊天工具与电商平台客服人员进行的信息交流，将被视为用户有效行为，用户应对此负责。除非有法律规定或司法裁定，且征得电商平台的同意，否则，账户信息不得以任何方式转让、赠与或继承，但与账户相关的财产权益除外。如果发现任何人不当使用用户的账户或有任何其他可能危及用户账户安全的情形时，用户应当立即以有效方式通知电商平台，要求电商平台暂停相关服务。用户理解电商平台对用户的请求采取行动需要合理时间，电商平台对在采取行动前已经产生的后果，包括但不限于用户的任何损失，不承担任何责任。</div>
+            <div class="cont-con">为方便用户使用电商平台的服务及电商平台关联公司或其他组织的服务（以下称“其他服务”），用户同意并授权锦江航运将用户在注册、使用电商平台服务过程中提供、形成的信息传递给向用户提供其他服务的电商平台关联公司或其他组织，或从提供其他服务的电商平台关联公司或其他组织获取用户在注册、使用其他服务期间提供、形成的信息。</div>
+            <div class="cont-con">4.3 在注册时，用户应当按照法律法规要求，或注册页面的提示准确提供，并及时更新用户的资料，以使之真实、及时，完整和准确。如有合理理由怀疑用户提供的资料错误、不实、过时或不完整的，锦江航运有权向用户发出询问及/或要求改正的通知，并有权直接做出删除相应资料的处理，直至中止、终止对用户提供部分或全部电商平台服务。锦江航运对此不承担任何责任，用户将承担因此产生的任何直接或间接支出。</div>
+            <div class="cont-con">用户应当准确填写并及时更新用户提供的电子邮件地址、联系电话、联系地址、邮政编码等联系方式，以便锦江航运或电商平台客服人员与用户进行有效联系。因通过这些联系方式无法与用户取得联系，导致用户在使用电商平台服务过程中产生任何损失或增加费用的，应由用户完全独自承担。<br />用户在使用电商平台服务过程中，所产生的应纳税赋，以及一切硬件、软件、服务及其它方面的费用，均由用户独自承担。</div>
+            <div class="agree-txtit">第五条 服务</div>
+            <div class="cont-con">5.1 通过锦江航运及其关联公司提供的电商平台服务和其它服务，用户可在电商平台上查询运价和服务信息、达成交易意向并进行交易、参加电商平台组织的活动以及使用其它信息服务及技术服务。</div>
+            <div class="cont-con">5.2 用户了解并同意，应政府部门的要求，锦江航运有权向其提供用户在电商平台填写的注册信息和交易纪录等必要信息。如用户涉嫌侵犯他人知识产权，则锦江航运亦有权在初步判断涉嫌侵权行为存在的情况下，向权利人提供用户必要的身份信息。</div>
+            <div class="cont-con">5.4 锦江航运将及时更新服务信息、服务价目表、运费价目表、航线和航程等与服务有关的信息，并公布到电商平台，以便用户随时查阅。</div>
+            <div class="agree-txtit">第六条 用户的权利与义务</div>
+            <div class="cont-con">6.1 用户应保证在创建服务订单时其所提交的所有信息（包括但不限于货物和运输相关信息，例如发货人、收货人、货物描述等信息）的真实性、准确性、合法性，否则如造成锦江航运损失及任何第三方的，用户应负责赔偿所有的损失，包括但不限于违约金、损害赔偿金、律师费、诉讼费、海关罚款等费用。如用户对货物运输有特殊的委托要求的，用户应通过书面的方式告知锦江航运，并征求锦江航运的同意。</div>
+            <div class="cont-con">6.2 用户在下订单完成后，如需对订单内容进行更改，用户应以书面的形式通知锦江航运（例如取消订单、更改订单信息等情况），无论更改是否成功，由此产生的所有费用与责任均由用户自行承担。</div>
+            <div class="cont-con">6.3用户应清楚、明确地选订服务内容，并根据所选择的服务提供相关信息，以方便锦江航运安排提供相关服务。</div>
+            <div class="cont-con">6.4 用户应在指定的时间内如实在电商平台上申报各国海关在船开前需要的各类申报信息，申报信息必须真实、准确、合法，否则应承担由此而产生的所有费用和责任。</div>
+            <div class="cont-con">6.5 用户应在指定的时间内在电商平台上填写提单信息以便承运人出具提单。用户如需更改提单，应征得承运人的同意，无论更改是否成功，由此产生的一切风险、责任和费用均应由用户承担。</div>
+            <div class="cont-con">6.6 因用户原因或货物原因造成锦江航运或任何第三方损失的，如无人提货、弃货、被港口当局扣押货物、罚款等，用户应承担一切损失和责任；因此导致服务无法履行的，锦江航运有权中止或终止服务或解除本协议，因此产生的一切费用和责任都应由用户承担。</div>
+            <div class="cont-con">6.7 因用户原因或货物原因产生的物流费用或滞期费费率，如运费、集装箱超期使用费、堆存费、操作费、文件费用等，用户同意按锦江航运或有权收取该费用的任何第三方自行公布或制定的费率计付，若锦江航运已代理用户向相关方垫付的，用户同意向锦江航运偿付垫付的费用。</div>
+            <div class="agree-txtit">第七条 电商平台服务使用规范</div>
+            <div class="cont-con">7.1 用户在使用电商平台服务过程中实施的所有行为均遵守国家法律、法规等规范性文件及电商平台各项规则的规定和要求，不违背社会公共利益或公共道德，不损害他人的合法权益，不违反本协议及相关规则。用户如果违反前述承诺，产生任何法律后果的，用户应以自己的名义独立承担所有的法律责任，并确保电商平台免于因此产生任何损失。</div>
+            <div class="cont-con">7.2 用户在与平台客服人员交易过程中，遵守诚实信用原则，不采取不正当竞争行为，不扰乱网上交易的正常秩序，不从事与网上交易无关的行为。</div>
+            <div class="cont-con">7.3 不对电商平台上的任何数据作商业性利用，包括但不限于在未经电商平台事先书面同意的情况下，以复制、传播等任何方式使用电商平台站上展示的资料。</div>
+            <div class="cont-con">7.4 不使用任何装置、软件或例行程序干预或试图干预电商平台的正常运作或正在电商平台上进行的任何交易、活动。用户不得采取任何将导致不合理的庞大数据负载加诸电商平台网络设备的行动。</div>
+            <div class="cont-con">7.5 锦江航运有权对用户是否违反7.1至7.4承诺做出单方认定，并根据单方认定结果适用规则予以处理或终止向用户提供服务，且无须征得用户的同意或提前通知予用户。</div>
+            <div class="cont-con">7.6 经国家行政或司法机关的生效法律文书确认用户存在违法或侵权行为，或者锦江航运根据自身的判断，认为用户的行为涉嫌违反本协议和/或规则的条款或涉嫌违反法律法规的规定的，则锦江航运有权在电商平台上公示用户的该等涉嫌违法或违约行为及锦江航运已对用户采取的措施。</div>
+            <div class="cont-con">7.7 对于用户在电商平台上实施的行为，包括用户未在电商平台上实施但已经对电商平台及其用户产生影响的行为，锦江航运有权单方认定用户行为的性质及是否构成对本协议和/或规则的违反，并据此做出相应处罚。用户应自行保存与用户行为有关的全部证据，并应对无法提供充要证据而承担的不利后果。</div>
+            <div class="cont-con">7.8 对于用户涉嫌违反承诺的行为对任意第三方造成损害的，用户均应当以自己的名义独立承担所有的法律责任，并应确保锦江航运免于因此产生损失或增加费用。</div>
+            <div class="cont-con">7.9 如用户涉嫌违反有关法律或者本协议之规定，使锦江航运遭受任何损失，或受到任何第三方的索赔，或受到任何行政管理部门的处罚，用户应当赔偿锦江航运因此造成的损失及/或发生的费用，包括合理的诉讼费用、律师费用。</div>
+            <div class="agree-txtit">第八条 责任范围和责任限制</div>
+            <div class="cont-con">8.1 锦江航运负责向用户提供电商平台服务。但锦江航运对电商平台服务不作任何明示或暗示的保证，包括但不限于电商平台服务的适用性、没有错误或疏漏、持续性、准确性、可靠性、适用于某一特定用途。同时，锦江航运也不对电商平台服务所涉及的技术及信息的有效性、准确性、正确性、可靠性、质量、稳定、完整和及时性做出任何承诺和保证。</div>
+            <div class="cont-con">8.2 除非法律法规明确要求，或出现以下情况，否则，锦江航运没有义务对所有用户的注册数据、服务信息、交易行为以及与交易有关的其它事项进行事先审查：</div>
+            <div class="cont-con">锦江航运有合理的理由认为特定会员及具体交易事项可能存在重大违法或违约情形。<br />锦江航运有合理的理由认为用户在电商平台的行为涉嫌违法或不当。</div>
+            <div class="cont-con">8.3 用户理解并同意，锦江航运及其关联公司并非司法机构，仅能以普通人的身份对证据进行鉴别，锦江航运及其关联公司对争议的调处完全是基于用户的委托，锦江航运及其关联公司无法保证争议处理结果符合用户的期望，也不对争议调处结论承担任何责任。如用户因此遭受损失，用户同意自行向受益人索偿。</div>
+            <div class="cont-con">8.4 用户了解并同意，锦江航运不对因下述任一情况而导致用户的任何损害赔偿承担责任，包括但不限于利润、商誉、使用、数据等方面的损失或其它无形损失的损害赔偿，无论锦江航运是否已被告知该等损害赔偿的可能性：</div>
+            <div class="cont-con">使用或未能使用电商平台服务。<br />第三方未经批准的使用用户的账户或更改用户的数据。<br />通过电商平台购买或获取任何服务、数据、信息或进行交易等行为或替代行为产生的费用及损失。<br />用户对电商平台服务的误解。<br />任何非因锦江航运的原因而引起的与电商平台服务有关的其它损失。</div>
+            <div class="cont-con">8.5不论在何种情况下，锦江航运均不对由于互联网正常的设备维护，互联网络连接故障，电脑、通讯或其他系统的故障，电力故障，罢工，劳动争议，暴乱，起义，骚乱，生产力或生产资料不足，火灾，洪水，风暴，爆炸，战争，政府行为，司法行政机关的命令或第三方的不作为而造成的不能服务或延迟服务承担责任。</div>
+            <div class="agree-txtit">第九条 其他约定</div>
+            <div class="cont-con">9.1 用户同意，锦江航运有权将本协议项下的所有或部分权利义务转让给其余有资质的第三方。锦江航运转让本协议的所有或部分权利义务时应以书面形式（包括但不限于电子邮件、传真、快递、电商平台公告等方式）通知用户，转让应于通知中列明的日期或送达通知的当日生效。</div>
+            <div class="cont-con">9.2 未经锦江航运同意，用户不得自行将本协议的所有或部分权利义务转让给无关的第三方，否则，应赔偿锦江航运由此而遭到所有损失。</div>
+            <div class="cont-con">9.3 用户同意，锦江航运不对非因锦江航运的过错而造成的损失负责。</div>
+            <div class="cont-con">9.4 对于用户提供的资料及数据信息，用户授予锦江航运及其关联公司独家的、全球通用的、永久的、免费的许可使用权利并有权在多个层面对该权利进行再授权。此外，锦江航运及其关联公司有权全部或部分地使用、复制、修订、改写、发布、翻译、分发、执行和展示用户的全部资料数据，包括但不限于注册资料、交易行为数据及全部展示于电商平台的各类信息或制作其派生作品，并以现在已知或日后开发的任何形式、媒体或技术，将上述信息纳入其它作品内。</div>
+            <div class="agree-txtit">第十条：协议终止</div>
+            <div class="cont-con">10.1 用户同意，锦江航运有权自行全权决定以任何理由不经事先通知的中止、终止向用户提供部分或全部电商平台服务，暂时冻结或永久冻结、注销用户的账户，且无须为此向用户或任何第三方承担任何责任。</div>
+            <div class="cont-con">10.2 出现以下情况时，锦江航运有权直接以注销账户的方式终止本协议:</div>
+            <div class="cont-con">电商平台终止向用户提供服务后，用户涉嫌再一次直接或间接或以他人名义注册为电商平台用户的；<br />用户注册信息中的主要内容不真实或不准确或不及时或不完整。<br />电商平台的协议或规则发生变更时，用户明示并通知锦江航运不愿接受新的服务协议的。<br />其它锦江航运认为应当终止服务的情况。</div>
+            <div class="cont-con">10.3 用户有权向锦江航运要求注销用户的账户，经锦江航运审核同意的，电商平台注销或永久冻结用户的账户，届时，用户与锦江航运基于本协议的合同关系即终止。用户的账户被注销或永久冻结后，锦江航运没有义务为用户保留或向用户披露用户账户中的任何信息，也没有义务向用户或第三方转发任何用户未曾阅读或发送过的信息。</div>
+            <div class="cont-con">10.4 用户同意，用户与锦江航运的合同关系终止后，锦江航运仍享有下列权利：</div>
+            <div class="cont-con">继续保存用户的注册信息及用户使用电商平台服务期间的所有交易信息。<br />用户在使用电商平台服务期间存在违法行为或违反本协议和/或规则的行为的，锦江航运仍可依据本协议向用户主张权利。</div>
+            <div class="cont-con">10.5 锦江航运中止或终止向用户提供电商平台服务后，对于用户在服务中止或终止之前的交易行为依下列原则处理，用户应独力处理并完全承担进行以下处理所产生的任何争议、损失或增加的任何费用，并应确保锦江航运免于因此产生任何损失或承担任何费用：</div>
+            <div class="cont-con">用户在服务中止或终止之前已经上传至电商平台的服务尚未交易的，锦江航运有权在中止或终止服务的同时删除此项服务的相关信息。<br />用户在服务中止或终止之前已经与平台客服人员达成订单，但订单尚未实际履行的，电商平台有权删除该订单及其交易服务的相关信息。</div>
+            <div class="agree-txtit">第十一条：网络安全</div>
+            <div class="cont-con">11.1 锦江航运及其关联公司有权维护自身网络系统的安全，防止非法侵入或非法传输，保护业务记录和数据信息不受非法侵入、篡改或毁损。</div>
+            <div class="cont-con">11.2 用户不得在电商平台上或向使用电商平台的其他用户发送与业务委托无关的电子报文，如非法文件、病毒程序等，否则将对因此造成损失承担赔偿责任。</div>
+            <div class="cont-con">11.3 锦江航运及其关联公司将努力保障网上服务系统和网络设备的正常工作。故障发生期间，电商平台在服务能力允许的情况下，可以接受用户通过传统的委托方式进行订舱业务和信息传递。</div>
+            <div class="cont-con">11.4 对于用户利用电商平台提供的网上服务功能进行在线交流、查询下载、询报价、申请订舱和其他相关的商务活动，锦江航运及其关联公司将提供必要的技术支持与技术指导。但是，无论如何，锦江航运及其关联公司对于所提供的技术支持和技术指导所发生的一切费用、风险和损失不承担责任。</div>
+            <div class="agree-txtit">第十二条.法律适用及争议解决</div>
+            <div class="cont-con">12.1 本协议之效力、解释、变更、执行与争议解决均适用中华人民共和国法律，排除冲突法的适用。如无相关法律规定的，则应参照通用国际商业惯例和/或行业惯例。</div>
+            <div class="cont-con">12.2 在执行本协议中如发生争议，应尽可能以友好协商方式解决，如经协商仍不能解决时，提交上海市黄浦区人民法院诉讼解决。</div>
+        </div>
+    </div>
+</div>
+<!-- main end -->
+
+
+<!-- footer -->
+<!-- 侧边栏 -->
+
+<!-- footer -->
+<div class="footer">
+    <div class="footer-links">
+        <div class="main clearfix w1000">
+            <dl class="footer-inner">
+                <dt>关于我们</dt>
+                <dd>
+                    <a target="_blank" href="www_jjshipping_default.html">公司官网</a>
+                    <a href="intoJinjiang.htm">走进锦江</a>
+                    <a href="contactUs.htm"> 联系我们</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>新手上路</dt>
+                <dd>
+                    <a href="serviceLogistics.htm">服务流程</a>
+                    <a href="paymentMethod.htm">支付方式</a>
+                    <a href="importExchangeProcess.htm">进口换单流程</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>常用信息</dt>
+                <dd>
+                    <a href="shipData.htm">船舶资料</a>
+                    <a href="portInformation.htm">港口信息</a>
+                    <a href="yardInformation.htm">堆场信息</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>帮助中心</dt>
+                <dd>
+                    <a href="proxyDirectory.htm">代理名录</a>
+                    <a href="overdueFeeStandard.htm">超期费标准</a>
+                    <!--<a th:href="@{'/additionFeeSchedule'}">附加费明细</a>-->
+                    <a href="fastDeliveryService.htm">快速交货服务</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner last-child">
+                <dt>联系我们</dt>
+                <dd>
+                    <span class="tel-icon"></span>
+                    <p class="tel-number">400-921-2288</p>
+                    <span class="qr_code"></span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="main clearfix w1000">
+            <div class="copyright">
+                <p>Copyright © 2015上海锦江航运(集团)有限公司 All Rights Reserved.  </p>
+                <p>沪ICP备13047598号</p>
+            </div>
+            <div class="friendlinks">
+                <a href="noticemore.htm">信息公告</a>
+                <span>|</span>
+                <a href="legalNotice.htm">法律申明</a>
+                <span>|</span>
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256022543'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1256022543' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end -->
+<div class="sidebar">
+    <a href="javascript:void(0);" style="cursor: context-menu;">
+        <span class=""></span>
+    </a>
+    <a target="_blank" href="http://q.url.cn/cdVSx4?_type=wpa%26qidian=true">
+        <span class="online-consult"></span>
+    </a>
+    <a href="javascript:void(0);" class="tel-parent">
+        <span class="telphone telImg"></span>
+        <p class="tel-details">
+            <s class="telphone"></s>售后服务热线:<br />400-921-2288
+        </p>
+    </a>
+    <a href="javascript:void(0);">
+        <mark class="backto-top"></mark>
+    </a>
+</div>
+<!-- end -->
+<!-- Javascript with AMD  -->
+<script src="js/lib/require.js" data-main="js/app/main"></script>
+<script src="js/lib/jquery-1.11.1.min.js"></script>
+<script src="js/lib/dialog-min.js"></script>
+<script language="JavaScript">
+    /*<![CDATA[*/
+    BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800097653, selector: 'BizQQWPA'});
+    $(".active").attr("class", "la");
+    $(".line").attr("class", "active");
+    /*]]>*/
+</script>
+</body>
+
+</html>

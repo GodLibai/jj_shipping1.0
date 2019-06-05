@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rr.dao.EndMapper">
+  <resultMap id="BaseResultMap" type="com.rr.pojo.End">
+    <id column="end_id" jdbcType="INTEGER" property="endId" />
+    <result column="e_name" jdbcType="VARCHAR" property="eName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    end_id, e_name
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_end
+    where end_id = #{endId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_end
+    where end_id = #{endId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rr.pojo.End">
+    insert into t_end (end_id, e_name)
+    values (#{endId,jdbcType=INTEGER}, #{eName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rr.pojo.End">
+    insert into t_end
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="endId != null">
+        end_id,
+      </if>
+      <if test="eName != null">
+        e_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="endId != null">
+        #{endId,jdbcType=INTEGER},
+      </if>
+      <if test="eName != null">
+        #{eName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rr.pojo.End">
+    update t_end
+    <set>
+      <if test="eName != null">
+        e_name = #{eName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where end_id = #{endId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rr.pojo.End">
+    update t_end
+    set e_name = #{eName,jdbcType=VARCHAR}
+    where end_id = #{endId,jdbcType=INTEGER}
+  </update>
+</mapper>

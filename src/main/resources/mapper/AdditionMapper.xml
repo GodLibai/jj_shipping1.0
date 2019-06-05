@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rr.dao.AdditionMapper">
+  <resultMap id="BaseResultMap" type="com.rr.pojo.Addition">
+    <id column="pay_id" jdbcType="INTEGER" property="payId" />
+    <result column="pay_name" jdbcType="VARCHAR" property="payName" />
+    <result column="pay_status" jdbcType="VARCHAR" property="payStatus" />
+    <result column="units" jdbcType="VARCHAR" property="units" />
+    <result column="currency" jdbcType="VARCHAR" property="currency" />
+    <result column="GP20" jdbcType="INTEGER" property="gp20" />
+    <result column="GP40" jdbcType="INTEGER" property="gp40" />
+    <result column="HC40" jdbcType="INTEGER" property="hc40" />
+    <result column="fares" jdbcType="INTEGER" property="fares" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    pay_id, pay_name, pay_status, units, currency, GP20, GP40, HC40, fares, remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_addition
+    where pay_id = #{payId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_addition
+    where pay_id = #{payId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.rr.pojo.Addition">
+    insert into t_addition (pay_id, pay_name, pay_status, 
+      units, currency, GP20, 
+      GP40, HC40, fares, 
+      remark)
+    values (#{payId,jdbcType=INTEGER}, #{payName,jdbcType=VARCHAR}, #{payStatus,jdbcType=VARCHAR}, 
+      #{units,jdbcType=VARCHAR}, #{currency,jdbcType=VARCHAR}, #{gp20,jdbcType=INTEGER}, 
+      #{gp40,jdbcType=INTEGER}, #{hc40,jdbcType=INTEGER}, #{fares,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rr.pojo.Addition">
+    insert into t_addition
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="payId != null">
+        pay_id,
+      </if>
+      <if test="payName != null">
+        pay_name,
+      </if>
+      <if test="payStatus != null">
+        pay_status,
+      </if>
+      <if test="units != null">
+        units,
+      </if>
+      <if test="currency != null">
+        currency,
+      </if>
+      <if test="gp20 != null">
+        GP20,
+      </if>
+      <if test="gp40 != null">
+        GP40,
+      </if>
+      <if test="hc40 != null">
+        HC40,
+      </if>
+      <if test="fares != null">
+        fares,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="payId != null">
+        #{payId,jdbcType=INTEGER},
+      </if>
+      <if test="payName != null">
+        #{payName,jdbcType=VARCHAR},
+      </if>
+      <if test="payStatus != null">
+        #{payStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="units != null">
+        #{units,jdbcType=VARCHAR},
+      </if>
+      <if test="currency != null">
+        #{currency,jdbcType=VARCHAR},
+      </if>
+      <if test="gp20 != null">
+        #{gp20,jdbcType=INTEGER},
+      </if>
+      <if test="gp40 != null">
+        #{gp40,jdbcType=INTEGER},
+      </if>
+      <if test="hc40 != null">
+        #{hc40,jdbcType=INTEGER},
+      </if>
+      <if test="fares != null">
+        #{fares,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rr.pojo.Addition">
+    update t_addition
+    <set>
+      <if test="payName != null">
+        pay_name = #{payName,jdbcType=VARCHAR},
+      </if>
+      <if test="payStatus != null">
+        pay_status = #{payStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="units != null">
+        units = #{units,jdbcType=VARCHAR},
+      </if>
+      <if test="currency != null">
+        currency = #{currency,jdbcType=VARCHAR},
+      </if>
+      <if test="gp20 != null">
+        GP20 = #{gp20,jdbcType=INTEGER},
+      </if>
+      <if test="gp40 != null">
+        GP40 = #{gp40,jdbcType=INTEGER},
+      </if>
+      <if test="hc40 != null">
+        HC40 = #{hc40,jdbcType=INTEGER},
+      </if>
+      <if test="fares != null">
+        fares = #{fares,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where pay_id = #{payId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rr.pojo.Addition">
+    update t_addition
+    set pay_name = #{payName,jdbcType=VARCHAR},
+      pay_status = #{payStatus,jdbcType=VARCHAR},
+      units = #{units,jdbcType=VARCHAR},
+      currency = #{currency,jdbcType=VARCHAR},
+      GP20 = #{gp20,jdbcType=INTEGER},
+      GP40 = #{gp40,jdbcType=INTEGER},
+      HC40 = #{hc40,jdbcType=INTEGER},
+      fares = #{fares,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR}
+    where pay_id = #{payId,jdbcType=INTEGER}
+  </update>
+</mapper>

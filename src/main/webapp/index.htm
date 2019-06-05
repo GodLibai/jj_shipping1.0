@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Basic Page Needs================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>锦江航运</title>
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+    <!-- reset and core CSS -->
+    <!--<link rel="stylesheet" href="css/less/swiper.min.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="css/less/idangerous.swiper.css" />-->
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/allcss.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="css/june-index.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+    <link href="css/0818.css" rel="stylesheet" type="text/css" />
+    <link href="css/ui-dialog.css" rel="stylesheet" type="text/css" />
+    <!--  <link href="css/pure.mini.css" rel="stylesheet" type="text/css"/>-->
+<style>
+
+    .selected_01 {
+        border: 1px solid #e3e3e3;
+        background: #fff;
+        border-radius: 3px;
+        display: inline-block;
+        height: 40px;
+        vertical-align: middle;
+        width: 120px;
+    }
+    .btndang {
+        display: inline-block;
+        width: 130px;
+        height: 46px;
+        color: #fff;
+        line-height: 46px;
+        border: none;
+        border-radius: 3px;
+        text-align: center;
+        transition: opacity .2s;
+    }
+    .banner .aside-left {
+        width: 70%;
+        float: left;
+    }
+    .banner .aside-right {
+        width: 30%;
+        float: right;
+    }
+    .xs_searchline {
+        width: 570px;
+        height: 60px;
+        margin-left: 0px;
+    }
+    .address_txt {
+        width: 140px;
+        height: 24px;
+        line-height: 24px;
+        border: 0;
+        font-size: 14px;
+        margin-top: 7px;
+    }
+    .searchbtn-area {
+        margin-left: 0px;
+    }
+    .adBox {
+        height: 100%;
+        width: 100%;
+        z-index: 99;
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+
+    .adBox .blankbg {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .6);
+    }
+    .adBox .adSwiper{
+        width:100%;
+        height: 405px;
+        /*overflow: visible;*/
+    }
+    .adBox  .close{
+        width: 32px;
+        height: 32px;
+        display: block;
+        border:2px solid #fff;
+        text-align: center;
+        float: right;
+        border-radius: 50%;
+        margin-bottom: 15px;
+    }
+    .adBox  .close img{
+        width: 16px;
+        height: 16px;
+        position: relative;
+        top: 8px;
+        display: inline-block;
+    }
+    .adBox .adcont{
+        width: 799px;
+        height: 504px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .adBox .adPagination{
+        width: 100%;
+        bottom:16px;
+    }
+    .adBox .swiper-slide{
+        width: 800px;
+        height: 405px;
+    }
+    .adBox .swiper-slide img{
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .adBox .swiper-pagination-switch{
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #fff;
+    }
+    .adBox .swiper-active-switch{
+        background: #00a2e6;
+    }
+    body,html{
+        overflow: hidden;
+    }
+    .banner{
+        background: url("http://ejj.jjshipping.cn:81/attach/ecAdvert/main.png") no-repeat center;
+    }
+    .adBox .swiper-slide img{
+        width:800px;height:405px
+    }
+</style>
+</head>
+<body>
+<!-- 登录-注册
+<div  th:replace="fragment/loginHeader :: loginHeader" th:remove="tag"></div>
+-->
+<div class="loginbar">
+    <div class="main clearfix">
+        <div class="login-submit">
+            <div class="login-dropdown"></div>
+            <span class="login-wrap">
+                <a href="login.htm">登录</a>
+                <i class="split-items">|</i>
+                <a href="register.htm">注册</a>
+            </span>
+            <a href="indexen.htm">English</a>
+        </div>
+    </div>
+</div>
+
+
+<!-- end -->
+<!-- header -->
+<div class="header">
+        <script language="javascript">
+            /*<![CDATA[*/
+            function coupon() {
+                window.location.href='/coupon';
+            }
+            function countdown() {
+                window.location.href='/countdown';
+            }
+            function seckilling() {
+                window.location.href='/seckilling';
+            }
+            function xyUserEntry() {
+                //window.location.href='/seckillover';
+                if ($("#xytype").val() !='CS' && $("#xytype").val() !='OB') {
+                    window.open('http://op.jjshipping.cn/eservices/index-nav.jsp?_menu=menu1');
+                }else{
+                    $("#xytype").val('XY')
+                }
+            }
+            function impChangeSingle() {
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=1');
+                $("#xytype").val('CS');
+            }
+            function onlinbox(){
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=2');
+                $("#xytype").val('OB');
+            }
+            /*]]>*/
+        </script>
+        <div class="main clearfix">
+            <h1 class="logo">
+                <a href="www_jjshipping_default.html" target="_blank"><img src="images/index/logo.png" alt="" /></a>
+            </h1>
+            <div class="top-nav">
+                <a href="index.htm" class="active">首页</a>
+                <a href="home.htm" class="line">在线订舱</a>
+                <a href="cargosearch.htm" class="defaultline">信息查询与订阅</a>
+            <!-- <a  class="discount-nav" >优惠信息
+                    <ul class="dis-nav" >
+                        <li onclick="seckilling();" >秒杀</li>
+                        <li  onclick="coupon();">优惠劵</li>
+
+
+                    </ul>
+                </a>-->
+                <input type="hidden" id="xytype" name="xytype" />
+                <a href="index.htm#" onclick="xyUserEntry();" class="discount-nav">协议用户入口
+                    <ul class="dis-nav" style="width: 140px;">
+                        <li onclick="impChangeSingle();">进口换单网上预约</li>
+                        <li onclick="onlinbox();">网上放箱</li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<!-- end -->
+<!-- banner -->
+<div class="banner">
+    <!--<img src="images/index/banner.jpg" alt="" class="banner-img">-->
+    <div class="main main-inner">
+        <div class="quick-entry">
+            <!-- nav -->
+            <ul id="myTabs" class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="index.htm#first-tab" role="tab" data-toggle="tab" aria-controls="first-tab" aria-expanded="false">海运订舱</a></li>
+                <li role="presentation" class=""><a href="index.htm#second-tab" role="tab" data-toggle="tab" aria-controls="second-tab" aria-expanded="true">货物跟踪</a></li>
+                <li role="presentation" class=""><a href="index.htm#third-tab" role="tab" data-toggle="tab" aria-controls="third-tab" aria-expanded="true">放箱查询</a></li>
+                <li role="presentation" class=""><a href="index.htm#forth-tab" role="tab" data-toggle="tab" aria-controls="forth-tab" aria-expanded="false">进口换单</a></li>
+                <li role="presentation" class=""><a href="index.htm#five-tab" role="tab" data-toggle="tab" aria-controls="five-tab" aria-expanded="true">滞期费 </a></li>
+            </ul>
+            <!-- Tab panes -->
+            <form class="pure-form" action="http://ejj.jjshipping.cn/homequeryfee" method="post">
+                <div class="tab-content">
+
+                    <div role="tabpanel" class="tab-pane fade in active" id="first-tab">
+                        <div class="select-wrap clearfix">
+                            <label class="pull-left">
+                                <span>起始港</span>
+
+                                <div class="selectedrow">
+                                    <input id="startport" class="selected-start" />
+                                    <input id="startportcod" name="startportcod" type="hidden" />
+                                </div>
+                            </label>
+                            <label class="pull-right">
+                                <span>目的港</span>
+
+                                    <div class="selectedrow">
+                                        <input id="endport" class="selected-start" placeholder="支持根据国家模糊查找" />
+                                        <input id="endportcod" name="endportcod" type="hidden" />
+                                    </div>
+
+                            </label>
+                        </div>
+                        <div class="searchbtn-area">
+                            <input type="submit" class="btn btn-search" value="查询运费" />
+                           <!-- <a href="#"  class="btn btn-search">查询运费</a>--></div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade in" id="second-tab">
+                        <div class="bank_title query-freight">
+                            <div class="xs_searchline">
+                                <label class="pull-left">
+                                    <div class="pull-left">
+                                        <span class="input-group" style="color: #333;">
+                                            <input id="checkbill" type="radio" name="chooseway" class="radio-select" value="checkbill" checked="checked" />提单号
+                                        </span>
+                                    </div>
+                                    <div class="pull-left" style="padding-top: 10px;">
+                                        <div class="selected selected_01" style="width: 140px;margin-left: 5px;">
+                                            <input id="cargobill" style="text-transform: uppercase;" name="billnbr" class="address_txt" placeholder="请输入单号" type="text" />
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="pull-left">
+                                    <div class="searchbtn-area extra-style" style="margin-top: 8px;">
+                                        <a href="index.htm#" class="btn btn-search" style="margin-left: 170px;" onClick="cargotraker()">查询</a>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="xs_searchline">
+                                <label class="pull-left">
+                                    <div class="pull-left">
+                                    <span class="input-group" style="letter-spacing: 8px;color: #333;">
+                                        <input id="checkcntr" type="radio" name="chooseway" class="radio-select" value="checkcntr" />箱号
+                                    </span>
+                                    </div>
+                                    <div class="pull-left" style="padding-top: 10px;">
+                                        <div class="selected selected_03" style="width: 140px;margin-left: 4px;">
+                                            <input id="cargocntrno" style="text-transform: uppercase;" name="cntrno" class="address_txt" placeholder="请输入箱号" type="text" />
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="pull-left" style="padding-top: 10px;margin-left: 5px;">
+                                    <span>船名</span>
+                                    <div class="selected selected_03">
+                                        <select title="请选择船名" name="shipname" id="selectshipname" class="single_selectship" style="width: 140px">
+                                            <option value="1TRIUMPH">1TRIUMPH(瑞洋厦门)</option>
+                                            <option value="ACACIA LIBRA">ACACIA LIBRA(瑞洋大阪)</option>
+                                            <option value="ACACIA TAURUS">ACACIA TAURUS(瑞洋大阪)</option>
+                                            <option value="ACACIA VIRGO">ACACIA VIRGO(瑞洋青岛)</option>
+                                            <option value="ANNA LISA">ANNA LISA(中通名古屋)</option>
+                                            <option value="ANONA IPSA">ANONA IPSA(泛亚青岛二号)</option>
+                                            <option value="AS LEONA">AS LEONA(亚海丽安娜)</option>
+                                            <option value="ATLANTIC EAST">ATLANTIC EAST(中通九州)</option>
+                                            <option value="BANI BHUM">BANI BHUM(宏地)</option>
+                                            <option value="BAOHANG">BAOHANG(亚海宝航)</option>
+                                            <option value="BEI HAI">BEI HAI(北海)</option>
+                                            <option value="BOMAR REGENT">BOMAR REGENT(宏民)</option>
+                                            <option value="CAPE FLINT">CAPE FLINT(金星弗林特)</option>
+                                            <option value="CCL NINGBO">CCL NINGBO(中通宁波)</option>
+                                            <option value="CHATTANOOGA">CHATTANOOGA(共同青岛)</option>
+                                            <option value="CHUN JIN">CHUN JIN(春锦)</option>
+                                            <option value="CONTSHIP BOX">CONTSHIP BOX(共同深圳)</option>
+                                            <option value="CONTSHIP ERA">CONTSHIP ERA(瑞洋厦门)</option>
+                                            <option value="COSCO KIKU">COSCO KIKU(中远菊花)</option>
+                                            <option value="DA PING">DA PING(大平)</option>
+                                            <option value="DA QING HE">DA QING HE(大清河)</option>
+                                            <option value="DANU BHUM">DANU BHUM(自由大地)</option>
+                                            <option value="DELIA">DELIA(中通德利亚)</option>
+                                            <option value="DONG FANG QIANG">DONG FANG QIANG(东方强)</option>
+                                            <option value="DS BLUE WAVE">DS BLUE WAVE(瑞洋名古屋)</option>
+                                            <option value="FESCO VOYAGER">FESCO VOYAGER(亚海远航)</option>
+                                            <option value="FRIESEDIJK">FRIESEDIJK(中通门司)</option>
+                                            <option value="GANTA BHUM">GANTA BHUM(宏财)</option>
+                                            <option value="GLORY FORTUNE">GLORY FORTUNE(海华香港)</option>
+                                            <option value="GLORY GUANDONG">GLORY GUANDONG(荣耀冠东)</option>
+                                            <option value="GLORY GUANGZHOU">GLORY GUANGZHOU(海华广州)</option>
+                                            <option value="GLORY OCEAN">GLORY OCEAN(海华东京)</option>
+                                            <option value="GLORY SEASON">GLORY SEASON(海华厦门)</option>
+                                            <option value="GLORY SHANGHAI">GLORY SHANGHAI(海华上海)</option>
+                                            <option value="GLORY SHENGDONG">GLORY SHENGDONG(荣耀盛东)</option>
+                                            <option value="GLORY TIANJIN">GLORY TIANJIN(海华天津)</option>
+                                            <option value="GLORY ZHENDONG">GLORY ZHENDONG(荣耀振东)</option>
+                                            <option value="HASCO QINGDAO">HASCO QINGDAO(海华青岛)</option>
+                                            <option value="HE BIN">HE BIN(和滨)</option>
+                                            <option value="HE JIN">HE JIN(和进)</option>
+                                            <option value="HEUNG-A MANILA">HEUNG-A MANILA(瑞洋马尼拉)</option>
+                                            <option value="HEUNG-A SINGAPORE">HEUNG-A SINGAPORE(瑞洋新加坡)</option>
+                                            <option value="HUNSA BHUM">HUNSA BHUM(宏智)</option>
+                                            <option value="INGENUITY">INGENUITY(锦安)</option>
+                                            <option value="INNWA STAR">INNWA STAR(宏星)</option>
+                                            <option value="IONIAN EXPRESS">IONIAN EXPRESS(达通博多)</option>
+                                            <option value="ITHA BHUM">ITHA BHUM(宏仁)</option>
+                                            <option value="JITRA BHUM">JITRA BHUM(宏勇)</option>
+                                            <option value="JJ NAGOYA">JJ NAGOYA(夏锦)</option>
+                                            <option value="JJ SKY">JJ SKY(锦江之宇)</option>
+                                            <option value="JJ STAR">JJ STAR(锦江之星)</option>
+                                            <option value="JJ SUN">JJ SUN(锦江之光)</option>
+                                            <option value="JJ TOKYO">JJ TOKYO(冬锦)</option>
+                                            <option value="JRS CORVUS">JRS CORVUS(共同名古屋)</option>
+                                            <option value="KAI PING">KAI PING(开平)</option>
+                                            <option value="KAMA BHUM">KAMA BHUM(宏德)</option>
+                                            <option value="KITI BHUM">KITI BHUM(亚海凯特)</option>
+                                            <option value="KMTC HAIPHONG">KMTC HAIPHONG(高丽海防)</option>
+                                            <option value="KUO CHANG">KUO CHANG(国强)</option>
+                                            <option value="KUO CHIA">KUO CHIA(国家)</option>
+                                            <option value="KUO LIN">KUO LIN(国麟)</option>
+                                            <option value="LILA BHUM">LILA BHUM(亚海丽萨)</option>
+                                            <option value="MARMAN">MARMAN(中通九州)</option>
+                                            <option value="MAX CENTAUR">MAX CENTAUR(达通名古屋)</option>
+                                            <option value="MAX PARTNER">MAX PARTNER(锦安1)</option>
+                                            <option value="MEDBAYKAL">MEDBAYKAL(中通吉祥)</option>
+                                            <option value="MILD CHORUS">MILD CHORUS(通和)</option>
+                                            <option value="MILD JAZZ">MILD JAZZ(通爵)</option>
+                                            <option value="MILD SONATA">MILD SONATA(通鸣)</option>
+                                            <option value="MILD TEMPO">MILD TEMPO(通韵)</option>
+                                            <option value="MILD TUNE">MILD TUNE(通律)</option>
+                                            <option value="MILD WALTZ">MILD WALTZ(通兹)</option>
+                                            <option value="NORDOCELOT">NORDOCELOT(正利斑虎)</option>
+                                            <option value="NORDPANTHER">NORDPANTHER(潘德)</option>
+                                            <option value="NORDPUMA">NORDPUMA(彪马)</option>
+                                            <option value="OPHELIA">OPHELIA(正利海鸥)</option>
+                                            <option value="OSG ALPHA">OSG ALPHA(共同厦门)</option>
+                                            <option value="OSG BEAUTEC">OSG BEAUTEC(共同名古屋)</option>
+                                            <option value="OSG BOSSTEC">OSG BOSSTEC(中通宝泰)</option>
+                                            <option value="OTANA BHUM">OTANA BHUM(达通神户)</option>
+                                            <option value="PACIFIC BUSAN">PACIFIC BUSAN(瑞洋宁波)</option>
+                                            <option value="PACIFIC NINGBO">PACIFIC NINGBO(锦顺)</option>
+                                            <option value="PACIFIC TIANJIN">PACIFIC TIANJIN(锦绣)</option>
+                                            <option value="PADIAN 2">PADIAN 2(亚海帕迪安)</option>
+                                            <option value="PANCON SUNSHINE">PANCON SUNSHINE(泛舟阳光)</option>
+                                            <option value="PANJA BHUM">PANJA BHUM(亚海帕尼亚)</option>
+                                            <option value="PIRA BHUM">PIRA BHUM(宏菊)</option>
+                                            <option value="PROSRICH">PROSRICH(龙裕)</option>
+                                            <option value="QIU JIN">QIU JIN(秋锦)</option>
+                                            <option value="RATANA THIDA">RATANA THIDA(宏国)</option>
+                                            <option value="RATHA BHUM">RATHA BHUM(宏瑞)</option>
+                                            <option value="RBD BOREA">RBD BOREA(共同珠海)</option>
+                                            <option value="RBD ESPERANZA">RBD ESPERANZA(中通大阪)</option>
+                                            <option value="SEA OF LUCK">SEA OF LUCK(金星吉祥)</option>
+                                            <option value="SINOTRANS MANILA">SINOTRANS MANILA(中外运马尼拉)</option>
+                                            <option value="SINOTRANS NAGOYA">SINOTRANS NAGOYA(外运名古屋)</option>
+                                            <option value="SITC BANGKOK">SITC BANGKOK(海丰曼谷)</option>
+                                            <option value="SITC GUANGDONG">SITC GUANGDONG(海丰广东)</option>
+                                            <option value="SITC GUANGXI">SITC GUANGXI(海丰广西)</option>
+                                            <option value="SITC HANSHIN">SITC HANSHIN(海丰阪神)</option>
+                                            <option value="SITC KAWASAKI">SITC KAWASAKI(海丰川崎)</option>
+                                            <option value="SITC KEELUNG">SITC KEELUNG(海丰基隆)</option>
+                                            <option value="SITC LIAONING">SITC LIAONING(海丰辽宁)</option>
+                                            <option value="SITC MACAO">SITC MACAO(海丰澳门)</option>
+                                            <option value="SITC ZHEJIANG">SITC ZHEJIANG(海丰浙江)</option>
+                                            <option value="SUPA BHUM">SUPA BHUM(宏兰)</option>
+                                            <option value="TRIUMPH">TRIUMPH(锦怡)</option>
+                                            <option value="TZINI">TZINI(国尼)</option>
+                                            <option value="ULTIMA">ULTIMA(中通青岛)</option>
+                                            <option value="VENUS C">VENUS C(海华大阪)</option>
+                                            <option value="WAN HAI 233">WAN HAI 233(利春)</option>
+                                            <option value="WAN HAI 235">WAN HAI 235(民春)</option>
+                                            <option value="WARNOW CARP">WARNOW CARP(海华瓦诺)</option>
+                                            <option value="WARNOW TROUT">WARNOW TROUT(亚海瓦尔特)</option>
+                                            <option value="XINDE KEELUNG">XINDE KEELUNG(中外运基隆快航)</option>
+                                            <option value="XING PING">XING PING(兴平)</option>
+                                            <option value="XIU HONG">XIU HONG(秀鸿)</option>
+                                            <option value="YAN HE">YAN HE(艳河)</option>
+                                            <option value="YM HAWK">YM HAWK(威明)</option>
+                                            <option value="YM HEIGHTS">YM HEIGHTS(宇明)</option>
+                                            <option value="YM HORIZON">YM HORIZON(环明)</option>
+                                            <option value="YM IDEALS">YM IDEALS(英明)</option>
+                                            <option value="YM IMMENSE">YM IMMENSE(云明)</option>
+                                            <option value="YM INAUGURATION">YM INAUGURATION(远明)</option>
+                                            <option value="YM INTELLIGENT">YM INTELLIGENT(精明)</option>
+                                        </select>
+                                    </div>
+                                    <input type="hidden" id="hideshipname" />
+                                </label>
+                                <label class="pull-left" style="padding-top: 10px;margin-left: 5px;">
+                                    <span>船次</span>
+                                    <div class="selected selected_03" style="width: 115px;">
+                                        <input id="selectvoyageno" name="voyageno" class="selected-start" style="width:80px;" value="" />
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <!--<div class="searchbtn-area extra-style"><a href="#" class="btn btn-search" onClick="cargotraker()">查询</a></div>-->
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade in" id="second-tab">
+                        <div class="input-wrap">
+                            <label>提单号</label>
+                            <input type="text" id="cargobill" placeholder="请输入提单号" />
+                        </div>
+
+                        <div class="searchbtn-area extra-style"><a href="index.htm#" class="btn btn-search" onClick="cargotraker()">查询</a></div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade in" id="third-tab">
+                        <div class="input-wrap">
+                            <label>提单号</label>
+                            <input type="text" id="putbill" placeholder="请输入提单号" />
+                        </div>
+                        <div class="searchbtn-area extra-style"><a href="index.htm#" class="btn btn-search" onClick="putcntr()">查询</a></div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade in" id="forth-tab">
+                        <div class="input-wrap">
+                            <label>提单号</label>
+                            <input type="text" id="dobillnbr" placeholder="请输入提单号" />
+                        </div>
+                        <div class="searchbtn-area extra-style"><a href="javascript:dofeequery();" class="btn btn-search">查询</a></div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade in" id="five-tab">
+                        <div class="five-wrap clearfix">
+                            <div class="aside-left">
+                                <div class="select-wrap clearfix">
+                                    <!--<label  class="pull-left">
+                                        <span>港口</span>
+
+                                            <div class="selected">
+                                                <input id="zqfport" class="selected-start"  />
+                                                <input type="hidden" id="hideport"  name="portcod" />
+                                            </div>
+                                    </label>-->
+
+                                    <label for="" class="pull-left">
+                                        <span class="padding15px">国家</span>
+                                        <div class="selected selected_01">
+                                            <select title="请选择国家" name="sType" id="selectcountry" class="single_select3">
+                                                <option value="SG">新加坡</option>
+                                                <option value="TH">泰国</option>
+                                                <option value="TW">中国台湾</option>
+                                                <option value="US">美国</option>
+                                                <option value="VN">越南</option>
+                                                <option value="CN">中国</option>
+                                                <option value="GB">英国</option>
+                                                <option value="HK">中国香港</option>
+                                                <option value="JP">日本</option>
+                                                <option value="KR">韩国</option>
+                                            </select>
+                                        </div>
+                                        <span class="padding15px">港口</span>
+                                        <div class="selected selected_01">
+                                            <select title="请选择港口" name="sType" id="selectport" class="single_select3">
+                                                <!--<option th:each="portdetail:${port}" th:value="${portdetail.PORT_COD}" th:text="${portdetail.C_PORT_NAM}"></option>-->
+                                            </select>
+                                        </div>
+                                    </label>
+                                    <label for="" class="pull-left ">
+
+                                    </label>
+                                    <label class="pull-right">
+                                        <span>状态</span>
+                                        <div class="selectedrow">
+                                            <select title="请选择状态" name="stat" id="stat" class="single_select" style="display: none;">
+                                                <option selected="selected" value="0">请选择状态</option>
+                                                <option value="1">未还箱</option>
+                                                <option value="2">已还箱未收</option>
+                                                <option value="3">已收</option>
+                                                <option value="-1">退费未退</option>
+                                                <option value="-2">退费已退</option>
+                                            </select>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="aside-right">
+                                <div class="input-wrap">
+                                    <label>提单号</label>
+                                    <input type="text" placeholder="请输入提单号" style="width: 100px" id="feebill" />
+                                </div>
+                                <div class="searchbtn-area extra-style" style="margin-top:20px"><a href="index.htm#" class="btndang btn-search" onClick="zqfee()">查询</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- 星星 -->
+        <!--<div class="star">-->
+            <!--<span class="star-box star-box-01"></span>-->
+            <!--<span class="star-box star-box-02"></span>-->
+            <!--<span class="star-box star-box-03"></span>-->
+            <!--<span class="star-box star-box-04"></span>-->
+            <!--<span class="star-box star-box-05"></span>-->
+            <!--<span class="star-box star-box-06"></span>-->
+            <!--<span class="star-box star-box-07"></span>-->
+            <!--<span class="star-box star-box-08"></span>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; 云朵 &ndash;&gt;-->
+        <!--<div class="cloud">-->
+            <!--<span class="cloud-01"><img src="images/index/cloud-01.png" alt="" class="img-responsive"/></span>-->
+            <!--<span class="cloud-02"><img src="images/index/cloud-02.png" alt="" class="img-responsive"/></span>-->
+            <!--<span class="cloud-03"><img src="images/index/cloud-03.png" alt="" class="img-responsive"/></span>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; 船 &ndash;&gt;-->
+        <!--<div class="boat">-->
+                <!--<span class="boat-wrap boat-01">-->
+                   <!--<img src="images/index/boat-01.png" alt="" class="img-responsive"/>-->
+                    <!--<i></i>-->
+                <!--</span>-->
+                <!--<span class="boat-wrap boat-02">-->
+                   <!--<img src="images/index/boat-02.png" alt="" class="img-responsive"/>-->
+                    <!--<i></i>-->
+                <!--</span>-->
+        <!--</div>-->
+    </div>
+</div>
+<!-- end -->
+<!-- main-content -->
+<div class="main-content">
+    <div class="main">
+        <div class="row clearfix">
+            <div class="left-side">
+                <h2 class="subtitle"><em class="icon01">信息查询</em><a href="index.htm#" class="more hide">更多 ></a></h2>
+                <div class="links">
+                    <div class="links-inner">
+                        <a href="sailingdate.htm">
+                            <i class="links-items links-icon01"></i><span>干线船期查询</span>
+                        </a>
+                        <a href="sailingdatebranch.htm">
+                            <i class="links-items links-icon02"></i><span>支线船期查询</span>
+                        </a>
+                        <a href="branchqueryindex.htm">
+                            <i class="links-items links-icon03"></i><span>多式联运查询</span>
+                        </a>
+                    </div>
+                    <div class="links-inner">
+                        <a href="shipstate.htm">
+                            <i class="links-items links-icon04"></i><span>船舶动态</span>
+                        </a>
+                        <a href="branchqueryindexNational.htm">
+                            <i class="links-items links-icon05"></i><span>国际中转查询</span>
+                        </a>
+                        <a href="cntrtracker.htm">
+                            <i class="links-items links-icon06"></i><span>集装箱跟踪</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <h2 class="subtitle"><em class="icon02">信息公告</em><a href="noticemore.htm" class="more">更多 ></a></h2>
+                <!-- 焦点图 新闻列表 -->
+                <div class="focus-news clearfix">
+                    <!-- Swiper -->
+                    <div class="index-swiper">
+                        <div class="swiper-container" id="indexSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="images/index/swiper-banner-01.jpg" alt="" class="img-responsive" /></div>
+                                <div class="swiper-slide"><img src="images/index/swiper-banner-02.jpg" alt="" class="img-responsive" /></div>
+                                <div class="swiper-slide"><img src="images/index/swiper-banner-03.jpg" alt="" class="img-responsive" /></div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <div class="news">
+                        <ul class="news-lists">
+                            <li>
+                                <a href="noticeinfo.htm">
+                                    <!--  <span class="news-timer" th:text="${#calendars.format(notice.notice_tim,'yyyy-MM-dd')}">2016-04-26</span>-->
+                                    <span class="news-timer">2019-01-08</span>
+                                    <p class="news-text">
+
+                                        <em class="news-remark" style="color:red;">[置顶]</em>
+
+                                        
+                                      <!-- <a th:href="@{'/noticeinfo?noticeno='+${notice.notice_no}}">-->
+
+                                        <span>关于厦门和香港征收LSS附加费的通知</span>
+
+
+                                        <!--</a><em class="news-remark" th:text="'['+${notice.notice_typ}+']'" >[船期]</em>
+                                        <span th:text="${#strings.length(notice.notice_title) gt 15}?${#strings.substring(notice.notice_title,1,15)+'...'}:${notice.notice_title}">香港海防航线2016年5月船期表</span>
+                                        -->
+                                        </p>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <ul class="news-lists">
+                            <li>
+                                <a href="noticeinfo_2.htm">
+                                    <!--  <span class="news-timer" th:text="${#calendars.format(notice.notice_tim,'yyyy-MM-dd')}">2016-04-26</span>-->
+                                    <span class="news-timer">2018-07-30</span>
+                                    <p class="news-text">
+
+                                        <em class="news-remark" style="color:red;">[置顶]</em>
+
+                                        
+                                      <!-- <a th:href="@{'/noticeinfo?noticeno='+${notice.notice_no}}">-->
+
+                                        <span>关于对网上支付业务开具电子发票的通知</span>
+
+
+                                        <!--</a><em class="news-remark" th:text="'['+${notice.notice_typ}+']'" >[船期]</em>
+                                        <span th:text="${#strings.length(notice.notice_title) gt 15}?${#strings.substring(notice.notice_title,1,15)+'...'}:${notice.notice_title}">香港海防航线2016年5月船期表</span>
+                                        -->
+                                        </p>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <ul class="news-lists">
+                            <li>
+                                <a href="noticeinfo_3.htm">
+                                    <!--  <span class="news-timer" th:text="${#calendars.format(notice.notice_tim,'yyyy-MM-dd')}">2016-04-26</span>-->
+                                    <span class="news-timer">2019-05-31</span>
+                                    <p class="news-text">
+
+                                        
+
+                                        <em class="news-remark">[船期]</em>
+                                      <!-- <a th:href="@{'/noticeinfo?noticeno='+${notice.notice_no}}">-->
+
+                                        <span>阪神穿梭快航2019年6月船期表（更正一）</span>
+
+
+                                        <!--</a><em class="news-remark" th:text="'['+${notice.notice_typ}+']'" >[船期]</em>
+                                        <span th:text="${#strings.length(notice.notice_title) gt 15}?${#strings.substring(notice.notice_title,1,15)+'...'}:${notice.notice_title}">香港海防航线2016年5月船期表</span>
+                                        -->
+                                        </p>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <ul class="news-lists">
+                            <li>
+                                <a href="noticeinfo_6.htm">
+                                    <!--  <span class="news-timer" th:text="${#calendars.format(notice.notice_tim,'yyyy-MM-dd')}">2016-04-26</span>-->
+                                    <span class="news-timer">2019-05-31</span>
+                                    <p class="news-text">
+
+                                        
+
+                                        <em class="news-remark">[船期]</em>
+                                      <!-- <a th:href="@{'/noticeinfo?noticeno='+${notice.notice_no}}">-->
+
+                                        <span>青岛快航2019年6月船期表（更正一）</span>
+
+
+                                        <!--</a><em class="news-remark" th:text="'['+${notice.notice_typ}+']'" >[船期]</em>
+                                        <span th:text="${#strings.length(notice.notice_title) gt 15}?${#strings.substring(notice.notice_title,1,15)+'...'}:${notice.notice_title}">香港海防航线2016年5月船期表</span>
+                                        -->
+                                        </p>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <ul class="news-lists">
+                            <li>
+                                <a href="noticeinfo_4.htm">
+                                    <!--  <span class="news-timer" th:text="${#calendars.format(notice.notice_tim,'yyyy-MM-dd')}">2016-04-26</span>-->
+                                    <span class="news-timer">2019-05-31</span>
+                                    <p class="news-text">
+
+                                        
+
+                                        <em class="news-remark">[船期]</em>
+                                      <!-- <a th:href="@{'/noticeinfo?noticeno='+${notice.notice_no}}">-->
+
+                                        <span>九州釜山线2019年6月船期表（更正二）</span>
+
+
+                                        <!--</a><em class="news-remark" th:text="'['+${notice.notice_typ}+']'" >[船期]</em>
+                                        <span th:text="${#strings.length(notice.notice_title) gt 15}?${#strings.substring(notice.notice_title,1,15)+'...'}:${notice.notice_title}">香港海防航线2016年5月船期表</span>
+                                        -->
+                                        </p>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <ul class="news-lists">
+                            <li>
+                                <a href="noticeinfo_5.htm">
+                                    <!--  <span class="news-timer" th:text="${#calendars.format(notice.notice_tim,'yyyy-MM-dd')}">2016-04-26</span>-->
+                                    <span class="news-timer">2019-05-31</span>
+                                    <p class="news-text">
+
+                                        
+
+                                        <em class="news-remark">[船期]</em>
+                                      <!-- <a th:href="@{'/noticeinfo?noticeno='+${notice.notice_no}}">-->
+
+                                        <span>四季快航2019年6月船期表（更正一）</span>
+
+
+                                        <!--</a><em class="news-remark" th:text="'['+${notice.notice_typ}+']'" >[船期]</em>
+                                        <span th:text="${#strings.length(notice.notice_title) gt 15}?${#strings.substring(notice.notice_title,1,15)+'...'}:${notice.notice_title}">香港海防航线2016年5月船期表</span>
+                                        -->
+                                        </p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 优势服务 -->
+    <div class="advantage">
+        <div class="main">
+            <div class="advantage-inner">
+                <div class="advantage-list clearfix">
+                    <div class="advan-details">
+                            <span class="detais-img">
+                                <img src="images/index/detais-img-01.png" alt="" class="img-responsive" />
+                            </span>
+                        <div class="details-title">
+                            <h3>班期合理</h3>
+                            <p>Reasonable schedule</p>
+                        </div>
+                    </div>
+
+                    <div class="advan-details">
+                            <span class="detais-img">
+                                <img src="images/index/detais-img-02.png" alt="" class="img-responsive" />
+                            </span>
+                        <div class="details-title">
+                            <h3>手续简便</h3>
+                            <p>Simple procedure</p>
+                        </div>
+                    </div>
+                    <div class="advan-details">
+                            <span class="detais-img">
+                                <img src="images/index/detais-img-03.png" alt="" class="img-responsive" />
+                            </span>
+                        <div class="details-title">
+                            <h3>交货精准</h3>
+                            <p>Precise delivery</p>
+                        </div>
+                    </div>
+                    <div class="advan-details last">
+                            <span class="detais-img">
+                                <img src="images/index/detais-img-04.png" alt="" class="img-responsive" />
+                            </span>
+                        <div class="details-title">
+                            <h3>安全高效</h3>
+                            <p>Safe and efficient</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end -->
+<!-- footer -->
+
+
+<div class="footer">
+    <div class="footer-links">
+        <div class="main clearfix w1000">
+            <dl class="footer-inner">
+                <dt>关于我们</dt>
+                <dd>
+                    <a target="_blank" href="www_jjshipping_default.html">公司官网</a>
+                    <a href="intoJinjiang.htm">走进锦江</a>
+                    <a href="contactUs.htm"> 联系我们</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>新手上路</dt>
+                <dd>
+                    <a href="serviceLogistics.htm">服务流程</a>
+                    <a href="paymentMethod.htm">支付方式</a>
+                    <a href="importExchangeProcess.htm">进口换单流程</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>常用信息</dt>
+                <dd>
+                    <a href="shipData.htm">船舶资料</a>
+                    <a href="portInformation.htm">港口信息</a>
+                    <a href="yardInformation.htm">堆场信息</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>帮助中心</dt>
+                <dd>
+                    <a href="proxyDirectory.htm">代理名录</a>
+                    <a href="overdueFeeStandard.htm">超期费标准</a>
+                    <!--<a th:href="@{'/additionFeeSchedule'}">附加费明细</a>-->
+                    <a href="fastDeliveryService.htm">快速交货服务</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner last-child">
+                <dt>联系我们</dt>
+                <dd>
+                    <span class="tel-icon"></span>
+                    <p class="tel-number">400-921-2288</p>
+                    <span class="qr_code"></span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="main clearfix w1000">
+            <div class="copyright">
+                <p>Copyright © 2015上海锦江航运(集团)有限公司 All Rights Reserved.  </p>
+                <p>沪ICP备13047598号</p>
+            </div>
+            <div class="friendlinks">
+                <a href="noticemore.htm">信息公告</a>
+                <span>|</span>
+                <a href="legalNotice.htm">法律申明</a>
+                <span>|</span>
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256022543'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1256022543' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end -->
+<div class="sidebar">
+    <a href="javascript:void(0);" style="cursor: context-menu;">
+        <span class=""></span>
+    </a>
+    <a target="_blank" href="http://q.url.cn/cdVSx4?_type=wpa%26qidian=true">
+        <span class="online-consult"></span>
+    </a>
+    <a href="javascript:void(0);" class="tel-parent">
+        <span class="telphone telImg"></span>
+        <p class="tel-details">
+            <s class="telphone"></s>售后服务热线:<br />400-921-2288
+        </p>
+    </a>
+    <a href="javascript:void(0);">
+        <mark class="backto-top"></mark>
+    </a>
+</div>
+<!-- 轮播 -->
+<div class="index-lunbo-wrap">
+    <input id="lbbool" type="hidden" value="1" />
+    <div class="close-lunbo"></div>
+    <div class="close-lunbo-box"></div>     <!-- 可以点击到的 -->
+    <!-- Swiper -->
+    <div class="swiper-container index-lunbo">
+        <div class="swiper-wrapper">
+            <a class="swiper-slide" style="background:url(http://ejj.jjshipping.cn:81/attach/ecAdvert/wb1555461383852.png) no-repeat bottom center;" href="index.htm">
+                <input class="lbclass" type="hidden" id="11" value="http://ejj.jjshipping.cn:81/attach/ecAdvert/wb1555461383853.png" />
+            </a>
+            <!--<div class="swiper-slide" style="background:url(images/index/lunbo6.png) no-repeat bottom center;"></div>-->
+            <!--<div class="swiper-slide" style="background:url(images/index/lunbo7.png) no-repeat bottom center;"></div>-->
+        </div>
+        <!-- Add Pagination -->
+        <div class="pagination"></div>
+    </div>
+    <!-- end -->
+</div>
+<div class="open-lunbo">
+    <img height="136" width="386" alt="" src="attach/ecAdvert/wb1555461383853.png" />
+</div>
+<!--广告-->
+<div class="adBox">
+    <input id="adbool" type="hidden" value="1" />
+    <div class="blankbg"></div>
+    <div class="adcont">
+        <span class="close">
+            <img src="images/icon/close-icon.png" />
+        </span>
+        <div class="swiper-container adSwiper">
+            <div class="swiper-wrapper" style="overflow:hidden;">
+                <div class="swiper-slide">
+                    <img alt="" src="attach/ecAdvert/wb1556095513918.png" />
+                    <input class="adclass" type="hidden" id="31" value="10000" />
+                </div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination-white adPagination"></div>
+    </div>
+</div>
+
+<!-- Javascript with AMD  -->
+<script src="js/lib/require.js" data-main="js/app/main"></script>
+<script>
+
+    BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800097653, selector: 'BizQQWPA'});
+    //换单查询
+    function dofeequery(){
+
+        window.open("/doquery?billnbr="+$("#dobillnbr").val(),'top');
+    }
+    //货物跟踪
+    function cargotraker(){
+        if ($('.input-group input[name="chooseway"]:checked ').val() == 'checkbill'){
+            var billnbr = $("#cargobill").val();
+            if (billnbr ==""){
+                msg('请填写提单号');
+                return;
+            }
+            var url = "/cargosearch?para=checkbill"+"@"+$("#cargobill").val();
+            window.open(url,'top');
+        }
+        if ($('.input-group input[name="chooseway"]:checked ').val() == 'checkcntr') {
+            var cntrno = $("#cargocntrno").val();
+            if (cntrno ==""){
+                msg('请填写箱号');
+                return;
+            }
+            var shipname = $("#selectshipname").val();
+            if (shipname ==""){
+                msg('请选择船');
+                return;
+            }
+            var voyageno = $("#selectvoyageno").val();
+            if (voyageno ==""){
+                msg('请选择航次');
+                return;
+            }
+            var url = "/cargosearch?para=checkcntr"+"@"+$("#selectshipname").val()+
+                    "@"+$("#selectvoyageno").val()+"@"+$("#cargocntrno").val();
+            window.open(url,'top');
+        }
+    }
+//    function cargotraker(){
+//        var url = "/cargosearch?billnbr="+$("#cargobill").val();
+//        window.open(url,'top');
+//    }
+    //放箱查询
+    function putcntr(){
+        window.open("/cntrfang?billnbr="+$("#putbill").val(),'top');
+    }
+    //滞期费查询
+
+    function zqfee(){
+
+        if($("#feebill").val()==''){
+            alert("请输入提单号!");
+
+            return;
+        }
+
+        if($("#selectport").val()==''||$("#selectport").val()==null){
+            alert("请选择港口!");
+            return;
+        }else {
+            var url = "/demurragequery?para=" + $("#selectcountry").val() + "@" + $("#selectport").val() + "@" + $("#stat").val() + "@" + $("#feebill").val();
+            console.log(url);
+            window.open(url, 'top');
+        }
+    }
+</script>
+<script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+<!--<script type="text/javascript" src="js/lib/swiper.min.js"></script>-->
+<script type="text/javascript" src="js/lib/idangerous.swiper.min.js"></script>
+<script type="text/javascript" src="js/app/common.js"></script>
+<script>
+    var swiper = new Swiper('.index-lunbo', {
+        pagination: '.pagination',
+        paginationClickable: true,
+        autoplay : 6000,
+        spaceBetween: 30,
+        //  loop:true,
+        effect: 'fade'
+    });
+
+    //让首页轮播默认展开
+    $('.index-lunbo-wrap').animate({'left':'-100%'}, 400);
+    $('.open-lunbo').animate({'left':'0%'}, 300);
+    $('.close-lunbo-box').click(function(event) {
+        var cimg = $('.lbclass').val();
+        $('.open-lunbo img').attr('src',cimg);
+//        if(swiper.activeIndex == 0){
+//            $('.open-lunbo img').attr('src',$("#1").val());
+//        }
+        $('.index-lunbo-wrap').animate({'left':'-100%'}, 400);
+        $('.open-lunbo').animate({'left':'0%'}, 300)
+    });
+    $('.open-lunbo').click(function(event) {
+        $('.index-lunbo-wrap').animate({'left':'0%'}, 400);
+        $('.open-lunbo').animate({'left':'-100%'}, 300)
+    });
+    if ($("#adbool").val()=="0"){
+        $(".adBox").fadeOut();
+        $("body,html").css("overflow","auto")
+    }
+    // 广告
+    var adswiper = new Swiper('.adSwiper', {
+        pagination: '.adPagination',
+        autoplay: 3000,
+        onlyExternal : true,
+        spaceBetween: 30,
+        onSlideChangeStart:function() {
+            var adtime = $('.adclass').val();
+            setTimeout(function () {
+                $(".adBox").fadeOut();
+                $("body,html").css("overflow", "auto")
+            }, adtime)
+        }
+    })
+    $(".close").click(function () {
+        $(".adBox").fadeOut();
+        $("body,html").css("overflow","auto")
+    })
+</script>
+
+
+</body>
+</html>

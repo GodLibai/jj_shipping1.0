@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Basic Page Needs================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache" />
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache" />
+    <META HTTP-EQUIV="Expires" CONTENT="0" />
+    <title>锦江航运</title>
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- IOS6全屏 Chrome高版本全屏 ================================================== -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+    <!-- reset and core CSS -->
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+    <link href="css/allcss.css" rel="stylesheet" type="text/css" />
+    <link href="css/0818.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="css/ui-dialog.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        .bill table.display tr th{padding:0px 2px;}
+        .bill table.display tr td{padding:10px 2px;}
+        .bill table.display tr td a{margin-left:8px;}
+
+    </style>
+</head>
+<body>
+
+    <!-- header -->
+    <div class="loginbar">
+    <div class="main clearfix">
+        <div class="login-submit">
+            <div class="login-dropdown"></div>
+            <span class="login-wrap">
+                <a href="login_3.htm">登录</a>
+                <i class="split-items">|</i>
+                <a href="register.htm">注册</a>
+            </span>
+            <a href="indexen.htm">English</a>
+        </div>
+    </div>
+</div>
+
+    <!-- end -->
+    <!-- header -->
+    <div class="header">
+        <script language="javascript">
+            /*<![CDATA[*/
+            function coupon() {
+                window.location.href='/coupon';
+            }
+            function countdown() {
+                window.location.href='/countdown';
+            }
+            function seckilling() {
+                window.location.href='/seckilling';
+            }
+            function xyUserEntry() {
+                //window.location.href='/seckillover';
+                if ($("#xytype").val() !='CS' && $("#xytype").val() !='OB') {
+                    window.open('http://op.jjshipping.cn/eservices/index-nav.jsp?_menu=menu1');
+                }else{
+                    $("#xytype").val('XY')
+                }
+            }
+            function impChangeSingle() {
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=1');
+                $("#xytype").val('CS');
+            }
+            function onlinbox(){
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=2');
+                $("#xytype").val('OB');
+            }
+            /*]]>*/
+        </script>
+        <div class="main clearfix">
+            <h1 class="logo">
+                <a href="www_jjshipping_default.html" target="_blank"><img src="images/index/logo.png" alt="" /></a>
+            </h1>
+            <div class="top-nav">
+                <a href="index.htm" class="active">首页</a>
+                <a href="home.htm" class="line">在线订舱</a>
+                <a href="cargosearch.htm" class="defaultline">信息查询与订阅</a>
+            <!-- <a  class="discount-nav" >优惠信息
+                    <ul class="dis-nav" >
+                        <li onclick="seckilling();" >秒杀</li>
+                        <li  onclick="coupon();">优惠劵</li>
+
+
+                    </ul>
+                </a>-->
+                <input type="hidden" id="xytype" name="xytype" />
+                <a href="cargosearch.htm#" onclick="xyUserEntry();" class="discount-nav">协议用户入口
+                    <ul class="dis-nav" style="width: 140px;">
+                        <li onclick="impChangeSingle();">进口换单网上预约</li>
+                        <li onclick="onlinbox();">网上放箱</li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- end -->
+    <!-- tit -->
+    <div class="g-tit">
+        首页 &gt; <span>货物跟踪</span>
+    </div>
+    <!-- /tit end -->
+        <!-- main -->
+        <div class="main pb40 clearfix">
+            <!-- left -->
+            <div class="leftsidebar  leftsidebar_01">
+
+    <dl>
+        <dt><img src="images/leftside-dt-icon6.png" alt="" />信息查询订阅</dt>
+        <dd><a href="cargosearch.htm" class="cur">货物跟踪</a></dd>
+        <dd><a href="sailingdate.htm" class="sailingdate">干线船期查询</a></dd>
+        <dd><a href="sailingdatebranch.htm" class="sailingdatebranch">支线船期查询</a></dd>
+        <dd><a href="shipstate.htm" class="shipstate">船舶动态</a></dd>
+        <dd><a href="branchqueryindex.htm" class="branchqueryindex">多式联运查询</a></dd>
+        <dd><a href="branchqueryindexNational.htm" class="branchqueryindexNational">国际中转查询</a></dd>
+        <dd><a href="demurragequery.htm" class="demurragequery">滞期费查询</a></dd>
+        <dd><a href="cntrfang.htm" class="cntrfang">放箱查询</a></dd>
+        <dd><a href="changeSingleInfo.htm" class="changeSingleInfo">换单信息查询</a></dd>
+        <dd><a href="cntrtracker.htm" class="cntrtracker">集装箱跟踪</a></dd>
+        <dd><a href="additionFeeSchedule.htm" class="additionFeeSchedule">附加费明细</a></dd>
+        <dd><a href="http://ejj.jjshipping.cn/subscriptionInfo" class="subscriptionInfo">消息订阅</a></dd>
+    </dl>
+
+</div>
+            <!-- /left end -->
+            <form action="cargosearch.htm" name="queryFrom" id="queryFrom" method="post">
+            <!-- right -->
+                 <div class="rightcolumn  query-freight">
+                <!--<div class="bank_title">-->
+                    <!--<label  class="pull-left ">-->
+                        <!--<span class="padding15px">提单号</span>-->
+                        <!--<div class="selected selected_01">-->
+                            <!--<input id="billnbr" style="text-transform: uppercase;"  name ="billnbr"  class="address_txt" placeholder="请输入单号" type="text" th:value="${billnbr}"/>-->
+                        <!--</div>-->
+                    <!--</label>-->
+                    <!--<input type="button"  id="butQuery" class="search_btn" value="查询"/>-->
+                    <!--<input type="button"  id="butWei" class="button_btna" value="微信跟踪"/>-->
+                     <!--<input type="button"  id="butReset" class="button_btn" value="重置"/>-->
+                <!--</div>-->
+                <div class="bank_title" style="height: auto;padding: 0px;">
+                    <div class="xs_searchline">
+                        <label class="pull-left">
+                            <div class="pull-left">
+                                <span class="input-group" style="color: #333;">
+                                    <input id="checkbill" type="radio" name="chooseway" class="radio-select" value="checkbill" checked="checked" />提单号
+                                </span>
+                            </div>
+                            <div class="pull-left" style="padding-top: 10px;">
+                                <div class="selected selected_01">
+                                    <input id="billnbr" style="text-transform: uppercase;" name="billnbr" class="address_txt" placeholder="请输入单号" type="text" value="" />
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="xs_searchline">
+                        <label class="pull-left">
+                            <div class="pull-left">
+                                <span class="input-group" style="letter-spacing: 8px;color: #333;">
+                                    <input id="checkcntr" type="radio" name="chooseway" class="radio-select" value="checkcntr" />箱号
+                                </span>
+                            </div>
+                            <div class="pull-left" style="padding-top: 10px;">
+                                <div class="selected selected_01">
+                                    <input id="cntrno" style="text-transform: uppercase;" name="cntrno" class="address_txt" placeholder="请输入箱号" type="text" value="" />
+                                </div>
+                            </div>
+                        </label>
+                        <label class="pull-left" style="padding-top: 10px;">
+                            <span class="padding15px" style="letter-spacing: 8px">船名</span>
+                            <div class="selected selected_03">
+                                <input id="carshipname" name="shipname" class="selected-start" style="width:120px;" value="" />
+                                <input id="eshipname" name="eshipname" type="hidden" value="" />
+                            </div>
+                        </label>
+                        <label class="pull-left" style="padding-top: 10px;">
+                            <span class="padding15px" style="letter-spacing: 8px">航次</span>
+                            <div class="selected selected_03">
+                                <input id="carvoyageno" name="voyageno" class="selected-start" style="width:120px;" value="" />
+                            </div>
+                        </label>
+                        <!--<label for="" class="pull-left" style="padding-top: 10px;">-->
+                            <!--<span class="padding15px" style="letter-spacing: 8px">船名</span>-->
+                            <!--<div class="selected selected_03">-->
+                                <!--<select title="请选择船名" name="shipname" id="selectshipname" class="single_selectship">-->
+                                    <!--<option th:each="shipnamedetail :${shipName}" th:value="${shipnamedetail.E_SHIP_NAM}"-->
+                                            <!--th:selected="${shipname}? ${#strings.contains(shipnamedetail.E_SHIP_NAM,shipname)}:false"-->
+                                            <!--th:text="${shipnamedetail.E_SHIP_NAM+'('+shipnamedetail.C_SHIP_NAM+')'}"></option>-->
+
+                                    <!--&lt;!&ndash;th:each="countrydetail :${country}" th:value="${countrydetail.COUNTRY_COD}"&ndash;&gt;-->
+                                    <!--&lt;!&ndash;th:selected="${countrys}? ${#strings.contains(countrydetail.COUNTRY_COD,countrys)}:false"&ndash;&gt;-->
+                                    <!--&lt;!&ndash;th:text="${countrydetail.C_COUNTRY_NAM}"></option>&ndash;&gt;-->
+                                <!--</select>-->
+                            <!--</div>-->
+                            <!--<input type="hidden" name="hideshipname" id="hideshipname" th:value="${hideshipname}"/>-->
+                        <!--</label>-->
+                        <!--<label class="pull-left" style="padding-top: 10px;">-->
+                            <!--<span class="padding15px" style="letter-spacing: 8px">航次</span>-->
+                            <!--<div class="selected selected_03">-->
+                                <!--<input id="selectvoyageno" name="voyageno" class="selected-start" style="width:120px;" th:value="${voyageno}"/>-->
+                            <!--</div>-->
+                        <!--</label>-->
+                    </div>
+                    <div class="xs_buttons">
+                        <div class="xs_button">
+                            <button id="butQuery" class="search_btn">搜索</button>
+                        </div>
+                        <div class="xs_button">
+                            <button id="butReset" class="button_btn">重置</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear20px"></div>
+                <div class="sea_titlea">提单状态</div>
+                <div class="padding20">
+                    <div class="sub_state_div">
+                        <div class="ss_title">
+                            <span>提单号：<em id="billno" style="text-transform: uppercase;"></em></span>
+                            <span>船名/航次：<em></em>
+                                <em></em></span>
+                            <span>港口：<em></em></span>
+                        </div>
+                        <div class="ss_content">
+                            <div class="sc_model  sc_model_clk">
+                                <div class="sc_img">
+                                    <div>
+                                        <img src="images/zz_order/zz_bg1.png" />
+                                    </div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+
+                                </div>
+                                <div class="sc_tit">
+                                    <span>已订舱</span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+
+                                    </div>
+
+                               <!-- <input type="hidden" name="aaa" th:value="${statedetail.value}"/>-->
+                                <div class="sc_p"></div>
+                            </div>
+                            <div class="sc_model  sc_model_clk">
+                                <div class="sc_img">
+                                    
+                                    <div>
+                                        <img src="images/zz_order/zz_bg2.png" />
+                                    </div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+
+                                </div>
+                                <div class="sc_tit">
+                                    
+                                    <span>已放箱</span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+
+                                    </div>
+
+                               <!-- <input type="hidden" name="aaa" th:value="${statedetail.value}"/>-->
+                                <div class="sc_p"></div>
+                            </div>
+                            <div class="sc_model  sc_model_clk">
+                                <div class="sc_img">
+                                    
+                                    
+                                    <div>
+                                        <img src="images/zz_order/zz_bg3.png" />
+                                    </div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+
+                                </div>
+                                <div class="sc_tit">
+                                    
+                                    
+                                    <span>已进站</span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+
+                                    </div>
+
+                               <!-- <input type="hidden" name="aaa" th:value="${statedetail.value}"/>-->
+                                <div class="sc_p"></div>
+                            </div>
+                            <div class="sc_model  sc_model_clk">
+                                <div class="sc_img">
+                                    
+                                    
+                                    
+                                    <div>
+                                        <img src="images/zz_order/zz_bg4.png" />
+                                    </div>
+                                    
+                                    
+                                    
+                                    
+                                    
+
+                                </div>
+                                <div class="sc_tit">
+                                    
+                                    
+                                    
+                                    <span>已放行</span>
+                                    
+                                    
+                                    
+                                    
+                                    
+
+                                    </div>
+
+                               <!-- <input type="hidden" name="aaa" th:value="${statedetail.value}"/>-->
+                                <div class="sc_p"></div>
+                            </div>
+                            <div class="sc_model  sc_model_clk">
+                                <div class="sc_img">
+                                    
+                                    
+                                    
+                                    
+                                    <div>
+                                        <img src="images/zz_order/zz_bg5.png" />
+                                    </div>
+                                    
+                                    
+                                    
+                                    
+
+                                </div>
+                                <div class="sc_tit">
+                                    
+                                    
+                                    
+                                    
+                                    <span>已装船</span>
+                                    
+                                    
+                                    
+                                    
+
+                                    </div>
+
+                               <!-- <input type="hidden" name="aaa" th:value="${statedetail.value}"/>-->
+                                <div class="sc_p"></div>
+                            </div>
+                            <div class="sc_model  sc_model_clk">
+                                <div class="sc_img">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <div>
+                                        <img src="images/zz_order/zz_bg6.png" />
+                                    </div>
+                                    
+                                    
+                                    
+
+                                </div>
+                                <div class="sc_tit">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <span>已卸船</span>
+                                    
+                                    
+                                    
+
+                                    </div>
+
+                               <!-- <input type="hidden" name="aaa" th:value="${statedetail.value}"/>-->
+                                <div class="sc_p"></div>
+                            </div>
+                            <div class="sc_model  sc_model_clk">
+                                <div class="sc_img">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <div>
+                                        <img src="images/zz_order/zz_bg7.png" />
+                                    </div>
+                                    
+                                    
+
+                                </div>
+                                <div class="sc_tit">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <span>已换单</span>
+                                    
+                                    
+
+                                    </div>
+
+                               <!-- <input type="hidden" name="aaa" th:value="${statedetail.value}"/>-->
+                                <div class="sc_p"></div>
+                            </div>
+                            <div class="sc_model  sc_model_clk">
+                                <div class="sc_img">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <div>
+                                        <img src="images/zz_order/zz_bg8.png" />
+                                    </div>
+                                    
+
+                                </div>
+                                <div class="sc_tit">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <span>已提货</span>
+                                    
+
+                                    </div>
+
+                               <!-- <input type="hidden" name="aaa" th:value="${statedetail.value}"/>-->
+                                <div class="sc_p"></div>
+                            </div>
+                            <div class="sc_model  sc_model_clk">
+                                <div class="sc_img">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <div>
+                                        <img src="images/zz_order/zz_bg9.png" />
+                                    </div>
+
+                                </div>
+                                <div class="sc_tit">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <span>已还箱</span>
+
+                                    </div>
+
+                               <!-- <input type="hidden" name="aaa" th:value="${statedetail.value}"/>-->
+                                <div class="sc_p"></div>
+                            </div>
+                            <!--<div class="sc_model sc_model_clk">
+                                <div class="sc_img"><img src="images/zz_order/zz_bg02.png"/></div>
+                                <div class="sc_tit">放箱</div>
+                                <div class="sc_p">2015-12-25</div>
+                            </div>
+                            <div class="sc_model sc_model_clk">
+                                <div class="sc_img"><img src="images/zz_order/zz_bg03.png"/></div>
+                                <div class="sc_tit">进站</div>
+                                <div class="sc_p">2015-12-25</div>
+                            </div>
+                            <div class="sc_model sc_model_clk">
+                                <div class="sc_img"><img src="images/zz_order/zz_bg04.png"/></div>
+                                <div class="sc_tit">放行</div>
+                                <div class="sc_p">2015-12-25</div>
+                            </div>
+                            <div class="sc_model">
+                                <div class="sc_img"><img src="images/zz_order/zz_bg05.png"/></div>
+                                <div class="sc_tit">装船</div>
+                                <div class="sc_p">2015-12-25</div>
+                            </div>
+                            <div class="sc_model">
+                                <div class="sc_img"><img src="images/zz_order/zz_bg06.png"/></div>
+                                <div class="sc_tit">卸船</div>
+                                <div class="sc_p">2015-12-25</div>
+                            </div>
+                            <div class="sc_model">
+                                <div class="sc_img"><img src="images/zz_order/zz_bg07.png"/></div>
+                                <div class="sc_tit">换单</div>
+                                <div class="sc_p">2015-12-25</div>
+                            </div>
+                            <div class="sc_model">
+                                <div class="sc_img"><img src="images/zz_order/zz_bg08.png"/></div>
+                                <div class="sc_tit">提货</div>
+                                <div class="sc_p">2015-12-25</div>
+                            </div>
+                            <div class="sc_model sc_model_9">
+                                <div class="sc_img"><img src="images/zz_order/zz_bg09.png"/></div>
+                                <div class="sc_tit">还箱</div>
+                                <div class="sc_p">2015-12-25</div>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="sea_titlea">货物跟踪</div>
+                <div class="dill table-responsive clearfix padding20">
+                    <table class="display" cellspacing="0" width="100%">
+                        <thead>
+                        <tr>
+                            <th>箱号</th>
+                            <th>箱型</th>
+                            <th>尺寸</th>
+                            <th>时间</th>
+                            <th>地点</th>
+                            <th>状态</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                       <!-- <tr>
+                            <td>TWCU2090432</td>
+                            <td>GP</td>
+                            <td>20</td>
+                            <td>2015-12-23 12:26:00</td>
+                            <td>银亿浦东</td>
+                            <td>已还箱</td>
+                            <td><a id="a_border" href="">详情</a></td>
+                        </tr>
+                        <tr>
+                            <td>TWCU2090432</td>
+                            <td>GP</td>
+                            <td>20</td>
+                            <td>2015-12-23 12:26:00</td>
+                            <td>银亿浦东</td>
+                            <td>已还箱</td>
+                            <td><a id="a_border" href="">详情</a></td>
+                        </tr>
+                        <tr>
+                            <td>TWCU2090432</td>
+                            <td>GP</td>
+                            <td>20</td>
+                            <td>2015-12-23 12:26:00</td>
+                            <td>银亿浦东</td>
+                            <td>已还箱</td>
+                            <td><a id="a_border" href="">详情</a></td>
+                        </tr>
+                        <tr>
+                            <td>TWCU2090432</td>
+                            <td>GP</td>
+                            <td>20</td>
+                            <td>2015-12-23 12:26:00</td>
+                            <td>银亿浦东</td>
+                            <td>已还箱</td>
+                            <td><a id="a_border" href="">详情</a></td>
+                        </tr>-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- /right end -->
+           </form>
+        </div>
+        <!-- main end -->
+    <!-- footer -->
+    <div class="footer">
+    <div class="footer-links">
+        <div class="main clearfix w1000">
+            <dl class="footer-inner">
+                <dt>关于我们</dt>
+                <dd>
+                    <a target="_blank" href="www_jjshipping_default.html">公司官网</a>
+                    <a href="intoJinjiang.htm">走进锦江</a>
+                    <a href="contactUs.htm"> 联系我们</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>新手上路</dt>
+                <dd>
+                    <a href="serviceLogistics.htm">服务流程</a>
+                    <a href="paymentMethod.htm">支付方式</a>
+                    <a href="importExchangeProcess.htm">进口换单流程</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>常用信息</dt>
+                <dd>
+                    <a href="shipData.htm">船舶资料</a>
+                    <a href="portInformation.htm">港口信息</a>
+                    <a href="yardInformation.htm">堆场信息</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>帮助中心</dt>
+                <dd>
+                    <a href="proxyDirectory.htm">代理名录</a>
+                    <a href="overdueFeeStandard.htm">超期费标准</a>
+                    <!--<a th:href="@{'/additionFeeSchedule'}">附加费明细</a>-->
+                    <a href="fastDeliveryService.htm">快速交货服务</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner last-child">
+                <dt>联系我们</dt>
+                <dd>
+                    <span class="tel-icon"></span>
+                    <p class="tel-number">400-921-2288</p>
+                    <span class="qr_code"></span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="main clearfix w1000">
+            <div class="copyright">
+                <p>Copyright © 2015上海锦江航运(集团)有限公司 All Rights Reserved.  </p>
+                <p>沪ICP备13047598号</p>
+            </div>
+            <div class="friendlinks">
+                <a href="noticemore.htm">信息公告</a>
+                <span>|</span>
+                <a href="legalNotice.htm">法律申明</a>
+                <span>|</span>
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256022543'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1256022543' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- end -->
+    <div class="sidebar">
+    <a href="javascript:void(0);" style="cursor: context-menu;">
+        <span class=""></span>
+    </a>
+    <a target="_blank" href="http://q.url.cn/cdVSx4?_type=wpa%26qidian=true">
+        <span class="online-consult"></span>
+    </a>
+    <a href="javascript:void(0);" class="tel-parent">
+        <span class="telphone telImg"></span>
+        <p class="tel-details">
+            <s class="telphone"></s>售后服务热线:<br />400-921-2288
+        </p>
+    </a>
+    <a href="javascript:void(0);">
+        <mark class="backto-top"></mark>
+    </a>
+</div>
+    <!-- end -->
+
+    <!-- Javascript with AMD  -->
+    <script src="js/lib/require.js" data-main="js/app/main"></script>
+    <script src="js/lib/jquery-1.11.1.min.js"></script>
+    <script src="js/lib/dialog-min.js"></script>
+    <script>
+        /*<![CDATA[*/
+        $(".active").attr("class", "la");
+        $(".defaultline").attr("class", "active");
+        BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800097653, selector: 'BizQQWPA'});
+       // $(".active").attr("class", "la");
+
+        $("#butQuery").on('click', function () {
+            if ($('.input-group input[name="chooseway"]:checked ').val() == 'checkbill'){
+                var billnbr = $("#billnbr").val().toUpperCase();
+                if (billnbr ==""){
+                    msg('请填写提单号');
+                    return;
+                }
+                $("#billno").val(billnbr);
+                $( "#queryFrom" ).submit();
+            }
+            if ($('.input-group input[name="chooseway"]:checked ').val() == 'checkcntr') {
+                var cntrno = $("#cntrno").val();
+                if (cntrno ==""){
+                    msg('请填写箱号');
+                    return;
+                }
+                var shipname = $("#chshipname").val();
+                if (shipname ==""){
+                    msg('请选择船');
+                    return;
+                }
+                var voyageno = $("#voyageno").val();
+                if (voyageno ==""){
+                    msg('请选择航次');
+                    return;
+                }
+                $("#queryFrom").submit();
+            }
+        });
+//        $("#butWei").on('click',function () {
+//            var billnbrwx = $(".address_txt").val().toUpperCase();
+//            if (billnbrwx ==""){
+//                msg('请填写提单号');
+//                return;
+//            }
+//            $.ajax({
+//                url: '/queryweixin',
+//                data:{billnbr:billnbrwx},
+//                cache: false,
+//                success: function (message) {
+//                    if (message.firstChild.childNodes[0].textContent == "1") {
+//                        msg("微信跟踪增加成功!");
+//                        return;
+//                    }
+//                    if (message.firstChild.childNodes[0].textContent == "2") {
+//                        msg("微信跟踪更新成功!");
+//                        return;
+//                    }
+//                    if (message.firstChild.childNodes[0].textContent == "3") {
+//                        msg("您没有登录,登录后,才能进行微信跟踪!");
+//                        return;
+//                    }
+//                    if (message.firstChild.childNodes[0].textContent == "4") {
+//                        msg("您好，BD加手机号可以绑定微信号!");
+//                        return;
+//                    }
+//                }
+//            });
+//        });
+
+
+        $("#butReset").on('click', function () {
+            $("#billnbr").val("");
+            $("#cntrno").val("");
+            $("#carshipname").val("");
+            $("#eshipname").val("");
+            $("#carvoyageno").val("");
+        });
+
+
+        function getData(url, billnbr,cntrno) {
+            var dataR={};
+            $.ajax({
+                url: url,
+                data:{
+                    billnbr:billnbr,
+                     cntrno:cntrno
+                },
+                async: false,
+                type: "POST",
+                dataType: "json",
+                success: function (data) {
+                    dataR = data;
+                },
+                error: function () {
+                    console.log("fail");
+                    return;
+                }
+            });
+            return dataR;
+        }
+
+
+        $(".more-inf").bind('click', function () {
+            if ($(this).attr("title") == "1") {
+                $(this).attr('id','a_borderd');
+                $(this).parents('tr').next(".show-hide").show();
+                $(this).attr("title", "0");
+                var  billnbr = $("#billno").text();
+                var cntrno = $(this).parents('tr').find("td:first").text();
+                var data = getData("/getcntrstate",billnbr,cntrno);
+                var contents =  '';
+                    $.each(data, function (i, item) {
+                        var cla = "tip_line";
+                        if (i==0){
+                            cla =  "tip_line tip_clk1"
+                        }else if (i==data.length-1){
+                            cla = "tip_line tip_clk2"
+                        }
+                        contents = contents + ' <div class="'+cla+'">'+
+                                '<span class="tc_01"> '+item.STAT_DTE+'</span>'+
+                                '<span class="tc_02"> '+item.STAT_NAM+'</span>'+
+                                '<span class="tc_03"> '+item.PLACE_NAM+'</span>'+
+                                '<span class="tc_04"> </span>'+
+                                '</div>';
+                    });
+                console.log(contents);
+                $(this).parents('tr').next(".show-hide").find(".wll_trmoreinfo").html(contents);
+            } else {
+                $(this).attr('id','a_bordera');
+                $(this).parents('tr').next(".show-hide").hide();
+                $(this).attr("title", "1");
+            }
+        });
+        /*]]>*/
+    </script>
+
+</body>
+
+</html>

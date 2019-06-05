@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!-- Basic Page Needs================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>锦江航运</title>
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- IOS6全屏 Chrome高版本全屏 ================================================== -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+    <!-- 让360双核浏览器用webkit内核渲染页面 ================================================== -->
+    <meta name="renderer" content="webkit" />
+    <!-- reset and core CSS -->
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/allcss.css" rel="stylesheet" type="text/css" />
+    <link href="css/october-new.css" rel="stylesheet" type="text/css" />
+    <link href="css/ui-dialog.css" rel="stylesheet" type="text/css" />
+    <!-- Favicons -->
+    <link rel="icon" href="http://ejj.jjshipping.cn/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="http://ejj.jjshipping.cn/favicon.ico" type="image/x-icon" />
+    <link rel="icon" sizes="196x196" href="http://ejj.jjshipping.cn/images/apple-touch-icon-152x152.jpg" />
+    <!-- IOS 主屏图标
+	================================================== -->
+    <link rel="apple-touch-icon-precomposed" href="http://ejj.jjshipping.cn/images/apple-touch-icon-76x76.jpg" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="http://ejj.jjshipping.cn/images/apple-touch-icon-76x76.jpg" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://ejj.jjshipping.cn/images/apple-touch-icon-120x120.jpg" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://ejj.jjshipping.cn/images/apple-touch-icon-152x152.jpg" />
+
+</head>
+
+<body>
+    <!-- 登录-注册 -->
+    <!-- header -->
+    <div class="loginbar">
+    <div class="main clearfix">
+        <div class="login-submit">
+            <div class="login-dropdown"></div>
+            <span class="login-wrap">
+                <a href="login_3.htm">登录</a>
+                <i class="split-items">|</i>
+                <a href="register.htm">注册</a>
+            </span>
+            <a href="indexen.htm">English</a>
+        </div>
+    </div>
+</div>
+
+    <!-- end -->
+    <!-- header -->
+    <div class="header">
+        <script language="javascript">
+            /*<![CDATA[*/
+            function coupon() {
+                window.location.href='/coupon';
+            }
+            function countdown() {
+                window.location.href='/countdown';
+            }
+            function seckilling() {
+                window.location.href='/seckilling';
+            }
+            function xyUserEntry() {
+                //window.location.href='/seckillover';
+                if ($("#xytype").val() !='CS' && $("#xytype").val() !='OB') {
+                    window.open('http://op.jjshipping.cn/eservices/index-nav.jsp?_menu=menu1');
+                }else{
+                    $("#xytype").val('XY')
+                }
+            }
+            function impChangeSingle() {
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=1');
+                $("#xytype").val('CS');
+            }
+            function onlinbox(){
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=2');
+                $("#xytype").val('OB');
+            }
+            /*]]>*/
+        </script>
+        <div class="main clearfix">
+            <h1 class="logo">
+                <a href="www_jjshipping_default.html" target="_blank"><img src="images/index/logo.png" alt="" /></a>
+            </h1>
+            <div class="top-nav">
+                <a href="index.htm" class="active">首页</a>
+                <a href="home.htm" class="line">在线订舱</a>
+                <a href="cargosearch.htm" class="defaultline">信息查询与订阅</a>
+            <!-- <a  class="discount-nav" >优惠信息
+                    <ul class="dis-nav" >
+                        <li onclick="seckilling();" >秒杀</li>
+                        <li  onclick="coupon();">优惠劵</li>
+
+
+                    </ul>
+                </a>-->
+                <input type="hidden" id="xytype" name="xytype" />
+                <a href="register.htm#" onclick="xyUserEntry();" class="discount-nav">协议用户入口
+                    <ul class="dis-nav" style="width: 140px;">
+                        <li onclick="impChangeSingle();">进口换单网上预约</li>
+                        <li onclick="onlinbox();">网上放箱</li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- end -->
+
+    <!-- tit -->
+    <div class="g-tit">
+        首页 &gt; 会员中心 <span>个人信息</span>
+    </div>
+    <!-- /tit end -->
+
+
+    <!-- main -->
+    <div class="main border-top pb40">
+        <div class="forget-password">
+            <div class="logincontent">
+            <!-- 点击免费注册出现的提示框区域 -->
+                <!-- 注册协议提示框 -->
+                <div class="regi-tip" id="check-tip" style="background-image: url('images/icon/reg-tip.png')">请阅读并接受《锦江航运用户协议》</div>
+                <!-- 注册成功提示框 -->
+                <div class="succ-tip" style="background-image: url('images/icon/yes.png')">注册成功，正在为您跳转登录页面</div>
+                <!-- 注册失败提示框 -->
+                <div class="fail-tip" style="background-image: url('images/icon/no.png');">注册失败，请稍后重试</div>
+                <!--邮箱提示框-->
+                <div class="regi-tip" id="email-tip" style="background-image: url('images/icon/reg-tip.png')">邮箱不能为空</div>
+                <!--验证码提示框-->
+                <div class="regi-tip" id="captcha-tip" style="background-image: url('images/icon/reg-tip.png')">验证码不能为空</div>
+                <!--设置密码提示框-->
+                <div class="regi-tip" id="password-tip" style="background-image: url('images/icon/reg-tip.png')">设置密码不能为空</div>
+                <!--确认密码提示框-->
+                <div class="regi-tip" id="repassword-tip" style="background-image: url('images/icon/reg-tip.png')">确认密码不能为空</div>
+                <!-- 公司名称提示框-->
+                <div class="regi-tip" id="ctrustnam-tip" style="background-image: url('images/icon/reg-tip.png')">公司名称不能为空</div>
+                <!-- 公司联系人提示框-->
+                <div class="regi-tip" id="concantname-tip" style="background-image: url('images/icon/reg-tip.png')">公司联系人姓名不能为空</div>
+                <!-- 公司联系人电话提示框-->
+                <div class="regi-tip" id="concantphone-tip" style="background-image: url('images/icon/reg-tip.png')">公司联系人电话不能为空</div>
+                <!-- 公司联系人提示框-->
+                <div class="regi-tip" id="concantname-ltip" style="background-image: url('images/icon/reg-tip.png')">联系人姓名不能为空</div>
+                <!-- 公司联系人电话提示框-->
+                <div class="regi-tip" id="concantphone-ltip" style="background-image: url('images/icon/reg-tip.png')">联系人电话不能为空</div>
+
+
+                <input type="hidden" id="flag" value="" />
+                 <!-- end -->
+                <div class="leftcon">
+                    <div class="tit">
+                        <div class="ltit">查询用户注册</div>
+                        <div class="rtit">交易用户注册</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+
+                    <form action="http://ejj.jjshipping.cn/registerForm" id="registerForm" name="registerForm" method="post">
+                        <dl class="padding20" id="regi">
+                            <dt>邮箱</dt>
+                            <dd><input type="text" id="lEmail" onblur="return lemailCheck('lEmail', 'lEmail')" placeholder="请输入邮箱" name="lEmail" value="" /></dd>
+                            <div style="color: red"><span style="margin-left: 90px" id="msglemail"></span></div>
+                            
+                            <dt>验证码</dt>
+                            <dd>
+                                <input type="text" id="lCaptcha" placeholder="请输入验证码" class="width160" name="lCaptcha" value="" />
+                                <input type="button" value="获取验证码" id="yzm" />
+                                <span style="display: inline;color: red;font-size: 12px" id="yzmInfo"></span>
+                            </dd>
+                            
+                            <dt>公司名称</dt>
+                            <dd><input type="text" id="lCTrustName" placeholder="公司名称(非必填项)" name="lCTrustName" value="" /></dd>
+                            <dt>联系人姓名</dt>
+                            <dd><input type="text" id="lConcantName" placeholder="请输入姓名" name="lConcantName" value="" /></dd>
+                            <dt>联系人电话</dt>
+                            <dd><input type="text" id="lConcantPhone" placeholder="请输入电话" name="lConcantPhone" value="" /></dd>
+                            <dt>设置密码</dt>
+                            <dd>
+                                <input type="password" id="lPassword" onblur="return lpwdCheck('lPassword','lPassword')" placeholder="只能输入6-20个字母，数字" name="lPassword" value="" />
+                            </dd>
+                            <div style="color: red"><span style="margin-left: 90px" id="msglpwd"></span></div>
+                            
+                            <dt>确认密码</dt>
+                            <dd><input type="password" id="lRepassword" onblur="return lrepwdCheck('lRepassword','lRepassword')" placeholder="请输入密码" name="lRepassword" value="" /></dd>
+                            <div style="color: red"><span style="margin-left: 90px" id="msglrepwd"></span></div>
+
+                            <dd class="reg-check" style="background-image: url(images/icon/check-n.png)">
+                                <input type="checkbox" class="reg-cbox" style="display: none" id="lcheckbox" />
+                                <span style="cursor: pointer">阅读并接受<a href="userAgreement.htm" target="view_window" style="color: #0d4698">《锦江航运用户协议》</a></span>
+                            </dd>
+                            <dd>
+                                <input type="button" class="reset register margin10" onclick="lrSubmit('L')" value="免费注册" />
+                                <input type="button" class="reg" onclick="window.open('/login','_top');" value="登录" />
+                            </dd>
+                        </dl>
+                        <dl class="padding20" id="agreementregi">
+                            <dt>邮箱</dt>
+                            <dd><input type="text" id="rEmail" onblur="return remailCheck('rEmail', 'rEmail')" placeholder="请输入邮箱" name="rEmail" value="" /></dd>
+                            <div style="color: red"><span style="margin-left: 120px" id="msgremail"></span></div>
+                            
+                            <dt>验证码</dt>
+                            <dd>
+                                <input type="text" id="rCaptcha" placeholder="请输入验证码" class="width160" name="rCaptcha" value="" />
+                                <input type="button" value="获取验证码" id="yzm2" />
+                                <span class="reg-tip">已向您18*7@qq.com邮箱发送验证码</span>
+                            </dd>
+                            
+                            <dt>公司名称</dt>
+                            <dd><input type="text" id="cTrustName" placeholder="请输入公司名称" name="cTrustName" value="" /></dd>
+                            <dt>公司联系人姓名</dt>
+                            <dd><input type="text" id="concantName" placeholder="请输入姓名" name="concantName" value="" /></dd>
+                            <dt>公司联系人电话</dt>
+                            <dd><input type="text" id="concantPhone" placeholder="请输入电话" name="concantPhone" value="" /></dd>
+                            <dt>设置密码</dt>
+                            <!-- 类名red是红色边框的类名 -->
+                            <dd>
+                                <input type="password" id="rPassword" onblur="return rpwdCheck('rPassword','rPassword')" placeholder="只能输入6-20个字母，数字" name="rPassword" value="" />
+                            </dd>
+                            <div style="color: red"><span style="margin-left: 120px" id="msgrpwd"></span></div>
+                            
+                            <dt>确认密码</dt>
+                            <dd><input type="password" id="rRepassword" onblur="return rrepwdCheck('rRepassword','rRepassword')" placeholder="请输入密码" name="rRepassword" value="" /></dd>
+                            <div style="color: red"><span style="margin-left: 120px" id="msgrrepwd"></span></div>
+                            <dd class="reg-check" style="background-image: url(images/icon/check-n.png)">
+                                <input type="checkbox" class="reg-cbox" style="display: none" id="rcheckbox" />
+                                <span style="cursor: pointer">阅读并接受<a href="userAgreement.htm" target="view_window" style="color: #0d4698">《锦江航运用户协议》</a></span>
+                            </dd>
+                            <dd>
+                                <input type="button" class="reset register margin10" onclick="lrSubmit('R')" value="免费注册" />
+                                <input type="button" onclick="window.open('/login','_top');" class="reg" value="登陆" />
+                            </dd>
+                        </dl>
+                        <input type="hidden" id="lrType" name="lrType" value="L" />
+                    </form>
+                   </div>
+                <div class="rightcon">
+                    <div class="con">
+                        <div class="table-responsive order-lists">
+                            <div class="table">
+                                <div class="lists-head">
+                                    <!-- 不需要可以删除或者添加 hide class -->
+                                    <span class="pull-right hide"></span>
+                                    <!-- 不需要可以删除或者添加 hide class -->
+                                    <p class="common-box">
+                                        <span class="common-box-title"><i class="icon icon-03"></i>小贴士</span>
+                                    </p>
+                                </div>
+                                <div class="lists-body">
+                                    <div class="ff"><strong>·</strong> 什么是查询用户？</div>
+                                    <div class="fcon">查询用户可以为个人用户，可查看网站内船期等 信息，但无在线订舱权限。</div>
+                                    <div class="ff">
+                                        <p>&nbsp;</p>
+                                        <p>&nbsp;</p>
+                                    </div>
+                                    <div class="ff"><strong>·</strong> 什么是交易用户？</div>
+                                    <div class="fcon">交易用户拥有在线订舱权限，需要和公司进行关联</div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ercode">
+                            <div><img src="images/er-code.jpg" /></div>
+                            <div class="stit">扫描二维码 更多资讯尽在锦江</div>
+                            <div class="btit">航运资讯触手可及</div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="con2" style="display: none;">
+                        <div class="table-responsive order-lists">
+                            <div class="table">
+                                <div class="lists-head">
+                                    <!-- 不需要可以删除或者添加 hide class -->
+                                    <span class="pull-right hide"></span>
+                                    <!-- 不需要可以删除或者添加 hide class -->
+                                    <p class="common-box">
+                                        <span class="common-box-title"><i class="icon icon-03"></i>交易用户签约流程须知</span>
+                                    </p>
+                                </div>
+                                <div class="lists-body">
+                                    <div class="liucheng">
+                                    <div class="lc-borderleft"></div>
+                                    <div class="liucheng-tit"><i>1</i>签署协议须知</div>
+                                    <div class="liucheng-text martop15">如果贵公司申请使用订舱权限，需签订书面《电子商务订舱协议》<a href="attachment/2.doc"><img src="images/icon/x-download.png" alt="" /></a></div>
+                                    <!--<div class="liucheng-text martop15">如果贵公司申请月结业务，需签订书面《电商月结补充协议》<a href="/attachment/3.doc"><img src="images/icon/x-download.png" alt=""/></a></div>
+                                    <div class="liucheng-text martop15">月结需满足以下两个条件并通过我司资质审核： ①  连续半年通过平台出运    ②  平均每月交易量>5TEU</div>-->
+                                    <div class="liucheng-tit"><i>2</i>提供贵司资质材料</div>
+                                    <div class="liucheng-text">营业执照复印件盖公章</div>
+                                    <div class="liucheng-text">银行开户证明复印件盖公章</div>
+                                    <div class="liucheng-text">无船承运人（NVOCC）资质证书或货运代理资质证书</div>
+                                    <div class="liucheng-tit"><i>3</i>邮寄协议和资质给我司</div>
+                                    <div class="liucheng-text">协议（一式两份、敲公章）及评审资料烦请寄至我司。</div>
+                                    <div class="liucheng-text">地址：上海市延安东路1200号8楼班轮部电商小组</div>
+                                    <div class="liucheng-tit"><i>4</i>审核结果反馈</div>
+                                    <div class="liucheng-text">我司将在一个工作日内完成审核工作并邮件通知贵公司，审核通过状态会同步在您的个人信息中进行提示。</div>
+                                    <div class="liucheng-tit"><i>5</i>在线支付需开通企业网银</div>
+                                    <div class="liucheng-text">在线支付需要开通企业网银B2B在线支付服务。<a href="membertargetbank.htm" target="view_window">如何开通网银B2B在线支付服务？</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="reg-"></div>
+    </div>
+    </div>
+    <!-- main end -->
+
+    <!-- footer -->
+    <div class="footer">
+    <div class="footer-links">
+        <div class="main clearfix w1000">
+            <dl class="footer-inner">
+                <dt>关于我们</dt>
+                <dd>
+                    <a target="_blank" href="www_jjshipping_default.html">公司官网</a>
+                    <a href="intoJinjiang.htm">走进锦江</a>
+                    <a href="contactUs.htm"> 联系我们</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>新手上路</dt>
+                <dd>
+                    <a href="serviceLogistics.htm">服务流程</a>
+                    <a href="paymentMethod.htm">支付方式</a>
+                    <a href="importExchangeProcess.htm">进口换单流程</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>常用信息</dt>
+                <dd>
+                    <a href="shipData.htm">船舶资料</a>
+                    <a href="portInformation.htm">港口信息</a>
+                    <a href="yardInformation.htm">堆场信息</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>帮助中心</dt>
+                <dd>
+                    <a href="proxyDirectory.htm">代理名录</a>
+                    <a href="overdueFeeStandard.htm">超期费标准</a>
+                    <!--<a th:href="@{'/additionFeeSchedule'}">附加费明细</a>-->
+                    <a href="fastDeliveryService.htm">快速交货服务</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner last-child">
+                <dt>联系我们</dt>
+                <dd>
+                    <span class="tel-icon"></span>
+                    <p class="tel-number">400-921-2288</p>
+                    <span class="qr_code"></span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="main clearfix w1000">
+            <div class="copyright">
+                <p>Copyright © 2015上海锦江航运(集团)有限公司 All Rights Reserved.  </p>
+                <p>沪ICP备13047598号</p>
+            </div>
+            <div class="friendlinks">
+                <a href="noticemore.htm">信息公告</a>
+                <span>|</span>
+                <a href="legalNotice.htm">法律申明</a>
+                <span>|</span>
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256022543'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1256022543' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- end -->
+    <div class="sidebar">
+    <a href="javascript:void(0);" style="cursor: context-menu;">
+        <span class=""></span>
+    </a>
+    <a target="_blank" href="http://q.url.cn/cdVSx4?_type=wpa%26qidian=true">
+        <span class="online-consult"></span>
+    </a>
+    <a href="javascript:void(0);" class="tel-parent">
+        <span class="telphone telImg"></span>
+        <p class="tel-details">
+            <s class="telphone"></s>售后服务热线:<br />400-921-2288
+        </p>
+    </a>
+    <a href="javascript:void(0);">
+        <mark class="backto-top"></mark>
+    </a>
+</div>
+    <!-- end -->
+    <!-- Javascript with AMD  -->
+    <script src="js/lib/require.js" data-main="js/app/main"></script>
+    <script src="js/lib/jquery-1.11.1.min.js"></script>
+    <script src="js/lib/dialog-min.js"></script>
+    <script>
+        /*<![CDATA[*/
+        BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800097653, selector: 'BizQQWPA'});
+
+        //验证邮箱
+        function lemailCheck(obj, labelName) {
+            var objName = eval("document.all."+obj);
+            var pattern = /^([\.a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+            if (!pattern.test(objName.value)) {
+                $("#msglemail").html("邮箱格式不正确");
+                objName.focus();
+                //  msginfo("请输入正确的邮箱地址。");
+                return false;
+            }else{
+                $("#msglemail").html("");
+            }
+            return true;
+        }
+        //验证邮箱
+        function remailCheck(obj, labelName) {
+            var objName = eval("document.all."+obj);
+            var pattern = /^([\.a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+            if (!pattern.test(objName.value)) {
+                $("#msgremail").html("邮箱格式不正确");
+                objName.focus();
+                //  msginfo("请输入正确的邮箱地址。");
+                return false;
+            }else{
+                $("#msgremail").html("");
+            }
+            return true;
+        }
+        //验证密码格式
+        function lpwdCheck(obj, labelName) {
+            var objName = eval(obj);
+            var pattern = /^(?![^a-zA-Z]+$){1}(?!\D+$){1}/;
+            var patternl = /^.{6,20}$/;
+            if (!pattern.test(objName.value)) {
+                $("#msglpwd").html("密码格式不正确");
+                objName.focus();
+                return false;
+            }else{
+                if (!patternl.test(objName.value)){
+                    $("#msglpwd").html("密码长度有问题");
+                    objName.focus();
+                    return false;
+                }else {
+                    $("#msglpwd").html("");
+                }
+            }
+            return true;
+        }
+
+        //验证密码格式
+        function lrepwdCheck(obj, labelName) {
+            var objName = eval(obj);
+            var pattern = /^(?![^a-zA-Z]+$){1}(?!\D+$){1}/;
+            var patternl = /^.{6,20}$/;
+            if (!pattern.test(objName.value)) {
+                $("#msglrepwd").html("密码格式不正确");
+                objName.focus();
+                return false;
+            }else{
+                if (!patternl.test(objName.value)){
+                    $("#msglrepwd").html("密码长度有问题");
+                    objName.focus();
+                    return false;
+                }else {
+                    $("#msglrepwd").html("");
+                }
+            }
+            return true;
+        }
+        //验证密码格式
+        function rpwdCheck(obj, labelName) {
+            var objName = eval(obj);
+            var pattern = /^(?![^a-zA-Z]+$){1}(?!\D+$){1}/;
+            var patternl = /^.{6,20}$/;
+            if (!pattern.test(objName.value)) {
+                $("#msgrpwd").html("密码格式不正确");
+                objName.focus();
+                return false;
+            }else{
+                if (!patternl.test(objName.value)){
+                    $("#msgrpwd").html("密码长度有问题");
+                    objName.focus();
+                    return false;
+                }else {
+                    $("#msgrpwd").html("");
+                }
+            }
+            return true;
+        }
+
+        //验证密码格式
+        function rrepwdCheck(obj, labelName) {
+            var objName = eval(obj);
+            var pattern = /^(?![^a-zA-Z]+$){1}(?!\D+$){1}/;
+            var patternl = /^.{6,20}$/;
+            if (!pattern.test(objName.value)) {
+                $("#msgrrepwd").html("密码格式不正确");
+                objName.focus();
+                return false;
+            }else{
+                if (!patternl.test(objName.value)){
+                    $("#msgrrepwd").html("密码长度有问题");
+                    objName.focus();
+                    return false;
+                }else {
+                    $("#msgrrepwd").html("");
+                }
+            }
+            return true;
+        }
+        // 左右切换
+        $(".ltit").bind("click", function () {
+            $("#lrType").val("L");
+            $(".rtit").removeClass("on");
+            $(".ltit").addClass("on");
+            $("#regi").css("display", "block");
+            $("#agreementregi").css("display", "none");
+            $('.con2').hide();
+            $('.con').show();
+            document.getElementById("lEmail").focus();
+        })
+
+        $(".rtit").bind("click", function () {
+            $("#lrType").val("R");
+            $(".ltit").removeClass("on");
+            $(".rtit").addClass("on");
+            $("#regi").css("display", "none");
+            $("#agreementregi").css("display", "block");
+            $('.con').hide();
+            $('.con2').show();
+            document.getElementById("rEmail").focus();
+        })
+       //默认状态
+        if($("#lrType").val() == 'L') {
+            $(".rtit").removeClass("on");
+            $(".ltit").addClass("on");
+            $("#regi").css("display", "block");
+            $("#agreementregi").css("display", "none");
+            $('.con2').hide();
+            $('.con').show();
+            document.getElementById("lEmail").focus();
+            if ($("#flag").val()=="true"){
+                $('.succ-tip').show();
+                setTimeout(function () {
+                    $('.succ-tip').hide();
+                },5000);
+                window.location.href="/login";
+            }
+            if ($("#flag").val()=="false"){
+                $('.fail-tip').show();
+                setTimeout(function () {
+                    $('.fail-tip').hide();
+                },5000);
+            }
+        }else if($("#lrType").val() == 'R'){
+            $(".ltit").removeClass("on");
+            $(".rtit").addClass("on");
+            $("#regi").css("display", "none");
+            $("#agreementregi").css("display", "block");
+            $('.con').hide();
+            $('.con2').show();
+            document.getElementById("rEmail").focus();
+            if ($("#flag").val()=="true"){
+                $('.succ-tip').show();
+                setTimeout(function () {
+                    $('.succ-tip').hide();
+                },5000);
+                window.location.href="/login";
+            }
+            if ($("#flag").val()=="false"){
+                $('.fail-tip').show();
+                setTimeout(function () {
+                    $('.fail-tip').hide();
+                },5000);
+            }
+        }
+
+        //验证码
+        $('#yzm').bind('click', function () {
+            $.ajax({
+                url: "/yzmemail",
+                type: "get",
+                data:{email:$("#lEmail").val()},
+                cache: false,
+                success: function (message) {
+                    if (message.firstChild.childNodes[0].textContent == "success") {
+                        $("#yzmInfo").html('已向您'+$("#lEmail").val()+'邮箱发送验证码');
+                    }
+                    if (message.firstChild.childNodes[0].textContent == "false") {
+                        $("#msglemail").html("邮箱已存在!");
+                    }
+                }
+            });
+            $(this).attr('value', '重新发送');
+        })
+
+        // 验证码
+        $('#yzm2').bind('click', function () {
+            $.ajax({
+                url: "/yzmemail",
+                type: "get",
+                data:{email:$("#rEmail").val()},
+                cache: false,
+                success: function (message) {
+                    if (message.firstChild.childNodes[0].textContent == "success") {
+                        $("#yzm2Info").html('已向您'+$("#rEmail").val()+'邮箱发送验证码');
+                    }
+                    if (message.firstChild.childNodes[0].textContent == "false") {
+                        $("#msgremail").html("邮箱已存在!");
+                    }
+                }
+            });
+            $(this).attr('value', '重新发送');
+        })
+
+        function lrSubmit(lrType) {
+            if (lrType=="L"){
+                var lflag = false;
+                if ($("#lEmail").val() == ''){
+                    lflag = true;
+                    $("#email-tip").show();
+                    setTimeout(function () {  $("#email-tip").hide() }, 3000);
+                }
+                if ($("#lEmail").val() != ''){
+                    var objName = $("#lEmail").val();
+                    var pattern = /^([\.a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+                    if (!pattern.test(objName)) {
+                        lflag = true;
+                        $("#msglemail").html("邮箱格式不正确");
+                    }
+                }
+                if ($("#lCaptcha").val() == ''){
+                    lflag = true;
+                    $("#captcha-tip").show();
+                    setTimeout(function () {  $("#captcha-tip").hide() }, 3000);
+                }
+                if($("#lConcantName").val() == ''){
+                    lflag = true;
+                    $("#concantname-ltip").show();
+                    setTimeout(function () {  $("#concantname-ltip").hide() }, 3000);
+                }
+                if($("#lConcantPhone").val() == ''){
+                    lflag = true;
+                    $("#concantphone-ltip").show();
+                    setTimeout(function () {  $("#concantphone-ltip").hide() }, 3000);
+                }
+                if ($("#lPassword").val() == ''){
+                    lflag = true;
+                    $("#password-tip").show();
+                    setTimeout(function () {  $("#password-tip").hide() }, 3000);
+                }
+                if ($("#lPassword").val() != ''){
+                    var objName = $("#lPassword").val();
+                    var pattern = /^(?![^a-zA-Z]+$){1}(?!\D+$){1}/;
+                    var patternl = /^.{6,20}$/;
+                    if (!pattern.test(objName)) {
+                        lflag = true;
+                        $("#msglpwd").html("密码格式不正确");
+                    }else{
+                        if (!patternl.test(objName)){
+                            lflag = true;
+                            $("#msglpwd").html("密码长度有问题");
+                        }
+                    }
+                }
+                if ($("#lRepassword").val() ==''){
+                    lflag = true;
+                    $("#repassword-tip").show();
+                    setTimeout(function () {  $("#repassword-tip").hide() }, 3000);
+                }
+                if ($("#lRepassword").val() != ''){
+                    var objName = $("#lRepassword").val();
+                    var pattern = /^(?![^a-zA-Z]+$){1}(?!\D+$){1}/;
+                    var patternl = /^.{6,20}$/;
+                    if (!pattern.test(objName)) {
+                        lflag = true;
+                        $("#msglpwd").html("密码格式不正确");
+                    }else{
+                        if (!patternl.test(objName)){
+                            lflag = true;
+                            $("#msglpwd").html("密码长度有问题");
+                        }
+                    }
+                }
+                if($("#lcheckbox").is(':checked') && !lflag){
+                    $("#registerForm").submit();
+                }
+            }else if(lrType=="R"){
+                var rflag = false;
+                if ($("#rEmail").val() == ''){
+                    rflag = true;
+                    $("#email-tip").show();
+                    setTimeout(function () {  $("#email-tip").hide() }, 3000);
+                }
+                if ($("#rEmail").val() !=''){
+                    var objName = $("#rEmail").val();
+                    var pattern = /^([\.a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+                    if (!pattern.test(objName)) {
+                        lflag = true;
+                        $("#msglemail").html("邮箱格式不正确");
+                    }
+                }
+                if ($("#rCaptcha").val()==''){
+                    rflag = true;
+                    $("#captcha-tip").show();
+                    setTimeout(function () {  $("#captcha-tip").hide() }, 3000);
+                }
+                if($("#cTrustName").val() == ''){
+                    rflag = true;
+                    $("#ctrustnam-tip").show();
+                    setTimeout(function () {  $("#ctrustnam-tip").hide() }, 3000);
+                }
+                if($("#concantName").val() == ''){
+                    rflag = true;
+                    $("#concantname-tip").show();
+                    setTimeout(function () {  $("#concantname-tip").hide() }, 3000);
+                }
+                if($("#concantPhone").val() == ''){
+                    rflag = true;
+                    $("#concantphone-tip").show();
+                    setTimeout(function () {  $("#concantphone-tip").hide() }, 3000);
+                }
+                if($("#rPassword").val() == ''){
+                    rflag = true;
+                    $("#password-tip").show();
+                    setTimeout(function () {  $("#password-tip").hide() }, 3000);
+                }
+                if ($("#rPassword").val() != ''){
+                    var objName = $("#rPassword").val();
+                    var pattern = /^(?![^a-zA-Z]+$){1}(?!\D+$){1}/;
+                    var patternl = /^.{6,20}$/;
+                    if (!pattern.test(objName)) {
+                        lflag = true;
+                        $("#msglpwd").html("密码格式不正确");
+                    }else{
+                        if (!patternl.test(objName)){
+                            lflag = true;
+                            $("#msglpwd").html("密码长度有问题");
+                        }
+                    }
+                }
+                if($("#rRepassword").val() == ''){
+                    rflag = true;
+                    $("#repassword-tip").show();
+                    setTimeout(function () {  $("#repassword-tip").hide() }, 3000);
+                }
+                if ($("#rRepassword").val() != ''){
+                    var objName = $("#rRepassword").val();
+                    var pattern = /^(?![^a-zA-Z]+$){1}(?!\D+$){1}/;
+                    var patternl = /^.{6,20}$/;
+                    if (!pattern.test(objName)) {
+                        lflag = true;
+                        $("#msglpwd").html("密码格式不正确");
+                    }else{
+                        if (!patternl.test(objName)){
+                            lflag = true;
+                            $("#msglpwd").html("密码长度有问题");
+                        }
+                    }
+                }
+                if($("#rcheckbox").is(':checked') && !rflag){
+                    $("#registerForm").submit();
+                }
+            }
+        }
+        // 协议部分的js
+        $('.reg-check').bind('click', function () {
+            if ($('.reg-cbox').is(':checked')) {
+                $('.reg-cbox').prop('checked', false);
+                $(this).css({
+                    'background-image': 'url(images/icon/check-n.png)'
+                })
+            }
+            else {
+                $('.reg-cbox').prop('checked', true);
+                $(this).css({
+                    'background-image': 'url(images/icon/check-y.png)'
+                })
+            }
+            // console.log($('.reg-cbox').is(':checked'));
+        })
+        $('.register').bind('click', function () {
+            if ($('.reg-cbox').is(':checked') == false) {
+                $("#check-tip").show()
+                setTimeout(function () {  $("#check-tip").hide() }, 3000);
+            }
+        })
+        /*]]>*/
+    </script>
+  </body>
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Basic Page Needs================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>锦江航运</title>
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- IOS6全屏 Chrome高版本全屏 ================================================== -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+    <!-- reset and core CSS -->
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/allcss.css" rel="stylesheet" type="text/css" />
+    <link href="css/0818.css" rel="stylesheet" type="text/css" />
+    <link href="calend/fullcalendar.css" rel="stylesheet" />
+    <link href="calend/fullcalendar.print.css" rel="stylesheet" media="print" />
+    <link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script src="calend/fullcalendar.min.js"></script>
+    <link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="css/ui-dialog.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+    <!-- header -->
+    <div class="loginbar">
+    <div class="main clearfix">
+        <div class="login-submit">
+            <div class="login-dropdown"></div>
+            <span class="login-wrap">
+                <a href="login_3.htm">登录</a>
+                <i class="split-items">|</i>
+                <a href="register.htm">注册</a>
+            </span>
+            <a href="indexen.htm">English</a>
+        </div>
+    </div>
+</div>
+
+    <!-- end -->
+    <!-- header -->
+    <div class="header">
+        <script language="javascript">
+            /*<![CDATA[*/
+            function coupon() {
+                window.location.href='/coupon';
+            }
+            function countdown() {
+                window.location.href='/countdown';
+            }
+            function seckilling() {
+                window.location.href='/seckilling';
+            }
+            function xyUserEntry() {
+                //window.location.href='/seckillover';
+                if ($("#xytype").val() !='CS' && $("#xytype").val() !='OB') {
+                    window.open('http://op.jjshipping.cn/eservices/index-nav.jsp?_menu=menu1');
+                }else{
+                    $("#xytype").val('XY')
+                }
+            }
+            function impChangeSingle() {
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=1');
+                $("#xytype").val('CS');
+            }
+            function onlinbox(){
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=2');
+                $("#xytype").val('OB');
+            }
+            /*]]>*/
+        </script>
+        <div class="main clearfix">
+            <h1 class="logo">
+                <a href="www_jjshipping_default.html" target="_blank"><img src="images/index/logo.png" alt="" /></a>
+            </h1>
+            <div class="top-nav">
+                <a href="index.htm" class="active">首页</a>
+                <a href="home.htm" class="line">在线订舱</a>
+                <a href="cargosearch.htm" class="defaultline">信息查询与订阅</a>
+            <!-- <a  class="discount-nav" >优惠信息
+                    <ul class="dis-nav" >
+                        <li onclick="seckilling();" >秒杀</li>
+                        <li  onclick="coupon();">优惠劵</li>
+
+
+                    </ul>
+                </a>-->
+                <input type="hidden" id="xytype" name="xytype" />
+                <a href="sailingdatebranch.htm#" onclick="xyUserEntry();" class="discount-nav">协议用户入口
+                    <ul class="dis-nav" style="width: 140px;">
+                        <li onclick="impChangeSingle();">进口换单网上预约</li>
+                        <li onclick="onlinbox();">网上放箱</li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- end -->
+
+
+
+
+    <!-- tit -->
+    <div class="g-tit">
+        首页 &gt; <span>支线船期查询</span>
+    </div>
+    <!-- /tit end -->
+
+
+
+
+        <!-- main -->
+        <div class="main pb40 clearfix">
+
+            <!-- left -->
+            <div class="leftsidebar  leftsidebar_01">
+
+    <dl>
+        <dt><img src="images/leftside-dt-icon6.png" alt="" />信息查询订阅</dt>
+        <dd><a href="cargosearch.htm" class="cur">货物跟踪</a></dd>
+        <dd><a href="sailingdate.htm" class="sailingdate">干线船期查询</a></dd>
+        <dd><a href="sailingdatebranch.htm" class="sailingdatebranch">支线船期查询</a></dd>
+        <dd><a href="shipstate.htm" class="shipstate">船舶动态</a></dd>
+        <dd><a href="branchqueryindex.htm" class="branchqueryindex">多式联运查询</a></dd>
+        <dd><a href="branchqueryindexNational.htm" class="branchqueryindexNational">国际中转查询</a></dd>
+        <dd><a href="demurragequery.htm" class="demurragequery">滞期费查询</a></dd>
+        <dd><a href="cntrfang.htm" class="cntrfang">放箱查询</a></dd>
+        <dd><a href="changeSingleInfo.htm" class="changeSingleInfo">换单信息查询</a></dd>
+        <dd><a href="cntrtracker.htm" class="cntrtracker">集装箱跟踪</a></dd>
+        <dd><a href="additionFeeSchedule.htm" class="additionFeeSchedule">附加费明细</a></dd>
+        <dd><a href="http://ejj.jjshipping.cn/subscriptionInfo" class="subscriptionInfo">消息订阅</a></dd>
+    </dl>
+
+</div>
+            <!-- /left end -->
+
+            <!-- right -->
+            <div class="rightcolumn  query-freight">
+                <div class="Port-tit">
+                    <ul>
+                        <li class="line clk"><a href="sailingdatebranch.htm">港口查询</a></li>
+                        <li class="line"><a href="sailingdatebranchA.htm">船名航次查询</a></li>
+                    </ul>
+                </div>
+                <div class="bank_title">
+                    <div class="select-wrap">
+                        <label class="pull-left">
+                            <span class="padding15px">起始港</span>
+                            <div class="selected selected_03">
+                                <input id="zqfZXport" class="selected-start" style="width:90px;" />
+                                <input type="hidden" id="hidezqfport" />
+                            </div>
+                        </label>
+                        <label class="pull-left">
+                            <span class="padding15px">目的港</span>
+                            <div class="selected selected_03">
+                                <input id="destZXport" class="selected-start" style="width:90px;" />
+                                <input type="hidden" id="hidedestport" />
+                            </div>
+                        </label>
+                        <div class="datediv">
+                            <label class="pull-right">
+                                <div class="date form_datetime" data-date-format="dd MM yyyy" id="contrastDate">
+                                    <span class="add-on"><i class="icon-th"></i></span>
+                                    <input size="16" type="text" id="date" />
+                                </div>
+                            </label>
+                            <!-- 不要和下面放到一个Label-->
+                            <label class="pull-right">
+                                <div class="pull-left">
+                                    <span for="1" class="input-groupa input-groupb">出发时间</span>
+                                    <span for="2" class="input-groupa">到达时间</span>
+                                    <input type="hidden" id="radio01" name="radio01" value="1" class="radio-select" />
+                                </div>
+                            </label>
+                        </div>
+                        <label class="pull-left">
+                            <div>
+                                <input type="button" id="buttonsearch" class="search_btn" value="查询" />
+                            </div>
+                        </label>
+                        <label class="pull-left">
+                            <div>
+                                <input type="button" id="buttonreset" class="button_btn" value="重置" />
+                            </div>
+                        </label>
+                    </div>
+                    <div class="tc_date">
+                        <div class="date datea form_datetime" data-date-format="dd MM yyyy" id="contrastDate">
+                            <span class="add-on"><i class="icon-th"></i></span>
+                            <input size="16" type="text" id="rq" value="" />
+                        </div>
+                    </div>
+                </div>
+                <!-- foreign-route -->
+                <div class="padding20">
+                    <div id="calendar"></div>
+                </div>
+                <!-- /foreign-route end -->
+            </div>
+            <!-- /right end -->
+        </div>
+    <!-- main end -->
+    <!-- footer -->
+    <div class="footer">
+    <div class="footer-links">
+        <div class="main clearfix w1000">
+            <dl class="footer-inner">
+                <dt>关于我们</dt>
+                <dd>
+                    <a target="_blank" href="www_jjshipping_default.html">公司官网</a>
+                    <a href="intoJinjiang.htm">走进锦江</a>
+                    <a href="contactUs.htm"> 联系我们</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>新手上路</dt>
+                <dd>
+                    <a href="serviceLogistics.htm">服务流程</a>
+                    <a href="paymentMethod.htm">支付方式</a>
+                    <a href="importExchangeProcess.htm">进口换单流程</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>常用信息</dt>
+                <dd>
+                    <a href="shipData.htm">船舶资料</a>
+                    <a href="portInformation.htm">港口信息</a>
+                    <a href="yardInformation.htm">堆场信息</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>帮助中心</dt>
+                <dd>
+                    <a href="proxyDirectory.htm">代理名录</a>
+                    <a href="overdueFeeStandard.htm">超期费标准</a>
+                    <!--<a th:href="@{'/additionFeeSchedule'}">附加费明细</a>-->
+                    <a href="fastDeliveryService.htm">快速交货服务</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner last-child">
+                <dt>联系我们</dt>
+                <dd>
+                    <span class="tel-icon"></span>
+                    <p class="tel-number">400-921-2288</p>
+                    <span class="qr_code"></span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="main clearfix w1000">
+            <div class="copyright">
+                <p>Copyright © 2015上海锦江航运(集团)有限公司 All Rights Reserved.  </p>
+                <p>沪ICP备13047598号</p>
+            </div>
+            <div class="friendlinks">
+                <a href="noticemore.htm">信息公告</a>
+                <span>|</span>
+                <a href="legalNotice.htm">法律申明</a>
+                <span>|</span>
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256022543'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1256022543' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- end -->
+    <div class="sidebar">
+    <a href="javascript:void(0);" style="cursor: context-menu;">
+        <span class=""></span>
+    </a>
+    <a target="_blank" href="http://q.url.cn/cdVSx4?_type=wpa%26qidian=true">
+        <span class="online-consult"></span>
+    </a>
+    <a href="javascript:void(0);" class="tel-parent">
+        <span class="telphone telImg"></span>
+        <p class="tel-details">
+            <s class="telphone"></s>售后服务热线:<br />400-921-2288
+        </p>
+    </a>
+    <a href="javascript:void(0);">
+        <mark class="backto-top"></mark>
+    </a>
+</div>
+    <!-- end -->
+    <script src="js/lib/jquery-1.11.1.min.js"></script>
+    <script src="calend/lib/moment.min.js"></script>
+    <script src="calend/fullcalendar.min.js"></script>
+    <script src="js/lib/layer.js"></script>
+    <script src="js/lib/dialog-min.js"></script>
+    <!-- Javascript with AMD  -->
+    <script src="js/lib/require.js" data-main="js/app/main"></script>
+
+    <script>
+        /*<![CDATA[*/
+        $(".active").attr("class", "la");
+        $(".defaultline").attr("class", "active");
+        BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800097653, selector: 'BizQQWPA'});
+        $(".cur").attr("class", "queryinfo");
+        $(".sailingdatebranch").attr("class", "cur");
+        function msg(msg){
+
+            var d = dialog({
+                title: '信息',
+                width:200,
+                content: msg
+            });
+
+            d.showModal();
+        }
+        var d=new Date();
+        var year=d.getFullYear();
+        var month=d.getMonth()+1;
+        if(month<=9){
+            month="0"+month;
+        }
+        var day=d.getDate();
+        if(day<=9){
+            day="0"+day;
+        }
+        var dates=year+"-"+month+"-"+day;
+        $("#rq").val(dates);
+
+        $(document).ready(function() {
+            var th=  $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                dayNamesShort: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+                buttonText:{
+                    prev:     '<上个月',
+                    next:     '下个月>',
+                    prevYear: '去年',
+                    nextYear: '明年',
+                    today:    '转到今天',
+                    month:    '月',
+                    week:     '周',
+                    day:      '日'
+                },
+                defaultDate: dates,
+                selectable: true,
+                selectHelper: true,
+                aspectRatio:2,
+                contentHeight:750,
+                //单击事件项时触发
+                eventClick: function (calEvent, jsEvent, view) {
+                    layer.open({
+                        type: 2,
+                        title: '挂靠港信息',
+                        fix: false,
+                        shadeClose: true,
+                        maxmin: true,
+                        area: ['800px', '470px'],
+                        content: "/sailingdatepopup?shipno="+calEvent.shipNo+"&shipName="+calEvent.title+"&differ="+"B",
+                    });
+                },
+                eventRender: function (event, element) {
+                    console.log(event.title)
+                    // element.html('<span style="color:red;font-size: small">'+event.title+'</span>');
+                    element.html('<div class="rili"><p>'+event.title+'</p><p>'+ '<span class="p1">'+'<em style="margin-left:0px;background:'+event.textColor+'">'
+                            +event.value+'</em></span><span class="p1" style="margin-left: 10px">'+" "+event.name+'</span><span class="p2">'+event.time+'</span></p></div>');
+                },
+                select: function(start, end) {
+                    /* var title = prompt('Event Title:');
+                     var eventData;
+                     if (title) {
+                     eventData = {
+                     title: title,
+                     start: start,
+                     end: end
+                     };
+                     $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+                     }
+                     $('#calendar').fullCalendar('unselect');*/
+                },
+                editable: false,
+                eventLimit: true
+                //, // allow "more" link when too many events
+
+
+                //   events:'/getsailingdate'
+            });
+
+            function addMonth(sDate, num) {
+
+                var aYmd = sDate.split('-');
+                var dt = new Date(aYmd[0], aYmd[1], aYmd[2]);
+
+                dt.setMonth(dt.getMonth() + num);
+
+                var y = dt.getFullYear();
+                var m = dt.getMonth();
+                var d = dt.getDate();
+                //坑爹啊，月份是从0开始啊！！！！
+                if (m == 0) { m = 12; y = y - 1; }
+
+                if (m < 10) m = '0' + m;
+                if (d < 10) d = '0' + d;
+                return y + '-' + m + '-' + d;
+            }
+
+            $('.fc-prev-button').click(function(){
+                var d=addMonth( $("#rq").val(),-1);
+
+
+
+                $("#rq").val(d)
+            });
+            $('.fc-next-button').click(function(){
+                var d=addMonth( $("#rq").val(),1);
+
+
+
+                $("#rq").val(d)
+            });
+            $('.fc-today-button').click(function(){
+                var d=new Date();
+                var year=d.getFullYear();
+                var month=d.getMonth()+1;
+                var day=d.getDate();
+                var dates=year+"-"+month+"-"+day;
+                $("#rq").val(dates);
+            });
+            $('#buttonsearch').click(function () {
+                if ($("#hidezqfport").val()==""){
+                    msg('请选择起始港');
+                    return;
+                }
+                if ($("#hidedestport").val()==""){
+                    msg('请选择目的港');
+                    return;
+                }
+                if ($("#date").val()==""){
+                    msg('请选择时间');
+                    return;
+                }
+                var events = {
+                    url: '/getsailingdatebranch',
+                    type: 'GET',
+                    data: {
+                        startportcod:$("#hidezqfport").val(),
+                        endportcod :$("#hidedestport").val(),
+                        date:$("#date").val(),
+                        flag:$("#radio01").val()
+                    }
+                }
+                th.fullCalendar('removeEventSource', events);
+                th.fullCalendar('addEventSource', events);
+//                th.fullCalendar('refetchEvents');
+                th.fullCalendar('gotoDate',new Date($("#date").val()));
+                $("#rq").val($("#date").val());
+            });
+
+        });
+
+        $("#buttonreset").on('click', function () {
+            $(".selected-start").val("");
+            $("#hidezqfport").val("")
+            $("#hidedestport").val("");
+            $("#date").val("");
+        });
+       // $(".active").attr("class", "la");
+        $(".input-groupa").click(function(){
+            $(this).siblings('span').removeClass('input-groupb');
+            $(this).addClass('input-groupb');
+            $(this).siblings('input').val($(this).attr('for'));
+        })
+        /*]]>*/
+    </script>
+
+
+</body>
+
+</html>

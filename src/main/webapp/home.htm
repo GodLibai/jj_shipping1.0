@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Basic Page Needs==================================================-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>锦江航运</title>
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+    <!-- reset and core CSS -->
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/allcss.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/june-index.css" />
+
+    <style>
+       /* .foreign-route table tr td:first-child {
+            text-align: left;
+            padding-left: 30px;
+        }*/
+      .foreign-route table tr td:first-child {
+           text-align: left;
+           padding-left: 20px;
+       }
+       .foreign-route table tr td .ship-name-img {
+           position: absolute;
+           left: 28px;
+           top: 15px;
+       }
+       .foreign-route table tr td .ship-name-text {
+           float: left;
+           padding-left: 27px;
+       }
+       .trmoreinfo {
+           width: 1118px;
+           border: 1px solid #cdd9ec;
+           padding: 20px!important;
+           background-color: #f9f9f9;
+           margin-left: -20px;
+           margin-bottom: 10px;
+       }
+        .style1
+        {
+            width: 133px;
+
+        }
+    </style>
+</head>
+
+<body>
+<!-- 登录-注册 -->
+<div class="loginbar">
+    <div class="main clearfix">
+        <div class="login-submit">
+            <div class="login-dropdown"></div>
+            <span class="login-wrap">
+                <a href="login_3.htm">登录</a>
+                <i class="split-items">|</i>
+                <a href="register.htm">注册</a>
+            </span>
+            <a href="indexen.htm">English</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="header">
+        <script language="javascript">
+            /*<![CDATA[*/
+            function coupon() {
+                window.location.href='/coupon';
+            }
+            function countdown() {
+                window.location.href='/countdown';
+            }
+            function seckilling() {
+                window.location.href='/seckilling';
+            }
+            function xyUserEntry() {
+                //window.location.href='/seckillover';
+                if ($("#xytype").val() !='CS' && $("#xytype").val() !='OB') {
+                    window.open('http://op.jjshipping.cn/eservices/index-nav.jsp?_menu=menu1');
+                }else{
+                    $("#xytype").val('XY')
+                }
+            }
+            function impChangeSingle() {
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=1');
+                $("#xytype").val('CS');
+            }
+            function onlinbox(){
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=2');
+                $("#xytype").val('OB');
+            }
+            /*]]>*/
+        </script>
+        <div class="main clearfix">
+            <h1 class="logo">
+                <a href="www_jjshipping_default.html" target="_blank"><img src="images/index/logo.png" alt="" /></a>
+            </h1>
+            <div class="top-nav">
+                <a href="index.htm" class="active">首页</a>
+                <a href="home.htm" class="line">在线订舱</a>
+                <a href="cargosearch.htm" class="defaultline">信息查询与订阅</a>
+            <!-- <a  class="discount-nav" >优惠信息
+                    <ul class="dis-nav" >
+                        <li onclick="seckilling();" >秒杀</li>
+                        <li  onclick="coupon();">优惠劵</li>
+
+
+                    </ul>
+                </a>-->
+                <input type="hidden" id="xytype" name="xytype" />
+                <a href="home.htm#" onclick="xyUserEntry();" class="discount-nav">协议用户入口
+                    <ul class="dis-nav" style="width: 140px;">
+                        <li onclick="impChangeSingle();">进口换单网上预约</li>
+                        <li onclick="onlinbox();">网上放箱</li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+<!-- main -->
+<div class="main pb40 clearfix">
+
+
+    <div class="query-freight clearfix">
+        <div class="select-wrap clearfix">
+            <label class="pull-left">
+                <span>起始港</span>
+                <div class="selectedrow">
+                    <input id="startport" class="selected-start" />
+                    <input id="startportcod" type="hidden" value="" />
+                </div>
+            </label>
+            <label class="pull-left pl60">
+                <span>目的港</span>
+                <div class="selectedrow">
+                    <input id="endport" class="selected-start" />
+                    <input type="hidden" id="endportcod" value="" />
+                </div>
+            </label>
+            <div class="datediv">
+                <label class="pull-right">
+                    <div class="date form_datetime" data-date-format="dd MM yyyy" id="contrastDate">
+                        <span class="add-on"><i class="icon-th"></i></span>
+                        <input size="16" type="text" name="querytime" id="querytime" />
+                    </div>
+                </label>
+                <!-- 不要和下面放到一个Label-->
+                <label class="pull-right">
+                    <div class="pull-left">
+                        <span class="input-group"><input type="radio" name="flag" checked="true" value="1" class="radio-select" />出发时间</span>
+                        <span class="input-group"><input type="radio" name="flag" value="2" class="radio-select" />到达时间</span>
+                        <input type="hidden" name="timflag" id="timflag" value="1" />
+                    </div>
+                </label>
+            </div>
+            <div class="searchbtn-area" style="width:180px;float:right;margin-top:0;"><a href="home.htm#" id="queryfee" class="btn btn-search">查询运费</a></div>
+        </div>
+
+    </div>
+
+    <!-- query-freight end -->
+
+
+    <!-- foreign-route -->
+    <div class="foreign-route clearfix">
+        <table class="display" id="tables_02" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th>船名</th>
+                <th>船次</th>
+                <th class="style1">起运港-目的港</th>
+                <th><span class="pull-left">出发时间</span> <span class="pull-right">到达时间</span></th>
+                <th>运费条款</th>
+                <th>20GP</th>
+                <th>40GP</th>
+                <th>40HC</th>
+                <th>操作</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+            <!--<tr>
+                <td>
+                    <img src="/images/foreign-route-img.png" class="ship-name-img" />
+                    <div class="ship-name-text">锦江之星
+                        <br/>东海穿梭快航</div>
+                </td>
+
+                <td class="vertical-top"><strong>064s</strong></td>
+                <td>
+                    <div class="starting-port">
+                        <img src="/images/foreign-route-icon1.png" alt="" />上海
+                    </div>
+                    <div class="starting-port">
+                        <img src="/images/foreign-route-icon2.png" alt="" />横滨
+                    </div>
+                </td>
+                <td>
+                    <div class="starting-time">
+                        <div class="pull-left">
+                            <strong>2016-05-16</strong> 周一
+                        </div>
+                        <span>3天</span>
+                        <div class="pull-right">
+                            <strong>2016-05-19</strong> 周五
+                        </div>
+                    </div>
+                </td>
+                <td class="vertical-top">
+                    <span>预付</span>
+                </td>
+                <td>
+                    <div class="freight">
+                        <p><strong>$220</strong><b>/20GP</b></p>
+                        <p><span>$440</span>/40GP</p>
+                        <p><span>$440</span>/40HP</p>
+                    </div>
+                </td>
+                <td>
+                    <a href="##" class="quick-order">快速下单</a>
+                    <a href="##" class="more-infor">更多信息 <i class="fa fa-angle-down"></i></a>
+                </td>
+            </tr>
+-->
+            </tbody>
+        </table>
+    </div>
+    <!-- /foreign-route end -->
+
+
+
+</div>
+<!-- main end -->
+<div class="sidebar">
+    <a href="javascript:void(0);" style="cursor: context-menu;">
+        <span class=""></span>
+    </a>
+    <a target="_blank" href="http://q.url.cn/cdVSx4?_type=wpa%26qidian=true">
+        <span class="online-consult"></span>
+    </a>
+    <a href="javascript:void(0);" class="tel-parent">
+        <span class="telphone telImg"></span>
+        <p class="tel-details">
+            <s class="telphone"></s>售后服务热线:<br />400-921-2288
+        </p>
+    </a>
+    <a href="javascript:void(0);">
+        <mark class="backto-top"></mark>
+    </a>
+</div>
+<div class="footer">
+    <div class="footer-links">
+        <div class="main clearfix w1000">
+            <dl class="footer-inner">
+                <dt>关于我们</dt>
+                <dd>
+                    <a target="_blank" href="www_jjshipping_default.html">公司官网</a>
+                    <a href="intoJinjiang.htm">走进锦江</a>
+                    <a href="contactUs.htm"> 联系我们</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>新手上路</dt>
+                <dd>
+                    <a href="serviceLogistics.htm">服务流程</a>
+                    <a href="paymentMethod.htm">支付方式</a>
+                    <a href="importExchangeProcess.htm">进口换单流程</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>常用信息</dt>
+                <dd>
+                    <a href="shipData.htm">船舶资料</a>
+                    <a href="portInformation.htm">港口信息</a>
+                    <a href="yardInformation.htm">堆场信息</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>帮助中心</dt>
+                <dd>
+                    <a href="proxyDirectory.htm">代理名录</a>
+                    <a href="overdueFeeStandard.htm">超期费标准</a>
+                    <!--<a th:href="@{'/additionFeeSchedule'}">附加费明细</a>-->
+                    <a href="fastDeliveryService.htm">快速交货服务</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner last-child">
+                <dt>联系我们</dt>
+                <dd>
+                    <span class="tel-icon"></span>
+                    <p class="tel-number">400-921-2288</p>
+                    <span class="qr_code"></span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="main clearfix w1000">
+            <div class="copyright">
+                <p>Copyright © 2015上海锦江航运(集团)有限公司 All Rights Reserved.  </p>
+                <p>沪ICP备13047598号</p>
+            </div>
+            <div class="friendlinks">
+                <a href="noticemore.htm">信息公告</a>
+                <span>|</span>
+                <a href="legalNotice.htm">法律申明</a>
+                <span>|</span>
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256022543'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1256022543' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Javascript with AMD  -->
+<script src="js/lib/require.js" data-main="/js/app/main"></script>
+
+<script src="js/lib/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="js/lib/jquery.icheck.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(".active").attr("class", "la");
+    $(".line").attr("class", "active");
+    BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800097653, selector: 'BizQQWPA'});
+    //$(".cur").attr("class", "queryInfo");
+   // $(".shipstate").attr("class", "cur");
+
+    $('.radio-select').iCheck({
+        increaseArea: '60%',
+        labelHover: false,
+        radioClass: 'radioed'
+    });
+
+    //$("tr[title='moreinfo']").hide();
+    $(".more-infor").bind('click', function () {
+        if ($(this).children("i").attr("title") == "1") {
+            var str = $(this).next(".hidemoreinfo").html();
+            var reg = new RegExp("(<tbody>)", "gmi");
+            str = str.replace(reg, '');
+            reg = new RegExp("(</tbody>)", "gmi");
+            str = str.replace(reg, '');
+            // alert(str);
+            $(this).parent().parent().after(str);
+            $(this).children("i").attr("title", "0");
+        } else {
+            $(this).parent().parent().next().remove();
+            $(this).children("i").attr("title", "1");
+        }
+
+    });
+
+
+</script>
+</body>
+
+</html>

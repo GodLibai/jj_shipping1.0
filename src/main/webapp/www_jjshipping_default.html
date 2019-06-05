@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="Author" content="上海锦江航运(集团)有限公司">
+<meta content="上海锦江航运(集团)有限公司" name="design">
+<title>上海锦江航运(集团)有限公司</title>
+<link rel="stylesheet" type="text/css" href="http://www.jjshipping.cn/jinjiang/css/css_whir.css"/>
+<script type="text/javascript" src="http://www.jjshipping.cn/jinjiang/scripts/jquery-1.9.1.min.js"></script>
+<!--[if lt IE 9]>
+  <script type="text/javascript" src="/jinjiang/scripts/html5shiv.v3.72.min.js"></script>
+<![endif]-->
+<!--  -->
+<script type="text/javascript" src="http://www.jjshipping.cn/jinjiang/scripts/jquery.SuperSlide.2.1.1.js"></script>
+
+
+<script src="http://www.jjshipping.cn/jjshipping/js/jquery-1.11.3.min.js"></script>
+<script src="http://www.jjshipping.cn/jjshipping/js/bootstrap.min.js"></script>
+<script src="http://www.jjshipping.cn/jjshipping/js/jquery.SuperSlide.2.1.1.js"></script>
+<script src="http://www.jjshipping.cn/jjshipping/js/My97DatePicker/WdatePicker.js"></script>
+<script src="http://www.jjshipping.cn/jjshipping/js/placeholder.js"></script>
+
+<!--[if lt IE 9]>
+  <script src="/jjshipping/js/html5shiv.min.js"></script>
+  <script src="/jjshipping/js/respond.min.js"></script>
+<![endif]-->
+
+    <script type="text/javascript">
+        var navID = "1";
+    </script>
+ <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+<!-- <script src="http://ip.ws.126.net/ipquery"></script>  -->
+<!-- <script type="text/javascript" src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script> -->
+
+<script>
+var myprovince = remote_ip_info['province']; 
+var mycity = remote_ip_info['city']; 
+ var mycountry = remote_ip_info['country'];
+var ipnam='';
+
+ $(function(){
+	
+     if(myprovince=='北京'||myprovince=='上海'||myprovince=='天津'||myprovince=='重庆'){
+    	 ipnam=myprovince;
+     }else{
+    	 ipnam=mycity;
+     }
+     
+}); 
+
+
+
+var userip="";
+var userllq="";
+
+var explorer =navigator.userAgent ;
+//ie 
+if (explorer.indexOf("MSIE") >= 0) {
+
+userllq+='IE浏览器';
+}
+//firefox 
+else if (explorer.indexOf("Firefox") >= 0) {
+
+userllq+='火狐浏览器';
+}
+//Chrome
+else if(explorer.indexOf("Chrome") >= 0){
+
+userllq+='谷歌内核浏览器';
+}
+//Opera
+else if(explorer.indexOf("Opera") >= 0){
+
+userllq+='欧朋浏览器';
+}
+//Safari
+else if(explorer.indexOf("Safari") >= 0){
+userllq+='Safari览器';
+} 
+//Netscape
+else if(explorer.indexOf("Netscape")>= 0) { 
+	userllq+='Netscape览器';
+} 
+
+
+<!-- 获取IP，IP地址 -->
+/* returnCitySN["cip"] + ',' + returnCitySN["cname"]  IP+省份城市 */
+/*城市名*/
+
+/* //获取访问网址 */
+var href = window.location.href;
+
+/*随机字符串*/
+ function randomWord(randomFlag, min, max){
+    var str = "",
+        range = min,
+        arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+ 
+    // 随机产生
+    if(randomFlag){
+        range = Math.round(Math.random() * (max-min)) + min;
+    }
+    for(var i=0; i<range; i++){
+        pos = Math.round(Math.random() * (arr.length-1));
+        str += arr[pos];
+    }
+    return str;
+    
+}
+var sj=randomWord(false, 40);
+
+
+
+
+<!-- //页面停留时间 -->
+	var second = 0;
+	
+	window.setInterval("OnlineStayTime();", 1000);
+	function OnlineStayTime() {
+		second++;
+		
+	}
+
+	var blnCheckUnload = true;
+	window.onunload = function(event) {
+		if (blnCheckUnload) {
+			var stime=second;
+			 $.post("/jjshipping/Count/addtime",{ttime:stime,bsmstr:bsm});
+			
+		}
+		
+	}
+	//访问页面获取访客信息
+	var bsm='';
+	$(document).ready(function() {
+		$.post("/jjshipping/Count/add", {ip:returnCitySN["cip"],ipname:ipnam,str:sj,url:href,llq:userllq},function(data){
+			bsm=bsm+data;
+			
+		});
+		
+	});
+
+
+	</script>
+	<script   language="JavaScript">       
+       //选择船期信息
+function onItemSelected(event ,idName,codid,portid,countid){
+	var ele = event.target;
+	while ($(ele)[0].tagName != 'A') {
+		ele = $(ele).parent();
+	}
+    var endport=$(ele).children(".ui-port-code:first").html();
+    var endcount=$(ele).children(".ui-port-name:first").html();
+    var portcod=$(ele).children(".spcod:first").html();
+    $(idName).val(endport);
+    $(codid).val(portcod);
+    $(portid).val(endport+'-'+endcount);
+    $(countid).val(endcount);
+}
+
+//选择国家
+function onCount(event ,idName){
+	var ele = event.target;
+	while ($(ele)[0].tagName != 'A') {
+		ele = $(ele).parent();
+	}
+    var endport=$(ele).children(".ui-port-code:first").html();
+    $(idName).val(endport);
+    
+    $.get("/jjshipping/Search/port",{cou:endport}, function(data){
+		  var value=eval(data);
+		  $('#loadportDiv11').html('');
+		  for(i in value){
+			  $('#loadportDiv11').append("<a class='ui-dropdown-cell' onclick=\"onItemSelected(event,'#startPort','#startPortcod','#portcount');\"><span class='spcod' style='display:none'>"+value[i].PortCod+"</span> <span class='ui-port-code'>"+value[i].F04+"</span> <span class='ui-port-name1'>"+value[i].F05+"</span><span class='ui-port-name'>"+value[i].F01+"</span></a>");
+		  }
+	        });
+}
+//选择到达国家
+function onEndCount(event ,idName){
+	var ele = event.target;
+	while ($(ele)[0].tagName != 'A') {
+		ele = $(ele).parent();
+	}
+    var endport=$(ele).children(".ui-port-code:first").html();
+    $(idName).val(endport);
+    
+    $.get("/jjshipping/Search/port",{cou:endport}, function(data){
+		  var value=eval(data);
+		  $('#loadportDiv12').html('');
+		  for(i in value){
+			  $('#loadportDiv12').append("<a class='ui-dropdown-cell' onclick=\"onItemSelected(event,'#endPort','#endPortcod','#eportcount');\"><span class='spcod' style='display:none'>"+value[i].PortCod+"</span> <span class='ui-port-code'>"+ value[i].F04+"</span><span class='ui-port-name1'>"+value[i].F05+"</span><span class='ui-port-name'>"+value[i].F01+"</span></a>");
+		  }
+	 	 });
+}
+
+    //显示隐藏
+    $(function(){
+			
+    	//页面跳出统计,判断用户跳出
+		$('a').click(function(){
+    		//window.onbeforeunload = null;
+			//如果是点击的话就不需要下面关闭窗口
+			is_confirm = true;
+			var tiaochuurl = $(this).attr("href").split('/');
+			if(tiaochuurl[2]=="192.168.7.212" || tiaochuurl[2]=="www.jjshipping.cn" || tiaochuurl[2]=="jjshipping.cn"){
+
+    		
+
+
+			}else{
+			//跳出域名不对，告诉后台。
+			//$.post("/jjshipping/Count/addskip", {name:'官网',ip:returnCitySN["cip"]});
+			var dangqianurl = window.location.href;
+			dangqianurl = dangqianurl.replace("192.168.7.212", "www.jjshipping.cn");
+
+			$.post("/jjshipping/Count/addstop", {url:dangqianurl,ip:returnCitySN["cip"]});
+			}
+    	});
+		//页面跳出，页面关闭
+		   $(window).bind('beforeunload', function(){
+				   if(window.is_confirm !== false){
+var dangqianurl = window.location.href;
+			dangqianurl = dangqianurl.replace("192.168.7.212", "www.jjshipping.cn");
+			$.post("/jjshipping/Count/addstop", {url:dangqianurl,ip:returnCitySN["cip"]});
+				   }
+			});
+
+
+
+    	//跳转到电商统计
+    	$('#sy_ds').click(function(){
+    		//window.onbeforeunload = null;
+    		$.post("/jjshipping/Count/addskip", {name:'官网',ip:returnCitySN["cip"]});
+    	});
+		$('.more').click(function(){
+    		//window.onbeforeunload = null;
+			if($(this).attr("href")=="http://ejj.jjshipping.cn/home"){
+
+    		$.post("/jjshipping/Count/addskip", {name:'官网二级',ip:returnCitySN["cip"]});
+
+			}
+    	});
+		$('#kscd').click(function(){
+    		//window.onbeforeunload = null;
+    		$.post("/jjshipping/Count/addskip", {name:'搜索',ip:returnCitySN["cip"]});
+
+    	});
+    	
+    	   $('.ui-dropdown-pol11').hide();
+    	   $('.ui-dropdown-pol111').hide();
+    	   $('.ui-dropdown-pol12').hide();
+    	   $('.ui-dropdown-pol122').hide();
+    	   
+    	   $("#startCountry").click(function(e) {
+    			 var start=$(this).val();
+    			 if (start == '') {
+    				 $.get("/jjshipping/Search/getcountry", function(data){
+       				  var value=eval(data);
+       				  $('#loadportDiv111').html('');
+       				  for(i in value){
+       					  $('#loadportDiv111').append("<a class='ui-dropdown-cell' onclick=\"onCount(event,'#startCountry');\"><span class='ui-port-code'>"+value[i].F02+"</span> <span class='ui-port-name'>"+value[i].F03+"</span></a>");
+       				  }
+       			        });
+    			 }else{
+    				 $.get("/jjshipping/Search/getcount",{cou:start}, function(data){
+   					  var value=eval(data);
+   					  $('#loadportDiv111').html('');
+   					  for(i in value){
+   						  $('#loadportDiv111').append("<a class='ui-dropdown-cell' onclick=\"onCount(event,'#startCountry');\"><span class='ui-port-code'>"+value[i].F01+"</span> <span class='ui-port-name'>"+value[i].F02+"</span></a>");
+   					  }
+   				        });
+   			 }
+    			  
+    			  
+ 		      $('.ui-dropdown-pol111').show();
+ 		     $('.ui-dropdown-pol11').hide();
+ 		      $('.ui-dropdown-pol12').hide();
+ 		     $('.ui-dropdown-pol122').hide();
+ 		          e.stopPropagation();  
+ 		 	 });  
+ 		  $(document).click(function(event) {  
+ 		      $(".ui-dropdown-pol111").hide();  
+ 	 		 });
+ 		  $("#endCountry").click(function(e) { 
+ 			 var end=$(this).val();
+			 if (end == '') {
+				 $.get("/jjshipping/Search/getcountry", function(data){
+   				  var value=eval(data);
+   				  $('#loadportDiv122').html('');
+   				  for(i in value){
+   					  $('#loadportDiv122').append("<a class='ui-dropdown-cell' onclick=\"onEndCount(event,'#endCountry');\"><span class='ui-port-code'>"+value[i].F02+"</span> <span class='ui-port-name'>"+value[i].F03+"</span></a>");
+   				  }
+   			        });
+			 }else{
+				 $.get("/jjshipping/Search/getcount",{cou:end}, function(data){
+					  var value=eval(data);
+					  $('#loadportDiv122').html('');
+					  for(i in value){
+						  $('#loadportDiv122').append("<a class='ui-dropdown-cell' onclick=\"onEndCount(event,'#endCountry');\"><span class='ui-port-code'>"+value[i].F01+"</span> <span class='ui-port-name'>"+value[i].F02+"</span></a>");
+					  }
+				        });
+			 }
+ 			  
+ 		      $('.ui-dropdown-pol122').show();
+ 		     $('.ui-dropdown-pol11').hide();
+ 		      $('.ui-dropdown-pol12').hide();
+ 		     $('.ui-dropdown-pol111').hide();
+ 		          e.stopPropagation();  
+ 		 	 });  
+ 		  $(document).click(function(event) {  
+ 		      $(".ui-dropdown-pol122").hide();  
+ 	 		 });
+    	   
+           $("#startPort").click(function(e) {
+        	 var scountry=$("#startCountry").val();
+        	 if(scountry==''){
+        		   var start=$(this).val();
+        			 if (start == '') {
+        				  $.get("/jjshipping/Search/port",{cou:start}, function(data){
+        	  				  var value=eval(data);
+        	  				  $('#loadportDiv11').html('');
+        	  				  for(i in value){
+        	  					  $('#loadportDiv11').append("<a class='ui-dropdown-cell' onclick=\"onItemSelected(event,'#startPort','#startPortcod','#portcount','#startCountry');\"><span class='spcod' style='display:none'>"+value[i].PortCod+"</span> <span class='ui-port-code'>"+value[i].F04+"</span> <span class='ui-port-name1'>"+value[i].F05+"</span><span class='ui-port-name'>"+value[i].F01+"</span></a>");
+        	  				  }
+        	  			        });
+        			 }else{
+        				 var start=$(this).val();
+        				 $.get("/jjshipping/Search/port",{cou:start}, function(data){
+       	  				  var value=eval(data);
+       	  				  $('#loadportDiv11').html('');
+       	  				  for(i in value){
+       	  					  $('#loadportDiv11').append("<a class='ui-dropdown-cell' onclick=\"onItemSelected(event,'#startPort','#startPortcod','#portcount','#startCountry');\"><span class='spcod' style='display:none'>"+value[i].PortCod+"</span> <span class='ui-port-code'>"+value[i].F04+"</span> <span class='ui-port-name1'>"+value[i].F05+"</span><span class='ui-port-name'>"+value[i].F01+"</span></a>");
+       	  				  }
+       	  			        });
+        			 }
+        	 }
+        
+  			
+        	   
+		      $('.ui-dropdown-pol11').show();
+		      $('.ui-dropdown-pol12').hide();
+		      $('.ui-dropdown-pol122').hide();
+	 		  $('.ui-dropdown-pol111').hide();
+		          e.stopPropagation();  
+		 	 });  
+		  $(document).click(function(event) {  
+		      $(".ui-dropdown-pol11").hide();  
+	 		 });
+		  $("#endPort").click(function(e) {
+			  var endscountry=$("#endCountry").val();
+			  if(endscountry==''){
+				  var end=$(this).val();
+					 if (end == '') {
+						  $.get("/jjshipping/Search/port",{cou:end}, function(data){
+							  var value=eval(data);
+							  $('#loadportDiv12').html('');
+							  for(i in value){
+								  $('#loadportDiv12').append("<a class='ui-dropdown-cell' onclick=\"onItemSelected(event,'#endPort','#endPortcod','#eportcount','#endCountry');\"><span class='spcod' style='display:none'>"+value[i].PortCod+"</span> <span class='ui-port-code'>"+ value[i].F04+"</span> <span class='ui-port-name1'>"+value[i].F05+"</span><span class='ui-port-name'>"+value[i].F01+"</span></a>");
+							  }
+						 	 });
+					 }else{
+							  $.get("/jjshipping/Search/port",{cou:end}, function(data){
+								  var value=eval(data);
+								  $('#loadportDiv12').html('');
+								  for(i in value){
+									  $('#loadportDiv12').append("<a class='ui-dropdown-cell' onclick=\"onItemSelected(event,'#endPort','#endPortcod','#eportcount','#endCountry');\"><span class='spcod' style='display:none'>"+value[i].PortCod+"</span> <span class='ui-port-code'>"+ value[i].F04+"</span> <span class='ui-port-name1'>"+value[i].F05+"</span><span class='ui-port-name'>"+value[i].F01+"</span></a>");
+								  }
+							 	 });
+					 }
+			  }
+			 
+		      $('.ui-dropdown-pol12').show();
+		      $(".ui-dropdown-pol11").hide();
+		      $('.ui-dropdown-pol122').hide();
+	 		  $('.ui-dropdown-pol111').hide();
+		          e.stopPropagation();  
+		 	 });  
+		  $(document).click(function(event) {  
+		      $(".ui-dropdown-pol12").hide();  
+	 		 });
+		  $('#startPort').focus(function() {
+			  $('.ui-dropdown-pol11').show();
+		      $('.ui-dropdown-pol12').hide();
+		      $('.ui-dropdown-pol122').hide();
+	 		  $('.ui-dropdown-pol111').hide();
+		          e.stopPropagation();  
+		  });
+		  $('#endPort').focus(function() {
+			  $('.ui-dropdown-pol12').show();
+		      $(".ui-dropdown-pol11").hide();
+		      $('.ui-dropdown-pol122').hide();
+	 		  $('.ui-dropdown-pol111').hide();
+		          e.stopPropagation();  
+		  });
+		  $('#endCountry').focus(function() {
+			  $('.ui-dropdown-pol12').hide();
+		      $(".ui-dropdown-pol11").hide();
+		      $('.ui-dropdown-pol122').show();
+	 		  $('.ui-dropdown-pol111').hide();
+		          e.stopPropagation();  
+		  });
+		  
+    });
+
+ 
+    $(function(){
+    	//起始港
+		$("#startCountry").keyup(function(){
+			 var start=$(this).val().toUpperCase();
+			 if (start == '') {
+				 return;
+			 }
+			  $.get("/jjshipping/Search/getcount",{cou:start}, function(data){
+				  var value=eval(data);
+				  $('#loadportDiv111').html('');
+				  for(i in value){
+					  $('#loadportDiv111').append("<a class='ui-dropdown-cell' onclick=\"onCount(event,'#startCountry');\"><span class='ui-port-code'>"+value[i].F01+"</span> <span class='ui-port-name'>"+value[i].F02+"</span></a>");
+				  }
+			        });
+			 	 });
+		
+    	
+		$("#startPort").keyup(function(){
+			 var start=$(this).val().toUpperCase();
+			 if (start == '') {
+				 $.get("/jjshipping/Search/port",{cou:start}, function(data){
+					  var value=eval(data);
+					  $('#loadportDiv11').html('');
+					  for(i in value){
+						  $('#loadportDiv11').append("<a class='ui-dropdown-cell' onclick=\"onItemSelected(event,'#startPort','#startPortcod','#portcount','#startCountry');\"><span class='spcod' style='display:none'>"+value[i].PortCod+"</span> <span class='ui-port-code'>"+value[i].F04+"</span> <span class='ui-port-name1'>"+value[i].F05+"</span><span class='ui-port-name'>"+value[i].F01+"</span></a>");
+					  }
+				        });
+			 }
+			  $.get("/jjshipping/Search/port",{cou:start}, function(data){
+				  var value=eval(data);
+				  $('#loadportDiv11').html('');
+				  for(i in value){
+					  $('#loadportDiv11').append("<a class='ui-dropdown-cell' onclick=\"onItemSelected(event,'#startPort','#startPortcod','#portcount','#startCountry');\"><span class='spcod' style='display:none'>"+value[i].PortCod+"</span> <span class='ui-port-code'>"+value[i].F04+"</span> <span class='ui-port-name1'>"+value[i].F05+"</span><span class='ui-port-name'>"+value[i].F01+"</span></a>");
+				  }
+			        });
+			 	 });
+		//目的港
+		$("#endCountry").keyup(function(){
+			 var end=$(this).val().toUpperCase();
+			 if (end == '') {
+				 return;
+			 }
+			  $.get("/jjshipping/Search/getcount",{cou:end}, function(data){
+				  var value=eval(data);
+				  $('#loadportDiv122').html('');
+				  for(i in value){
+					  $('#loadportDiv122').append("<a class='ui-dropdown-cell' onclick=\"onEndCount(event,'#endCountry');\"><span class='ui-port-code'>"+value[i].F01+"</span> <span class='ui-port-name'>"+value[i].F02+"</span></a>");
+				  }
+			        });
+				});
+		$("#endPort").keyup(function(){
+			 var end=$(this).val().toUpperCase();
+			 if (end == '') {
+				  $.get("/jjshipping/Search/port",{cou:end}, function(data){
+					  var value=eval(data);
+					  $('#loadportDiv12').html('');
+					  for(i in value){
+						  $('#loadportDiv12').append("<a class='ui-dropdown-cell' onclick=\"onItemSelected(event,'#endPort','#endPortcod','#eportcount','#endCountry');\"><span class='spcod' style='display:none'>"+value[i].PortCod+"</span> <span class='ui-port-code'>"+ value[i].F04+"</span> <span class='ui-port-name1'>"+value[i].F05+"</span><span class='ui-port-name'>"+value[i].F01+"</span></a>");
+					  }
+				 	 });
+			 }
+			  $.get("/jjshipping/Search/port",{cou:end}, function(data){
+				  var value=eval(data);
+				  $('#loadportDiv12').html('');
+				  for(i in value){
+					  $('#loadportDiv12').append("<a class='ui-dropdown-cell' onclick=\"onItemSelected(event,'#endPort','#endPortcod','#eportcount','#endCountry');\"><span class='spcod' style='display:none'>"+value[i].PortCod+"</span> <span class='ui-port-code'>"+ value[i].F04+"</span> <span class='ui-port-name1'>"+value[i].F05+"</span><span class='ui-port-name'>"+value[i].F01+"</span></a>");
+				  }
+			 	 });
+				});
+		
+		
+		//提交表单
+		$('.ss_icon').click(function(){
+		 	var stc=$('#startCountry').val();//起始国家
+			var stp=$('#startPort').val();//起始港口
+			var endc=$('#endCountry').val();//目的国家
+			var endp=$('#endPort').val();//目的港口 
+			var sportcod=$('#startPortcod').val();//出发港口代码
+			var eportcod=$('#endPortcod').val();//目的港口代码
+			
+			$.post("/jjshipping/Search/allsearch",{qs:stc,qsg:stp,md:endc,mdg:endp},function(){
+				if(stc=='' || endc==''){
+				alert('请输入您要搜索的国家名称');
+			}else if(stp=='' || endp==''){
+				alert('请输入您要搜索的港口名称');
+			}else{
+					if(sportcod=='' || eportcod==''){
+						alert('您输入的港口未开通，可以尝试使用高级搜索！');
+						//window.onbeforeunload = null;
+						blnCheckUnload= false;
+						$('#form1').submit();
+						
+					}else{
+						blnCheckUnload= false;
+						//window.onbeforeunload = null;
+						$('#form1').submit();
+					}
+				
+			}	
+			});
+			
+	
+			
+		});	
+		});
+		//END 提交表单
+  
+  </script> <script type="text/javascript">
+   var navID = "1";
+</script>
+</head>
+
+<body>
+<!--top-->
+<header class="Top">
+    <div class="logo"><a href="www_jjshipping_default.html"><img src="http://www.jjshipping.cn/jinjiang/images/logo.png" /></a></div>
+    <div class="headrf">
+    <form action="http://www.jjshipping.cn/search.jspx" target="_blank" id="searchFrom">
+        <div class="topinfo">
+            <div class="pic"><img src="http://www.jjshipping.cn/jinjiang/images/icon1.gif" /><img src="http://www.jjshipping.cn/jinjiang/images/icon2.gif" /></div>
+            <div class="Searchbox">
+            <input name="q" type="text" class="text" id="key" value="输入关键字" onblur="if(this.value=='')this.value='输入关键字';"
+            onfocus="this.value='';" maxlength="50" autocomplete="off"   />
+            <a href="javascript:submit2();" class="Search_btn"></a>
+            </div>
+            <div class="Language"><a href="http://www.jjshipping.cn/en/index.jhtml">English</a><em>|</em><a href="http://www.jjshipping.cn/jp/index.jhtml">日本語</a></div>
+            <div class="clear"></div>
+        </div>
+        </form>
+        <script type="text/javascript">
+		function submit2(){
+			var form = $("#searchFrom");
+			form.submit();
+		}
+		</script>
+        <nav class="MainNav">
+          <ul>
+            <li id="nav1"><a class="nav1" href="www_jjshipping_default.html"><em>首页</em></a></li>
+
+
+             <li id="nav1120"><a class="nav1120" href="http://www.jjshipping.cn/gywm/index.jhtml"><em>关于我们</em></a>
+
+                <div class="subnav">
+                    <dl class="subcon">
+
+                      <dt><a href="http://www.jjshipping.cn/jjjtgk.jhtml">集团概况</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                      <dt><a href="http://www.jjshipping.cn/jjzzjg.jhtml">组织架构</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                      <dt><a href="http://www.jjshipping.cn/jjfzyg/index.jhtml">发展沿革</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                      <dt><a href="http://www.jjshipping.cn/jjxcp/index.jhtml">宣传片</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                      <dt><a href="http://www.jjshipping.cn/jjryzz/index.jhtml">荣誉资质</a>
+
+
+		     <img src="http://www.jjshipping.cn/jinjiang/images/subnav_jt.png" style="position: absolute; top: 15px; right: 8px;">
+
+		     <img src="http://www.jjshipping.cn/jinjiang/images/subnav_jt.png" style="position: absolute; top: 15px; right: 8px;">
+
+		     <img src="http://www.jjshipping.cn/jinjiang/images/subnav_jt.png" style="position: absolute; top: 15px; right: 8px;">
+
+                         <dl class="Thinav">
+
+                             <dt><a href="http://www.jjshipping.cn/jjpp/index.jhtml">品牌</a></dt>
+
+                             <dt><a href="http://www.jjshipping.cn/jjaq/index.jhtml">安全</a></dt>
+
+                             <dt><a href="http://www.jjshipping.cn/jjzz/index.jhtml">资质</a></dt>
+
+                         </dl>
+
+                      </dt>
+
+                    </dl>
+                </div>
+
+             </li>
+
+             <li id="nav1126"><a class="nav1126" href="http://www.jjshipping.cn/jjxwzx/index.jhtml"><em>新闻资讯</em></a>
+
+                <div class="subnav">
+                    <dl class="subcon">
+
+                      <dt><a href="http://www.jjshipping.cn/jjgsjx/index.jhtml">公司简讯</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                      <dt><a href="http://www.jjshipping.cn/jjmtsd/index.jhtml">媒体视点</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                      <dt><a href="http://www.jjshipping.cn/jjxxpl/index.jhtml">信息披露</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                      <dt><a href="http://www.jjshipping.cn/aqwh/index.jhtml">安全文化</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                    </dl>
+                </div>
+
+             </li>
+
+             <li id="nav1129"><a class="nav1129" href="http://www.jjshipping.cn/jjqywh/index.jhtml"><em>企业文化</em></a>
+
+                <div class="subnav">
+                    <dl class="subcon">
+
+                      <dt><a href="http://www.jjshipping.cn/jjppln.jhtml">品牌理念</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                      <dt><a href="http://www.jjshipping.cn/jjwhdt/index.jhtml">文化动态</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                      <dt><a href="http://www.jjshipping.cn/jjyxfc/index.jhtml">一线风采</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                      <dt><a href="http://www.jjshipping.cn/jjbydll/index.jhtml">榜样的力量</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                    </dl>
+                </div>
+
+             </li>
+
+             <li id="nav1135"><a class="nav1135" href="http://www.jjshipping.cn/jjjyly/index.jhtml"><em>经营领域</em></a>
+
+                <div class="subnav">
+                    <dl class="subcon">
+
+                      <dt><a href="http://www.jjshipping.cn/jjjzxys/index.jhtml">集装箱运输</a>
+
+
+		     <img src="http://www.jjshipping.cn/jinjiang/images/subnav_jt.png" style="position: absolute; top: 15px; right: 8px;">
+
+		     <img src="http://www.jjshipping.cn/jinjiang/images/subnav_jt.png" style="position: absolute; top: 15px; right: 8px;">
+
+		     <img src="http://www.jjshipping.cn/jinjiang/images/subnav_jt.png" style="position: absolute; top: 15px; right: 8px;">
+
+		     <img src="http://www.jjshipping.cn/jinjiang/images/subnav_jt.png" style="position: absolute; top: 15px; right: 8px;">
+
+                         <dl class="Thinav">
+
+                             <dt><a href="http://www.jjshipping.cn/jjjphx/index.jhtml">精品航线</a></dt>
+
+                             <dt><a href="http://www.jjshipping.cn/jjtsfw/index.jhtml">特色服务</a></dt>
+
+                             <dt><a href="http://www.jjshipping.cn/jjcbzl/index.jhtml">船舶资料</a></dt>
+
+                             <dt><a href="http://www.jjshipping.cn/jjjzxgl/index.jhtml">集装箱管理</a></dt>
+
+                         </dl>
+
+                      </dt>
+
+                      <dt><a href="http://www.jjshipping.cn/jjhyzyfw.jhtml">航运专业服务</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                      <dt><a href="http://www.jjshipping.cn/jjhywl.jhtml">航运物流</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                    </dl>
+                </div>
+
+             </li>
+
+             <li id="nav1143"><a class="nav1143" href="http://www.jjshipping.cn/dzswjj/index.jhtml"><em>电子商务</em></a>
+
+                <div class="subnav">
+                    <dl class="subcon">
+
+                      <dt><a href="http://www.jjshipping.cn/dzswjj.jhtml">电子商务</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                    </dl>
+                </div>
+
+             </li>
+
+             <li id="nav1147"><a class="nav1147" href="http://www.jjshipping.cn/jjjrwm/index.jhtml"><em>加入我们</em></a>
+
+                <div class="subnav">
+                    <dl class="subcon">
+
+                      <dt><a href="http://www.jjshipping.cn/jjrcln.jhtml">人才理念</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                      <dt><a href="http://www.jjshipping.cn/jjjypxs/index.jhtml">教育培训</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                      <dt><a href="http://www.jjshipping.cn/ryzp/index.jhtml">人员招聘</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                    </dl>
+                </div>
+
+             </li>
+
+             <li id="nav1199"><a class="nav1199" href="http://www.jjshipping.cn/yqlj.jhtml"><em>辅助栏目</em></a>
+
+                <div class="subnav">
+                    <dl class="subcon">
+
+                      <dt><a href="http://www.jjshipping.cn/yqlj.jhtml">友情链接</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                      <dt><a href="http://www.jjshipping.cn/lxwm.jhtml">联系我们</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                      <dt><a href="http://www.jjshipping.cn/wzdt.jhtml">网站地图</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                      <dt><a href="http://www.jjshipping.cn/flsm.jhtml">法律声明</a>
+
+
+                         <dl class="Thinav">
+
+                         </dl>
+
+                      </dt>
+
+                    </dl>
+                </div>
+
+             </li>
+
+
+          </ul>
+          <div class="clear"></div>
+       </nav>
+       <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</header>
+<script type="text/javascript">
+   //导航选中
+    $("#nav1").addClass("onnav");
+	
+	$(".MainNav").find("li").each(function(){
+	  var num=$(this).find(".subnav dt").size();
+	  if(num>0){
+		$(this).hover(function(){
+			 $(this).find(".subnav").toggle();
+		});  
+	  }	
+	});
+	$(".MainNav").find("li").find(".subnav dt").hover(function(){
+		    $(this).addClass("onsub");
+			$(this).find(".Thinav").show();
+		},function(){
+		    $(this).removeClass("onsub");
+			$(this).find(".Thinav").hide();
+		 }); 
+</script>	<!--top End-->
+
+<aside class="HomeBan">
+    <div class="BanList">
+        <ul>
+             <li><a href="http://www.jjshipping.cn/jjgsjx/4860.jhtml"><img src="http://www.jjshipping.cn/jinjiang/upload/cms/www/201905/09083533m35u.jpg" /></a></li>
+                        <li><a href="ejj_jjshipping_default.html"><img src="http://www.jjshipping.cn/jinjiang/upload/cms/www/201802/11132114bizu.jpg" /></a></li>
+                        <li><a href="http://www.jjshipping.cn/jjhyzyfw.jhtml"><img src="http://www.jjshipping.cn/jinjiang/upload/cms/www/201702/24171034nj0w.jpg" /></a></li>
+                        <li><a href="http://www.jjshipping.cn/jjhywl.jhtml"><img src="http://www.jjshipping.cn/jinjiang/upload/cms/www/201702/241710473hsn.jpg" /></a></li>
+                        <li><a href="http://www.jjshipping.cn/jjjphx/index.jhtml"><img src="http://www.jjshipping.cn/jinjiang/upload/cms/www/201702/24171114rnpf.jpg" /></a></li>
+                        <li><a href="http://www.jjshipping.cn/jjtsfw/index.jhtml"><img src="http://www.jjshipping.cn/jinjiang/upload/cms/www/201702/24171125clap.jpg" /></a></li>
+            
+        </ul>
+    </div>
+    <div class="tabList">
+        <ul>
+        		 <li><span></span></li>
+        		 <li><span></span></li>
+        		 <li><span></span></li>
+        		 <li><span></span></li>
+        		 <li><span></span></li>
+        		 <li><span></span></li>
+        </ul>
+    </div>
+</aside>
+
+<section class="Contain">
+    <div class="Contain_tbg"></div>
+    <div class="MainContainIndex">
+         <div class="HomeBoxLeft"> 
+            <div class="HomeBox1">
+                <div class="HomeNews">
+                    <div class="tabList">
+                        <ul>
+                           <li><a href="http://www.jjshipping.cn/jjgsjx/index.jhtml">公司简讯</a></li>
+                           <li><em><img src="http://www.jjshipping.cn/jjmtsd/index.jhtml" width="1" height="13" /></em></li>
+                           <li><a href="http://www.jjshipping.cn/jjmtsd/index.jhtml">媒体视点</a></li> 
+						   <li><em><img src="http://www.jjshipping.cn/aqwh/index.jhtml" width="1" height="13" /></em></li>
+                           <li><a href="http://www.jjshipping.cn/aqwh/index.jhtml">安全文化</a></li> 
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="txtCont">
+                       <ul>
+                          <div class="top">
+                              <time>
+                                  <span>09</span>
+                                  <em>2019-05</em>
+                              </time>
+                              <div class="info">
+                                  <h3><a href="http://www.jjshipping.cn/jjgsjx/4920.jhtml" target="_blank">实至名归！锦江航运获“上海市五一劳动奖状”称号及“2019承运人创新奖...</a></h3>
+                                  <p><span style=" color:#666666;"></p>
+                              </div>
+                              <div class="clear"></div>
+                          </div>
+                          <li><time>2019-03-18</time>
+                          <a href="http://www.jjshipping.cn/jjgsjx/4860.jhtml" target="_blank">锦江航运泰国越南航线新增周五班服务</a></li>
+                          <li><time>2019-03-13</time>
+                          <a href="http://www.jjshipping.cn/jjgsjx/4821.jhtml" target="_blank">锦江航运2019年代理工作会顺利召...</a></li>
+                          <li><time>2019-03-06</time>
+                          <a href="http://www.jjshipping.cn/jjgsjx/4780.jhtml" target="_blank">锦江航运一届四次党代会、五届七次工...</a></li>
+                          <li><time>2018-12-27</time>
+                          <a href="http://www.jjshipping.cn/jjgsjx/4661.jhtml" target="_blank">锦江航运受邀出席上海海事大学201...</a></li>
+                       </ul>
+                          
+                       <ul>
+                          <div class="top">
+                              <time>
+                                  <span>08</span>
+                                  <em>2018-02</em>
+                              </time>
+                              <div class="info">
+                                  <h3><a href="http://www.jjshipping.cn/jjmtsd/4160.jhtml" target="_blank">《中国航务周刊》：重拳出击 锦江航运精品服务再发力</a></h3>
+                                  <p><span style=" color:#666666;"></p>
+                              </div>
+                              <div class="clear"></div>
+                          </div>
+                          <li><time>2017-03-17</time>
+                          <a href="http://www.jjshipping.cn/jjmtsd/3241.jhtml" target="_blank">《航运交易公报》：安全保驾，锦江航...</a></li>
+                          <li><time>2017-03-17</time>
+                          <a href="http://www.jjshipping.cn/jjmtsd/3240.jhtml" target="_blank">《中国航务周刊》：文化滋养安全 安...</a></li>
+                          <li><time>2015-11-17</time>
+                          <a href="http://www.jjshipping.cn/jjmtsd/1640.jhtml" target="_blank">《中国水运报》：锦江航运电商业务平...</a></li>
+                          <li><time>2015-07-13</time>
+                          <a href="http://www.jjshipping.cn/jjmtsd/1227.jhtml" target="_blank">《中国航务周刊》：锦江航运集团的"...</a></li>
+                       </ul>
+                       <ul>
+                          <div class="top">
+                              <time>
+                                  <span>22</span>
+                                  <em>2018-08</em>
+                              </time>
+                              <div class="info">
+                                  <h3><a href="http://www.jjshipping.cn/aqwh/4441.jhtml" target="_blank">锦江航运成为上海地区首家安全生产标准化一级企业年度核查“优秀”单位</a></h3>
+                                  <p><span style=" color:#666666;"></p>
+                              </div>
+                              <div class="clear"></div>
+                          </div>
+                          <li><time>2018-05-14</time>
+                          <a href="http://www.jjshipping.cn/aqwh/4321.jhtml" target="_blank">锦江航运完成安全管理体系2018年...</a></li>
+                          <li><time>2018-05-11</time>
+                          <a href="http://www.jjshipping.cn/aqwh/4301.jhtml" target="_blank">锦江航运公司荣获"上海市平安示范单...</a></li>
+                          <li><time>2017-09-14</time>
+                          <a href="http://www.jjshipping.cn/aqwh/3760.jhtml" target="_blank">锦江航运公司领导带队赴锦亿物流开展...</a></li>
+                          <li><time>2017-08-11</time>
+                          <a href="http://www.jjshipping.cn/aqwh/3620.jhtml" target="_blank">学安全讲安全,持续建设航运安全文化...</a></li>
+                       </ul>
+                    </div>
+                </div>
+                <div class="HomeJZX">
+                     <div class="tabList">
+                        <ul>
+                           <li><a href="http://www.jjshipping.cn/jjjzxys/index.jhtml">国际集装箱</a></li>
+                           <li><a href="http://www.jjshipping.cn/jjhyzyfw.jhtml">航运专业服务</a></li>
+                           <li><a href="http://www.jjshipping.cn/jjhywl.jhtml">航运物流</a></li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="txtCont">
+                        <div class="Box"><a href="http://www.jjshipping.cn/jjjzxys/index.jhtml"><img src="http://www.jjshipping.cn/jinjiang/upload/cms/www/201507/27083305ttsg.jpg" /></a></div>
+                        <div class="Box"><a href="http://www.jjshipping.cn/jjhyzyfw.jhtml"><img src="http://www.jjshipping.cn/jinjiang/upload/cms/www/201507/291048204m0j.jpg" /></a></div>
+                        <div class="Box"><a href="http://www.jjshipping.cn/jjhywl.jhtml"><img src="http://www.jjshipping.cn/jinjiang/upload/cms/www/201507/121041119h0d.jpg" /></a></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <!--HomeBox2-->
+            <div class="HomeBox2">
+                <div class="ColName"><span>精品服务</span></div>
+                <div class="txtCont">
+                    <ul>
+                       <li>
+                          <div class="pic"><a href="http://www.jjshipping.cn/jjjphx/index.jhtml"><img src="http://www.jjshipping.cn/jinjiang/upload/cms/www/201603/31170412kxcl.jpg" /></a></div>
+                          <div class="info">
+                              <p><p><span style="TEXT-ALIGN: left; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 13px/21px 微软雅黑, Arial; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(100,115,138); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">锦江航运集团秉持"安全、可靠、定时、快捷"的服务宗旨通过船期定港定时、交货时间定时、单证信息货物信息传输快速准确的"两定一快"的服务模式，开辟中国-日本、中国-东南亚、海峡两岸间多条精品航线，为客户提供优质、快捷的集装箱运输服务。</span></p></p>
+                              <a href="http://www.jjshipping.cn/jjjphx/index.jhtml" class="more">精品航线>></a>
+                          </div>
+                          <div class="clear"></div>
+                       </li>
+                       <li class="li2">
+                          <div class="pic"><a href="http://www.jjshipping.cn/jjtsfw/index.jhtml"><img src="http://www.jjshipping.cn/jinjiang/upload/cms/www/201509/07105401aywa.jpg" /></a></div>
+                          <div class="info">
+                              <p><p><span style="WHITE-SPACE: normal; TEXT-TRANSFORM: none; WORD-SPACING: 0px; FLOAT: none; COLOR: rgb(100,115,138); TEXT-ALIGN: left; FONT: 13px/21px 微软雅黑, Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">锦江航运坚持实施品牌战略，通过精细化提升货物运输全过程的服务质量，以HDS各类特种箱服务、危险品服务等特色服务为基础，为客户提供个性化、差异化高品质服务。</span></p></p>
+                              <a href="http://www.jjshipping.cn/jjtsfw/index.jhtml" class="more">特色服务>></a>
+                          </div>
+                          <div class="clear"></div>
+                       </li>
+                    </ul>
+                </div> 
+            </div>
+        </div>
+        <div class="HomeBoxRight">
+            <div class="HomeSearch">
+                <div class="ColName"><span><em>船期查询</em></span></div>
+
+ <style>
+ * {
+    box-sizing: border-box;
+}
+.clearInput {right:5%;top:50%;   position: absolute; width: 16px; height: 16px; margin-top:-8px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAPCAMAAADarb8dAAAAbFBMVEX////6+/3n7fbg5OtAZqcyV5X19vjs8vjt8ffi6/Xq7fPn6/DX3uvN1+eBqdaIqNNGgtBhjcdojcRmiL8+abF+ka1VcZ1SbZo0WZhQapMqTodGespGeslehL9dg76ElrSElrNbeKpad6k9YqNLZbeXAAAAYElEQVQI152LxxGAMBDEDgdycE5k6L9H/DkKsD47qxlBIc3cQQXd3KBYhCRApFhQELUe074pAkirDTO6xZv7kb1szIv0d+Dh6f9PHfeT546iuFIcYIjpRFFbmntqayjiA+RmA+vwIGrWAAAAAElFTkSuQmCC) no-repeat; outline: none; z-index:99;}
+input.addClear::-ms-clear { display: none; }
+input.addClear:valid + .clearInput { display: block; }
+ </style>
+
+ 
+<div class="txtCon">
+    <form id="form1" role="form" action="http://www.jjshipping.cn/jjshipping/Search/hisearch" method="POST">
+                        <div class="form-group">
+                            <div class="title">出发国家</div>
+                            <div class="SelectBox SelectBox_Up">
+                                <input type="text" class="form-control addClear" name="count" id="startCountry" placeholder="请输入出发的国家"><a href="javascript:" class="clearInput"></a>
+                                	<div class="ui-dropdown-pol111">
+										<div class="title">国家名称</div>
+										<div id="loadportDiv111" class="cui-dropdown-cnt"></div>
+									</div>
+                            </div>
+                            <div class="title">出发港口</div>
+                            <div class="SelectBox SelectBox_Up">
+                                <input type="text" class="form-control addClear"  id="startPort" placeholder="请输入出发的港口"><a href="javascript:" class="clearInput"></a>
+                                <input type="text" id="portcount" name="stg" class="form-control" style="display: none">
+                                <input type="text" id="startPortcod" name="spcod" class="form-control" style="display: none">
+									<div class="ui-dropdown-pol11">
+										<div class="title">国家所有港口</div>
+										<div id="loadportDiv11" class="cui-dropdown-cnt"></div>
+									</div>
+								</div>
+                            <div class="title">到达国家</div>
+                            <div class="SelectBox SelectBox_Up">
+                                <input type="text" class="form-control addClear" name="ecount" id="endCountry" placeholder="请输入到达的国家"><a href="javascript:" class="clearInput"></a>
+                                <div class="ui-dropdown-pol122">
+										<div class="title">国家名称</div>
+										<div id="loadportDiv122" class="cui-dropdown-cnt"></div>
+									</div>
+                            </div>
+                            <div class="title">到达港口</div>
+                            <div class="SelectBox SelectBox_Up">
+                                <input type="text" class="form-control addClear"  id="endPort" placeholder="请输入到达的港口"><a href="javascript:" class="clearInput"></a>
+                                <input type="text" id="eportcount" name="edg" class="form-control" style="display: none">
+                                <input type="text" id="endPortcod" name="epcod" class="form-control" style="display: none">
+									<div class="ui-dropdown-pol12">
+										<div class="title">国家所有港口</div>
+										<div id="loadportDiv12" class="cui-dropdown-cnt"></div>
+									</div>
+								</div>
+								<input type="hidden" name="stadate" value="14"/>
+								<input type="hidden" id="oxtoday" name="sy" value=""/>
+								
+								<script type="text/javascript">
+								function today(){
+									var today=new Date();
+									var h=today.getFullYear();
+									var m=today.getMonth()+1;
+									var d=today.getDate();
+									return h+"-"+m+"-"+d;
+								}
+								 
+								document.getElementById("oxtoday").value = today();
+								</script>
+
+                            <div class="BtnBox"><a href="www_jjshipping_default.html#" class="ss_icon">搜索</a>
+                                <a href="http://www.jjshipping.cn/jjshipping/Search/hisearch" target="_blank" class="gjss_icon">高级搜索>></a></div>
+                        </div>
+    </form>                 
+</div>
+
+ <script language="JavaScript">   
+$('.clearInput').on('click',function(){
+	$(this).siblings('input').val('');
+	$('.ui-dropdown-pol111').hide();
+ 		     $('.ui-dropdown-pol11').hide();
+ 		      $('.ui-dropdown-pol12').hide();
+ 		     $('.ui-dropdown-pol122').hide();
+})	
+
+</script>            </div>
+           
+            <div class="clear"></div>
+            <div class="RHBot">
+                <ul>
+                   <li>
+                      <a  id="sy_ds" href="ejj_jjshipping_default.html">
+                      <div class="pic"><img src="http://www.jjshipping.cn/jinjiang/upload/cms/www/201507/120359222l57.gif" /></div>
+                      <span>进入电商平台>></span>
+                      </a>
+                   </li>
+                   <li>
+                      <a href="http://www.jjshipping.cn/lxwm.jhtml">
+                      <div class="pic"><img src="http://www.jjshipping.cn/jinjiang/images/Home_Icon02.gif" /></div>
+                      <span>我们的集团>></span>
+                      </a>
+                   </li>
+                   <!--  <li class="last">
+                      <div class="info">
+                          <em>锦江航运官方二维码</em>
+                          <dl>
+                          <div class="iconbox">关注我们：<a href="#" class="wb_pic"><img src="/jinjiang/images/icon23.gif"/></a>
+						  <dt><img src="/jinjiang/uploadfiles/image/wx.gif" class="weibo" id="weibo" /></dt>
+						</dl>
+						<dl>
+                              <a href="javascript:void(0);" class="wx_pic"><img src="images/icon24.gif" /></a>
+                              <dt><img src="uploadfiles/image/wx.gif" class="weixin" id="weixin"/></dt>
+                              </dl>
+                         </div>
+					</div>
+			<div class="wxbox"><img src="/jinjiang/uploadfiles/image/cli_300px.png" /></div>
+                   </li>  -->
+                   
+                   <li class="last">
+                      <div class="info">
+                          <em>锦江航运官方二维码</em>
+                          <div class="iconbox"><b>关注我们：</b>
+                              <dl>
+                              <a class="wb_pic" href="javascript:void(0);"><img src="http://www.jjshipping.cn/jinjiang/images/icon23.gif"></a>
+                              <dt><img id="weibo" class="weibo" src="http://www.jjshipping.cn/jinjiang/uploadfiles/wb.png"></dt>
+                              </dl>
+                              <dl>
+                              <a class="wx_pic" href="javascript:void(0);"><img src="http://www.jjshipping.cn/jinjiang/images/icon24.gif"></a>
+                              <dt style="display: none;"><img id="weixin" class="weixin" src="http://www.jjshipping.cn/jinjiang/uploadfiles/wxjj.jpg"></dt>
+                              </dl>
+                          </div>
+                      </div>
+                      <div class="wxbox"><img src="http://www.jjshipping.cn/jinjiang/uploadfiles/gsjj.png"></div>
+                   </li>
+                    
+                </ul>
+                 <script type="text/javascript">
+                    $(".HomeBoxRight .RHBot li.last .info .iconbox").find("dl").each(function(){
+						$(this).find("a").hover(function(){
+						   $(this).next("dt").show();	
+						},function(){
+							$(this).next("dt").hide();	
+						});
+					});
+                </script>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+<div class="Contain_bot">
+          <ul>
+          
+
+               <li>
+                  <a href="http://www.jjshipping.cn/yqlj.jhtml">
+                     <em><img src="http://www.jjshipping.cn/jinjiang/upload/cms/www/201507/12104245dk5y.gif" /></em>
+                     <span>友情链接</span>
+                  </a>
+               </li>
+
+               <li>
+                  <a href="http://www.jjshipping.cn/lxwm.jhtml">
+                     <em><img src="http://www.jjshipping.cn/jinjiang/upload/cms/www/201507/12104258cke2.gif" /></em>
+                     <span>联系我们</span>
+                  </a>
+               </li>
+
+               <li>
+                  <a href="http://www.jjshipping.cn/wzdt.jhtml">
+                     <em><img src="http://www.jjshipping.cn/jinjiang/upload/cms/www/201507/12104330i5x0.gif" /></em>
+                     <span>网站地图</span>
+                  </a>
+               </li>
+
+               <li>
+                  <a href="http://www.jjshipping.cn/flsm.jhtml">
+                     <em><img src="http://www.jjshipping.cn/jinjiang/upload/cms/www/201507/12104342noau.gif" /></em>
+                     <span>法律声明</span>
+                  </a>
+               </li>
+
+
+            </ul>
+            <div class="clear"></div>
+    </div>
+    <div class="Contain_bg"></div></section>
+<script type="text/javascript">
+    jQuery(".HomeBan").slide({titCell:".tabList li",mainCell:".BanList ul",autoPlay:true,interTime:6000});
+	var num=$(".HomeBan .tabList").find("li").size();
+	var twidth=15*num+23;
+	$(".HomeBan .tabList").find("ul").width(twidth);
+
+   //新闻选项卡切换
+   $(".HomeNews .tabList").find("li:first").addClass("on");
+   $(".HomeNews .txtCont").find("ul:first").show();
+   $(".HomeNews .tabList").find("li:even").each(function(i,item){
+	       $(this).mouseover(function(){
+			       $(this).addClass("on");
+				   $(this).siblings().removeClass("on");
+				   Boxshow(i);
+			   });
+	   });
+    function Boxshow(i){
+		   $(".HomeNews .txtCont").find("ul").hide();
+		   $(".HomeNews .txtCont").find("ul").eq(i).show();
+		}
+  
+  
+  //新闻选项卡切换
+   $(".HomeJZX .tabList").find("li:last").css("margin-right",0);
+   $(".HomeJZX .tabList").find("li:first").addClass("on");
+   $(".HomeJZX .txtCont").find(".Box:first").show();
+   $(".HomeJZX .tabList").find("li").each(function(i,item){
+	       $(this).mouseover(function(){
+			       $(this).addClass("on");
+				   $(this).siblings().removeClass("on");
+				   Boxshow2(i);
+			   });
+	   });
+    function Boxshow2(i){
+		   $(".HomeJZX .txtCont").find(".Box").hide();
+		   $(".HomeJZX .txtCont").find(".Box").eq(i).show();
+		}
+
+ //右侧下拉
+   $(".SelectBox").each(function(){    //同一个页面允许多次使用                      
+		$(this).find(".SelectText").click(function(){  //点击展开下拉菜单
+				  var SelectListStatis = $(this).next(".SelectList").css("display");
+				  if(SelectListStatis == "none"){    //判断下拉菜单是否展开
+						$(this).next(".SelectList").show();
+				   }
+				   else{   
+						   $(this).next(".SelectList").hide();
+				  }
+		});
+		//下拉菜单选项点击事件
+			  $(this).find(".SelectList").children("dt").click(function(){
+				   var Value = $(this).find("a").text();  //点击获取值
+				   var idValue = $(this).find("input").val();
+				  //赋值
+		$(this).parents(".SelectList").prev(".SelectText").text(Value);
+		$(this).parents(".SelectList").prev(".SelectText").siblings("input[name='guojia']").val(idValue);
+		$(this).parents(".SelectList").prev(".SelectText").siblings("input[name='zgk']").val(idValue);
+		$(this).parents(".SelectList").prev(".SelectText").siblings("input[name='aguojia']").val(idValue);
+		$(this).parents(".SelectList").prev(".SelectText").siblings("input[name='xgk']").val(idValue);
+		$(this).parents(".SelectList").hide();
+		$(this).mouseleave(function(){ $(this).find(".SelectList").hide(); });
+		});
+   });
+</script>
+<!--bottom-->
+<!--bottom-->
+<footer class="Bottom">
+   <nav class="BottomLinks"> <!--友情链接-->
+     <!--  <a href="#" target="_blank">友情链接</a> <em>
+      |</em><a href="#" target="_blank">网站地图</a> <em>
+      |</em><a href="#" target="_blank">法律声明</a><em>
+      |</em><a href="#" target="_blank">联系我们</a> -->
+   </nav>
+   <div class="Copyright">Copyright © 2015上海锦江航运(集团)有限公司&nbsp;&nbsp;&nbsp;&nbsp;All Rights Reserved.&nbsp;&nbsp;&nbsp;&nbsp;沪ICP备13047598号</div>
+   <div style="width:300px;margin:0 auto; padding:20px 0;">
+     <a target="_blank" href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010102004859" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.jjshipping.cn/jinjiang/uploadfiles/image/batb.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">沪公网安备 31010102004859号</p></a>
+   </div>
+</footer>
+
+<!--bottom End-->
+<!--bottom End-->
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Basic Page Needs================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>锦江航运</title>
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- IOS6全屏 Chrome高版本全屏 ================================================== -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+    <!-- reset and core CSS -->
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/allcss.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .tcdPageCode{padding: 15px 20px;text-align: left;color: #ccc;}
+        .tcdPageCode a{display: inline-block;color: #428bca;display: inline-block;height: 25px;	line-height: 25px;	padding: 0 10px;border: 1px solid #ddd;	margin: 0 2px;border-radius: 4px;vertical-align: middle;}
+        .tcdPageCode a:hover{text-decoration: none;border: 1px solid #428bca;}
+        .tcdPageCode span.current{display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;color: #fff;background-color: #428bca;	border: 1px solid #428bca;border-radius: 4px;vertical-align: middle;}
+        .tcdPageCode span.disabled{	display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;	color: #bfbfbf;background: #f2f2f2;border: 1px solid #bfbfbf;border-radius: 4px;vertical-align: middle;}
+
+
+        .tcdPageCode1{padding: 15px 20px;text-align: left;color: #ccc;}
+        .tcdPageCode1 a{display: inline-block;color: #428bca;display: inline-block;height: 25px;	line-height: 25px;	padding: 0 10px;border: 1px solid #ddd;	margin: 0 2px;border-radius: 4px;vertical-align: middle;}
+        .tcdPageCode1 a:hover{text-decoration: none;border: 1px solid #428bca;}
+        .tcdPageCode1 span.current{display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;color: #fff;background-color: #428bca;	border: 1px solid #428bca;border-radius: 4px;vertical-align: middle;}
+        .tcdPageCode1 span.disabled{	display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;	color: #bfbfbf;background: #f2f2f2;border: 1px solid #bfbfbf;border-radius: 4px;vertical-align: middle;}
+
+        .tcdPageCode2{padding: 15px 20px;text-align: left;color: #ccc;}
+        .tcdPageCode2 a{display: inline-block;color: #428bca;display: inline-block;height: 25px;	line-height: 25px;	padding: 0 10px;border: 1px solid #ddd;	margin: 0 2px;border-radius: 4px;vertical-align: middle;}
+        .tcdPageCode2 a:hover{text-decoration: none;border: 1px solid #428bca;}
+        .tcdPageCode2 span.current{display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;color: #fff;background-color: #428bca;	border: 1px solid #428bca;border-radius: 4px;vertical-align: middle;}
+        .tcdPageCode2 span.disabled{	display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;	color: #bfbfbf;background: #f2f2f2;border: 1px solid #bfbfbf;border-radius: 4px;vertical-align: middle;}
+
+        .tcdPageCode3{padding: 15px 20px;text-align: left;color: #ccc;}
+        .tcdPageCode3 a{display: inline-block;color: #428bca;display: inline-block;height: 25px;	line-height: 25px;	padding: 0 10px;border: 1px solid #ddd;	margin: 0 2px;border-radius: 4px;vertical-align: middle;}
+        .tcdPageCode3 a:hover{text-decoration: none;border: 1px solid #428bca;}
+        .tcdPageCode3 span.current{display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;color: #fff;background-color: #428bca;	border: 1px solid #428bca;border-radius: 4px;vertical-align: middle;}
+        .tcdPageCode3 span.disabled{	display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;	color: #bfbfbf;background: #f2f2f2;border: 1px solid #bfbfbf;border-radius: 4px;vertical-align: middle;}
+
+    </style>
+</head>
+<body>
+
+    <!-- header -->
+    <div class="loginbar">
+    <div class="main clearfix">
+        <div class="login-submit">
+            <div class="login-dropdown"></div>
+            <span class="login-wrap">
+                <a href="login_3.htm">登录</a>
+                <i class="split-items">|</i>
+                <a href="register.htm">注册</a>
+            </span>
+            <a href="indexen.htm">English</a>
+        </div>
+    </div>
+</div>
+
+    <!-- end -->
+    <!-- header -->
+    <div class="header">
+        <script language="javascript">
+            /*<![CDATA[*/
+            function coupon() {
+                window.location.href='/coupon';
+            }
+            function countdown() {
+                window.location.href='/countdown';
+            }
+            function seckilling() {
+                window.location.href='/seckilling';
+            }
+            function xyUserEntry() {
+                //window.location.href='/seckillover';
+                if ($("#xytype").val() !='CS' && $("#xytype").val() !='OB') {
+                    window.open('http://op.jjshipping.cn/eservices/index-nav.jsp?_menu=menu1');
+                }else{
+                    $("#xytype").val('XY')
+                }
+            }
+            function impChangeSingle() {
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=1');
+                $("#xytype").val('CS');
+            }
+            function onlinbox(){
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=2');
+                $("#xytype").val('OB');
+            }
+            /*]]>*/
+        </script>
+        <div class="main clearfix">
+            <h1 class="logo">
+                <a href="www_jjshipping_default.html" target="_blank"><img src="images/index/logo.png" alt="" /></a>
+            </h1>
+            <div class="top-nav">
+                <a href="index.htm" class="active">首页</a>
+                <a href="home.htm" class="line">在线订舱</a>
+                <a href="cargosearch.htm" class="defaultline">信息查询与订阅</a>
+            <!-- <a  class="discount-nav" >优惠信息
+                    <ul class="dis-nav" >
+                        <li onclick="seckilling();" >秒杀</li>
+                        <li  onclick="coupon();">优惠劵</li>
+
+
+                    </ul>
+                </a>-->
+                <input type="hidden" id="xytype" name="xytype" />
+                <a href="noticemore.htm#" onclick="xyUserEntry();" class="discount-nav">协议用户入口
+                    <ul class="dis-nav" style="width: 140px;">
+                        <li onclick="impChangeSingle();">进口换单网上预约</li>
+                        <li onclick="onlinbox();">网上放箱</li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- end -->
+
+<!--main start-->
+    <!-- tit -->
+    <div class="g-tit">
+        首页 &gt; <span>信息公告</span>
+    </div>
+    <!-- /tit end -->
+
+
+
+    <!-- main -->
+    <div class="main pb40 clearfix">
+        <!-- left -->
+        <div class="leftsidebar">
+            <dl>
+                <dt><img src="images/leftside-dt-icon1.png" alt="" />辅助栏目</dt>
+                <dd><a href="noticemore.htm" class="cur">信息公告</a></dd>
+                <dd><a href="legalNotice.htm">法律申明</a></dd>
+            </dl>
+        </div>
+        <!-- /left end -->
+
+        <!-- right -->
+        <div class="rightcolumn">
+            <div class="infor-tab">
+                <ul class="infor-tab-nav">
+                    <li class="active"><a href="noticemore.htm#panel-1" data-toggle="tab">全部</a></li>
+                    <li><a href="noticemore.htm#panel-2" data-toggle="tab">船期</a></li>
+
+                    <li><a href="noticemore.htm#panel-4" data-toggle="tab">操作</a></li>
+                    <li><a href="noticemore.htm#panel-5" data-toggle="tab">费用</a></li>
+
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="panel-1">
+                        <ul id="totaldata">
+                            <li><span>2019-05-31</span>
+                                <a target="_blank" href="noticeinfo_3.htm"><em>【船期】</em>
+                                阪神穿梭快航2019年6月船期表（更正一） </a></li>
+                            <li><span>2019-05-31</span>
+                                <a target="_blank" href="noticeinfo_6.htm"><em>【船期】</em>
+                                青岛快航2019年6月船期表（更正一） </a></li>
+                            <li><span>2019-05-31</span>
+                                <a target="_blank" href="noticeinfo_4.htm"><em>【船期】</em>
+                                九州釜山线2019年6月船期表（更正二） </a></li>
+                            <li><span>2019-05-31</span>
+                                <a target="_blank" href="noticeinfo_5.htm"><em>【船期】</em>
+                                四季快航2019年6月船期表（更正一） </a></li>
+                            <li><span>2019-05-31</span>
+                                <a target="_blank" href="noticeinfo_7.htm"><em>【船期】</em>
+                                东海穿梭2019年6月船期表（更正二） </a></li>
+                            <li><span>2019-05-31</span>
+                                <a target="_blank" href="noticeinfo_8.htm"><em>【船期】</em>
+                                太仓日本航线2019年6月船期表（更正二） </a></li>
+                            <li><span>2019-05-24</span>
+                                <a target="_blank" href="noticeinfo_9.htm"><em>【船期】</em>
+                                太仓日本航线2019年6月船期表（更正一） </a></li>
+                            <li><span>2019-05-24</span>
+                                <a target="_blank" href="noticeinfo_10.htm"><em>【船期】</em>
+                                青岛快航2019年6月船期表 </a></li>
+                            <li><span>2019-05-24</span>
+                                <a target="_blank" href="noticeinfo_11.htm"><em>【船期】</em>
+                                上海台湾航线2019年06月船期表 </a></li>
+                            <li><span>2019-05-24</span>
+                                <a target="_blank" href="noticeinfo_12.htm"><em>【船期】</em>
+                                阪神穿梭快航2019年6月船期表 </a></li>
+                            <li><span>2019-05-24</span>
+                                <a target="_blank" href="noticeinfo_13.htm"><em>【船期】</em>
+                                泰越航线2019年6月船期表 </a></li>
+                            <li><span>2019-05-24</span>
+                                <a target="_blank" href="noticeinfo_14.htm"><em>【船期】</em>
+                                华北台湾航线2019年6月船期表 </a></li>
+                            <li><span>2019-05-24</span>
+                                <a target="_blank" href="noticeinfo_17.htm"><em>【船期】</em>
+                                九州釜山线2019年6月船期表（更正一） </a></li>
+                            <li><span>2019-05-24</span>
+                                <a target="_blank" href="noticeinfo_15.htm"><em>【船期】</em>
+                                东海穿梭2019年6月船期表（更正一） </a></li>
+                            <li><span>2019-05-24</span>
+                                <a target="_blank" href="noticeinfo_16.htm"><em>【船期】</em>
+                                四季快航2019年6月船期表 </a></li>
+
+                        </ul>
+                        <!-- page -->
+                        <div class="tcdPageCode">
+
+                        </div>
+                        <!-- /page end -->
+                    </div>
+                    <div class="tab-pane" id="panel-2">
+                        <ul id="totaldata1">
+                            <li><span>2019-05-31</span>
+                                <a target="_blank" href="noticeinfo_3.htm"><em>【船期】</em>
+                                    阪神穿梭快航2019年6月船期表（更正一） </a></li>
+                            <li><span>2019-05-31</span>
+                                <a target="_blank" href="noticeinfo_6.htm"><em>【船期】</em>
+                                    青岛快航2019年6月船期表（更正一） </a></li>
+                            <li><span>2019-05-31</span>
+                                <a target="_blank" href="noticeinfo_4.htm"><em>【船期】</em>
+                                    九州釜山线2019年6月船期表（更正二） </a></li>
+                            <li><span>2019-05-31</span>
+                                <a target="_blank" href="noticeinfo_5.htm"><em>【船期】</em>
+                                    四季快航2019年6月船期表（更正一） </a></li>
+                            <li><span>2019-05-31</span>
+                                <a target="_blank" href="noticeinfo_7.htm"><em>【船期】</em>
+                                    东海穿梭2019年6月船期表（更正二） </a></li>
+                            <li><span>2019-05-31</span>
+                                <a target="_blank" href="noticeinfo_8.htm"><em>【船期】</em>
+                                    太仓日本航线2019年6月船期表（更正二） </a></li>
+                            <li><span>2019-05-24</span>
+                                <a target="_blank" href="noticeinfo_9.htm"><em>【船期】</em>
+                                    太仓日本航线2019年6月船期表（更正一） </a></li>
+                            <li><span>2019-05-24</span>
+                                <a target="_blank" href="noticeinfo_10.htm"><em>【船期】</em>
+                                    青岛快航2019年6月船期表 </a></li>
+                            <li><span>2019-05-24</span>
+                                <a target="_blank" href="noticeinfo_11.htm"><em>【船期】</em>
+                                    上海台湾航线2019年06月船期表 </a></li>
+                            <li><span>2019-05-24</span>
+                                <a target="_blank" href="noticeinfo_12.htm"><em>【船期】</em>
+                                    阪神穿梭快航2019年6月船期表 </a></li>
+                            <li><span>2019-05-24</span>
+                                <a target="_blank" href="noticeinfo_13.htm"><em>【船期】</em>
+                                    泰越航线2019年6月船期表 </a></li>
+                            <li><span>2019-05-24</span>
+                                <a target="_blank" href="noticeinfo_14.htm"><em>【船期】</em>
+                                    华北台湾航线2019年6月船期表 </a></li>
+                            <li><span>2019-05-24</span>
+                                <a target="_blank" href="noticeinfo_17.htm"><em>【船期】</em>
+                                    九州釜山线2019年6月船期表（更正一） </a></li>
+                            <li><span>2019-05-24</span>
+                                <a target="_blank" href="noticeinfo_15.htm"><em>【船期】</em>
+                                    东海穿梭2019年6月船期表（更正一） </a></li>
+                            <li><span>2019-05-24</span>
+                                <a target="_blank" href="noticeinfo_16.htm"><em>【船期】</em>
+                                    四季快航2019年6月船期表 </a></li>
+
+                        </ul>
+                        <!-- page -->
+                        <div class="tcdPageCode1">
+
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="panel-4">
+                        <ul id="totaldata2">
+                            <li><span>2019-04-23</span>
+                                <a target="_blank" href="noticeinfo_19.htm"><em>【操作】</em>
+                                    “MILD CHORUS”1916E等航次晚开及HDS取消通知 </a></li>
+                            <li><span>2019-04-16</span>
+                                <a target="_blank" href="noticeinfo_18.htm"><em>【操作】</em>
+                                    “PROSRICH”1915E等航次晚开及HDS取消通知 </a></li>
+                            <li><span>2019-04-11</span>
+                                <a target="_blank" href="noticeinfo_28.htm"><em>【操作】</em>
+                                    “MILD JAZZ”1915E航次晚开及HDS取消通知 </a></li>
+                            <li><span>2019-04-09</span>
+                                <a target="_blank" href="noticeinfo_20.htm"><em>【操作】</em>
+                                    “GLORY SHANGHAI”1914E航次晚开及HDS取消通知 </a></li>
+                            <li><span>2019-04-09</span>
+                                <a target="_blank" href="noticeinfo_21.htm"><em>【操作】</em>
+                                    “CHUN JIN”1914E航次HDS取消通知 </a></li>
+                            <li><span>2019-03-14</span>
+                                <a target="_blank" href="noticeinfo_22.htm"><em>【操作】</em>
+                                    “MILD JAZZ”1911E航次晚开及HDS取消通知 </a></li>
+                            <li><span>2019-03-12</span>
+                                <a target="_blank" href="noticeinfo_23.htm"><em>【操作】</em>
+                                    “JJ SUN”1910E航次晚开及HDS取消通知 </a></li>
+                            <li><span>2019-03-12</span>
+                                <a target="_blank" href="noticeinfo_24.htm"><em>【操作】</em>
+                                    “QIU JIN”1910E航次晚开及HDS取消通知 </a></li>
+                            <li><span>2019-03-04</span>
+                                <a target="_blank" href="noticeinfo_25.htm"><em>【操作】</em>
+                                    “JJ SUN”1909E航次晚开及HDS取消通知 </a></li>
+                            <li><span>2019-01-28</span>
+                                <a target="_blank" href="noticeinfo_27.htm"><em>【操作】</em>
+                                    “MILD WALTZ”1904E、“QIU JIN”1904E航次晚开及HDS取消通知 </a></li>
+                            <li><span>2019-01-24</span>
+                                <a target="_blank" href="noticeinfo_26.htm"><em>【操作】</em>
+                                    “JJ SUN”1903E航次晚开及HDS取消通知 </a></li>
+                            <li><span>2019-01-14</span>
+                                <a target="_blank" href="noticeinfo_29.htm"><em>【操作】</em>
+                                    “JJ SUN”1902E航次晚开及HDS取消通知 </a></li>
+                            <li><span>2019-01-08</span>
+                                <a target="_blank" href="noticeinfo_32.htm"><em>【操作】</em>
+                                    “JJ SUN”1901E航次晚开及HDS取消通知 </a></li>
+                            <li><span>2018-12-06</span>
+                                <a target="_blank" href="noticeinfo_30.htm"><em>【操作】</em>
+                                    “MILD WALTZ”1849E航次晚开及HDS取消通知 </a></li>
+                            <li><span>2018-11-19</span>
+                                <a target="_blank" href="noticeinfo_34.htm"><em>【操作】</em>
+                                    “MILD JAZZ”1846E及“JJ SUN”1846E航次晚开及HDS取消通知 </a></li>
+
+                        </ul>
+                        <!-- page -->
+                        <div class="tcdPageCode2">
+
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="panel-5">
+                        <ul id="totaldata3">
+                            <li><span>2019-03-15</span>
+                                <a target="_blank" href="noticeinfo_31.htm"><em>【费用】</em>
+                                    关于调整中国大陆地区出口普通箱THC的通知 </a></li>
+                            <li><span>2019-01-24</span>
+                                <a target="_blank" href="noticeinfo_37.htm"><em>【费用】</em>
+                                    关于调整越南THC的通知 </a></li>
+                            <li><span>2019-01-08</span>
+                                <a target="_blank" href="noticeinfo.htm"><em>【费用】</em>
+                                    关于厦门和香港征收LSS附加费的通知 </a></li>
+                            <li><span>2018-10-18</span>
+                                <a target="_blank" href="noticeinfo_33.htm"><em>【费用】</em>
+                                    关于征收LSS附加费的通知 </a></li>
+                            <li><span>2018-07-26</span>
+                                <a target="_blank" href="noticeinfo_35.htm"><em>【费用】</em>
+                                    关于调整韩国航线CRC附加费的通知 </a></li>
+                            <li><span>2018-07-25</span>
+                                <a target="_blank" href="noticeinfo_36.htm"><em>【费用】</em>
+                                    沪台航线出口货物收取BAF的通知（从2018年8月2日开始） </a></li>
+                            <li><span>2018-06-20</span>
+                                <a target="_blank" href="noticeinfo_38.htm"><em>【费用】</em>
+                                    关于调整韩国航线韩国港口THC附加费的通知 </a></li>
+                            <li><span>2018-06-20</span>
+                                <a target="_blank" href="noticeinfo_39.htm"><em>【费用】</em>
+                                    关于中国大陆出口至香港及东南亚货物征收BAF费用的通知 </a></li>
+                            <li><span>2018-06-01</span>
+                                <a target="_blank" href="noticeinfo_40.htm"><em>【费用】</em>
+                                    关于日本航线进口征收AFS及AFA附加费的通知 </a></li>
+                            <li><span>2018-06-01</span>
+                                <a target="_blank" href="noticeinfo_42.htm"><em>【费用】</em>
+                                    关于中国日本航线出口附加费CIC调整的通知 </a></li>
+                            <li><span>2018-04-28</span>
+                                <a target="_blank" href="noticeinfo_41.htm"><em>【费用】</em>
+                                    关于征收CRC附加费的通知 </a></li>
+                            <li><span>2018-01-19</span>
+                                <a target="_blank" href="noticeinfo_43.htm"><em>【费用】</em>
+                                    四季快航2018年2月船期表 </a></li>
+                            <li><span>2018-01-09</span>
+                                <a target="_blank" href="noticeinfo_44.htm"><em>【费用】</em>
+                                    锦江航运调整东南亚、香港到中国大陆DOC（文件费）的通知 </a></li>
+                            <li><span>2017-07-31</span>
+                                <a target="_blank" href="noticeinfo_45.htm"><em>【费用】</em>
+                                    关于调整越南THC的通知 </a></li>
+                            <li><span>2017-06-09</span>
+                                <a target="_blank" href="noticeinfo_46.htm"><em>【费用】</em>
+                                    锦江加收东南亚、香港到中国大陆DOC（文件费）的通知 </a></li>
+
+                        </ul>
+                        <!-- page -->
+                        <div class="tcdPageCode3">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /right end -->
+    </div>
+    <!-- main end -->
+
+
+
+
+    <!-- footer -->
+    <div class="footer">
+    <div class="footer-links">
+        <div class="main clearfix w1000">
+            <dl class="footer-inner">
+                <dt>关于我们</dt>
+                <dd>
+                    <a target="_blank" href="www_jjshipping_default.html">公司官网</a>
+                    <a href="intoJinjiang.htm">走进锦江</a>
+                    <a href="contactUs.htm"> 联系我们</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>新手上路</dt>
+                <dd>
+                    <a href="serviceLogistics.htm">服务流程</a>
+                    <a href="paymentMethod.htm">支付方式</a>
+                    <a href="importExchangeProcess.htm">进口换单流程</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>常用信息</dt>
+                <dd>
+                    <a href="shipData.htm">船舶资料</a>
+                    <a href="portInformation.htm">港口信息</a>
+                    <a href="yardInformation.htm">堆场信息</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>帮助中心</dt>
+                <dd>
+                    <a href="proxyDirectory.htm">代理名录</a>
+                    <a href="overdueFeeStandard.htm">超期费标准</a>
+                    <!--<a th:href="@{'/additionFeeSchedule'}">附加费明细</a>-->
+                    <a href="fastDeliveryService.htm">快速交货服务</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner last-child">
+                <dt>联系我们</dt>
+                <dd>
+                    <span class="tel-icon"></span>
+                    <p class="tel-number">400-921-2288</p>
+                    <span class="qr_code"></span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="main clearfix w1000">
+            <div class="copyright">
+                <p>Copyright © 2015上海锦江航运(集团)有限公司 All Rights Reserved.  </p>
+                <p>沪ICP备13047598号</p>
+            </div>
+            <div class="friendlinks">
+                <a href="noticemore.htm">信息公告</a>
+                <span>|</span>
+                <a href="legalNotice.htm">法律申明</a>
+                <span>|</span>
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256022543'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1256022543' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- end -->
+    <div class="sidebar">
+    <a href="javascript:void(0);" style="cursor: context-menu;">
+        <span class=""></span>
+    </a>
+    <a target="_blank" href="http://q.url.cn/cdVSx4?_type=wpa%26qidian=true">
+        <span class="online-consult"></span>
+    </a>
+    <a href="javascript:void(0);" class="tel-parent">
+        <span class="telphone telImg"></span>
+        <p class="tel-details">
+            <s class="telphone"></s>售后服务热线:<br />400-921-2288
+        </p>
+    </a>
+    <a href="javascript:void(0);">
+        <mark class="backto-top"></mark>
+    </a>
+</div>
+    <!-- end -->
+<input type="hidden" id="pagecount" value="43" />
+    <input type="hidden" id="pagecountcq" value="35" />
+    <input type="hidden" id="pagecountcz" value="6" />
+    <input type="hidden" id="pagecountfy" value="1" />
+
+    <!-- Javascript with AMD  -->
+    <script src="js/lib/require.js" data-main="js/app/main"></script>
+    <script src="js/lib/jquery-1.11.1.min.js"></script>
+    <script src="js/lib/page.js"></script>
+
+<script type="text/javascript">
+    /*<![CDATA[*/
+    BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800097653, selector: 'BizQQWPA'});
+    var pagecounts=$("#pagecount").val();
+    function getUrl(fileAddr){
+        var url = "http://op.jjshipping.cn/main?action=webbuilder/application/shipping/electricitymanage/noticemanage/noticeAttrView.xwl?attdir="+encodeURI(encodeURI(fileAddr));
+
+
+
+    location.href = url;
+    }
+    $(".tcdPageCode").createPage({
+        pageCount:pagecounts,
+        current:1,
+        backFn:function(p){
+           getreplace(p,14);
+        }
+    });
+
+    function getreplace(p,pagecount){
+        var rowstart=(p-1)*pagecount+1;
+        var rowend=p*pagecount+1;
+
+        $.ajax({
+            url: "/getnoticelist",
+            type: "POST",
+            data: {
+               rowstart:rowstart,
+                rowend:rowend,
+                type:'0'
+            },
+            dataType: "json",
+            cache: false,
+            success: function (message) {
+                var innerHtml = '<ul id="totaldata">';
+                for (var i = 0; i < message.data.length; i++) {
+
+                   // console.info(message.data[i].notice_no);
+                    innerHtml +='<li><span >'+message.data[i].notice_tim+'</span><a target="_blank" href="http://ejj.jjshipping.cn/noticeinfo?noticeno='+message.data[i].notice_no+'"><em>【'+message.data[i].notice_typ+'】 </em>'+message.data[i].notice_title+' </a></li>';
+                   // innerHtml +='<li><span >'+message.data[i].notice_tim+'</span><a target="_blank" href="http://ejj.jjshipping.cn/noticeinfo?noticeno='+message.data[i].notice_no+'"><em>【'+message.data[i].notice_typ+'】 </em>'+message.data[i].notice_title+' </a></li>';
+
+
+                }
+                innerHtml += "</ul>";
+                $("#totaldata").replaceWith(innerHtml);
+            }
+        });
+    }
+
+    $(".tcdPageCode1").createPage({
+        pageCount:$("#pagecountcq").val(),
+        current:1,
+        backFn:function(p){
+            getreplace1(p,14);
+
+
+        }
+    });
+
+    function getreplace1(p,pagecount){
+        var rowstart=(p-1)*pagecount+1;
+        var rowend=p*pagecount+1;
+
+        $.ajax({
+            url: "/getnoticelist",
+            type: "POST",
+            data: {
+                rowstart:rowstart,
+                rowend:rowend,
+                type:'1'
+            },
+            dataType: "json",
+            cache: false,
+            success: function (message) {
+                var innerHtml = '<ul id="totaldata1">';
+                for (var i = 0; i < message.data.length; i++) {
+
+                  //  console.info(message.data[i].notice_no);
+                    innerHtml +='<li><span >'+message.data[i].notice_tim+'</span><a  target="_blank" href="http://ejj.jjshipping.cn/noticeinfo?noticeno='+message.data[i].notice_no+'" ><em>【'+message.data[i].notice_typ+'】 </em>'+message.data[i].notice_title+' </a></li>';
+
+
+                }
+                innerHtml += "</ul>";
+                $("#totaldata1").replaceWith(innerHtml);
+            }
+        });
+    }
+    $(".tcdPageCode2").createPage({
+        pageCount:$("#pagecountcz").val(),
+        current:1,
+        backFn:function(p){
+            getreplace2(p,14);
+
+
+        }
+    });
+
+    function getreplace2(p,pagecount){
+        var rowstart=(p-1)*pagecount+1;
+        var rowend=p*pagecount+1;
+
+        $.ajax({
+            url: "/getnoticelist",
+            type: "POST",
+            data: {
+                rowstart:rowstart,
+                rowend:rowend,
+                type:'2'
+            },
+            dataType: "json",
+            cache: false,
+            success: function (message) {
+                var innerHtml = '<ul id="totaldata2">';
+                for (var i = 0; i < message.data.length; i++) {
+
+                    //console.info(message.data[i].notice_no);
+                    innerHtml +='<li><span >'+message.data[i].notice_tim+'</span><a target="_blank"  href="http://ejj.jjshipping.cn/noticeinfo?noticeno='+message.data[i].notice_no+'"><em>【'+message.data[i].notice_typ+'】 </em>'+message.data[i].notice_title+' </a></li>';
+
+
+                }
+                innerHtml += "</ul>";
+                $("#totaldata2").replaceWith(innerHtml);
+            }
+        });
+    }
+    $(".tcdPageCode3").createPage({
+        pageCount:$("#pagecountfy").val(),
+        current:1,
+        backFn:function(p){
+            getreplace3(p,14);
+
+
+        }
+    });
+
+    function getreplace3(p,pagecount){
+        var rowstart=(p-1)*pagecount+1;
+        var rowend=p*pagecount+1;
+
+        $.ajax({
+            url: "/getnoticelist",
+            type: "POST",
+            data: {
+                rowstart:rowstart,
+                rowend:rowend,
+                type:'3'
+            },
+            dataType: "json",
+            cache: false,
+            success: function (message) {
+                var innerHtml = '<ul id="totaldata3">';
+                for (var i = 0; i < message.data.length; i++) {
+
+                //    console.info(message.data[i].notice_no);
+                    innerHtml +='<li><span >'+message.data[i].notice_tim+'</span><a target="_blank" href="http://ejj.jjshipping.cn/noticeinfo?noticeno='+message.data[i].notice_no+'"><em>【'+message.data[i].notice_typ+'】 </em>'+message.data[i].notice_title+' </a></li>';
+
+
+                }
+                innerHtml += "</ul>";
+                $("#totaldata3").replaceWith(innerHtml);
+            }
+        });
+    }
+
+    /*]]>*/
+</script>
+
+</body>
+
+</html>

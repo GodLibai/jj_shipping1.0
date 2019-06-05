@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Basic Page Needs================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>锦江航运</title>
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+    <!-- reset and core CSS -->
+    <!--<link rel="stylesheet" href="css/less/swiper.min.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="css/less/idangerous.swiper.css" />-->
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/allcss.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="css/june-index.css" rel="stylesheet" type="text/css" />
+    <!--  <link href="css/pure.mini.css" rel="stylesheet" type="text/css"/>-->
+    <style>
+
+.discount-navnew{
+
+    border-bottom-color: #0d4698;
+}
+    </style>
+
+</head>
+<body>
+<!-- 登录-注册
+<div  th:replace="fragment/loginHeader :: loginHeader" th:remove="tag"></div>
+-->
+<div class="loginbar">
+    <div class="main clearfix">
+        <div class="login-submit">
+            <div class="login-dropdown"></div>
+            <span class="login-wrap">
+                <a href="login_3.htm">登录</a>
+                <i class="split-items">|</i>
+                <a href="register.htm">注册</a>
+            </span>
+            <a href="indexen.htm">English</a>
+        </div>
+    </div>
+</div>
+
+
+<!-- end -->
+<!-- header -->
+<div class="header">
+        <script language="javascript">
+            /*<![CDATA[*/
+            function coupon() {
+                window.location.href='/coupon';
+            }
+            function countdown() {
+                window.location.href='/countdown';
+            }
+            function seckilling() {
+                window.location.href='/seckilling';
+            }
+            function xyUserEntry() {
+                //window.location.href='/seckillover';
+                if ($("#xytype").val() !='CS' && $("#xytype").val() !='OB') {
+                    window.open('http://op.jjshipping.cn/eservices/index-nav.jsp?_menu=menu1');
+                }else{
+                    $("#xytype").val('XY')
+                }
+            }
+            function impChangeSingle() {
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=1');
+                $("#xytype").val('CS');
+            }
+            function onlinbox(){
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=2');
+                $("#xytype").val('OB');
+            }
+            /*]]>*/
+        </script>
+        <div class="main clearfix">
+            <h1 class="logo">
+                <a href="www_jjshipping_default.html" target="_blank"><img src="images/index/logo.png" alt="" /></a>
+            </h1>
+            <div class="top-nav">
+                <a href="index.htm" class="active">首页</a>
+                <a href="home.htm" class="line">在线订舱</a>
+                <a href="cargosearch.htm" class="defaultline">信息查询与订阅</a>
+            <!-- <a  class="discount-nav" >优惠信息
+                    <ul class="dis-nav" >
+                        <li onclick="seckilling();" >秒杀</li>
+                        <li  onclick="coupon();">优惠劵</li>
+
+
+                    </ul>
+                </a>-->
+                <input type="hidden" id="xytype" name="xytype" />
+                <a href="coupon.htm#" onclick="xyUserEntry();" class="discount-nav">协议用户入口
+                    <ul class="dis-nav" style="width: 140px;">
+                        <li onclick="impChangeSingle();">进口换单网上预约</li>
+                        <li onclick="onlinbox();">网上放箱</li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<!-- end -->
+
+<!-- main-content -->
+<div class="container">
+    <img width="100%" src="images/coupon01.jpg" alt="" />
+    <div class="main clearfix">
+        <div class="coupon-page-wrap">
+            <ul class="coupon-list clearfix" id="couponDataList">
+
+
+            </ul>
+        </div>
+        <div id="coupon-page"></div>
+        <input type="hidden" id="couponCount" value="" />
+        <input type="hidden" id="sessionuser" value="" />
+    </div>
+</div>
+
+
+<!-- end -->
+<!-- footer -->
+
+
+<div class="footer">
+    <div class="footer-links">
+        <div class="main clearfix w1000">
+            <dl class="footer-inner">
+                <dt>关于我们</dt>
+                <dd>
+                    <a target="_blank" href="www_jjshipping_default.html">公司官网</a>
+                    <a href="intoJinjiang.htm">走进锦江</a>
+                    <a href="contactUs.htm"> 联系我们</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>新手上路</dt>
+                <dd>
+                    <a href="serviceLogistics.htm">服务流程</a>
+                    <a href="paymentMethod.htm">支付方式</a>
+                    <a href="importExchangeProcess.htm">进口换单流程</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>常用信息</dt>
+                <dd>
+                    <a href="shipData.htm">船舶资料</a>
+                    <a href="portInformation.htm">港口信息</a>
+                    <a href="yardInformation.htm">堆场信息</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>帮助中心</dt>
+                <dd>
+                    <a href="proxyDirectory.htm">代理名录</a>
+                    <a href="overdueFeeStandard.htm">超期费标准</a>
+                    <!--<a th:href="@{'/additionFeeSchedule'}">附加费明细</a>-->
+                    <a href="fastDeliveryService.htm">快速交货服务</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner last-child">
+                <dt>联系我们</dt>
+                <dd>
+                    <span class="tel-icon"></span>
+                    <p class="tel-number">400-921-2288</p>
+                    <span class="qr_code"></span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="main clearfix w1000">
+            <div class="copyright">
+                <p>Copyright © 2015上海锦江航运(集团)有限公司 All Rights Reserved.  </p>
+                <p>沪ICP备13047598号</p>
+            </div>
+            <div class="friendlinks">
+                <a href="noticemore.htm">信息公告</a>
+                <span>|</span>
+                <a href="legalNotice.htm">法律申明</a>
+                <span>|</span>
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256022543'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1256022543' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end -->
+<div class="sidebar">
+    <a href="javascript:void(0);" style="cursor: context-menu;">
+        <span class=""></span>
+    </a>
+    <a target="_blank" href="http://q.url.cn/cdVSx4?_type=wpa%26qidian=true">
+        <span class="online-consult"></span>
+    </a>
+    <a href="javascript:void(0);" class="tel-parent">
+        <span class="telphone telImg"></span>
+        <p class="tel-details">
+            <s class="telphone"></s>售后服务热线:<br />400-921-2288
+        </p>
+    </a>
+    <a href="javascript:void(0);">
+        <mark class="backto-top"></mark>
+    </a>
+</div>
+
+<!-- Javascript with AMD  -->
+<script src="js/lib/require.js" data-main="js/app/main"></script>
+<script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery.pagination.js"></script>
+<!--
+<script type="text/javascript" src="js/lib/swiper.min.js"></script>
+<script type="text/javascript" src="js/lib/idangerous.swiper.min.js"></script>-->
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $(".active").attr("class", "la");
+//    $(".discount-nav").attr("class", "active");
+  //  $(".discount-nav").attr("class", "activebb");
+
+    //$(".discount-nav").attr("class", "discount-navnew");
+    BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800097653, selector: 'BizQQWPA'});
+    $(function() {
+
+        var pageIndex = 0;     //页面索引初始值
+        var pageSize = 6;     //每页显示条数初始化，修改显示条数，修改这里即可
+        var pcount=$("#couponCount").val();
+        var uid=$("#sessionuser").val();//当前用户ID
+        InitTable(0);    //Load事件，初始化表格数据，页面索引为0（第一页）
+        //分页，PageCount是总条目数，这是必选参数，其它参数都是可选
+        $("#coupon-page").pagination(pcount, {
+            callback: PageCallback,  //PageCallback() 为翻页调用次函数。
+            items_per_page:pageSize,
+            num_edge_entries: 2,       //两侧首尾分页条目数
+            num_display_entries: 6,    //连续分页主体部分分页条目数
+            current_page: pageIndex,   //当前页索引
+        });
+        //翻页调用
+        function PageCallback(index, jq) {
+            InitTable(index);
+        }
+        //请求数据
+        function InitTable(pageIndex) {
+            var rowstart=pageIndex*pageSize+1;
+            var rowend=(pageIndex+1)*pageSize;
+            $.ajax({
+                type: "POST",
+                dataType: "JSON",
+                sync:false,
+                url: '/getCouponList',
+                data: "rowstart=" + rowstart+ "&rowend=" + rowend,          //提交两个参数：pageIndex(页面索引)，pageSize(显示条数)
+                success: function(msg) {
+                    var content="";
+                    for (var i = 0; i < msg.data.length; i++) {
+
+                        var ENDDATE = new Date(Date.parse(msg.data[i].ENDDATE.replace(/\./g,"/")));//截止时间
+                        var nowDate=new Date();//当前时间
+
+
+                        var yycounts=msg.data[i].ECSUM;//已用优惠券数
+                        var zcounts=msg.data[i].CU_TOTAL;//优惠券总数
+                        var sybfb=100;
+                        if(yycounts>0){
+                            sybfb=100-Math.floor(yycounts*100/zcounts);
+                        }
+                        if(uid!="" && msg.data[i].ECUSER==1){
+                            content+=' <li class="has-coup">';
+                        }else{
+                            if(yycounts==zcounts || nowDate>ENDDATE){
+                                content+='<li class="no-coup">';
+                            }else{
+                                content+='<li class="rob-coup">';
+                            }
+                        }
+                        content+=' <div class="coup-top"> <div class="purpose clearfix">可用于';
+                          if(msg.data[i].CU_TYPE==1){
+                              content+='订舱服务';
+                          }else if(msg.data[i].CU_TYPE==2){
+                              content+='拖车';
+                          }else if(msg.data[i].CU_TYPE==3){
+                              content+='内装';
+                          }else{
+                              content+='保关';
+                          }
+                          content+='<div class="coup-money">'+msg.data[i].COIN_KIND_COD+'<b>'+msg.data[i].MONEYVALUE+'</b></div></div>'+
+                                  '<div class="time-slot clearfix">'+msg.data[i].STARTDATE+'-'+msg.data[i].ENDDATE;
+                        if(msg.data[i].CU_CONDITON==1){
+                            content+='<span>满'+msg.data[i].CU_CONDITION_VAL+'可用</span></div>';
+                        }else{
+                            content+='<span>无条件使用</span></div>';
+                        }
+
+                        if(uid!="" && msg.data[i].ECUSER==1){
+                            content+='<img src="images/get.png" alt="">';
+                        }else{
+                            if(yycounts==zcounts){
+                                content+='<img src="images/complete.png" alt="">';
+                            }
+                        }
+
+                        content+='</div><p>剩余：'+sybfb+'%</p> <div class="progress">'+
+                            '<div class="progress-bar" role="progressbar" aria-valuenow="'+sybfb+'" aria-valuemin="0" aria-valuemax="100" style="width: '+sybfb+'%;"></div></div>';
+
+                        if(uid!="" && msg.data[i].ECUSER==1){
+                            content+='<button class="get-coup">去使用</button>';
+                        }else{
+                            if(yycounts==zcounts){
+                                content+='<button class="get-coup get-coup-bd">立即领取</button>';
+                            }else{
+                                content+=" <button class='get-coup' onclick=userGetCoupon('"+msg.data[i].ID+"')>立即领取</button>";
+                            }
+                        }
+                           content+= ' </li>';
+                    }
+                    $("#couponDataList").html(content);
+                }
+            });
+        }
+    });
+
+    //领取优惠券
+    function userGetCoupon(id){
+        $.ajax({
+            url: "/getCoupon?date="+new Date(),
+            type: "POST",
+            data: {
+                ECU_ID:id,
+            },
+            dataType: "json",
+            cache: false,
+            success: function (msg) {
+
+                if(msg.msg==-1){
+                    location.href="/login";
+                    return false;
+                }else if(msg.msg==1){
+                    location.reload();
+                    return false;
+                }else{
+                    alert("失败");
+                }
+
+
+            }
+        });
+    }
+    /*]]>*/
+</script>
+
+
+</body>
+</html>

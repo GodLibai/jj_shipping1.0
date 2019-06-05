@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Basic Page Needs================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- IOS6全屏 Chrome高版本全屏 ================================================== -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+    <!-- reset and core CSS -->
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/allcss.css" rel="stylesheet" type="text/css" />
+    <link href="css/0818.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+<!-- header -->
+<div class="loginbar">
+    <div class="main clearfix">
+        <div class="login-submit">
+            <div class="login-dropdown"></div>
+            <span class="login-wrap">
+                <a href="login_3.htm">登录</a>
+                <i class="split-items">|</i>
+                <a href="register.htm">注册</a>
+            </span>
+            <a href="indexen.htm">English</a>
+        </div>
+    </div>
+</div>
+
+<!-- end -->
+<!-- header -->
+<div class="header">
+        <script language="javascript">
+            /*<![CDATA[*/
+            function coupon() {
+                window.location.href='/coupon';
+            }
+            function countdown() {
+                window.location.href='/countdown';
+            }
+            function seckilling() {
+                window.location.href='/seckilling';
+            }
+            function xyUserEntry() {
+                //window.location.href='/seckillover';
+                if ($("#xytype").val() !='CS' && $("#xytype").val() !='OB') {
+                    window.open('http://op.jjshipping.cn/eservices/index-nav.jsp?_menu=menu1');
+                }else{
+                    $("#xytype").val('XY')
+                }
+            }
+            function impChangeSingle() {
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=1');
+                $("#xytype").val('CS');
+            }
+            function onlinbox(){
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=2');
+                $("#xytype").val('OB');
+            }
+            /*]]>*/
+        </script>
+        <div class="main clearfix">
+            <h1 class="logo">
+                <a href="www_jjshipping_default.html" target="_blank"><img src="images/index/logo.png" alt="" /></a>
+            </h1>
+            <div class="top-nav">
+                <a href="index.htm" class="active">首页</a>
+                <a href="home.htm" class="line">在线订舱</a>
+                <a href="cargosearch.htm" class="defaultline">信息查询与订阅</a>
+            <!-- <a  class="discount-nav" >优惠信息
+                    <ul class="dis-nav" >
+                        <li onclick="seckilling();" >秒杀</li>
+                        <li  onclick="coupon();">优惠劵</li>
+
+
+                    </ul>
+                </a>-->
+                <input type="hidden" id="xytype" name="xytype" />
+                <a href="proxyDirectory.htm#" onclick="xyUserEntry();" class="discount-nav">协议用户入口
+                    <ul class="dis-nav" style="width: 140px;">
+                        <li onclick="impChangeSingle();">进口换单网上预约</li>
+                        <li onclick="onlinbox();">网上放箱</li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<!-- end -->
+
+
+<!-- tit -->
+<div class="g-tit">
+    首页 &gt; <span>代理名录</span>
+</div>
+<!-- /tit end -->
+
+
+<!-- main -->
+
+<form>
+    <!-- main -->
+    <div class="main pb40 clearfix">
+
+        <!-- left -->
+        <div class="leftsidebar leftsidebar_01">
+    <dl>
+        <dt><img src="images/leftside-dt-icon6.png" alt="" />帮助中心</dt>
+        <dd><a href="intoJinjiang.htm" class="cur">走进锦江</a></dd>
+        <dd><a href="contactUs.htm" class="contactUs">联系我们</a></dd>
+        <dd><a href="serviceLogistics.htm" class="serviceLogistics">服务流程</a></dd>
+        <dd><a href="paymentMethod.htm" class="paymentMethod">支付方式</a></dd>
+        <dd><a href="importExchangeProcess.htm" class="importExchangeProcess">进口换单流程</a></dd>
+        <dd><a href="shipData.htm" class="shipData">船舶资料</a></dd>
+        <dd><a href="portInformation.htm" class="portInformation">港口信息</a></dd>
+        <dd><a href="yardInformation.htm" class="yardInformation">堆场信息</a></dd>
+        <dd><a href="proxyDirectory.htm" class="proxyDirectory">代理名录</a></dd>
+        <dd><a href="overdueFeeStandard.htm" class="overdueFeeStandard">超期费标准</a></dd>
+        <!--<dd><a href="/additionFeeSchedule"  class="additionFeeSchedule">附加费用明细</a></dd>-->
+        <dd><a href="fastDeliveryService.htm" class="fastDeliveryService">快速交货服务</a></dd>
+        <dd><a href="hsClearance.htm" class="hsClearance">通关编码查询</a></dd>
+        <dd><a href="shiptracker.htm" class="shiptracker">船舶跟踪</a></dd>
+        <dd><a href="agreement.htm" class="agreements">提单背面条款</a></dd>
+    </dl>
+</div>
+        <!-- /left end -->
+        <!-- main -->
+
+        <!-- right -->
+        <!--<div  th:each="valuelistAP:${cntrmap[cntrlistail.CNTR_NO]}" th:class="${valuelistAPStat.index == 0 }? 'tip_line tip_clk1':
+               th:class="${valuelistAP.index ==(valuelistAP.size)-1}?'page_one_txt page_nine21':'' "
+               (${valuelistAPStat.index ==(valuelistAPStat.size)-1}?'tip_line tip_clk2':'tip_line')">-->
+        <div class="rightcolumn  padding20">
+            <div class="page_one">
+                <h1 style="background-image:none">Tcc Agency Limited</h1>
+                <div class="page_nine26">
+                    <h4>Tcc Agency Limited</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+ (66) 2026 7119</em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em>+(66) 2026 7100</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em>docimp@th-sjj.com</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>    Lumpini Tower, 3rd Floor, No. 1168/5, Rama 4 Road, Tungmahamek, Sathorn, Bangkok 10120 Thailand</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page_one">
+                <h1 style="background-image:none">越南Pamar代理</h1>
+                <div class="page_nine26">
+                    <h4>越南Pamar代理</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+(84)-8-38237237</em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em>+(84)-8-38245337</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em>HuongNTT@gemadept.com.vn</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>    20th Floor, Gemadept Tower, 6 Le Thanh Ton Street,District 1.Ho Chi Minh City,Viet Nam</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_nine26">
+                    <h4>越南海防GEMADEPT代理</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+(84)-31-3825961*129</em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em>+(84)-31-3825966</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em>dochph@gemadept.com.vn</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>    06th Fl., TD Business Center Building, Lot 20A,Le Hong Phong Street,Ngo Quyen District,Hai Phong City,Viet Nam</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page_one">
+                <h1 style="background-image:none">上海市锦诚国际船务代理有限公司</h1>
+                <div class="page_nine26">
+                    <h4>上海市锦诚国际船务代理有限公司青岛分公司</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+(86)-532-80910177  </em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em>+(86)-532-86678236  </em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em>266071</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>青岛市市南区山东路6号华润大厦B座3603室    ROOM 3603，BLOCK B,CHINA RESOURCES BUILDING,NO.6，SHANDONG ROAD,SHINAN DISTRICT,QINGDAO CITY</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_nine26">
+                    <h4>上海市锦诚国际船务代理有限公司</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+(86)-21-63902288 </em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em>+(86)-21-63903292 </em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em>200003</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>上海市延安东路1200号8楼    Floor 8, No.1200, Yan An Road (East), Shanghai, China</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em>http://www.jc-agency.com</em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_nine26">
+                    <h4>上海市锦诚国际船务代理有限公司天津分公司</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+(86)-22-83192360</em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em>+(86)-22-83192361</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>天津南京路189号津汇广场1号楼1902    Room 1902, Building 1, Jinhui Square, No.189, Nanjing Road, Tianjin</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_nine26">
+                    <h4>上海市锦诚国际船务代理有限公司厦门分公司</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+(86)-592-5614719</em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>福建省厦门市中国（福建）自由贸易试验区厦门片区（保税区）
+象屿路97号厦门国际航运中心D栋6层11B单元
+
+    11B,6th Fl.,Building D,Xiamen International Shipping Center,No.97 Xiangyu Road,Xiamen,Fujian,China
+
+</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_nine26">
+                    <h4>太仓锦诚国际船务代理有限公司</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em></em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>    </em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page_one">
+                <h1 style="background-image:none">式邦船务代理有限公司</h1>
+                <div class="page_nine26">
+                    <h4>式邦船务代理有限公司</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+(886)-2-27133788 (Rep.)</em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em>+(886)-2-27193377  27198833</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>台北市南京东路三段217号11楼    11TH FL, No.217, Sec3, Nanking E.Road, Taipei</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_nine26">
+                    <h4>吉盛船务代理有限公司</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+(886)-2-24275417</em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em>+(886)-2-24238419</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>基隆市信一路133-6号4楼    4th Floor. No. 34, Hsin 1 Road, Keelung</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_nine26">
+                    <h4>安舫船務代理有限公司</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+(886)-4-26573260</em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em>+(886)-4-26573351</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>台中市梧棲區八德路82-1号3楼之6    3F-6, No.84 Ba Deh Road, Wuchi, Taichung</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_nine26">
+                    <h4>海鑫船务代理有限公司</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+(886)-7-3344478</em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em>+(886)-7-3336541</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>高雄市苓雅区海边路29号12楼    12th  Floor, No. 29, Hai Pien Road, Kaohsiung</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_nine26">
+                    <h4>式邦船务代理有限公司(高雄分公司)</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+886-7-5360670</em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em>+886-7-5374770</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>高雄市海边路29号15楼(领航大楼)    15F, B2 Room, No.29, Haipein RD, Kaohsiung</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page_one">
+                <h1 style="background-image:none">锦江航运（日本）株式会社</h1>
+                <div class="page_nine26">
+                    <h4>三井仓库中部支社</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+(81)-52-9720633</em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em>+(81)-52-9720646</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>名古屋市中区丸の内 3-22-24　名古屋桜通ビル10階    10th Floor, Nagoya Sakuradori Building, 3-22-24, Marunouchi, Naka-ku, Nagoya-shi 460-0002 Japan</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_nine26">
+                    <h4>住友仓库东京支店</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+(81)-3-34724220</em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em>+(81)-3-34724343</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>東京都品川区東品川 5-4-36    5th Floor, Shinagawa Container Center, 5-4-36, Higashi-Shinagawa, Shinagawa-ku, Tokyo 140-0002 Japan</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_nine26">
+                    <h4>住友仓库大阪港支店</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+(81)-6-65715006</em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em>+(81)-6-65722215</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>大阪市港区海岸通 2-6-15    2-6-15, Kaigan-dori, Minato-ku, Osaka 552-0022 Japan</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_nine26">
+                    <h4>住友仓库神户支店</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+(81)-78-3711219</em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em>+(81)-78-3711259</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>神戸市中央区波止場町 6-4    6-4, Hatoba-cho, Chuo-ku, Kobe 650-0042 Japan</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_nine26">
+                    <h4>清水仓库株式会社</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+(81)-54-3715510</em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em>+(81)-54-3715532</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>静岡市清水区尾羽471-1    471-1, Obame, Shimizu-Ku, Shizuoka-shi Japan</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_nine26">
+                    <h4>锦江航运（日本）株式会社</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+(81)-3-62143080</em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em>+(81)-3-62143070</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>东京都中央区八重洲2丁目5-9　八重洲共同ビル3阶    3rd Floor, Yaesu Kyodo Bldg., 5-9, 2-Chome, Yaesu, Chuo-ku, Tokyo</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em>http://www.jinjiangshipping.com</em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_nine26">
+                    <h4>三井仓库关东支社</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+(81)-45-2016902</em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em>+(81)-45-2123039</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>横浜市中区相生町3-56-1    56-1, Aioi-Cho 3-Chome, Naka-Ku, Yokohama 231-0012 Japan</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_nine26">
+                    <h4>三井仓库九州株式会社</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+(81)-93-3325328</em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em>+(81)-93-3321975</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>    No.1 Container Terminal Tachinoura Kaigan, Moji-ku, Kitakyushu, Fukuoka 801-0805, Japan</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_nine26">
+                    <h4>博多港运株式会社</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+(81)-92-6633131</em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em>+(81)-92-6633123</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>    4-2-2 Kashiihama Futou, Higashi-ku, Fukuoka-City, Fukuoka 813-0018, Japan</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page_one">
+                <h1 style="background-image:none">韩国斗宇海运株式会社</h1>
+                <div class="page_nine26">
+                    <h4>韩国斗宇海运株式会社</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>82-2-2022-8800</em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>    6th Floor, Hanjin Bldg 88, Sogong-ro, Chung-gu, Seoul, Korea
+</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page_one">
+                <h1 style="background-image:none">香港金发船务有限公司</h1>
+                <div class="page_nine26">
+                    <h4>香港金发船务有限公司</h4>
+                    <div style="display:none">
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagephone.png" /></span>
+                            <div class="pt_div"><strong>电  话：</strong><em>+(852)-28246442</em> </div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageprint.png" /></span>
+                            <div class="pt_div"><strong>传  真：</strong><em>+(852)-28024345</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pagecode.png" /></span>
+                            <div class="pt_div"><strong>邮  编：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageemail.png" /></span>
+                            <div class="pt_div"><strong>E-MAIL：</strong><em></em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageaddress.png" /></span>
+                            <div class="pt_div"><strong>地  址：</strong> <em>    ROOM M1508-13 OFFICE TOWER
+CONVENTION PLAZA, 1 HARBOUR ROAD,
+WANCHAI, HONGKONG.</em></div>
+                        </div>
+                        <div class="page_two_p">
+                            <span><img class="img-responsive" alt="" src="images/pageurl.png" /></span>
+                            <div class="pt_div"><strong>网  址：</strong><em></em></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page_one_txt page_nine22">
+                <a href="attachment/2018Trust.doc">内陆代理通讯录2018年版下载</a>
+            </div>
+        </div>
+        <!-- /right end -->
+        <!-- main end -->
+    </div>
+</form>
+
+
+<!-- footer -->
+<div class="footer">
+    <div class="footer-links">
+        <div class="main clearfix w1000">
+            <dl class="footer-inner">
+                <dt>关于我们</dt>
+                <dd>
+                    <a target="_blank" href="www_jjshipping_default.html">公司官网</a>
+                    <a href="intoJinjiang.htm">走进锦江</a>
+                    <a href="contactUs.htm"> 联系我们</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>新手上路</dt>
+                <dd>
+                    <a href="serviceLogistics.htm">服务流程</a>
+                    <a href="paymentMethod.htm">支付方式</a>
+                    <a href="importExchangeProcess.htm">进口换单流程</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>常用信息</dt>
+                <dd>
+                    <a href="shipData.htm">船舶资料</a>
+                    <a href="portInformation.htm">港口信息</a>
+                    <a href="yardInformation.htm">堆场信息</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>帮助中心</dt>
+                <dd>
+                    <a href="proxyDirectory.htm">代理名录</a>
+                    <a href="overdueFeeStandard.htm">超期费标准</a>
+                    <!--<a th:href="@{'/additionFeeSchedule'}">附加费明细</a>-->
+                    <a href="fastDeliveryService.htm">快速交货服务</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner last-child">
+                <dt>联系我们</dt>
+                <dd>
+                    <span class="tel-icon"></span>
+                    <p class="tel-number">400-921-2288</p>
+                    <span class="qr_code"></span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="main clearfix w1000">
+            <div class="copyright">
+                <p>Copyright © 2015上海锦江航运(集团)有限公司 All Rights Reserved.  </p>
+                <p>沪ICP备13047598号</p>
+            </div>
+            <div class="friendlinks">
+                <a href="noticemore.htm">信息公告</a>
+                <span>|</span>
+                <a href="legalNotice.htm">法律申明</a>
+                <span>|</span>
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256022543'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1256022543' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end -->
+<div class="sidebar">
+    <a href="javascript:void(0);" style="cursor: context-menu;">
+        <span class=""></span>
+    </a>
+    <a target="_blank" href="http://q.url.cn/cdVSx4?_type=wpa%26qidian=true">
+        <span class="online-consult"></span>
+    </a>
+    <a href="javascript:void(0);" class="tel-parent">
+        <span class="telphone telImg"></span>
+        <p class="tel-details">
+            <s class="telphone"></s>售后服务热线:<br />400-921-2288
+        </p>
+    </a>
+    <a href="javascript:void(0);">
+        <mark class="backto-top"></mark>
+    </a>
+</div>
+<!-- end -->
+
+<!-- Javascript with AMD  -->
+<script src="js/lib/require.js" data-main="js/app/main"></script>
+<script src="js/lib/jquery-1.11.1.min.js"></script>
+
+<script>
+    BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800097653, selector: 'BizQQWPA'});
+    $(".cur").attr("class", "helps");
+    $(".proxyDirectory").attr("class", "cur");
+    var wait = 60;
+    function countdown() {
+        if (wait == 0) {
+            $(".redfont").html("");
+            $("#btnmoblie").removeClass("btndisablecolor");
+            $("#btnmoblie").attr("disabled",false);
+            $("#btnmoblie").val("发送验证码");
+            wait = 60;
+        } else {
+            $(".redfont").html("请前往邮箱获取验证码");
+            $("#btnmoblie").addClass("btndisablecolor");
+            $("#btnmoblie").attr("disabled", true);
+            $("#btnmoblie").val( wait + " S");
+            wait--;
+            setTimeout(countdown, 1000);
+        }
+    }
+    $("#btnmoblie").bind('click', function () {
+        countdown();
+    })
+
+    $(".page_nine26 h4").click(function(){
+        var flag = $(this).attr('class');
+        if(flag){
+            $(this).removeClass('clk');
+            $(this).next().hide();
+        }else{
+            $(this).addClass('clk');
+            $(this).next().show();
+        }
+
+    })
+</script>
+
+
+</body>
+
+</html>

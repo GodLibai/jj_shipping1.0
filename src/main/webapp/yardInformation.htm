@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Basic Page Needs================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- IOS6全屏 Chrome高版本全屏 ================================================== -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+    <!-- reset and core CSS -->
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/allcss.css" rel="stylesheet" type="text/css" />
+    <link href="css/0818.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="css/ui-dialog.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<!-- header -->
+<div class="loginbar">
+    <div class="main clearfix">
+        <div class="login-submit">
+            <div class="login-dropdown"></div>
+            <span class="login-wrap">
+                <a href="login_3.htm">登录</a>
+                <i class="split-items">|</i>
+                <a href="register.htm">注册</a>
+            </span>
+            <a href="indexen.htm">English</a>
+        </div>
+    </div>
+</div>
+
+<!-- end -->
+<!-- header -->
+<div class="header">
+        <script language="javascript">
+            /*<![CDATA[*/
+            function coupon() {
+                window.location.href='/coupon';
+            }
+            function countdown() {
+                window.location.href='/countdown';
+            }
+            function seckilling() {
+                window.location.href='/seckilling';
+            }
+            function xyUserEntry() {
+                //window.location.href='/seckillover';
+                if ($("#xytype").val() !='CS' && $("#xytype").val() !='OB') {
+                    window.open('http://op.jjshipping.cn/eservices/index-nav.jsp?_menu=menu1');
+                }else{
+                    $("#xytype").val('XY')
+                }
+            }
+            function impChangeSingle() {
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=1');
+                $("#xytype").val('CS');
+            }
+            function onlinbox(){
+                window.open('http://op.jjshipping.cn/eservices/index.jsp?MARK=2');
+                $("#xytype").val('OB');
+            }
+            /*]]>*/
+        </script>
+        <div class="main clearfix">
+            <h1 class="logo">
+                <a href="www_jjshipping_default.html" target="_blank"><img src="images/index/logo.png" alt="" /></a>
+            </h1>
+            <div class="top-nav">
+                <a href="index.htm" class="active">首页</a>
+                <a href="home.htm" class="line">在线订舱</a>
+                <a href="cargosearch.htm" class="defaultline">信息查询与订阅</a>
+            <!-- <a  class="discount-nav" >优惠信息
+                    <ul class="dis-nav" >
+                        <li onclick="seckilling();" >秒杀</li>
+                        <li  onclick="coupon();">优惠劵</li>
+
+
+                    </ul>
+                </a>-->
+                <input type="hidden" id="xytype" name="xytype" />
+                <a href="yardInformation.htm#" onclick="xyUserEntry();" class="discount-nav">协议用户入口
+                    <ul class="dis-nav" style="width: 140px;">
+                        <li onclick="impChangeSingle();">进口换单网上预约</li>
+                        <li onclick="onlinbox();">网上放箱</li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<!-- end -->
+
+
+<!-- tit -->
+<div class="g-tit">
+    首页 &gt; <span>堆场信息</span>
+</div>
+<!-- /tit end -->
+
+
+<!-- main -->
+
+<form>
+    <!-- main -->
+    <div class="main pb40 clearfix">
+
+        <!-- left -->
+        <div class="leftsidebar leftsidebar_01">
+    <dl>
+        <dt><img src="images/leftside-dt-icon6.png" alt="" />帮助中心</dt>
+        <dd><a href="intoJinjiang.htm" class="cur">走进锦江</a></dd>
+        <dd><a href="contactUs.htm" class="contactUs">联系我们</a></dd>
+        <dd><a href="serviceLogistics.htm" class="serviceLogistics">服务流程</a></dd>
+        <dd><a href="paymentMethod.htm" class="paymentMethod">支付方式</a></dd>
+        <dd><a href="importExchangeProcess.htm" class="importExchangeProcess">进口换单流程</a></dd>
+        <dd><a href="shipData.htm" class="shipData">船舶资料</a></dd>
+        <dd><a href="portInformation.htm" class="portInformation">港口信息</a></dd>
+        <dd><a href="yardInformation.htm" class="yardInformation">堆场信息</a></dd>
+        <dd><a href="proxyDirectory.htm" class="proxyDirectory">代理名录</a></dd>
+        <dd><a href="overdueFeeStandard.htm" class="overdueFeeStandard">超期费标准</a></dd>
+        <!--<dd><a href="/additionFeeSchedule"  class="additionFeeSchedule">附加费用明细</a></dd>-->
+        <dd><a href="fastDeliveryService.htm" class="fastDeliveryService">快速交货服务</a></dd>
+        <dd><a href="hsClearance.htm" class="hsClearance">通关编码查询</a></dd>
+        <dd><a href="shiptracker.htm" class="shiptracker">船舶跟踪</a></dd>
+        <dd><a href="agreement.htm" class="agreements">提单背面条款</a></dd>
+    </dl>
+</div>
+        <!-- /left end -->
+        <!-- main -->
+
+        <!-- right -->
+        <div class="rightcolumn">
+            <div class="bank_title">
+                <label for="" class="pull-left">
+                    <span class="padding15px">国家</span>
+                    <div class="selected selected_01">
+                        <select title="请选择国家" name="sType" id="selectcountry" class="single_select3">
+                            <option value="SG">新加坡</option>
+                            <option value="TH">泰国</option>
+                            <option value="TW">中国台湾</option>
+                            <option value="US">美国</option>
+                            <option value="VN">越南</option>
+                            <option value="CN">中国</option>
+                            <option value="GB">英国</option>
+                            <option value="HK">中国香港</option>
+                            <option value="JP">日本</option>
+                            <option value="KR">韩国</option>
+                        </select>
+                    </div>
+                </label>
+                <label for="" class="pull-left ">
+                    <span class="padding15px">港口</span>
+                    <div class="selected selected_01">
+                        <select title="请选择港口" name="sType" id="selectport" class="single_select3">
+                            <!--<option th:each="portdetail:${port}" th:value="${portdetail.PORT_COD}" th:text="${portdetail.C_PORT_NAM}"></option>-->
+                        </select>
+                    </div>
+                </label>
+                <label class="pull-left">
+                    <div>
+                        <input type="button" id="queryport" class="search_btn" value="查询" />
+                    </div>
+                </label>
+            </div>
+            <div class="bill table-responsive clearfix">
+                <table class="display" id="tables_034" cellspacing="0" width="100%">
+                    <thead>
+                    <tr>
+                        <th width="60">国家代码</th>
+                        <th>国家地区名称</th>
+                        <th>港口代码</th>
+                        <th>港口名称</th>
+                        <th>堆场名称</th>
+                        <th width="100">地址</th>
+                        <th>手机号码</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="clear20"></div>
+            <!-- page -->
+        </div>
+        <!-- /right end -->
+        <!-- main end -->
+    </div>
+</form>
+
+
+<!-- footer -->
+<div class="footer">
+    <div class="footer-links">
+        <div class="main clearfix w1000">
+            <dl class="footer-inner">
+                <dt>关于我们</dt>
+                <dd>
+                    <a target="_blank" href="www_jjshipping_default.html">公司官网</a>
+                    <a href="intoJinjiang.htm">走进锦江</a>
+                    <a href="contactUs.htm"> 联系我们</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>新手上路</dt>
+                <dd>
+                    <a href="serviceLogistics.htm">服务流程</a>
+                    <a href="paymentMethod.htm">支付方式</a>
+                    <a href="importExchangeProcess.htm">进口换单流程</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>常用信息</dt>
+                <dd>
+                    <a href="shipData.htm">船舶资料</a>
+                    <a href="portInformation.htm">港口信息</a>
+                    <a href="yardInformation.htm">堆场信息</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner">
+                <dt>帮助中心</dt>
+                <dd>
+                    <a href="proxyDirectory.htm">代理名录</a>
+                    <a href="overdueFeeStandard.htm">超期费标准</a>
+                    <!--<a th:href="@{'/additionFeeSchedule'}">附加费明细</a>-->
+                    <a href="fastDeliveryService.htm">快速交货服务</a>
+                </dd>
+            </dl>
+            <dl class="footer-inner last-child">
+                <dt>联系我们</dt>
+                <dd>
+                    <span class="tel-icon"></span>
+                    <p class="tel-number">400-921-2288</p>
+                    <span class="qr_code"></span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="main clearfix w1000">
+            <div class="copyright">
+                <p>Copyright © 2015上海锦江航运(集团)有限公司 All Rights Reserved.  </p>
+                <p>沪ICP备13047598号</p>
+            </div>
+            <div class="friendlinks">
+                <a href="noticemore.htm">信息公告</a>
+                <span>|</span>
+                <a href="legalNotice.htm">法律申明</a>
+                <span>|</span>
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256022543'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1256022543' type='text/javascript'%3E%3C/script%3E"));</script>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end -->
+<div class="sidebar">
+    <a href="javascript:void(0);" style="cursor: context-menu;">
+        <span class=""></span>
+    </a>
+    <a target="_blank" href="http://q.url.cn/cdVSx4?_type=wpa%26qidian=true">
+        <span class="online-consult"></span>
+    </a>
+    <a href="javascript:void(0);" class="tel-parent">
+        <span class="telphone telImg"></span>
+        <p class="tel-details">
+            <s class="telphone"></s>售后服务热线:<br />400-921-2288
+        </p>
+    </a>
+    <a href="javascript:void(0);">
+        <mark class="backto-top"></mark>
+    </a>
+</div>
+<!-- end -->
+
+<!-- Javascript with AMD  -->
+<script src="js/lib/require.js" data-main="js/app/main"></script>
+<script src="js/lib/jquery-1.11.1.min.js"></script>
+<script src="js/lib/jquery.dataTables.js"></script>
+<script src="js/lib/jquery.fancybox.js"></script>
+<script src="js/lib/dialog-min.js"></script>
+
+<script>
+    /*<![CDATA[*/
+    BizQQWPA.addCustom({aty: '0', a: '0', nameAccount: 800097653, selector: 'BizQQWPA'});
+    $(".cur").attr("class", "helps");
+    $(".yardInformation").attr("class", "cur");
+    function msg(msg){
+
+        var d = dialog({
+            title: '信息',
+            width:200,
+            content: msg
+        });
+
+        d.showModal();
+    }
+    var table1 = $('#tables_034').DataTable({
+        searching: false, //设置是否显示搜索
+        "async": true,
+        "ajax": "/getYardInformation",
+        "paging": true, //设置是否分页
+        "serverSide": true,
+        "processing": true,
+        "bDestory": true,
+        language: {
+            processing: "数据加载中",//处理页面数据的时候的显示
+            paginate: {//分页的样式文本内容。
+                previous: "上一页",
+                next: "下一页",
+                first: "第一页",
+                last: "最后一页"
+            },
+
+            zeroRecords: "没有内容",//table tbody内容为空时，tbody的内容。
+            //下面三者构成了总体的左下角的内容。
+            info: "总共_PAGES_ 页，显示第_START_ 到第 _END_ ，筛选之后得到 _TOTAL_ 条 ",//左下角的信息显示，大写的词为关键字。
+            infoEmpty: "0条记录",//筛选为空时左下角的显示。
+            infoFiltered: ""//筛选之后的左下角筛选提示(另一个是分页信息显示，在上面的info中已经设置，所以可以不显示)，
+        },
+        columns: [
+            {"data": "COUNTRY_COD"},
+            {"data": "CNAME"},
+            {"data":"PORT_COD"},
+            {"data": "PNAME"},
+            {"data": "C_PLACE_NAM"},
+            {"data": "ADDR_STR"},
+            {"data":"TEL_STR"}
+        ], columnDefs: [
+            {
+                targets: 0,
+                render: function (data, type, row) {
+                    return row.COUNTRY_COD;
+                }
+
+            },
+            {
+                targets: 1,
+                render: function (data, type, row) {
+                    return row.CNAME;
+                }
+
+            },
+            {
+                targets: 2,
+                render: function (data, type, row) {
+                    return row.PORT_COD;
+                }
+
+            },
+            {
+                targets: 3,
+                render: function (data, type, row) {
+                    return row.PNAME;
+                }
+
+            },
+            {
+                targets: 4,
+                render: function (data, type, row) {
+                    return row.C_PLACE_NAM;
+                }
+
+            },
+            {
+                targets: 5,
+                render: function (data, type, row) {
+                    return row.ADDR_STR;
+                }
+
+            },
+            {
+                targets: 6,
+                render: function (data, type, row) {
+                    return row.TEL_STR;
+                }
+
+            }
+
+        ]
+    });
+
+    $('#queryport').on('click', function () {
+        var country = $("#selectcountry").val();
+        if(country == null){
+            msg("请选择国家");
+            return;
+        }
+        var port = $("#selectport").val();
+        table1.ajax.url("/getYardInformation?cnamecod="+country+"&pnamecod="+port).load();
+
+    });
+    /*]]>*/
+
+</script>
+
+
+</body>
+
+</html>
