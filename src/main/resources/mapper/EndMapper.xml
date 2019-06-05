@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zzf4.jj_shipping.dao.EndMapper">
   <resultMap id="BaseResultMap" type="End">
-    <id column="end_id" jdbcType="INTEGER" property="endId" />
-    <result column="e_name" jdbcType="VARCHAR" property="eName" />
+    <id column="endid" jdbcType="INTEGER" property="endId" />
+    <result column="ename" jdbcType="VARCHAR" property="eName" />
   </resultMap>
   <sql id="Base_Column_List">
-    end_id, e_name
+    endid, ename
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -55,4 +55,9 @@
     set e_name = #{eName,jdbcType=VARCHAR}
     where end_id = #{endId,jdbcType=INTEGER}
   </update>
+
+  <select id="selectAll" resultType="End">
+    select <include refid="Base_Column_List" />
+    from t_end
+</select>
 </mapper>

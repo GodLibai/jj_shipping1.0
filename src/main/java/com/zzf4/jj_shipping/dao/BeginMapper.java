@@ -2,6 +2,8 @@ package com.zzf4.jj_shipping.dao;
 
 import com.zzf4.jj_shipping.entity.Begin;
 
+import java.util.List;
+
 public interface BeginMapper {
     int deleteByPrimaryKey(Integer beginId);
 
@@ -14,4 +16,8 @@ public interface BeginMapper {
     int updateByPrimaryKeySelective(Begin record);
 
     int updateByPrimaryKey(Begin record);
+
+    //查詢全部
+    List<Begin> selectAll();
+
 }
