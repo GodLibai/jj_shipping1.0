@@ -21,5 +21,5 @@ public interface ShipinfoMapper {
 
     int updateByPrimaryKey(Shipinfo record);
 
-    List<VoShipInfos> selectByBeginAndEnd(@Param("begin")String begin,@Param("end")String end);
+    List<VoShipInfos> selectByBeginAndEnd(@Param("begin")String begin,@Param("end")String end,@Param("beginTime")Date beginTime,@Param("endTime")Date endTime);
 }
