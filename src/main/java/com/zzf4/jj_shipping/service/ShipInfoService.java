@@ -4,6 +4,6 @@ import com.zzf4.jj_shipping.vo.VoShipInfos;
 
 import java.util.List;
 
-public interface ShipService {
-    List<VoShipInfos> selectAll();
+public interface ShipInfoService {
+    List<VoShipInfos> selectByBeginAndEnd(String begin,String end);
 }

@@ -12,13 +12,14 @@ public class VoShipInfos {
     private Integer sid;
     private String sclass;
     private String sname;
-    private String sailings;
+    private String saillings;
     private String gP20;
     private String gP40;
     private String hC40;
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date begintime;
     private  String beginWeek;
+    private  Long day;
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date endtime;
     private  String endWeek;

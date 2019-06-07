@@ -115,10 +115,11 @@
     where l_id = #{lId,jdbcType=INTEGER}
   </update>
 
-  <select id="selectAll" resultType="com.zzf4.jj_shipping.vo.VoShipInfos">
-    select si.lid,b.bname,e.ename,s.*,si.begintime,si.endtime,si.paystatus from t_shipinfo si
+  <select id="selectByBeginAndEnd" parameterType="map" resultType="com.zzf4.jj_shipping.vo.VoShipInfos">
+   select si.lid,b.bname,e.ename,s.*,si.begintime,si.endtime,si.paystatus from t_shipinfo si
     INNER JOIN t_ship s on si.sid= s.sid
     INNER JOIN t_begin b on si.beginid=b.beginid
     INNER JOIN t_end e on si.endid=e.endid
+	where b.bname=#{begin} and e.ename=#{end}
   </select>
 </mapper>
