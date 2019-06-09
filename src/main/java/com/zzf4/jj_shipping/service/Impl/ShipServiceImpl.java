@@ -8,6 +8,8 @@ import com.zzf4.jj_shipping.vo.VoShipInfos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -16,8 +18,11 @@ public class ShipServiceImpl implements ShipInfoService {
     @Autowired
     ShipinfoMapper shipinfoMapper;
     @Override
-    public List<VoShipInfos> selectByBeginAndEnd(String begin, String end,Date bginTime, Date endTime) {
-        List<VoShipInfos> list = shipinfoMapper.selectByBeginAndEnd(begin,end,bginTime,endTime);
+    public List<VoShipInfos> selectByBeginAndEnd(String begin, String end, Date beginTime, Date endTime) {
+
+
+
+        List<VoShipInfos> list = shipinfoMapper.selectByBeginAndEnd(begin,end,beginTime,endTime);
         for (VoShipInfos voShipInfos:list
              ) {
             //设置开始 结束的日期是周几及相隔的天数

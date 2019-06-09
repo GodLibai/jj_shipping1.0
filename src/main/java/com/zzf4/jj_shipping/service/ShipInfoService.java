@@ -6,5 +6,5 @@ import java.util.Date;
 import java.util.List;
 
 public interface ShipInfoService {
-    List<VoShipInfos> selectByBeginAndEnd(String begin, String end,Date bginTime, Date endTime);
+    List<VoShipInfos> selectByBeginAndEnd(String begin, String end,Date beginTime, Date endTime);
 }
