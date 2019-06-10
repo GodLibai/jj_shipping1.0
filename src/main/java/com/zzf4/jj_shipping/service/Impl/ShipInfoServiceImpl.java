@@ -1,6 +1,6 @@
 package com.zzf4.jj_shipping.service.Impl;
 
-import com.zzf4.jj_shipping.dao.ShipinfoMapper;
+import com.zzf4.jj_shipping.dao.ShipInfoMapper;
 import com.zzf4.jj_shipping.service.ShipInfoService;
 import com.zzf4.jj_shipping.utils.GetDay;
 import com.zzf4.jj_shipping.utils.GetWeek;
@@ -9,14 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
 @Service
-public class ShipServiceImpl implements ShipInfoService {
+public class ShipInfoServiceImpl implements ShipInfoService {
     @Autowired
-    ShipinfoMapper shipinfoMapper;
+    ShipInfoMapper shipinfoMapper;
     @Override
     public List<VoShipInfos> selectByBeginAndEnd(String begin, String end, Date beginTime, Date endTime) {
 

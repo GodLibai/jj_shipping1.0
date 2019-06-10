@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Select;
 import java.util.Date;
 import java.util.List;
 
-public interface ShipinfoMapper {
+public interface ShipInfoMapper {
     int deleteByPrimaryKey(Integer lId);
 
     int insert(Shipinfo record);

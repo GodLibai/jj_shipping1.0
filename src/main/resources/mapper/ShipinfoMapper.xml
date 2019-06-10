@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zzf4.jj_shipping.dao.ShipinfoMapper">
+<mapper namespace="com.zzf4.jj_shipping.dao.ShipInfoMapper">
   <resultMap id="BaseResultMap" type="Shipinfo">
     <id column="lid" jdbcType="INTEGER" property="lId" />
     <result column="sid" jdbcType="INTEGER" property="sId" />

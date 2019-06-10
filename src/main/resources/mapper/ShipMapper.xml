@@ -11,7 +11,7 @@
     <result column="HC40" jdbcType="VARCHAR" property="hc40" />
   </resultMap>
   <sql id="Base_Column_List">
-    s_id, s_class, s_name, saillings, GP20, GP40, HC40
+    sid, sclass, sname, saillings, gP20, gP40, hC40
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -114,4 +114,9 @@
       HC40 = #{hc40,jdbcType=VARCHAR}
     where s_id = #{sId,jdbcType=INTEGER}
   </update>
+
+  <select id="selcetAll" resultType="Ship">
+    select <include refid="Base_Column_List" />
+    from t_ship
+  </select>
 </mapper>

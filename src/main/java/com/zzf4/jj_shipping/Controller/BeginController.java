@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
-@Api(value = "起运港")
+@Api(value = "起运港",tags = "起运港操作")
 @Controller
 @ResponseBody
 public class BeginController {

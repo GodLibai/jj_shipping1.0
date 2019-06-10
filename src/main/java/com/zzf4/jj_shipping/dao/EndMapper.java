@@ -18,6 +18,6 @@ public interface EndMapper {
 
     int updateByPrimaryKey(End record);
 
-    //查詢全部
-    List<End> selectAll();
+    //根据字段名查询
+    List<End> selectByName(String name);
 }

@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface EndService {
     //查詢全部
-    List<End> selectAll();
+    List<End> selectByName(String name);
 }

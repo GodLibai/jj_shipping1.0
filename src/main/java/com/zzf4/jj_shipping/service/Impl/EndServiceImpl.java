@@ -15,8 +15,12 @@ public class EndServiceImpl implements EndService {
     EndMapper endMapper;
 
     @Override
-    public List<End> selectAll() {
-        List<End> list = endMapper.selectAll();
+    public List<End> selectByName(String name) {
+        if (name == null){
+            name = "";
+        }
+
+        List<End> list = endMapper.selectByName(name);
         return list;
     }
 }

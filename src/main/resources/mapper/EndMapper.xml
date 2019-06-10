@@ -6,7 +6,7 @@
     <result column="ename" jdbcType="VARCHAR" property="eName" />
   </resultMap>
   <sql id="Base_Column_List">
-    endid, ename
+    endid, ename,country
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -56,8 +56,9 @@
     where end_id = #{endId,jdbcType=INTEGER}
   </update>
 
-  <select id="selectAll" resultType="End">
+  <select id="selectByName" parameterType="string" resultType="End">
     select <include refid="Base_Column_List" />
-    from t_end
-</select>
+    from t_end where country like CONCAT('%',#{name},'%')
+
+  </select>
 </mapper>
